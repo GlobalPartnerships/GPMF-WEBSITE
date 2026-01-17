@@ -4,7 +4,7 @@ const translations = {
     es: {
         // MENÚ
         "nav.home": "Inicio",
-        "nav.firm": "La Firma",
+        "nav.firm": "Nuestra firma",
         "nav.services": "Servicios",
         "nav.contact": "Agendar",
         "nav.int": "Internacionalización",
@@ -159,7 +159,7 @@ const translations = {
     },
     en: {
         "nav.home": "Home",
-        "nav.firm": "The Firm",
+        "nav.firm": "Our Firm",
         "nav.services": "Services",
         "nav.contact": "Book Now",
         "nav.int": "Internationalization",
@@ -273,7 +273,7 @@ const translations = {
         "allies.partner.humboldt.point2": "• Technology transfer",
         "allies.cta.kicker": "Extended Collaboration",
         "allies.cta.title": "A living network for high-risk, high-impact projects.",
-        "allies.cta.desc": "We activate squads per challenge: data scientists, legal experts, science diplomats, strategic storytellers. All under one playbook.",
+        "allies.cta.desc": "We activate squads per challenge: data scientists, legal experts, science diplomats, strategic storytellers.",
         "allies.cta.point1": "Transnational teams coordinated across three time zones.",
         "allies.cta.point2": "Flexible contracts: pod, retainer, or sprint acceleration.",
         "allies.cta.point3": "Cultural and technical due diligence before every partnership.",
@@ -308,7 +308,7 @@ const translations = {
     },
     de: {
         "nav.home": "Startseite",
-        "nav.firm": "Die Firma",
+        "nav.firm": "Unsere Firma",
         "nav.services": "Dienstleistungen",
         "nav.contact": "Buchen",
         "nav.int": "Internationalisierung",
@@ -457,7 +457,7 @@ const translations = {
     },
     fr: {
         "nav.home": "Accueil",
-        "nav.firm": "Le Cabinet",
+        "nav.firm": "Notre cabinet",
         "nav.services": "Services",
         "nav.contact": "Réserver",
         "nav.int": "Internationalisation",

@@ -14,12 +14,12 @@
 | `about.html` | La Firma | ✅ | ✅ (hero, team, vision) | ✅ |
 | `aliados-equipo.html` | Aliados & Equipo | ✅ | ✅ | ✅ |
 | `contact.html` | Contacto + formulario | ✅ | ✅ (sidebar + form + placeholders) | ✅ |
-| `internationalization.html` | Servicio Internacionalización | ⚠️ (header viejo, sin link IA) | ❌ (solo textos fijos) | ❌ |
-| `data-governance.html` | Servicio Datos & IA | ⚠️ (header viejo, sin link IA) | ❌ | ❌ |
+| `internationalization.html` | Servicio Internacionalización | ✅ (header/nav global + link IA) | ❌ (solo textos fijos) | ❌ |
+| `data-governance.html` | Servicio Datos & IA | ✅ (header/nav global + link IA) | ❌ | ❌ |
 | `landing_GEN_IA_consultora_boutique.html` | Landing IA específica | ✅ (ya enlazada en dropdown) | ❌ (textos aún sin `data-i18n`) | ❌ |
 | `template-service.html` | Plantilla reutilizable | ✅ | ❌ (texto base para reemplazar) | ✅ |
 
-> ⚠️ `internationalization.html` y `data-governance.html` siguen con el header anterior, no usan `nav.ai` ni cargan `js/main.js`, por lo que todavía no responden al selector de idioma.
+> ⚠️ `internationalization.html` y `data-governance.html` ya usan el header global con el dropdown completo, pero aún no tienen `data-i18n` en el contenido ni cargan `js/main.js`, por lo que el selector de idioma todavía no afecta el cuerpo de la página.
 
 ## Internacionalización
 - **`js/main.js`** contiene `translations` para ES/EN/DE/FR, incluyendo navegación (`nav.*`), Home, About, Aliados y Contacto. También se añadió la clave `nav.ai` para la nueva landing de IA.
@@ -29,7 +29,7 @@
   3. Textos de `internationalization.html` y `data-governance.html` una vez que se etiqueten.
 
 ## Header / Footer
-- **Header**: `index`, `about`, `aliados`, `contact`, `landing`, `template` ya comparten la misma estructura (logo + nav + dropdown servicios + selector de idioma + menú móvil). Falta replicarlo en `internationalization` y `data-governance`.
+- **Header**: Todas las páginas listadas comparten la misma estructura (logo + nav + dropdown servicios con “IA & Analítica” + selector de idioma + menú móvil). En los servicios viejos aún falta cargar `js/main.js` para que el selector tenga efecto.
 - **Footer**: `index` y páginas nuevas todavía emplean variantes distintas (home usa footer oscuro minimalista, otras el footer claro con logo/links). Decidir un patrón único en la próxima sesión.
 - **WhatsApp flotante**: Ahora `landing` y `template` usan el mismo botón con ícono Font Awesome. Revisar `index`, `contact`, etc., para reemplazar SVGs antiguos si se busca uniformidad total.
 
