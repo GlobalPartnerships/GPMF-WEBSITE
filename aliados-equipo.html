@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliados & Equipo | GPMF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                        amber: '#FFC857'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="GPMF Logo" class="h-10 w-auto">
+                <span class="text-black font-bold tracking-tight text-lg">Global Partnerships</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
+                <a href="about.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.firm">La Firma</a>
+                <a href="aliados-equipo.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.partners">Aliados &amp; Equipo</a>
+                <a href="about.html#equipo" class="text-gray-600 hover:text-burgundy" data-i18n="nav.team">Equipo</a>
+                <div class="relative group cursor-pointer py-4">
+                    <span class="text-gray-600 hover:text-burgundy flex items-center gap-1" data-i18n="nav.services">Servicios</span>
+                    <div class="absolute top-14 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
+                        <a href="internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.int">Internacionalización</a>
+                        <a href="data-governance.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.data">Datos e IA</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26]" data-i18n="nav.contact">Agendar</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-3 text-xs font-semibold">
+                <button onclick="changeLanguage('es')" class="lang-btn text-burgundy font-bold" data-lang="es">ES</button>|
+                <button onclick="changeLanguage('en')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="en">EN</button>|
+                <button onclick="changeLanguage('de')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="de">DE</button>|
+                <button onclick="changeLanguage('fr')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="fr">FR</button>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-charcoal">☰</button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
+            <a href="index.html" class="text-2xl font-bold" data-i18n="nav.home">Inicio</a>
+            <a href="about.html" class="text-2xl font-bold" data-i18n="nav.firm">La Firma</a>
+            <a href="aliados-equipo.html" class="text-2xl font-bold" data-i18n="nav.partners">Aliados &amp; Equipo</a>
+            <a href="about.html#equipo" class="text-2xl font-bold" data-i18n="nav.team">Equipo</a>
+            <a href="contact.html" class="text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-3xl">✕</button>
+        </div>
+    </header>
+
+    <main class="pt-32 bg-warmgray/30 min-h-screen">
+        <section class="py-20">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <p class="text-sm tracking-[0.4em] uppercase text-gray-500 mb-4" data-i18n="allies.hero.kicker">Red Global</p>
+                <h1 class="text-4xl md:text-5xl font-bold text-charcoal mb-6" data-i18n="allies.hero.title">Personas y Firmas que amplifican nuestro impacto</h1>
+                <p class="text-lg text-gray-600" data-i18n="allies.hero.desc">Unimos liderazgo senior, estrategas especializados y aliados institucionales en Europa, Norteamérica y Latinoamérica para desbloquear proyectos complejos.</p>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500" data-i18n="allies.core.kicker">Core Team</p>
+                        <h2 class="text-3xl font-bold" data-i18n="allies.core.title">Socias y directores de práctica</h2>
+                    </div>
+                    <span class="text-sm text-gray-500" data-i18n="allies.core.subtitle">Atención directa, sin intermediarios junior</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
+                        <div class="relative mb-5">
+                            <img src="Assets/Marcela.JPG" alt="Marcela Sánchez" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow" loading="lazy">
+                        </div>
+                        <h3 class="text-xl.font-bold text-center">Marcela Sánchez</h3>
+                        <p class="text-amber font-semibold text-center text-sm.mb-3" data-i18n="allies.core.marcela.role">Network Management</p>
+                        <p class="text-sm text-gray-600 text-center flex-1" data-i18n="allies.core.marcela.desc">Transformación digital y expansión comercial en ecosistemas trinlingües ES/EN/DE.</p>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
+                        <div class="relative mb-5">
+                            <img src="Assets/Adriana.JPG" alt="Adriana Halleux" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-center">Adriana Halleux</h3>
+                        <p class="text-amber font-semibold text-center text-sm mb-3" data-i18n="allies.core.adriana.role">Innovación &amp; Políticas Públicas</p>
+                        <p class="text-sm text-gray-600 text-center flex-1" data-i18n="allies.core.adriana.desc">Ingeniera y estratega en ciencia, agro e inteligencia competitiva para gobiernos y multilaterales.</p>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
+                        <div class="relative mb-5">
+                            <img src="Assets/Natalia.JPG" alt="Natalia Sánchez" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-center">Natalia Sánchez</h3>
+                        <p class="text-amber font-semibold text-center text-sm mb-3" data-i18n="allies.core.natalia.role">Análisis &amp; Operaciones</p>
+                        <p class="text-sm text-gray-600 text-center flex-1" data-i18n="allies.core.natalia.desc">Diseño de operaciones internas y analítica aplicada para escalabilidad organizacional.</p>
+                    </article>
+
+                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
+                        <div class="relative mb-5">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Carlos Santiusti" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-center">Carlos Santiusti</h3>
+                        <p class="text-amber font-semibold text-center text-sm mb-3" data-i18n="allies.core.carlos.role">Business Intelligence &amp; IA</p>
+                        <p class="text-sm text-gray-600 text-center flex-1" data-i18n="allies.core.carlos.desc">12+ años en BI, data strategy y despliegues de IA para corporaciones LatAm-Europa.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12 flex-wrap gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500" data-i18n="allies.partners.kicker">Alianzas</p>
+                        <h2 class="text-3xl font-bold" data-i18n="allies.partners.title">Partners y firmas asociadas</h2>
+                    </div>
+                    <span class="text-sm text-gray-500" data-i18n="allies.partners.subtitle">Células especializadas que extendemos según el proyecto</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold">Atelier du Climat</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Francia</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.atelier.desc">Think tank en transición energética, diplomacia climática y financiamiento verde.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.atelier.point1">• Diseño de hojas de ruta Net-Zero</li>
+                            <li data-i18n="allies.partner.atelier.point2">• Coordinación con instituciones UE</li>
+                        </ul>
+                    </article>
+
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold">Nordic Bridge Lab</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Alemania / Escandinavia</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.nordic.desc">Estudio boutique en softlanding legal y comercial para scaleups tecnológicas.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.nordic.point1">• Estructuración societaria UE</li>
+                            <li data-i18n="allies.partner.nordic.point2">• Acceso a fondos y hubs digitales</li>
+                        </ul>
+                    </article>
+
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between.mb-4">
+                            <h3 class="text-xl font-bold">AgroTech Latam Coalition</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Latinoamérica</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.agro.desc">Red de expertos en bioeconomía, agrotech y transferencia tecnológica.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.agro.point1">• Proyectos de cooperación internacional</li>
+                            <li data-i18n="allies.partner.agro.point2">• Inteligencia competitiva sectorial</li>
+                        </ul>
+                    </article>
+
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold">Lumen Analytics Studio</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">USA</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.lumen.desc">Laboratorio de IA aplicada en retail, salud y manufactura avanzada.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.lumen.point1">• Desarrollo de modelos predictivos</li>
+                            <li data-i18n="allies.partner.lumen.point2">• Integración de datos multi-fuente</li>
+                        </ul>
+                    </article>
+
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold">Círculo Diplomático Andino</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Colombia / Perú</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.andino.desc">Colectivo de ex diplomáticos y negociadores B2G para proyectos de infraestructura.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.andino.point1">• Relacionamiento institucional</li>
+                            <li data-i18n="allies.partner.andino.point2">• Gestión regulatoria</li>
+                        </ul>
+                    </article>
+
+                    <article class="border border-gray-100 rounded-2xl p-6 bg-warmgray/40">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold">Humboldt Innovation Hub</h3>
+                            <span class="text-xs uppercase tracking-widest text-gray-500">Alemania</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="allies.partner.humboldt.desc">Spin-off académico que conecta universidades DACH con startups latinoamericanas.</p>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li data-i18n="allies.partner.humboldt.point1">• Programas de innovación abierta</li>
+                            <li data-i18n="allies.partner.humboldt.point2">• Transferencia tecnológica</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-charcoal text-white">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <p class="text-sm uppercase tracking-[0.4em] text-white/60 mb-4" data-i18n="allies.cta.kicker">Colaboración Extendida</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="allies.cta.title">Una red viva para proyectos de alto riesgo y alto impacto.</h2>
+                    <p class="text-white/80 mb-4" data-i18n="allies.cta.desc">Activamos squads según el reto: data scientists, expertos legales, diplomáticos científicos, storytellers estratégicos. Todo integrado bajo el mismo playbook.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3" data-i18n="allies.cta.point1"><span class="text-amber">★</span><p>Equipos transnacionales coordinados en tres zonas horarias.</p></li>
+                        <li class="flex items-start gap-3" data-i18n="allies.cta.point2"><span class="text-amber">★</span><p>Contratos flexibles: pod, retainer o aceleración por sprint.</p></li>
+                        <li class="flex items-start gap-3" data-i18n="allies.cta.point3"><span class="text-amber">★</span><p>Due diligence cultural y técnica antes de cada partnership.</p></li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="allies.cta.join.title">¿Quieres sumarte como aliado?</h3>
+                    <p class="text-white/80 mb-6" data-i18n="allies.cta.join.desc">Buscamos firmas y profesionales con ADN boutique y enfoque en resultados. Ciencia, tecnología, data, diplomacia y expansión.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:contacto.gpmfsas@gmail.com?subject=Partnership%20GPMF" class="bg-white text-charcoal font-bold px-6 py-3 rounded-full text-center hover:bg-amber hover:text-black transition-all" data-i18n="allies.cta.join.btn.primary">Postular alianza</a>
+                        <a href="contact.html" class="border border-white/30 text-white font-bold px-6 py-3 rounded-full text-center hover:bg-white hover:text-charcoal transition-all" data-i18n="allies.cta.join.btn.secondary">Agendar conversación</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-400 py-12 text-center border-t border-gray-900">
+        <p class="text-xs">&copy; 2025 GPMF.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
