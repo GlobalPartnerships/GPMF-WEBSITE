@@ -3,9 +3,10 @@
 ## Resumen ejecutivo
 - **Objetivo principal:** internacionalización completa (ES/EN/DE/FR) usando un único HTML por página con `data-i18n` + `translations` en `js/main.js`.
 - **Progreso:** Home (`index.html`), About, Aliados & Equipo y Contacto ya usan el header global, el menú móvil, el selector de idioma y la lógica de traducciones.
-- **Nuevas páginas:**
+- **Nuevas páginas / assets recientes:**
   - `landing_GEN_IA_consultora_boutique.html`: landing IA con el mismo header/nav y botón flotante de WhatsApp.
   - `template-service.html`: plantilla modular para futuros servicios (hero → problemas → metodología → planes → casos → equipo → CTA) ya alineada al header global y con CTA/WhatsApp coherentes.
+  - `business-development.html`: versión final del servicio *Expansión & Soluciones Sectoriales* (copy completo, métricas, metodología, planes y casos) lista para enlazarse desde cualquier sección de servicios.
 
 ## Estructura actual del proyecto
 | Página | Propósito | Header/Footers homogéneos | `data-i18n` aplicado | `js/main.js` incluido |
@@ -18,6 +19,7 @@
 | `data-governance.html` | Servicio Datos & IA | ✅ (header/nav global + link IA) | ❌ | ❌ |
 | `landing_GEN_IA_consultora_boutique.html` | Landing IA específica | ✅ (ya enlazada en dropdown) | ❌ (textos aún sin `data-i18n`) | ❌ |
 | `template-service.html` | Plantilla reutilizable | ✅ | ❌ (texto base para reemplazar) | ✅ |
+| `business-development.html` | Servicio Expansión & Soluciones Sectoriales | ✅ (incluye CTA y botones actualizados) | ❌ (solo nav usa `data-i18n`) | ✅ |
 
 > ⚠️ `internationalization.html` y `data-governance.html` ya usan el header global con el dropdown completo, pero aún no tienen `data-i18n` en el contenido ni cargan `js/main.js`, por lo que el selector de idioma todavía no afecta el cuerpo de la página.
 
@@ -29,7 +31,7 @@
   3. Textos de `internationalization.html` y `data-governance.html` una vez que se etiqueten.
 
 ## Header / Footer
-- **Header**: Todas las páginas listadas comparten la misma estructura (logo + nav + dropdown servicios con “IA & Analítica” + selector de idioma + menú móvil). En los servicios viejos aún falta cargar `js/main.js` para que el selector tenga efecto.
+- **Header**: Todas las páginas listadas comparten la misma estructura (logo + nav + dropdown servicios con “IA & Analítica” y “Expansión & Soluciones Sectoriales” + selector de idioma + menú móvil). En los servicios viejos aún falta cargar `js/main.js` para que el selector tenga efecto.
 - **Footer**: `index` y páginas nuevas todavía emplean variantes distintas (home usa footer oscuro minimalista, otras el footer claro con logo/links). Decidir un patrón único en la próxima sesión.
 - **WhatsApp flotante**: Ahora `landing` y `template` usan el mismo botón con ícono Font Awesome. Revisar `index`, `contact`, etc., para reemplazar SVGs antiguos si se busca uniformidad total.
 
@@ -52,6 +54,7 @@
 ## Recomendaciones para la próxima sesión
 - Comenzar por migrar `internationalization.html` al header global (copiar desde `template-service`), agregar `data-i18n` y extender `translations` con sus textos.
 - Repetir la misma operación para `data-governance.html`.
+- Si se requiere otra versión del servicio de Expansión, reutilizar `business-development.html` como blueprint (hero basado en resultados reales, dolores, metodología 4 etapas, planes y casos) y generar las traducciones correspondientes.
 - Definir un footer único (oscuro vs. claro) y replicarlo en todas las páginas.
 - Finalmente, abordar la traducción completa de `landing_GEN_IA_consultora_boutique.html` usando la tabla de secciones del template para mantener consistencia.
 
