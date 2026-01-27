@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio 203 · Soft-Landing Studio | Casa Normandía</title>
+    <meta
+      name="description"
+      content="Soft-Landing Studio: Fast Wi-Fi + Desk. Designed for Digital Nomads, Consultants, and Academics looking for a 'Soft Landing' in Bogotá for mid-to-long stays (1-3 months)."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --terracotta: #b85c38;
+        --deep-clay: #7a3e1d;
+        --chocolate: #2f1b16;
+        --sunset: #f2c078;
+        --sand: #f8eee2;
+        --cream: #fff8f0;
+        --sage: #7a8c6e;
+        --white: #ffffff;
+        --text: #33231d;
+        --shadow: rgba(15, 10, 8, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: var(--cream);
+        color: var(--text);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .container {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 12px 30px rgba(184, 92, 56, 0.25);
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--sunset);
+        outline-offset: 3px;
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        color: var(--deep-clay);
+        box-shadow: none;
+      }
+
+      .btn-whatsapp {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        background: #25D366;
+        color: var(--white);
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 50;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 248, 240, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .site-header.is-sticky {
+        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
+        background: rgba(255, 248, 240, 0.98);
+      }
+
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.05em;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.2rem;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--terracotta);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--deep-clay);
+      }
+
+      .cta-inline {
+        display: none;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        inset: 0;
+        background: rgba(47, 27, 22, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.35s ease;
+      }
+
+      .mobile-nav a {
+        color: var(--white);
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .mobile-nav.open {
+        transform: translateY(0);
+      }
+
+      main {
+        padding-bottom: 4rem;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        background-image:
+          linear-gradient(120deg, rgba(47, 27, 22, 0.8), rgba(184, 92, 56, 0.65)),
+          url("assets/203.png");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+      }
+
+      .hero-content {
+        max-width: 560px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.3rem, 6vw, 3.75rem);
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .badge {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 0.5rem 1.25rem;
+        width: fit-content;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .split {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .card {
+        padding: 1.85rem;
+        border-radius: 1.25rem;
+        background: var(--white);
+        box-shadow: 0 25px 60px var(--shadow);
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--chocolate);
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 0 0 0.5rem;
+        color: var(--deep-clay);
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(47, 27, 22, 0.08);
+      }
+
+      .feature-icon {
+        font-size: 1.5rem;
+        min-width: 2rem;
+        text-align: center;
+      }
+
+      .gallery-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .gallery-card {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 18px 35px rgba(47, 27, 22, 0.2);
+      }
+
+      .gallery-card::after {
+        content: attr(data-caption);
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 1rem;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .contact-card {
+        display: grid;
+        gap: 1.5rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2rem;
+        padding: 2rem;
+        border: 1px solid rgba(47, 27, 22, 0.08);
+      }
+
+      .contact-details {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .contact-details span {
+        font-weight: 600;
+        color: var(--sage);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+      }
+
+      footer {
+        padding: 3rem 0;
+        background: var(--chocolate);
+        color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--sunset);
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+
+        .cta-inline {
+          display: inline-flex;
+        }
+
+        .hero {
+          padding: 6rem 0;
+        }
+
+        .split {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <div class="container nav-wrapper">
+        <a class="brand" href="index.html">Casa Normandía</a>
+        <nav class="site-nav" aria-label="Main menu">
+          <ul>
+            <li><a href="index.html#inicio" data-scroll>Home</a></li>
+            <li><a href="index.html#sobre" data-scroll>About</a></li>
+            <li><a href="index.html#amenidades" data-scroll>Amenities</a></li>
+            <li><a href="index.html#galeria" data-scroll>Gallery</a></li>
+            <li><a href="index.html#precios" data-scroll>Pricing</a></li>
+            <li><a href="index.html#contacto" data-scroll>Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary cta-inline" href="index.html#contacto">Book Now</a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+      <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <a href="index.html#inicio" data-scroll>Home</a>
+        <a href="index.html#sobre" data-scroll>About</a>
+        <a href="index.html#amenidades" data-scroll>Amenities</a>
+        <a href="index.html#galeria" data-scroll>Gallery</a>
+        <a href="index.html#precios" data-scroll>Pricing</a>
+        <a href="index.html#contacto" data-scroll>Contact</a>
+        <a class="btn btn-primary" href="index.html#contacto">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" role="region" aria-label="Studio 203 Hero">
+        <div class="container">
+          <div class="hero-content">
+            <span class="badge">Studio 203 · Soft-Landing Studio</span>
+            <h1>Fast Wi-Fi + Desk</h1>
+            <p>
+              Looking for a productive base in Bogotá? Welcome to Casa Normandía.
+              Managed by a Tech & Int. Relations professional (FU Berlin Alumna), this studio is designed for Digital Nomads, Consultants, and Academics looking for a "Soft Landing" in the city for mid-to-long stays (1-3 months).
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="index.html#precios">Book Now</a>
+              <a class="btn btn-secondary" href="mailto:contacto.gpmfsas@gmail.com?subject=Booking%20Studio%20203" target="_blank" rel="noopener">Send Email</a>
+            </div>
+            <p class="note">💻 Work-from-home ready · 🏡 Independent studio · 📍 Strategic location · 🤝 Family team</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="card">
+            <h2>About This Space</h2>
+            <p>
+              Unlike standard tourist rentals, we understand the needs of remote work: silence, reliable internet, and independence.
+              Perfect for Digital Nomads, Consultants, and Academics looking for a "Soft Landing" in Bogotá for mid-to-long stays (1-3 months).
+            </p>
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">💻</div>
+                <div>
+                  <h3>WORK-FROM-HOME READY</h3>
+                  <p>Connectivity: High-speed Wi-Fi (Fiber Optic) suitable for video calls.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🪑</div>
+                <div>
+                  <h3>Workspace</h3>
+                  <p>Private desk dedicated to productivity (not a dining table).</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">💧</div>
+                <div>
+                  <h3>Power</h3>
+                  <p>Back-up water solutions ensuring comfort even during city shortages.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: var(--sand);">
+        <div class="container">
+          <div class="card">
+            <h2>The Studio</h2>
+            <p>
+              Fully independent unit within a traditional family home (Safety + Privacy).
+              Designed for comfort and productivity during your extended stay in Bogotá.
+            </p>
+            
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">🏡</div>
+                <div>
+                  <h3>Independent Living</h3>
+                  <p>Fully independent unit within a traditional family home (Safety + Privacy).</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🍳</div>
+                <div>
+                  <h3>Kitchenette</h3>
+                  <p>Equipped for light cooking (Fridge, coffee station, stove).</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🚿</div>
+                <div>
+                  <h3>Private Bathroom</h3>
+                  <p>Private bathroom with hot water.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🐕</div>
+                <div>
+                  <h3>Pet Friendly</h3>
+                  <p>We love having furry co-workers!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="card">
+            <h2>Strategic Location</h2>
+            <p>
+              Located in the safe and green Normandía District, offering the perfect balance between accessibility and tranquility.
+            </p>
+            
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">✈️</div>
+                <div>
+                  <h3>Logistics</h3>
+                  <p>10-15 min to El Dorado Airport (Ideal for late arrivals).</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">💼</div>
+                <div>
+                  <h3>Business</h3>
+                  <p>Close to Calle 26 Business Hub & US Embassy.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🌳</div>
+                <div>
+                  <h3>Life</h3>
+                  <p>Walking distance to supermarkets, ATMs, and the Botanical Garden.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🏞️</div>
+                <div>
+                  <h3>Green Oasis</h3>
+                  <p>A safe, green oasis in the chaotic city.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: var(--sand);">
+        <div class="container">
+          <div class="card">
+            <h2>Your Hosts</h2>
+            <p>
+              A family team dedicated to making your stay productive and comfortable.
+            </p>
+            
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">👩‍💻</div>
+                <div>
+                  <h3>Marcela (Digital Manager)</h3>
+                  <p>Tech & Int. Relations professional (FU Berlin Alumna). I handle the digital/tech side ensuring you have everything for work.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">👴</div>
+                <div>
+                  <h3>Aristides (On-Site Host)</h3>
+                  <p>My father is on-site to provide a warm welcome and assist with any day-to-day needs.</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <div>
+                  <h3>Family Team</h3>
+                  <p>We understand the needs of international professionals and long-term stays.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="card">
+            <h2>Gallery</h2>
+            <p>
+              We have high-quality photos available. You can replace these placeholders by uploading your images to 
+              <code>/assets</code> and updating the background path, or provide us with your gallery links.
+            </p>
+            <div class="gallery-grid">
+              <figure class="gallery-card" data-caption="King Bed with Garden View"
+                style="background-image:url('assets/203-bedroom.png');"></figure>
+              <figure class="gallery-card" data-caption="Dedicated Work Desk"
+                style="background-image:url('assets/203-desk.png');"></figure>
+              <figure class="gallery-card" data-caption="Kitchenette for Light Cooking"
+                style="background-image:url('assets/203-kitchen.png');"></figure>
+              <figure class="gallery-card" data-caption="Private Bathroom"
+                style="background-image:url('assets/203-bathroom.png');"></figure>
+            </div>
+            <p class="note" style="margin-top: 1.5rem;">
+              Need help organizing the media folder? Let us know and we'll document the naming convention before uploading the final files.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <div class="container">
+          <div class="contact-card">
+            <div>
+              <h2>Book Studio 203</h2>
+              <p>Perfect for digital nomads and long-term stays. Contact us for availability and monthly rates.</p>
+            </div>
+            <div class="contact-details">
+              <div>
+                <span>Email</span>
+                <p><a href="mailto:contacto.gpmfsas@gmail.com">contacto.gpmfsas@gmail.com</a></p>
+              </div>
+              <div>
+                <span>Phone</span>
+                <p><a href="tel:+571234567890">+57 1 234 5678</a></p>
+              </div>
+            </div>
+            <form action="https://formsubmit.co/contacto.gpmfsas@gmail.com" method="POST">
+              <label>
+                Full Name
+                <input type="text" name="nombre" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Check-in Date
+                <input type="date" name="checkin" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Check-out Date
+                <input type="date" name="checkout" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Message
+                <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Send Booking Request</button>
+              <input type="hidden" name="_subject" value="Booking Request - Studio 203" />
+              <input type="hidden" name="_captcha" value="false" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; <span id="year"></span> Casa Normandía · Bogotá, Colombia · Your soft-landing studio for productive stays.</p>
+        <p>
+          <a href="index.html">← Back to all units</a>
+        </p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/573123456789?text=Hi!%20I'm%20interested%20in%20Studio%20203%20at%20Casa%20Normandía" 
+       class="btn btn-whatsapp" 
+       target="_blank" 
+       rel="noopener"
+       title="Contact us on WhatsApp">
+      💬
+    </a>
+
+    <script>
+      const header = document.querySelector('.site-header');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const scrollLinks = document.querySelectorAll('[data-scroll]');
+
+      const toggleMenu = () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', event => {
+          const targetId = link.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            event.preventDefault();
+            document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('is-sticky', window.scrollY > 10);
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

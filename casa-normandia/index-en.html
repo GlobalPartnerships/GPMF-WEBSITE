@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casa Normandía | Boutique lodging in Bogotá</title>
+    <meta
+      name="description"
+      content="Casa Normandía is a traditional house remodeled with modern studios near El Dorado Airport. Flexible lodging for 1-9 guests."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --terracotta: #b85c38;
+        --deep-clay: #7a3e1d;
+        --chocolate: #2f1b16;
+        --sunset: #f2c078;
+        --sand: #f8eee2;
+        --cream: #fff8f0;
+        --sage: #7a8c6e;
+        --white: #ffffff;
+        --text: #33231d;
+        --shadow: rgba(15, 10, 8, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: var(--cream);
+        color: var(--text);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .container {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 12px 30px rgba(184, 92, 56, 0.25);
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--sunset);
+        outline-offset: 3px;
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        color: var(--deep-clay);
+        box-shadow: none;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 248, 240, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .site-header.is-sticky {
+        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
+        background: rgba(255, 248, 240, 0.98);
+      }
+
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.05em;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.2rem;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--terracotta);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--deep-clay);
+      }
+
+      .cta-inline {
+        display: none;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        inset: 0;
+        background: rgba(47, 27, 22, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.35s ease;
+      }
+
+      .mobile-nav a {
+        color: var(--white);
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .mobile-nav.open {
+        transform: translateY(0);
+      }
+
+      main {
+        padding-bottom: 4rem;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background-image:
+          linear-gradient(120deg, rgba(47, 27, 22, 0.8), rgba(184, 92, 56, 0.65)),
+          url("https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+      }
+
+      .hero-content {
+        max-width: 560px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.3rem, 6vw, 3.75rem);
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .badge {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 0.5rem 1.25rem;
+        width: fit-content;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .split {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .card {
+        padding: 1.85rem;
+        border-radius: 1.25rem;
+        background: var(--white);
+        box-shadow: 0 25px 60px var(--shadow);
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--chocolate);
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 0 0 0.5rem;
+        color: var(--deep-clay);
+      }
+
+      .info-list li {
+        padding: 0.65rem 0;
+        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+      }
+
+      .info-list strong {
+        display: block;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--sage);
+        margin-bottom: 0.35rem;
+      }
+
+      .units-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .unit-card h4 {
+        margin: 0 0 0.25rem;
+        font-size: 1.05rem;
+        color: var(--chocolate);
+      }
+
+      .unit-card p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+
+      .amenities section {
+        padding-top: 0;
+      }
+
+      .amenities-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .amenity {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 1rem 1.1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(47, 27, 22, 0.08);
+      }
+
+      .amenity span {
+        font-weight: 600;
+      }
+
+      .amenity .status {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      .status.yes {
+        background: var(--sage);
+      }
+
+      .status.no {
+        background: rgba(47, 27, 22, 0.25);
+      }
+
+      .gallery-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .gallery-card {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 18px 35px rgba(47, 27, 22, 0.2);
+      }
+
+      .gallery-card::after {
+        content: attr(data-caption);
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 1rem;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      .note {
+        font-size: 0.9rem;
+        color: rgba(47, 27, 22, 0.7);
+      }
+
+      .pricing-grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .pricing-card {
+        background: var(--white);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        border: 1px solid rgba(47, 27, 22, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 25px 60px var(--shadow);
+      }
+
+      .pricing-card strong {
+        font-size: 2.2rem;
+        color: var(--terracotta);
+      }
+
+      .pricing-card ul {
+        list-style: disc;
+        padding-left: 1.2rem;
+        color: rgba(47, 27, 22, 0.8);
+      }
+
+      .contact-card {
+        display: grid;
+        gap: 1.5rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2rem;
+        padding: 2rem;
+        border: 1px solid rgba(47, 27, 22, 0.08);
+      }
+
+      .contact-details {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .contact-details span {
+        font-weight: 600;
+        color: var(--sage);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+      }
+
+      footer {
+        padding: 3rem 0;
+        background: var(--chocolate);
+        color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--sunset);
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+
+        .cta-inline {
+          display: inline-flex;
+        }
+
+        .hero {
+          padding: 6rem 0;
+        }
+
+        .split {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .units-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .units-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <div class="container nav-wrapper">
+        <a class="brand" href="#inicio">Casa Normandía</a>
+        <nav class="site-nav" aria-label="Main menu">
+          <ul>
+            <li><a href="#inicio" data-scroll>Home</a></li>
+            <li><a href="#sobre" data-scroll>About</a></li>
+            <li><a href="#amenidades" data-scroll>Amenities</a></li>
+            <li><a href="#galeria" data-scroll>Gallery</a></li>
+            <li><a href="#precios" data-scroll>Pricing</a></li>
+            <li><a href="#contacto" data-scroll>Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary cta-inline" href="#contacto">Book Now</a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+      <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <a href="#inicio" data-scroll>Home</a>
+        <a href="#sobre" data-scroll>About</a>
+        <a href="#amenidades" data-scroll>Amenities</a>
+        <a href="#galeria" data-scroll>Gallery</a>
+        <a href="#precios" data-scroll>Pricing</a>
+        <a href="#contacto" data-scroll>Contact</a>
+        <a class="btn btn-primary" href="#contacto">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" role="region" aria-label="Casa Normandía Hero">
+        <div class="container">
+          <div class="hero-content">
+            <span class="badge">Bogotá · Normandía Neighborhood</span>
+            <h1>Casa Normandía<br />Your home in the heart of Bogotá</h1>
+            <p>
+              Traditional house remodeled with independent studios, fiber optic WiFi and a strategic location 10 minutes from El Dorado Airport. Ideal for
+              digital nomads, professionals in transit, and families seeking flexibility.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#precios">Check Availability</a>
+              <a class="btn btn-secondary" href="mailto:contacto.gpmfsas@gmail.com?subject=Booking%20Casa%20Normand%C3%ADa" target="_blank" rel="noopener">Send Email</a>
+            </div>
+            <p class="note">Total capacity: up to 9 people renting entire floor · 24/7 autonomous entry</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre">
+        <div class="container split">
+          <article>
+            <h2>Essential Information</h2>
+            <p>
+              Casa Normandía offers four main units —including a premium apartment— all located on the second floor of a traditional Bogotá house.
+              Each space was optimized for short and medium stays with privacy, natural light, and functional equipment.
+            </p>
+            <ul class="info-list">
+              <li>
+                <strong>Address</strong>
+                Cra. 71 No. 53 – 72, Normandía Neighborhood, Bogotá, Colombia
+              </li>
+              <li>
+                <strong>Contact</strong>
+                contacto.gpmfsas@gmail.com
+              </li>
+              <li>
+                <strong>Capacity</strong>
+                4 independent units · 1 to 3 guests per unit · 9 people renting entire floor
+              </li>
+              <li>
+                <strong>Short description</strong>
+                "Traditional house remodeled with modern studios. Strategic location, nearby parks, and fiber optic WiFi for remote work."
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h2>Available Units</h2>
+            <div class="units-grid">
+              <div class="card unit-card">
+                <h4><a href="apartment-201.html" style="color: inherit; text-decoration: none;">Apartment 201 · Premium</a></h4>
+                <p>Double bed + sofa bed · Full kitchen · Bathtub · Capacity 2-3 people.</p>
+              </div>
+              <div class="card unit-card">
+                <h4><a href="studio-203.html" style="color: inherit; text-decoration: none;">Studio 203</a></h4>
+                <p>King bed · Simple kitchen · Spacious living area · Capacity 1-2 people.</p>
+              </div>
+              <div class="card unit-card">
+                <h4><a href="studio-204.html" style="color: inherit; text-decoration: none;">Studio 204 · Guest Favorite</a></h4>
+                <p>Double bed · Simple kitchen · Dedicated workspace · Capacity 1-2 people.</p>
+              </div>
+              <div class="card unit-card">
+                <h4><a href="suite-202.html" style="color: inherit; text-decoration: none;">Suite 202 · Office A</a></h4>
+                <p>Bed + coffee station and fridge · Private bathroom · Capacity 1-2 people.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="amenidades" style="background: var(--sand);">
+        <div class="container">
+          <h2>Amenities & Services</h2>
+          <p>We selected essential equipment for productive stays, without losing the warm charm of a Bogotá house.</p>
+          <div class="amenities-list">
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Fiber optic WiFi ~500Mbps</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Full kitchen (201)</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Simple kitchen in 203 and 204</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Parking with reservation</span>
+            </div>
+            <div class="amenity">
+              <div class="status no">–</div>
+              <span>Air conditioning (not required)</span>
+            </div>
+            <div class="amenity">
+              <div class="status no">–</div>
+              <span>Heating (temperate climate)</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>HD TV and streaming</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Shared washer and dryer</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Work areas in all units</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Garden and common areas</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Hot water with reserve tanks</span>
+            </div>
+            <div class="amenity">
+              <div class="status yes">✓</div>
+              <span>Autonomous entry / independence</span>
+            </div>
+          </div>
+          <p class="note" style="margin-top: 1.5rem;">
+            * Parking subject to prior reservation. Air conditioning and heating are not included because Bogotá maintains a temperate climate throughout the year.
+          </p>
+        </div>
+      </section>
+
+      <section id="galeria">
+        <div class="container">
+          <h2>Gallery &amp; upcoming photos</h2>
+          <p>
+            We have a OneDrive bank with high-quality photos of 60% of the units. You can replace these placeholders by uploading your images to
+            <code>/assets</code> and updating the background path.
+          </p>
+          <div class="gallery-grid">
+            <figure class="gallery-card" data-caption="Apartment 201 · Full kitchen"
+              style="background-image:url('assets/201.png');"></figure>
+            <figure class="gallery-card" data-caption="Studio 203 · King bed"
+              style="background-image:url('assets/203.png');"></figure>
+            <figure class="gallery-card" data-caption="Studio 204 · Work area"
+              style="background-image:url('assets/204.png');"></figure>
+            <figure class="gallery-card" data-caption="Suite 202 · Private bathroom"
+              style="background-image:url('assets/202.png');"></figure>
+          </div>
+          <p class="note" style="margin-top: 1.5rem;">
+            Need help organizing the media folder? Let us know and we'll document the naming convention before uploading the final files.
+          </p>
+        </div>
+      </section>
+
+      <section id="precios" style="background: var(--sand);">
+        <div class="container">
+          <h2>Base Rates 2025</h2>
+          <p>Transparency and flexibility for short stays (short-term) or work residences by month (medium-term).</p>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3>From</h3>
+              <strong>$100.000 COP</strong>
+              <p>per night (depending on unit and season)</p>
+              <ul>
+                <li>Includes WiFi, utilities, and weekly cleaning</li>
+                <li>Flexible cancellation 5 days in advance</li>
+                <li>Check-in 3:00 PM · Check-out 11:00 AM</li>
+              </ul>
+              <a class="btn btn-primary" href="mailto:contacto.gpmfsas@gmail.com?subject=Booking%20Casa%20Normand%C3%ADa">Request Quote</a>
+            </article>
+            <article class="pricing-card">
+              <h3>Monthly Stays</h3>
+              <strong>$2.100.000</strong>
+              <p>to $4.200.000 COP depending on unit and discounts</p>
+              <ul>
+                <li>Ideal for nomads or corporate relocations</li>
+                <li>Maintenance and dedicated support</li>
+                <li>Refundable deposit according to duration</li>
+              </ul>
+              <a class="btn btn-secondary" href="mailto:contacto.gpmfsas@gmail.com?subject=Booking%20Casa%20Normand%C3%ADa" target="_blank" rel="noopener">Send Email</a>
+            </article>
+            <article class="pricing-card">
+              <h3>Complete House</h3>
+              <strong>9 guests</strong>
+              <p>Combine all 4 units for families or teams.</p>
+              <ul>
+                <li>Ideal plan for weekends or productions</li>
+                <li>Includes parking + onsite support</li>
+                <li>We coordinate extended cleaning</li>
+              </ul>
+              <a class="btn btn-primary" href="#contacto">Book entire floor</a>
+            </article>
+          </div>
+          <p class="note" style="margin-top: 1.5rem;">
+            Recommended times: Check-in 3:00 PM (flexible with lockbox) · Check-out 11:00 AM. Rates subject to availability and airport/fair demand.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container split">
+          <article>
+            <h2>Direct Booking</h2>
+            <p>To see availability and direct Airbnb and calendar links, visit each unit's specific page.</p>
+            <div class="card" style="background: rgba(255,255,255,0.9);">
+              <ul class="info-list">
+                <li>
+                  <strong>Apartment 201</strong>
+                  <a href="apartment-201.html">View details and book</a>
+                </li>
+                <li>
+                  <strong>Studio 203</strong>
+                  <a href="studio-203.html">View details and book</a>
+                </li>
+                <li>
+                  <strong>Studio 204</strong>
+                  <a href="studio-204.html">View details and book</a>
+                </li>
+                <li>
+                  <strong>Suite 202</strong>
+                  <a href="suite-202.html">View details and book</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="container split">
+          <article>
+            <h2>Schedules &amp; Logistics</h2>
+            <div class="card">
+              <ul class="info-list">
+                <li>
+                  <strong>Check-in</strong>
+                  3:00 PM · Flexible with smart lockbox (installation in progress)
+                </li>
+                <li>
+                  <strong>Check-out</strong>
+                  11:00 AM · Late check-out subject to availability
+                </li>
+                <li>
+                  <strong>Access</strong>
+                  Autonomous entry · Exterior camera circuit · Night lighting
+                </li>
+                <li>
+                  <strong>Support</strong>
+                  Team in Bogotá available by email for incidents and special requirements
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article>
+            <h2>Quick Booking</h2>
+            <div class="card">
+              <ul class="info-list">
+                <li>
+                  <strong>Email</strong>
+                  <a href="mailto:contacto.gpmfsas@gmail.com">contacto.gpmfsas@gmail.com</a>
+                </li>
+                <li>
+                  <strong>Response Time</strong>
+                  Less than 12 hours
+                </li>
+                <li>
+                  <strong>Languages</strong>
+                  Spanish &amp; English
+                </li>
+                <li>
+                  <strong>Payment Methods</strong>
+                  Bank transfer, PayPal, cryptocurrency
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <div class="container">
+          <div class="contact-card">
+            <div>
+              <h2>Direct Booking</h2>
+              <p>Tell us dates, preferred unit, and number of guests. We respond in less than 12 hours with the best available rate.</p>
+            </div>
+            <div class="contact-details">
+              <div>
+                <span>Email</span>
+                <p><a href="mailto:contacto.gpmfsas@gmail.com">contacto.gpmfsas@gmail.com</a></p>
+              </div>
+              <div>
+                <span>Instagram</span>
+                <p>@CasaNormandia (in preparation)</p>
+              </div>
+            </div>
+            <form action="https://formsubmit.co/contacto.gpmfsas@gmail.com" method="POST">
+              <label>
+                Full Name
+                <input type="text" name="nombre" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Email Address
+                <input type="email" name="email" required style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);" />
+              </label>
+              <label>
+                Message / Dates
+                <textarea name="mensaje" rows="4" style="width: 100%; padding: 0.85rem; margin-top: 0.35rem; border-radius: 0.75rem; border: 1px solid rgba(47, 27, 22, 0.15);"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Send Request</button>
+              <input type="hidden" name="_subject" value="New booking request Casa Normandía" />
+              <input type="hidden" name="_captcha" value="false" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; <span id="year"></span> Casa Normandía · Bogotá, Colombia · Residential neighborhood with parks, cafés, and quick access to El Dorado Airport.</p>
+        
+        <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+          <a href="policies.html" style="color: var(--sunset);">📋 House Policies</a>
+          <a href="policies.html#pet-policy" style="color: var(--sunset);">🐾 Pet Policy</a>
+          <a href="policies.html#data-protection" style="color: var(--sunset);">🔒 Data Protection</a>
+          <a href="policies.html#guest-registration" style="color: var(--sunset);">📝 Guest Registration</a>
+        </div>
+
+        <p style="margin-top: 1.5rem;">
+          Need to upload new photos? Save them in <code>/assets</code> following the convention <em>unit-number.jpg</em> and replace them in the Gallery section.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector('.site-header');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const scrollLinks = document.querySelectorAll('[data-scroll]');
+
+      const toggleMenu = () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', event => {
+          const targetId = link.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            event.preventDefault();
+            document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('is-sticky', window.scrollY > 10);
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

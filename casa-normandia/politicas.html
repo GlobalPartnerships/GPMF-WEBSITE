@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Casa Normandía | Reglas y Guías</title>
+    <meta name="description" content="Políticas completas de Casa Normandía: reglas de la casa, política de mascotas, registro de huéspedes y guías para una estancia perfecta.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --terracotta: #b85c38;
+        --deep-clay: #7a3e1d;
+        --chocolate: #2f1b16;
+        --sunset: #f2c078;
+        --sand: #f8eee2;
+        --cream: #fff8f0;
+        --sage: #7a8c6e;
+        --white: #ffffff;
+        --text: #33231d;
+        --shadow: rgba(15, 10, 8, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: var(--cream);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: var(--terracotta);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--deep-clay);
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .container {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 12px 30px rgba(184, 92, 56, 0.25);
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--sunset);
+        outline-offset: 3px;
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        color: var(--deep-clay);
+        box-shadow: none;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 248, 240, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .site-header.is-sticky {
+        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
+        background: rgba(255, 248, 240, 0.98);
+      }
+
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.05em;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.2rem;
+        color: var(--text);
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--terracotta);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--deep-clay);
+      }
+
+      .mobile-nav {
+        position: fixed;
+        inset: 0;
+        background: rgba(47, 27, 22, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.35s ease;
+      }
+
+      .mobile-nav a {
+        color: var(--white);
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .mobile-nav.open {
+        transform: translateY(0);
+      }
+
+      main {
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        padding: 4rem 0 2rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.3rem, 6vw, 3.75rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+        color: var(--chocolate);
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        color: var(--text);
+      }
+
+      .policy-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .policy-nav a {
+        background: var(--white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .policy-nav a:hover {
+        background: var(--terracotta);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        padding: 2rem;
+        border-radius: 1.25rem;
+        background: var(--white);
+        box-shadow: 0 25px 60px var(--shadow);
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--chocolate);
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem;
+        color: var(--deep-clay);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .rule-list {
+        display: grid;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .rule-item {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(47, 27, 22, 0.08);
+        border-left: 4px solid var(--terracotta);
+      }
+
+      .rule-item h4 {
+        margin: 0 0 0.5rem;
+        color: var(--deep-clay);
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .rule-item ul {
+        padding-left: 1.5rem;
+        margin: 0.5rem 0;
+      }
+
+      .rule-item li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        list-style-type: none;
+        padding-left: 1.5rem;
+      }
+
+      .rule-item li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--terracotta);
+        font-weight: bold;
+      }
+
+      .warning {
+        background: rgba(184, 92, 56, 0.1);
+        border-left-color: var(--terracotta);
+      }
+
+      .info {
+        background: rgba(122, 140, 110, 0.1);
+        border-left-color: var(--sage);
+      }
+
+      .contact-info {
+        background: var(--sand);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .contact-info h3 {
+        margin-top: 0;
+        color: var(--deep-clay);
+      }
+
+      footer {
+        padding: 3rem 0;
+        background: var(--chocolate);
+        color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--sunset);
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+
+        .hero {
+          padding: 6rem 0 3rem;
+        }
+
+        .policy-nav {
+          gap: 1.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header class="site-header" aria-label="Main navigation">
+        <div class="container nav-wrapper">
+            <a class="brand" href="index.html">Casa Normandía</a>
+            <nav class="site-nav" aria-label="Main menu">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#amenidades">Amenidades</a></li>
+                    <li><a href="index.html#galeria">Galería</a></li>
+                    <li><a href="index.html#precios">Precios</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+        <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#amenidades">Amenidades</a>
+            <a href="index.html#galeria">Galería</a>
+            <a href="index.html#precios">Precios</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Políticas de Casa Normandía</h1>
+                <p>
+                    Este espacio está diseñado para personas que valoran la tranquilidad, el respeto y la comunidad. 
+                    Conoce nuestras reglas y políticas para garantizar una estancia agradable para todos.
+                </p>
+                <div class="policy-nav">
+                    <a href="#reglas-casa">📋 Reglas de la Casa</a>
+                    <a href="#politica-mascotas">🐾 Política de Mascotas</a>
+                    <a href="#tratamiento-datos">🔒 Tratamiento de Datos</a>
+                    <a href="#registro-huespedes">📝 Registro de Huéspedes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="reglas-casa">
+            <div class="container">
+                <div class="card">
+                    <h2>📋 Reglas de la Casa / Manual de la Casa</h2>
+                    
+                    <p>
+                        Este espacio está diseñado para personas que valoran la tranquilidad, el respeto y la comunidad. 
+                        En caso de cualquier inconveniente, solicitamos a los huéspedes que mantengan la compostura y 
+                        aborden el problema de manera respetuosa. Reconocemos que pueden surgir contratiempos imprevistos, 
+                        pero pedimos una actitud colaborativa y constructiva para encontrar soluciones.
+                    </p>
+
+                    <h3>🔹 Normas Generales</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1. Respeto y convivencia</h4>
+                            <p>Este es un espacio compartido. Se espera respeto hacia los demás huéspedes, vecinos y anfitriones.</p>
+                            <ul>
+                                <li>Evitar comportamiento que afecte la armonía o tranquilidad del lugar.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>2. Horario de silencio</h4>
+                            <ul>
+                                <li>A partir de las 10:00 p.m. rige el horario de silencio.</li>
+                                <li>Evita música, risas fuertes o cualquier ruido que pueda incomodar a los demás.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🔥 Prohibiciones Importantes</h3>
+                    <div class="rule-list">
+                        <div class="rule-item warning">
+                            <h4>1. Prohibición de fumar</h4>
+                            <ul>
+                                <li>Está prohibido fumar dentro del alojamiento (incluye cigarrillos, electrónicos, tabaco armado o cualquier variante).</li>
+                                <li>Si deseas fumar, únicamente en áreas externas designadas.</li>
+                                <li>Incumplir esta regla conlleva cargos adicionales por limpieza profunda y/o reposición de mobiliario dañado por humo.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item warning">
+                            <h4>2. Velas, inciensos y fuego abierto</h4>
+                            <ul>
+                                <li>No se permite encender velas, inciensos ni ningún objeto con fuego o brasas dentro del espacio.</li>
+                                <li>Esta medida evita incendios, manchas de cera y olores persistentes.</li>
+                                <li>Daños ocasionados por incumplimiento se cobrarán al huésped responsable.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🪑 Cuidado del Espacio</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>Mobiliario y objetos</h4>
+                            <ul>
+                                <li>Muchos de los muebles tienen no solo valor económico, sino también valor sentimental.</li>
+                                <li>Te pedimos usarlos con cuidado y responsabilidad.</li>
+                                <li>Cualquier daño debe ser informado inmediatamente.</li>
+                                <li>Los daños no reportados implicarán un cargo por el valor total de reposición.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>Servicio de Limpieza y otros</h4>
+                            <ul>
+                                <li>Durante la estadía, la limpieza y el cambio de sábanas se realizan únicamente al finalizar la reserva.</li>
+                                <li>Cuando el alojamiento está desocupado, nuestro equipo realiza limpieza de mantenimiento cada 3 días, asegurando que siempre recibas un espacio impecable.</li>
+                                <li>Para estancias prolongadas de más de 20 días, ofrecemos un servicio de limpieza gratuito a mitad de la estancia (a partir del día 15), que se coordina previamente para mayor comodidad.</li>
+                                <li>Evita usar sustancias que generen olores fuertes (ej. aceites quemados, incienso, humo).</li>
+                                <li>Si es necesario realizar una limpieza profunda adicional por olores, se cobrará al huésped responsable.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>Artículos de Cortesía</h4>
+                            <p>
+                                Al inicio de la estadía encontrarás papel higiénico, jabón (manos y cuerpo) y champú. 
+                                Estos productos son de cortesía inicial. En caso de agotarse, será responsabilidad del huésped 
+                                adquirir lo necesario para suplir sus necesidades durante el resto de la estancia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>📋 Otras Indicaciones</h3>
+                    <div class="rule-list">
+                        <div class="rule-item info">
+                            <ol>
+                                <li><strong>Registro de Invitados:</strong> Todos los invitados deben ser registrados al igual que los huéspedes principales. Envíe una copia de sus identificaciones.</li>
+                                <li><strong>Política de silencio:</strong> Se establece una política de silencio entre las 9:30 p.m. y las 8:00 a.m. Solicitamos a los huéspedes que respeten el descanso de los vecinos y mantengan el ruido al mínimo durante estas horas, incluyendo el volumen del televisor y evitar el uso de calzado ruidoso.</li>
+                                <li><strong>Prohibición de mascotas sin consenso previo:</strong> No se permite la presencia de mascotas sin autorización previa.</li>
+                                <li><strong>Restricción de edad:</strong> El alojamiento no es apto para niños ni bebés. Se prohíbe el ingreso de menores de edad.</li>
+                                <li><strong>Seguridad:</strong> Asegúrese de cerrar correctamente las ventanas y candados al salir del alojamiento.</li>
+                                <li><strong>Televisión e Internet:</strong> Si el apartamento que rentaste cuenta con un televisor, cada huésped debe usar sus propios datos de acceso para plataformas como Netflix u otras. La señal de internet está activa y debería funcionar correctamente.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="rule-item warning">
+                        <h3>✅ Consecuencias</h3>
+                        <p>El incumplimiento de estas reglas puede resultar en:</p>
+                        <ul>
+                            <li>Cargo económico por limpieza, reparación o reposición.</li>
+                            <li>Cancelación anticipada de la reserva sin reembolso, en casos graves.</li>
+                        </ul>
+                        <p>
+                            Estas reglas están diseñadas para garantizar una estancia cómoda y agradable para todos los huéspedes, 
+                            así como para mantener el respeto hacia la propiedad y los vecinos. ¡Gracias por tu cooperación!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="politica-mascotas" style="background: var(--sand);">
+            <div class="container">
+                <div class="card">
+                    <h2>🐾 Política para Mascotas en Casa Normandía House</h2>
+                    
+                    <p>
+                        En Normandía House nos encanta recibir a toda la familia, ¡incluidos los amigos de cuatro patas! 
+                        Para garantizar una estadía agradable y segura para todos, hemos establecido las siguientes políticas para mascotas:
+                    </p>
+
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1. Una mascota por unidad</h4>
+                            <p>Solo se permite un perro o un gato por reserva para mantener la tranquilidad del lugar. Otras mascotas deben discutirse previamente con nosotros.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>2. Correa Obligatoria</h4>
+                            <p>Los perros deben estar siempre con correa dentro de la propiedad.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>3. Supervisión</h4>
+                            <p>Los perros o gatos no pueden quedarse solos en el estudio ni en las áreas comunes.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>4. Sin Muebles</h4>
+                            <p>Para mantener la higiene, tu perro o gato no pueden subirse a camas, sofás u otros muebles.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>5. Limpieza</h4>
+                            <p>Los huéspedes deben recoger los desechos de su mascota usando sus propios suministros, como bolsas para excrementos.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>6. Paseos Fuera de la Propiedad</h4>
+                            <p>Aunque contamos con un antejardín, tu mascota no puede usar este espacio para sus necesidades. Deben ser llevados fuera de la propiedad.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>7. Comportamiento</h4>
+                            <p>Solo se permiten perros y gatos bien educados, no agresivos y no destructivos. Ladridos excesivos, maullidos constantes u otros comportamientos disruptivos no están permitidos.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>8. Salud</h4>
+                            <p>Los perros y gatos deben estar limpios, libres de pulgas o garrapatas, y tener todas sus vacunas al día.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>9. Cargo Adicional</h4>
+                            <p>Podrían aplicarse cargos adicionales por limpieza extra o daños causados por tu mascota.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>10. Incumplimiento</h4>
+                            <p>No cumplir con estas reglas puede resultar en cargos adicionales o la cancelación de tu reserva.</p>
+                        </div>
+
+                        <div class="rule-item warning">
+                            <h4>11. Prohibición de Animales Exóticos</h4>
+                            <p>Por razones de seguridad y bienestar, no se permiten animales exóticos, como reptiles, serpientes, arañas u otras mascotas no convencionales.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>12. Autorización para Mascotas no Convencionales</h4>
+                            <p>Si deseas traer una mascota distinta a un perro o gato, deberás discutirlo previamente con nosotros. Esto incluye animales como roedores, aves u otras especies pequeñas.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>13. Transporte Seguro</h4>
+                            <p>En caso de aprobar mascotas no convencionales, estas deben transportarse en jaulas seguras y mantenerse supervisadas en todo momento.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>14. Depósito Extra o Cargo Adicional</h4>
+                            <p>Para casos especiales, se podrá requerir un depósito extra para cubrir posibles daños o inspecciones adicionales al final de la estadía.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>15. Motivos de Rechazo</h4>
+                            <p>Nos reservamos el derecho de rechazar reservas si consideramos que la mascota no es adecuada para la propiedad o podría comprometer la experiencia de otros huéspedes. Esto se informará antes de completar el check-in.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item info">
+                        <p>
+                            <strong>Al traer a tu mascota, aceptas seguir estas reglas y asumir la responsabilidad total por su comportamiento durante la estancia.</strong> 
+                            Recuerda que si necesitas algo adicional para tu mascota, como recomendaciones de lugares amigables para ellos, no dudes en decírnoslo. 🐾✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tratamiento-datos" style="background: var(--sand);">
+            <div class="container">
+                <div class="card">
+                    <h2>🔒 Política de Tratamiento de Datos Personales</h2>
+                    
+                    <h3>1. Información básica</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>Responsable del tratamiento</h4>
+                            <p>El anfitrión del alojamiento.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Finalidades del tratamiento</h4>
+                            <ul>
+                                <li>Gestionar la reserva y el alojamiento del huésped.</li>
+                                <li>Brindar servicios al huésped.</li>
+                                <li>Brindar información sobre el alojamiento y la zona.</li>
+                                <li>Contactar con el huésped en caso de necesidad.</li>
+                                <li>Enviar información sobre productos y servicios.</li>
+                                <li>Cumplir con las obligaciones legales.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Derechos de los huéspedes</h4>
+                            <ul>
+                                <li>Acceder, conocer, actualizar y rectificar sus datos personales.</li>
+                                <li>Solicitar la supresión de sus datos personales.</li>
+                                <li>Revocar la autorización para el tratamiento de sus datos personales.</li>
+                                <li>Presentar quejas ante la Superintendencia de Industria y Comercio.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>2. Datos que se recopilan</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>Información personal</h4>
+                            <ul>
+                                <li>Nombre completo, número de identificación, dirección de correo electrónico, número de teléfono, fecha de nacimiento.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Información de la reserva</h4>
+                            <ul>
+                                <li>Fecha de llegada y salida, número de huéspedes, tipo de alojamiento.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Información de pago</h4>
+                            <ul>
+                                <li>Número de tarjeta de crédito o débito, nombre del titular de la tarjeta, fecha de vencimiento de la tarjeta.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Información de la comunicación</h4>
+                            <ul>
+                                <li>Mensajes que se envían a través de la plataforma Airbnb.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>3. Uso de los datos</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>Los datos se utilizan para gestionar la reserva y el alojamiento del huésped.</li>
+                                <li>Los datos se pueden utilizar para contactar con el huésped en caso de necesidad.</li>
+                                <li>Los datos se pueden utilizar para enviar información sobre el alojamiento y la zona.</li>
+                                <li>Los datos se pueden utilizar para cumplir con las obligaciones legales.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>4. Compartición de los datos</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>Los datos se pueden compartir con Airbnb para que puedan brindar sus servicios.</li>
+                                <li>Los datos se pueden compartir con las autoridades competentes en caso de que así lo requieran.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>5. Seguridad de los datos</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>El responsable del tratamiento tomará las medidas necesarias para proteger los datos personales de los huéspedes.</li>
+                                <li>Los datos se almacenarán en servidores seguros.</li>
+                                <li>Los datos se tratarán de forma confidencial.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>6. Consentimiento</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <p>Al realizar una reserva a través de Airbnb y/o checking en el estudio, el huésped acepta la presente política de tratamiento de datos.</p>
+                        </div>
+                    </div>
+
+                    <h3>7. Modificaciones</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>El responsable del tratamiento se reserva el derecho de modificar la presente política de tratamiento de datos.</li>
+                                <li>Las modificaciones se publicarán en la plataforma Airbnb.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>8. Cómo contactarnos</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <p>Si tiene alguna pregunta sobre la presente política de tratamiento de datos, puede contactarnos a través de la plataforma Airbnb.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Para obtener más información sobre las políticas de tratamiento de datos de Airbnb:</h4>
+                            <ul>
+                                <li><a href="https://www.airbnb.com/help/article/5" target="_blank" rel="noopener">Política de privacidad de Airbnb</a></li>
+                                <li><a href="https://www.airbnb.com/help" target="_blank" rel="noopener">Centro de ayuda de Airbnb</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registro-huespedes">
+            <div class="container">
+                <div class="card">
+                    <h2>📝 Importante – Registro de Huéspedes Obligatorio</h2>
+                    
+                    <p>
+                        Como tu llegada se acerca, queremos estar preparados para recibirte y facilitarte el proceso de check-in. 
+                        Por ello, te pedimos que completes el siguiente formulario antes de tu llegada:
+                    </p>
+
+                    <div class="rule-item info" style="text-align: center; padding: 2rem;">
+                        <a href="https://forms.gle/JRicQokLquVgCDU97" target="_blank" rel="noopener" class="btn btn-primary">
+                            👉 Completar Formulario de Registro
+                        </a>
+                    </div>
+
+                    <p>
+                        Este paso es <strong>indispensable</strong>, ya que es necesario para autorizar tu ingreso a la propiedad. 
+                        Desde hace algún tiempo, el Ministerio de Comercio, Industria y Turismo exige diligenciar la 
+                        <strong>Tarjeta de Registro de Alojamiento (TRA)</strong> como parte de las regulaciones del sector turístico en Colombia.
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>📞 Contacto del Anfitrión</h3>
+                    <p><strong>Aristides Sánchez Segura</strong></p>
+                    <p>Casa Normandía by GPMF</p>
+                    <p>Carrera 71 no 53-72, Bogotá</p>
+                    <p>📱 +57 3156166760</p>
+                    <p>🔗 <a href="https://www.linkedin.com/company/casa-normandia-coliving" target="_blank" rel="noopener">LinkedIn</a></p>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+                        <a href="index-en.html" class="btn btn-primary">English Version →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Casa Normandía · Bogotá, Colombia · Políticas y reglamentos para tu comodidad.</p>
+            <p>
+                <a href="index.html">← Volver a Casa Normandía</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('.site-header');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        const toggleMenu = () => {
+            const isOpen = mobileNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('is-sticky', window.scrollY > 10);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

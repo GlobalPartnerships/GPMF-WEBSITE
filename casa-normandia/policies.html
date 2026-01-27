@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Normandía Policies | House Rules & Guidelines</title>
+    <meta name="description" content="Complete policies for Casa Normandía: house rules, pet policy, guest registration and guides for a perfect stay.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --terracotta: #b85c38;
+        --deep-clay: #7a3e1d;
+        --chocolate: #2f1b16;
+        --sunset: #f2c078;
+        --sand: #f8eee2;
+        --cream: #fff8f0;
+        --sage: #7a8c6e;
+        --white: #ffffff;
+        --text: #33231d;
+        --shadow: rgba(15, 10, 8, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background-color: var(--cream);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: var(--terracotta);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: var(--deep-clay);
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .container {
+        width: min(1200px, 90vw);
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 12px 30px rgba(184, 92, 56, 0.25);
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--sunset);
+        outline-offset: 3px;
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        color: var(--deep-clay);
+        box-shadow: none;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 248, 240, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .site-header.is-sticky {
+        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
+        background: rgba(255, 248, 240, 0.98);
+      }
+
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.05em;
+      }
+
+      nav {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      nav a {
+        position: relative;
+        padding-bottom: 0.2rem;
+        color: var(--text);
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--terracotta);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--deep-clay);
+      }
+
+      .mobile-nav {
+        position: fixed;
+        inset: 0;
+        background: rgba(47, 27, 22, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.35s ease;
+      }
+
+      .mobile-nav a {
+        color: var(--white);
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .mobile-nav.open {
+        transform: translateY(0);
+      }
+
+      main {
+        padding: 2rem 0 4rem;
+      }
+
+      .hero {
+        padding: 4rem 0 2rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.3rem, 6vw, 3.75rem);
+        line-height: 1.1;
+        margin: 0 0 1rem;
+        color: var(--chocolate);
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        color: var(--text);
+      }
+
+      .policy-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .policy-nav a {
+        background: var(--white);
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        border: 1px solid rgba(47, 27, 22, 0.1);
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .policy-nav a:hover {
+        background: var(--terracotta);
+        color: var(--white);
+        transform: translateY(-2px);
+      }
+
+      section {
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        padding: 2rem;
+        border-radius: 1.25rem;
+        background: var(--white);
+        box-shadow: 0 25px 60px var(--shadow);
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+        color: var(--chocolate);
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin: 2rem 0 1rem;
+        color: var(--deep-clay);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .rule-list {
+        display: grid;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .rule-item {
+        padding: 1.5rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(47, 27, 22, 0.08);
+        border-left: 4px solid var(--terracotta);
+      }
+
+      .rule-item h4 {
+        margin: 0 0 0.5rem;
+        color: var(--deep-clay);
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .rule-item ul {
+        padding-left: 1.5rem;
+        margin: 0.5rem 0;
+      }
+
+      .rule-item li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        list-style-type: none;
+        padding-left: 1.5rem;
+      }
+
+      .rule-item li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--terracotta);
+        font-weight: bold;
+      }
+
+      .warning {
+        background: rgba(184, 92, 56, 0.1);
+        border-left-color: var(--terracotta);
+      }
+
+      .info {
+        background: rgba(122, 140, 110, 0.1);
+        border-left-color: var(--sage);
+      }
+
+      .contact-info {
+        background: var(--sand);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .contact-info h3 {
+        margin-top: 0;
+        color: var(--deep-clay);
+      }
+
+      footer {
+        padding: 3rem 0;
+        background: var(--chocolate);
+        color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--sunset);
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+
+        .hero {
+          padding: 6rem 0 3rem;
+        }
+
+        .policy-nav {
+          gap: 1.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header class="site-header" aria-label="Main navigation">
+        <div class="container nav-wrapper">
+            <a class="brand" href="index-en.html">Casa Normandía</a>
+            <nav class="site-nav" aria-label="Main menu">
+                <ul>
+                    <li><a href="index-en.html#inicio">Home</a></li>
+                    <li><a href="index-en.html#sobre">About</a></li>
+                    <li><a href="index-en.html#amenidades">Amenities</a></li>
+                    <li><a href="index-en.html#galeria">Gallery</a></li>
+                    <li><a href="index-en.html#precios">Pricing</a></li>
+                    <li><a href="index-en.html#contacto">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Open menu">☰</button>
+        </div>
+        <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+            <a href="index-en.html#inicio">Home</a>
+            <a href="index-en.html#sobre">About</a>
+            <a href="index-en.html#amenidades">Amenities</a>
+            <a href="index-en.html#galeria">Gallery</a>
+            <a href="index-en.html#precios">Pricing</a>
+            <a href="index-en.html#contacto">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Casa Normandía Policies</h1>
+                <p>
+                    This space is designed for people who value tranquility, respect, and community. 
+                    Learn our rules and policies to ensure a pleasant stay for everyone.
+                </p>
+                <div class="policy-nav">
+                    <a href="#house-rules">📋 House Rules</a>
+                    <a href="#pet-policy">🐾 Pet Policy</a>
+                    <a href="#data-protection">🔒 Data Protection</a>
+                    <a href="#guest-registration">📝 Guest Registration</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="house-rules">
+            <div class="container">
+                <div class="card">
+                    <h2>📋 House Rules / Normandy House Manual</h2>
+                    
+                    <p>
+                        This space is designed for people who value tranquility, respect, and community. 
+                        In the event of any inconvenience, we ask guests to remain calm and address the issue respectfully. 
+                        We recognize that unforeseen setbacks may arise, but we ask for a collaborative and constructive 
+                        attitude to find solutions. We appreciate the understanding and patience of everyone involved in such situations.
+                    </p>
+
+                    <h3>🔹 General Rules</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1. Respect and coexistence</h4>
+                            <p>This is a shared space. Respect for other guests, neighbors, and hosts is expected.</p>
+                            <ul>
+                                <li>Any behavior that affects the harmony or tranquility of the place is not permitted.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>2. Quiet hours</h4>
+                            <ul>
+                                <li>From 10:00 p.m. the hours of silence apply.</li>
+                                <li>Avoid loud music, laughter, or any noise that might bother others.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🔥 Important Prohibitions</h3>
+                    <div class="rule-list">
+                        <div class="rule-item warning">
+                            <h4>1. Smoking ban</h4>
+                            <ul>
+                                <li>Smoking is prohibited inside the accommodation (including cigarettes, electronic cigarettes, rolled tobacco, or any variant).</li>
+                                <li>If you wish to smoke, please do so only in designated outdoor areas.</li>
+                                <li>Failure to comply with this rule will result in additional charges for deep cleaning and/or replacement of smoke-damaged furniture.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item warning">
+                            <h4>2. Candles, incense and open fire</h4>
+                            <ul>
+                                <li>Lighting candles, incense, or any object with fire or embers is not permitted within the space.</li>
+                                <li>This measure prevents fires, wax stains and lingering odors.</li>
+                                <li>Damages caused by non-compliance will be charged to the responsible guest.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>🪑 Space Care</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1. Furniture and objects</h4>
+                            <ul>
+                                <li>Many of the pieces of furniture have not only economic, but also sentimental value.</li>
+                                <li>We ask you to use them with care and responsibility.</li>
+                                <li>Any damage must be reported immediately.</li>
+                                <li>Unreported damage will incur a charge for the full replacement value.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>2. Cleaning Service and Cleanliness</h4>
+                            <ul>
+                                <li>During the stay, cleaning and changing of sheets are carried out only at the end of the reservation.</li>
+                                <li>When the accommodation is vacant, our team performs maintenance cleaning every three days, ensuring you always receive a spotless space.</li>
+                                <li>For long stays of more than 20 days, we offer a Free mid-stay cleaning service (starting on the 15th), which is coordinated in advance for greater convenience.</li>
+                                <li>Avoid using substances that generate strong odors (e.g., burnt oils, incense, smoke).</li>
+                                <li>If additional deep cleaning is necessary due to odors, the responsible guest will be charged.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>Courtesy Articles</h4>
+                            <p>
+                                At the beginning of your stay you will find toilet paper, soap (hand and body) and shampoo. 
+                                These products are initial courtesy. If supplies run out, the guest will be responsible 
+                                for purchasing what is necessary to meet their needs for the remainder of the stay.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3>📋 Other Indications</h3>
+                    <div class="rule-list">
+                        <div class="rule-item info">
+                            <ol>
+                                <li><strong>Guest Registration:</strong> All guests must be registered, just like the main guests. Please send a copy of their ID.</li>
+                                <li><strong>Quiet Hours Policy:</strong> A quiet hour policy is in place between 9:30 p.m. and 8:00 a.m. We ask that guests respect the rest of the neighbors and keep noise to a minimum during these hours, including lowering the television volume and avoiding noisy shoes.</li>
+                                <li><strong>Pets are prohibited without prior consent:</strong> Pets are not allowed in the accommodation without prior authorization.</li>
+                                <li><strong>Not Suitable for Children or Infants:</strong> The accommodation is not suitable for children or infants. Minors are not allowed.</li>
+                                <li><strong>Security:</strong> Make sure you properly lock and close windows when leaving the accommodation.</li>
+                                <li><strong>Television and Internet:</strong> If the apartment you rented has a television, each guest must use their own login information for platforms like Netflix and others. The internet connection is active and should be working properly.</li>
+                                <li><strong>Cleaning Service:</strong> We perform a minimum cleaning every three days and whenever a guest checks out, including changing sheets and blankets.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="rule-item warning">
+                        <h3>✅ Consequences</h3>
+                        <p>Failure to comply with these rules may result in:</p>
+                        <ul>
+                            <li>Economic charge for cleaning, repair or replacement.</li>
+                            <li>Early cancellation of the reservation without refund, in serious cases.</li>
+                        </ul>
+                        <p>
+                            These rules are designed to ensure a comfortable and pleasant stay for all guests, 
+                            as well as to maintain respect for the property and neighbors. Thank you for your cooperation!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pet-policy" style="background: var(--sand);">
+            <div class="container">
+                <div class="card">
+                    <h2>🐾 Pet Policy at Casa Normandía House</h2>
+                    
+                    <p>
+                        At Normandía House, we love welcoming the whole family, including your four-legged friends! 
+                        To ensure a pleasant and safe stay for everyone, we've established the following pet policies:
+                    </p>
+
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>1. One Pet Per Unit</h4>
+                            <p>Only one dog or cat is allowed per reservation to maintain the property's tranquility. Other pets must be discussed with us in advance.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>2. Leash Requirement</h4>
+                            <p>Dogs must always be on a leash within the property.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>3. Supervision</h4>
+                            <p>Dogs and cats cannot be left alone in the studio or common areas.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>4. No Furniture</h4>
+                            <p>To maintain hygiene, your dog or cat is not allowed on beds, sofas, or other furniture.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>5. Clean-Up</h4>
+                            <p>Guests must clean up after their pets using their own supplies, such as waste bags.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>6. Outdoor Walks</h4>
+                            <p>Although we have a front garden, your pet cannot use this space for their needs. They must be taken off the property for walks.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>7. Behavior</h4>
+                            <p>Only well-behaved, non-aggressive, and non-destructive dogs and cats are allowed. Excessive barking, constant meowing, or other disruptive behaviors are not permitted.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>8. Health</h4>
+                            <p>Dogs and cats must be clean, free of fleas or ticks, and up-to-date on all vaccinations.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>9. Additional Charges</h4>
+                            <p>Extra charges may apply for additional cleaning or damages caused by your pet.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>10. Non-Compliance</h4>
+                            <p>Failure to adhere to these rules may result in additional charges or cancellation of your reservation.</p>
+                        </div>
+
+                        <div class="rule-item warning">
+                            <h4>11. Exotic Animal Prohibition</h4>
+                            <p>For safety and well-being, exotic animals such as reptiles, snakes, spiders, or other unconventional pets are not allowed.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>12. Authorization for Non-Conventional Pets</h4>
+                            <p>If you wish to bring a pet other than a dog or cat, you must discuss this with us in advance. This includes animals like rodents, birds, or other small species.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>13. Safe Transport</h4>
+                            <p>In the case of approved non-conventional pets, they must be transported in secure cages and supervised at all times.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>14. Extra Deposit or Charge</h4>
+                            <p>For special cases, an extra deposit may be required to cover potential damages or additional inspections after the stay.</p>
+                        </div>
+
+                        <div class="rule-item">
+                            <h4>15. Reservation Rejection</h4>
+                            <p>We reserve the right to reject reservations if we believe the pet is not suitable for the property or could compromise other guests' experiences.</p>
+                        </div>
+                    </div>
+
+                    <div class="rule-item info">
+                        <p>
+                            <strong>By bringing your pet, you agree to follow these rules and take full responsibility for their behavior during the stay.</strong> 
+                            If you need anything additional for your pet, such as recommendations for pet-friendly places, don't hesitate to let us know. 🐾✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-protection" style="background: var(--sand);">
+            <div class="container">
+                <div class="card">
+                    <h2>🔒 Personal Data Protection Policy</h2>
+                    
+                    <h3>1. Basic Information</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>Data Controller</h4>
+                            <p>The accommodation host.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Purposes of Processing</h4>
+                            <ul>
+                                <li>Manage the guest's reservation and accommodation.</li>
+                                <li>Provide services to the guest.</li>
+                                <li>Provide information about the accommodation and area.</li>
+                                <li>Contact the guest when necessary.</li>
+                                <li>Send information about products and services.</li>
+                                <li>Comply with legal obligations.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Guest Rights</h4>
+                            <ul>
+                                <li>Access, know, update and rectify their personal data.</li>
+                                <li>Request the deletion of their personal data.</li>
+                                <li>Revoke authorization for processing their personal data.</li>
+                                <li>File complaints with the Superintendence of Industry and Commerce.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>2. Data Collected</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <h4>Personal Information</h4>
+                            <ul>
+                                <li>Full name, identification number, email address, phone number, date of birth.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Reservation Information</h4>
+                            <ul>
+                                <li>Check-in and check-out dates, number of guests, type of accommodation.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Payment Information</h4>
+                            <ul>
+                                <li>Credit or debit card number, cardholder name, card expiration date.</li>
+                            </ul>
+                        </div>
+                        <div class="rule-item">
+                            <h4>Communication Information</h4>
+                            <ul>
+                                <li>Messages sent through the Airbnb platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>3. Data Use</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>Data is used to manage the guest's reservation and accommodation.</li>
+                                <li>Data may be used to contact the guest when necessary.</li>
+                                <li>Data may be used to send information about the accommodation and area.</li>
+                                <li>Data may be used to comply with legal obligations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>4. Data Sharing</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>Data may be shared with Airbnb so they can provide their services.</li>
+                                <li>Data may be shared with competent authorities when required.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>5. Data Security</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>The data controller will take necessary measures to protect guests' personal data.</li>
+                                <li>Data will be stored on secure servers.</li>
+                                <li>Data will be treated confidentially.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>6. Consent</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <p>By making a reservation through Airbnb and/or checking in at the studio, the guest accepts this data protection policy.</p>
+                        </div>
+                    </div>
+
+                    <h3>7. Modifications</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <ul>
+                                <li>The data controller reserves the right to modify this data protection policy.</li>
+                                <li>Modifications will be published on the Airbnb platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>8. How to Contact Us</h3>
+                    <div class="rule-list">
+                        <div class="rule-item">
+                            <p>If you have any questions about this data protection policy, you can contact us through the Airbnb platform.</p>
+                        </div>
+                        <div class="rule-item">
+                            <h4>For more information about Airbnb's data protection policies:</h4>
+                            <ul>
+                                <li><a href="https://www.airbnb.com/help/article/5" target="_blank" rel="noopener">Airbnb Privacy Policy</a></li>
+                                <li><a href="https://www.airbnb.com/help" target="_blank" rel="noopener">Airbnb Help Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guest-registration">
+            <div class="container">
+                <div class="card">
+                    <h2>📝 Important – Guest Registration Required</h2>
+                    
+                    <p>
+                        As your arrival approaches, we want to be ready to welcome you and facilitate your check-in process. 
+                        Therefore, we kindly ask you to complete the following form before your arrival:
+                    </p>
+
+                    <div class="rule-item info" style="text-align: center; padding: 2rem;">
+                        <a href="https://forms.gle/JRicQokLquVgCDU97" target="_blank" rel="noopener" class="btn btn-primary">
+                            👉 Complete Registration Form
+                        </a>
+                    </div>
+
+                    <p>
+                        This step is <strong>indispensable</strong>, as it is necessary to authorize your entry to the property. 
+                        For some time now, the Ministry of Commerce, Industry and Tourism has required the completion of the 
+                        <strong>Accommodation Registration Card (TRA)</strong> as part of the regulations of the tourism sector in Colombia.
+                    </p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>📞 Host Contact</h3>
+                    <p><strong>Aristides Sánchez Segura</strong></p>
+                    <p>Normandy House by GPMF</p>
+                    <p>Carrera 71 no 53-72, Bogotá</p>
+                    <p>📱 +57 3156166760</p>
+                    <p>🔗 <a href="https://www.linkedin.com/company/casa-normandia-coliving" target="_blank" rel="noopener">LinkedIn</a></p>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <a href="index-en.html" class="btn btn-secondary">← Back to Home</a>
+                        <a href="politicas.html" class="btn btn-primary">Versión en Español →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Casa Normandía · Bogotá, Colombia · Policies and regulations for your comfort.</p>
+            <p>
+                <a href="index-en.html">← Back to Casa Normandía</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('.site-header');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        const toggleMenu = () => {
+            const isOpen = mobileNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('is-sticky', window.scrollY > 10);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
