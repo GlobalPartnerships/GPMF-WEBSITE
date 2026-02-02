@@ -1,0 +1,218 @@
+:root {
+    --color-burgundy: #7A0F32;
+    --color-charcoal: #2E2E2E;
+    --color-warmgray: #F5F5F5;
+    --color-black: #000000;
+    --color-light-gray: #e5e7eb;
+}
+
+.pricing-section {
+    padding: 6rem 1.5rem;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.pricing-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Toggle Styles */
+.pricing-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-toggle {
+    display: flex;
+    background: var(--color-warmgray);
+    padding: 0.25rem;
+    border-radius: 9999px;
+    position: relative;
+    border: 1px solid var(--color-light-gray);
+}
+
+.toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: var(--color-burgundy);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card {
+    background: #fff;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-burgundy);
+}
+
+.pricing-card.featured {
+    background-color: var(--color-charcoal);
+    color: white;
+    border-color: var(--color-charcoal);
+}
+
+.pricing-card.featured .plan-name,
+.pricing-card.featured .plan-price,
+.pricing-card.featured .plan-desc {
+    color: white;
+}
+
+.pricing-card.featured .feature-item {
+    color: #d1d5db;
+}
+
+.pricing-card.featured .feature-icon {
+    color: var(--color-burgundy);
+    /* Or white/lighter burgundy */
+}
+
+
+.plan-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-burgundy);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pricing-card.featured .plan-name {
+    color: var(--color-warmgray);
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 1rem;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.plan-desc {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    flex-grow: 1;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+}
+
+.feature-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    color: var(--color-burgundy);
+    flex-shrink: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: transparent;
+    color: var(--color-burgundy);
+    border: 2px solid var(--color-burgundy);
+    border-radius: 9999px;
+    /* full rounded */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--color-burgundy);
+    color: white;
+}
+
+.pricing-card.featured .cta-button {
+    background-color: var(--color-burgundy);
+    color: white;
+    border-color: var(--color-burgundy);
+}
+
+.pricing-card.featured .cta-button:hover {
+    background-color: white;
+    color: var(--color-burgundy);
+}

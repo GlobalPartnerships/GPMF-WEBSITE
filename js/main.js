@@ -18,8 +18,8 @@ const translations = {
         "home.hero.title": "Navegando la complejidad global a través de",
         "home.hero.span": "inteligencia estratégica.",
         "home.hero.desc": "Ayudamos a organizaciones a prosperar en ecosistemas complejos mediante gestión multidisciplinaria, intercultural y transformación basada en datos.",
-        "home.hero.cta": "Hablemos de su Estrategia",
-        "home.hero.services": "Explorar Servicios",
+        "home.hero.cta": "Planes estratégicos", // ← New change
+        "home.hero.services": "Hablemos de su estrategia",
         "home.trust.title": "Confianza generada en ecosistemas globales",
 
         // HOME - PROPUESTA VALOR (ICONOS)
@@ -204,7 +204,7 @@ const translations = {
         "home.services.card4.bullet1": "Opportunity diagnostic & global roadmap",
         "home.services.card4.bullet2": "Partnership activation & deal support",
         "common.viewDetails": "View details →",
-        
+
         "home.why.title": "No canned answers.",
         "home.why.span": "We co-create solutions.",
         "home.why.desc": "In an information-saturated world, value lies not in data, but in the ability to transform it into action.",
@@ -237,7 +237,7 @@ const translations = {
         "about.vision.stat1": "Continents",
         "about.vision.stat2": "Years Combined Experience",
         "about.vision.stat3": "Senior Attention",
-        
+
         "allies.hero.kicker": "Global Network",
         "allies.hero.title": "People and Firms that amplify our impact",
         "allies.hero.desc": "We bring together senior leadership, specialized strategists, and institutional allies across Europe, North America, and Latin America to unlock complex projects.",
@@ -283,7 +283,7 @@ const translations = {
         "allies.cta.join.desc": "We look for boutique DNA firms focused on outcomes. Science, technology, data, diplomacy, and expansion.",
         "allies.cta.join.btn.primary": "Apply partnership",
         "allies.cta.join.btn.secondary": "Book a conversation",
-        
+
         // CONTACT
         "contact.sidebar.title": "Let's connect",
         "contact.sidebar.desc": "We're ready to listen to your challenges and explore how our global network can accelerate your results.",
@@ -354,7 +354,7 @@ const translations = {
         "home.services.card4.bullet1": "Opportunity-Diagnose & globaler Fahrplan",
         "home.services.card4.bullet2": "Partnerschaftsaktivierung & Deal-Support",
         "common.viewDetails": "Details ansehen →",
-        
+
         "home.why.title": "Keine Standardantworten.",
         "home.why.span": "Wir schaffen Lösungen.",
         "home.why.desc": "Der Wert liegt nicht in den Daten, sondern in der Fähigkeit, sie in Handlungen umzusetzen.",
@@ -387,7 +387,7 @@ const translations = {
         "about.vision.stat1": "Kontinente",
         "about.vision.stat2": "Jahre gemeinsame Erfahrung",
         "about.vision.stat3": "Senior-Betreuung",
-        
+
         "allies.hero.kicker": "Globales Netzwerk",
         "allies.hero.title": "Menschen und Firmen, die unseren Impact verstärken",
         "allies.hero.desc": "Wir vereinen Senior Leadership, Spezialisten und institutionelle Partner in Europa, Nordamerika und Lateinamerika für komplexe Projekte.",
@@ -433,7 +433,7 @@ const translations = {
         "allies.cta.join.desc": "Wir suchen Boutique-Firmen mit Ergebnisfokus. Wissenschaft, Technologie, Daten, Diplomatie, Expansion.",
         "allies.cta.join.btn.primary": "Partnerschaft anfragen",
         "allies.cta.join.btn.secondary": "Gespräch vereinbaren",
-        
+
         // CONTACT
         "contact.sidebar.title": "Lassen Sie uns sprechen",
         "contact.sidebar.desc": "Wir sind bereit, Ihre Herausforderungen zu hören und zu zeigen, wie unser globales Netzwerk Ergebnisse beschleunigt.",
@@ -504,7 +504,7 @@ const translations = {
         "home.services.card4.bullet1": "Diagnostic d’opportunité & feuille de route",
         "home.services.card4.bullet2": "Activation de partenariats & closing",
         "common.viewDetails": "Voir détails →",
-        
+
         "home.why.title": "Pas de réponses toutes faites.",
         "home.why.span": "Nous co-créons des solutions.",
         "home.why.desc": "La valeur réside dans la capacité à transformer les données en action.",
@@ -537,7 +537,7 @@ const translations = {
         "about.vision.stat1": "Continents",
         "about.vision.stat2": "Années d'expérience",
         "about.vision.stat3": "Attention senior",
-        
+
         "allies.hero.kicker": "Réseau Global",
         "allies.hero.title": "Des personnes et des firmes qui amplifient notre impact",
         "allies.hero.desc": "Nous réunissons leadership senior, stratèges spécialisés et alliés institutionnels entre Europe, Amérique du Nord et Amérique latine pour débloquer des projets complexes.",
@@ -583,7 +583,7 @@ const translations = {
         "allies.cta.join.desc": "Nous recherchons des firmes boutique orientées résultats. Science, technologie, data, diplomatie, expansion.",
         "allies.cta.join.btn.primary": "Proposer une alliance",
         "allies.cta.join.btn.secondary": "Planifier un échange",
-        
+
         // CONTACT
         "contact.sidebar.title": "Discutons",
         "contact.sidebar.desc": "Nous sommes prêts à écouter vos défis et à activer notre réseau mondial pour accélérer vos résultats.",
@@ -613,7 +613,7 @@ function changeLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            if(element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[lang][key];
             } else {
                 element.textContent = translations[lang][key];
@@ -621,7 +621,7 @@ function changeLanguage(lang) {
         }
     });
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        if(btn.dataset.lang === lang) {
+        if (btn.dataset.lang === lang) {
             btn.classList.add('text-burgundy', 'font-bold');
             btn.classList.remove('text-gray-400');
         } else {
@@ -634,10 +634,10 @@ function changeLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('gpmf-lang') || 'es';
     changeLanguage(savedLang);
-    
+
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    if(menuBtn && mobileMenu) {
+    if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('flex');
@@ -649,11 +649,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const expanded = button.getAttribute('aria-expanded') === 'true';
             button.setAttribute('aria-expanded', (!expanded).toString());
-            if(panel) {
+            if (panel) {
                 panel.classList.toggle('hidden');
             }
             const icon = button.querySelector('svg');
-            if(icon) {
+            if (icon) {
                 icon.classList.toggle('rotate-180');
             }
         });
