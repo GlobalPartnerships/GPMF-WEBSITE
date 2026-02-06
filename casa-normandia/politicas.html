@@ -13,16 +13,17 @@
     />
     <style>
       :root {
-        --terracotta: #b85c38;
-        --deep-clay: #7a3e1d;
-        --chocolate: #2f1b16;
-        --sunset: #f2c078;
-        --sand: #f8eee2;
-        --cream: #fff8f0;
-        --sage: #7a8c6e;
+        --gpmf-burgundy: #7A0F32;
+        --gpmf-burgundy-light: #9A1A42;
+        --gpmf-burgundy-dark: #5A0A28;
+        --gpmf-black: #000000;
+        --warm-gray: #F5F5F5;
+        --deep-charcoal: #2E2E2E;
+        --medium-gray: #666666;
+        --light-gray: #E8E8E8;
         --white: #ffffff;
-        --text: #33231d;
-        --shadow: rgba(15, 10, 8, 0.12);
+        --shadow-burgundy: rgba(122, 15, 50, 0.15);
+        --shadow-charcoal: rgba(46, 46, 46, 0.1);
       }
 
       * {
@@ -36,8 +37,8 @@
       body {
         margin: 0;
         font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background-color: var(--cream);
-        color: var(--text);
+        background-color: var(--warm-gray);
+        color: var(--gpmf-black);
         line-height: 1.6;
       }
 
@@ -47,13 +48,13 @@
       }
 
       a {
-        color: var(--terracotta);
+        color: var(--gpmf-black);
         text-decoration: none;
         transition: color 0.3s ease;
       }
 
       a:hover {
-        color: var(--deep-clay);
+        color: var(--gpmf-burgundy);
       }
 
       ul {
@@ -106,15 +107,16 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        background: rgba(255, 248, 240, 0.95);
+        background: rgba(245, 245, 245, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        border-bottom: 1px solid var(--gpmf-burgundy);
         transition: box-shadow 0.3s ease, background 0.3s ease;
       }
 
       .site-header.is-sticky {
-        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
-        background: rgba(255, 248, 240, 0.98);
+        box-shadow: 0 8px 30px var(--shadow-charcoal);
+        background: rgba(245, 245, 245, 0.98);
+        border-bottom: 2px solid var(--gpmf-burgundy);
       }
 
       .nav-wrapper {
@@ -128,6 +130,8 @@
         font-family: "Playfair Display", serif;
         font-size: 1.35rem;
         letter-spacing: 0.05em;
+        color: var(--gpmf-black);
+        font-weight: 600;
       }
 
       nav {
@@ -335,13 +339,18 @@
 
       footer {
         padding: 3rem 0;
-        background: var(--chocolate);
-        color: rgba(255, 255, 255, 0.85);
+        background: var(--gpmf-black);
+        color: var(--white);
         text-align: center;
       }
 
       footer a {
-        color: var(--sunset);
+        color: var(--gpmf-burgundy);
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--gpmf-burgundy-light);
       }
 
       @media (min-width: 768px) {

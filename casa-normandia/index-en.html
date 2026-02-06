@@ -16,16 +16,17 @@
     />
     <style>
       :root {
-        --terracotta: #b85c38;
-        --deep-clay: #7a3e1d;
-        --chocolate: #2f1b16;
-        --sunset: #f2c078;
-        --sand: #f8eee2;
-        --cream: #fff8f0;
-        --sage: #7a8c6e;
+        --gpmf-burgundy: #7A0F32;
+        --gpmf-burgundy-light: #9A1A42;
+        --gpmf-burgundy-dark: #5A0A28;
+        --gpmf-black: #000000;
+        --warm-gray: #F5F5F5;
+        --deep-charcoal: #2E2E2E;
+        --medium-gray: #666666;
+        --light-gray: #E8E8E8;
         --white: #ffffff;
-        --text: #33231d;
-        --shadow: rgba(15, 10, 8, 0.12);
+        --shadow-burgundy: rgba(122, 15, 50, 0.15);
+        --shadow-charcoal: rgba(46, 46, 46, 0.1);
       }
 
       * {
@@ -39,8 +40,8 @@
       body {
         margin: 0;
         font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background-color: var(--cream);
-        color: var(--text);
+        background-color: var(--warm-gray);
+        color: var(--gpmf-black);
       }
 
       img {
@@ -72,46 +73,54 @@
         font-weight: 600;
         border-radius: 999px;
         padding: 0.85rem 1.75rem;
-        border: none;
+        border: 2px solid var(--gpmf-burgundy);
         cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        box-shadow: 0 12px 30px rgba(184, 92, 56, 0.25);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px var(--shadow-burgundy);
       }
 
       .btn:focus-visible {
-        outline: 3px solid var(--sunset);
+        outline: 3px solid var(--gpmf-burgundy-light);
         outline-offset: 3px;
       }
 
       .btn-primary {
-        background: var(--terracotta);
+        background: var(--gpmf-burgundy);
         color: var(--white);
+        border-color: var(--gpmf-burgundy);
       }
 
       .btn-secondary {
-        background: var(--white);
-        border: 1px solid rgba(47, 27, 22, 0.1);
-        color: var(--deep-clay);
+        background: transparent;
+        color: var(--gpmf-burgundy);
+        border-color: var(--gpmf-burgundy);
         box-shadow: none;
       }
 
       .btn:hover {
         transform: translateY(-2px);
+        box-shadow: 0 12px 35px var(--shadow-burgundy);
+      }
+
+      .btn-secondary:hover {
+        background: var(--gpmf-burgundy);
+        color: var(--white);
       }
 
       header {
         position: sticky;
         top: 0;
         z-index: 20;
-        background: rgba(255, 248, 240, 0.95);
+        background: rgba(245, 245, 245, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        border-bottom: 1px solid var(--gpmf-burgundy);
         transition: box-shadow 0.3s ease, background 0.3s ease;
       }
 
       .site-header.is-sticky {
-        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
-        background: rgba(255, 248, 240, 0.98);
+        box-shadow: 0 8px 30px var(--shadow-charcoal);
+        background: rgba(245, 245, 245, 0.98);
+        border-bottom: 2px solid var(--gpmf-burgundy);
       }
 
       .nav-wrapper {
@@ -125,6 +134,8 @@
         font-family: "Playfair Display", serif;
         font-size: 1.35rem;
         letter-spacing: 0.05em;
+        color: var(--gpmf-black);
+        font-weight: 600;
       }
 
       nav {
@@ -141,6 +152,8 @@
       nav a {
         position: relative;
         padding-bottom: 0.2rem;
+        color: var(--gpmf-black);
+        font-weight: 500;
       }
 
       nav a::after {
@@ -150,8 +163,12 @@
         bottom: 0;
         width: 0;
         height: 2px;
-        background: var(--terracotta);
+        background: var(--gpmf-burgundy);
         transition: width 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--gpmf-burgundy);
       }
 
       nav a:hover::after {
@@ -163,7 +180,7 @@
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
-        color: var(--deep-clay);
+        color: var(--gpmf-black);
       }
 
       .cta-inline {
@@ -173,7 +190,7 @@
       .mobile-nav {
         position: fixed;
         inset: 0;
-        background: rgba(47, 27, 22, 0.95);
+        background: var(--gpmf-black);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -181,16 +198,13 @@
         gap: 1.5rem;
         transform: translateY(-100%);
         transition: transform 0.35s ease;
-      }
-
-      .mobile-nav a {
-        color: var(--white);
-        font-size: 1.4rem;
-        font-weight: 600;
+        z-index: 9999;
+        visibility: hidden;
       }
 
       .mobile-nav.open {
         transform: translateY(0);
+        visibility: visible;
       }
 
       main {
@@ -206,11 +220,23 @@
         display: flex;
         align-items: center;
         background-image:
-          linear-gradient(120deg, rgba(47, 27, 22, 0.8), rgba(184, 92, 56, 0.65)),
+          linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(122, 15, 50, 0.2)),
           url("https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80");
         background-size: cover;
         background-position: center;
         color: var(--white);
+        position: relative;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(122, 15, 50, 0.05), transparent);
+        pointer-events: none;
       }
 
       .hero-content {
@@ -436,13 +462,18 @@
 
       footer {
         padding: 3rem 0;
-        background: var(--chocolate);
-        color: rgba(255, 255, 255, 0.85);
+        background: var(--gpmf-black);
+        color: var(--white);
         text-align: center;
       }
 
       footer a {
-        color: var(--sunset);
+        color: var(--gpmf-burgundy-light);
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--gpmf-burgundy);
       }
 
       @media (min-width: 768px) {
@@ -482,6 +513,10 @@
     <header class="site-header" aria-label="Main navigation">
       <div class="container nav-wrapper">
         <a class="brand" href="#inicio">Casa Normandía</a>
+        <div class="language-selector" style="display: flex; gap: 0.5rem; align-items: center;">
+          <a href="index.html" style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.85rem; font-weight: 600; background: transparent; color: var(--gpmf-burgundy); border: 1px solid var(--gpmf-burgundy);">ES</a>
+          <a href="index-en.html" style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.85rem; font-weight: 600; background: var(--gpmf-burgundy); color: var(--white);">EN</a>
+        </div>
         <nav class="site-nav" aria-label="Main menu">
           <ul>
             <li><a href="#inicio" data-scroll>Home</a></li>
@@ -828,15 +863,11 @@
         <p>&copy; <span id="year"></span> Casa Normandía · Bogotá, Colombia · Residential neighborhood with parks, cafés, and quick access to El Dorado Airport.</p>
         
         <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-          <a href="policies.html" style="color: var(--sunset);">📋 House Policies</a>
-          <a href="policies.html#pet-policy" style="color: var(--sunset);">🐾 Pet Policy</a>
-          <a href="policies.html#data-protection" style="color: var(--sunset);">🔒 Data Protection</a>
-          <a href="policies.html#guest-registration" style="color: var(--sunset);">📝 Guest Registration</a>
+          <a href="policies.html" style="color: var(--gpmf-burgundy-light);">📋 House Policies</a>
+          <a href="policies.html#pet-policy" style="color: var(--gpmf-burgundy-light);">🐾 Pet Policy</a>
+          <a href="policies.html#data-protection" style="color: var(--gpmf-burgundy-light);">🔒 Data Protection</a>
+          <a href="policies.html#guest-registration" style="color: var(--gpmf-burgundy-light);">📝 Guest Registration</a>
         </div>
-
-        <p style="margin-top: 1.5rem;">
-          Need to upload new photos? Save them in <code>/assets</code> following the convention <em>unit-number.jpg</em> and replace them in the Gallery section.
-        </p>
       </div>
     </footer>
 

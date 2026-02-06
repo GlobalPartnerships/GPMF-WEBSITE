@@ -16,16 +16,17 @@
     />
     <style>
       :root {
-        --terracotta: #b85c38;
-        --deep-clay: #7a3e1d;
-        --chocolate: #2f1b16;
-        --sunset: #f2c078;
-        --sand: #f8eee2;
-        --cream: #fff8f0;
-        --sage: #7a8c6e;
+        --gpmf-burgundy: #7A0F32;
+        --gpmf-burgundy-light: #9A1A42;
+        --gpmf-burgundy-dark: #5A0A28;
+        --gpmf-black: #000000;
+        --warm-gray: #F5F5F5;
+        --deep-charcoal: #2E2E2E;
+        --medium-gray: #666666;
+        --light-gray: #E8E8E8;
         --white: #ffffff;
-        --text: #33231d;
-        --shadow: rgba(15, 10, 8, 0.12);
+        --shadow-burgundy: rgba(122, 15, 50, 0.15);
+        --shadow-charcoal: rgba(46, 46, 46, 0.1);
       }
 
       * {
@@ -39,8 +40,8 @@
       body {
         margin: 0;
         font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background-color: var(--cream);
-        color: var(--text);
+        background-color: var(--warm-gray);
+        color: var(--gpmf-black);
       }
 
       img {
@@ -79,19 +80,20 @@
       }
 
       .btn:focus-visible {
-        outline: 3px solid var(--sunset);
+        outline: 3px solid var(--gpmf-burgundy-light);
         outline-offset: 3px;
       }
 
       .btn-primary {
-        background: var(--terracotta);
+        background: var(--gpmf-burgundy);
         color: var(--white);
+        border-color: var(--gpmf-burgundy);
       }
 
       .btn-secondary {
-        background: var(--white);
-        border: 1px solid rgba(47, 27, 22, 0.1);
-        color: var(--deep-clay);
+        background: transparent;
+        color: var(--gpmf-burgundy);
+        border-color: var(--gpmf-burgundy);
         box-shadow: none;
       }
 
@@ -120,15 +122,16 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        background: rgba(255, 248, 240, 0.95);
+        background: rgba(245, 245, 245, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(47, 27, 22, 0.08);
+        border-bottom: 1px solid var(--gpmf-burgundy);
         transition: box-shadow 0.3s ease, background 0.3s ease;
       }
 
       .site-header.is-sticky {
-        box-shadow: 0 12px 30px rgba(47, 27, 22, 0.12);
-        background: rgba(255, 248, 240, 0.98);
+        box-shadow: 0 8px 30px var(--shadow-charcoal);
+        background: rgba(245, 245, 245, 0.98);
+        border-bottom: 2px solid var(--gpmf-burgundy);
       }
 
       .nav-wrapper {
@@ -142,6 +145,8 @@
         font-family: "Playfair Display", serif;
         font-size: 1.35rem;
         letter-spacing: 0.05em;
+        color: var(--gpmf-black);
+        font-weight: 600;
       }
 
       nav {
@@ -158,6 +163,8 @@
       nav a {
         position: relative;
         padding-bottom: 0.2rem;
+        color: var(--gpmf-black);
+        font-weight: 500;
       }
 
       nav a::after {
@@ -167,8 +174,12 @@
         bottom: 0;
         width: 0;
         height: 2px;
-        background: var(--terracotta);
+        background: var(--gpmf-burgundy);
         transition: width 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--gpmf-burgundy);
       }
 
       nav a:hover::after {
@@ -180,7 +191,7 @@
         border: none;
         font-size: 1.5rem;
         cursor: pointer;
-        color: var(--deep-clay);
+        color: var(--gpmf-black);
       }
 
       .cta-inline {
@@ -190,7 +201,7 @@
       .mobile-nav {
         position: fixed;
         inset: 0;
-        background: rgba(47, 27, 22, 0.95);
+        background: var(--gpmf-black);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -198,6 +209,8 @@
         gap: 1.5rem;
         transform: translateY(-100%);
         transition: transform 0.35s ease;
+        z-index: 9999;
+        visibility: hidden;
       }
 
       .mobile-nav a {
@@ -223,11 +236,23 @@
         display: flex;
         align-items: center;
         background-image:
-          linear-gradient(120deg, rgba(47, 27, 22, 0.8), rgba(184, 92, 56, 0.65)),
+          linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(122, 15, 50, 0.2)),
           url("assets/202.png");
         background-size: cover;
         background-position: center;
         color: var(--white);
+        position: relative;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(122, 15, 50, 0.05), transparent);
+        pointer-events: none;
       }
 
       .hero-content {
@@ -273,23 +298,46 @@
       }
 
       .card {
-        padding: 1.85rem;
+        padding: 2rem;
         border-radius: 1.25rem;
         background: var(--white);
-        box-shadow: 0 25px 60px var(--shadow);
+        box-shadow: 0 15px 40px var(--shadow-charcoal);
+        border: 1px solid rgba(122, 15, 50, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px var(--shadow-charcoal);
+        border-color: rgba(122, 15, 50, 0.15);
       }
 
       h2 {
         font-family: "Playfair Display", serif;
         font-size: clamp(1.9rem, 4vw, 2.5rem);
         margin-bottom: 1rem;
-        color: var(--chocolate);
+        color: var(--gpmf-black);
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--gpmf-burgundy);
+        border-radius: 2px;
       }
 
       h3 {
         font-size: 1.2rem;
         margin: 0 0 0.5rem;
-        color: var(--deep-clay);
+        color: var(--gpmf-black);
+        font-weight: 600;
       }
 
       .feature-list {
@@ -356,20 +404,25 @@
 
       .contact-details span {
         font-weight: 600;
-        color: var(--sage);
+        color: var(--gpmf-burgundy);
         font-size: 0.85rem;
         letter-spacing: 0.08em;
       }
 
       footer {
         padding: 3rem 0;
-        background: var(--chocolate);
-        color: rgba(255, 255, 255, 0.85);
+        background: var(--gpmf-black);
+        color: var(--white);
         text-align: center;
       }
 
       footer a {
-        color: var(--sunset);
+        color: var(--gpmf-burgundy);
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: var(--gpmf-burgundy-light);
       }
 
       @media (min-width: 768px) {
