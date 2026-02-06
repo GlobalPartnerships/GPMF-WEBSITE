@@ -9,8 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/gradient_background.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="css/mini_classes.css">
-
+    <link rel="stylesheet" href="../css/mini_classes.css">
+    <script src="./planes.js"></script>
     <script>
         tailwind.config = {
             theme: { extend: { colors: { burgundy: '#7A0F32', charcoal: '#2E2E2E', warmgray: '#F5F5F5', black: '#000000' }, fontFamily: { sans: ['Inter', 'sans-serif'] } } }
@@ -134,7 +134,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>Soporte por Email</li>
                     </ul>
-                    <a href="../contact.html" class="cta-button">Empezar</a>
+                    <button onclick="selectPlan('explore')" class="cta-button">Empezar</button>
                 </div>
 
                 <!-- Plan 2 -->
@@ -164,7 +164,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>Optimización de Procesos</li>
                     </ul>
-                    <a href="../contact.html" class="cta-button">Elegir Grow</a>
+                    <button onclick="selectPlan('grow')" class="cta-button">Elegir Grow</button>
                 </div>
 
                 <!-- Plan 3 (Featured) -->
@@ -194,7 +194,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>Asesoría Legal Local</li>
                     </ul>
-                    <a href="../contact.html" class="cta-button">Más Popular</a>
+                    <button onclick="selectPlan('expand')" class="cta-button">Más Popular</button>
                 </div>
 
                 <!-- Plan 4 -->
@@ -219,7 +219,7 @@
                                     clip-rule="evenodd"></path>
                             </svg>Soporte 24/7 Prioritario</li>
                     </ul>
-                    <a href="../contact.html" class="cta-button">Contactar</a>
+                    <button onclick="selectPlan('corporate')" class="cta-button">Contactar</button>
                 </div>
             </div>
         </section>
