@@ -38,7 +38,7 @@
           <div class="absolute top-14 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
             <a href="internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.int">Internacionalización</a>
             <a href="landing_GEN_IA_consultora_boutique.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp; Analítica</a>
-            <a href="data-governance.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.data">Datos e IA</a>
+            <a href="business-development.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
           </div>
         </div>
         <a href="contact.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26]" data-i18n="nav.contact">Agendar</a>
@@ -66,7 +66,7 @@
       <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
         <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
         <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
-        <a href="data-governance.html" data-i18n="nav.data">Datos e IA</a>
+        <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
       </div>
       <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Agendar</a>
       <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-3xl">✕</button>
@@ -257,30 +257,39 @@
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Caso 1 -->
-        <article class="rounded-2xl border border-neutral-200 p-6 bg-white">
-          <h3 class="font-semibold text-neutral-900">Casa Normandía (Coliving)</h3>
-          <ul class="mt-3 space-y-2 text-sm text-neutral-700 list-disc list-inside">
+        <article class="rounded-2xl border border-neutral-200 p-6 bg-white flex flex-col gap-4">
+          <div class="aspect-[4/3] bg-neutral-100 rounded-lg overflow-hidden">
+            <img src="Assets/casa-normandia-thumb.jpg" alt="Casa Normandía" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="font-semibold text-neutral-900">Casa Normandía</h3>
+          <ul class="mt-auto space-y-2 text-sm text-neutral-700 list-disc list-inside">
             <li><strong>Problema:</strong> Operaciones en Excel y tareas repetitivas.</li>
             <li><strong>Solución:</strong> Automatización con Zapier + Apps Script.</li>
             <li><strong>Resultado:</strong> Panel de control en Sheets y gestión ágil.</li>
           </ul>
         </article>
         <!-- Caso 2 -->
-        <article class="rounded-2xl border border-neutral-200 p-6 bg-white">
+        <article class="rounded-2xl border border-neutral-200 p-6 bg-white flex flex-col gap-4">
+          <div class="aspect-[4/3] bg-neutral-100 rounded-lg overflow-hidden">
+            <img src="Assets/construccion-thumb.jpg" alt="Construcción 4.0" class="w-full h-full object-cover" loading="lazy">
+          </div>
           <h3 class="font-semibold text-neutral-900">Construcción 4.0</h3>
-          <ul class="mt-3 space-y-2 text-sm text-neutral-700 list-disc list-inside">
+          <ul class="mt-auto space-y-2 text-sm text-neutral-700 list-disc list-inside">
             <li><strong>Problema:</strong> Datos dispersos y costeo sin automatizar.</li>
             <li><strong>Solución:</strong> Estándares + Power BI + IA generativa.</li>
             <li><strong>Resultado:</strong> Decisiones basadas en datos y eficiencia.</li>
           </ul>
         </article>
         <!-- Caso 3 -->
-        <article class="rounded-2xl border border-neutral-200 p-6 bg-white">
-          <h3 class="font-semibold text-neutral-900">Desarrollo Inmobiliario</h3>
-          <ul class="mt-3 space-y-2 text-sm text-neutral-700 list-disc list-inside">
-            <li><strong>Problema:</strong> Selección de terrenos sin datos históricos.</li>
-            <li><strong>Solución:</strong> Modelos de selección + dashboards.</li>
-            <li><strong>Resultado:</strong> Mayor rentabilidad y menor tiempo de ciclo.</li>
+        <article class="rounded-2xl border border-neutral-200 p-6 bg-white flex flex-col gap-4">
+          <div class="aspect-[4/3] bg-neutral-100 rounded-lg overflow-hidden">
+            <img src="Assets/agrotech-thumb.jpg" alt="Agro Tech La granja Nilo" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <h3 class="font-semibold text-neutral-900">Agro Tech La granja Nilo</h3>
+          <ul class="mt-auto space-y-2 text-sm text-neutral-700 list-disc list-inside">
+            <li><strong>Problema:</strong> Operaciones manuales y falta de visibilidad de datos.</li>
+            <li><strong>Solución:</strong> Implementación de sistema de gestión agrícola con dashboard en tiempo real.</li>
+            <li><strong>Resultado:</strong> Optimización de procesos y toma de decisiones basada en datos.</li>
           </ul>
         </article>
       </div>
@@ -295,36 +304,23 @@
         <p class="mt-2 text-neutral-600 max-w-3xl">Consultora boutique con alianzas de alto nivel. Un núcleo ágil y multidisciplinario.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Persona -->
+        <!-- Carlos -->
         <div class="rounded-2xl bg-white border border-neutral-200 p-6">
           <img src="Assets/carlos.jpeg" alt="Carlos Santiusti" class="h-20 w-20 rounded-full object-cover mb-4 mx-auto">
           <h3 class="font-semibold">Carlos Santiusti</h3>
           <p class="text-sm text-neutral-600">Estratega de IA y Data Engineer — 12+ años aplicando datos a negocio.</p>
         </div>
-        <div class="rounded-2xl bg-white border border-neutral-200 p-6">
-          <img src="Assets/Marcela.JPG" alt="Marcela Sánchez Vargas" class="h-20 w-20 rounded-full object-cover mb-4 mx-auto">
-          <h3 class="font-semibold">Marcela Sánchez Vargas</h3>
-          <p class="text-sm text-neutral-600">Transformación digital y cambio cultural — Alineación tech-estrategia.</p>
-        </div>
-        <div class="rounded-2xl bg-white border border-neutral-200 p-6">
-          <img src="Assets/Adriana.JPG" alt="Adriana Sánchez" class="h-20 w-20 rounded-full object-cover mb-4 mx-auto">
-          <h3 class="font-semibold">Adriana Sánchez</h3>
-          <p class="text-sm text-neutral-600">Gestión de proyectos — Ciencia, tecnología e innovación, TIC y agro.</p>
-        </div>
+        <!-- Natalia -->
         <div class="rounded-2xl bg-white border border-neutral-200 p-6">
           <img src="Assets/Natalia.JPG" alt="Natalia Sánchez Vargas" class="h-20 w-20 rounded-full object-cover mb-4 mx-auto">
           <h3 class="font-semibold">Natalia Sánchez Vargas</h3>
           <p class="text-sm text-neutral-600">Bióloga de datos — Dirección de análisis y operaciones internas.</p>
         </div>
+        <!-- Anyelin -->
         <div class="rounded-2xl bg-white border border-neutral-200 p-6">
-          <div class="h-20 w-20 rounded-full bg-neutral-200 mb-4 mx-auto"></div>
+          <img src="Assets/Anyelin.JPG" alt="Anyelin Pérez" class="h-20 w-20 rounded-full object-cover mb-4 mx-auto">
           <h3 class="font-semibold">Anyelin Pérez</h3>
           <p class="text-sm text-neutral-600">Business Analyst — Reingeniería de procesos y eficiencia operativa.</p>
-        </div>
-        <div class="rounded-2xl bg-white border border-neutral-200 p-6">
-          <div class="h-20 w-20 rounded-full bg-neutral-200 mb-4 mx-auto"></div>
-          <h3 class="font-semibold">Equipo aliado</h3>
-          <p class="text-sm text-neutral-600">Especialistas invitados según cada proyecto (data, legal, diplomacia).</p>
         </div>
       </div>
     </div>
