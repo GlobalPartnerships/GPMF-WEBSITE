@@ -1,0 +1,357 @@
+.luxurious-roman-regular {
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-container img {
+    height: 50px;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 400;
+
+    width: 100%;
+    background-color: rgb(255 255 255 / 0.65);
+    backdrop-filter: blur(8px);
+    /* border-bottom: 1px solid #f5f5f5; */
+
+    animation: darker-background linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 250px;
+}
+
+#header-logo {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    & span {
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+#header-logo:hover {
+    transform: scale(1.05);
+
+    & span {
+        color: #7A0F32;
+    }
+}
+
+.header-content {
+
+    max-width: 80rem;
+    /* max-w-7xl */
+    margin-left: auto;
+    /* mx-auto */
+    margin-right: auto;
+    /* mx-auto */
+    padding-left: 1.5rem;
+    /* px-6 */
+    padding-right: 1.5rem;
+    /* px-6 */
+    height: 100px;
+    /* h-20 */
+    display: flex;
+    /* flex */
+    align-items: center;
+    /* items-center */
+    justify-content: space-between;
+    /* justify-between */
+
+
+    animation: enhanced-header linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 250px;
+}
+
+@keyframes enhanced-header {
+    100% {
+        height: 60px;
+    }
+}
+
+@keyframes darker-background {
+    100% {
+        background-color: #ffffff1e;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Efecto específico para la clase nav-link */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0.25rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #7A0F32;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    height: 3px;
+}
+
+#header-nav a {
+    padding: 10px 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#title-desc {
+    width: max-content;
+    border-radius: 0px;
+    border: solid 5px transparent;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    animation:
+        typewritter 3s steps(63) forwards
+}
+
+@keyframes typewritter {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes enhanced-header {
+    100% {
+        height: 60px;
+    }
+}
+
+/* Logo slider loop */
+.slider {
+    width: 100%;
+    /* border: 1px solid red; */
+    height: var(--height);
+    overflow: hidden;
+
+    mask-image: linear-gradient(to right,
+            transparent,
+            #000 10% 90%,
+            transparent);
+}
+
+.slider .track {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--quantity) * var(--width));
+    position: relative;
+}
+
+.slider .track .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    filter: grayscale(1);
+}
+
+.slider .track .item img {
+    width: 100%;
+
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: calc(-1 * var(--width));
+    }
+}
+
+.slider:hover .item {
+    animation-play-state: paused !important;
+}
+
+.slider .item:hover {
+    filter: grayscale(0);
+}
+
+/* _______________________________________________________________________________________ */
+
+/* Hero Buttons Styles */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+    .hero-btn {
+        width: auto;
+    }
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Primary Button */
+.hero-btn.primary {
+    background-color: #7A0F32;
+    color: white;
+}
+
+.hero-btn.primary:hover {
+    background-color: #5e0b26;
+}
+
+/* Secondary Button */
+.hero-btn.secondary {
+    color: #2E2E2E;
+    border: 1px solid #d1d5db;
+    background-color: white;
+}
+
+.hero-btn.secondary:hover {
+    background-color: #fafafa;
+    border: 1px solid #7A0F32;
+}
+
+/* Icon Animation */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease, margin-left 0.3s ease;
+    overflow: hidden;
+}
+
+.hero-btn:hover .btn-icon {
+    width: 15px;
+    opacity: 1;
+    margin-left: 8px;
+}
+
+.btn-icon svg {
+    transform: translateX(-15px);
+    transition: transform 0.2s ease;
+}
+
+.hero-btn:hover .btn-icon svg {
+    transform: translateX(0);
+}
+
+.fade-in-from-right {
+    animation: appearing-content auto linear both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 35%;
+}
+
+.move-out {
+    animation: move-out-enhanced ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 35%;
+}
+
+@keyframes appearing-content {
+    0% {
+        opacity: 0;
+        translate: -40px 0;
+    }
+
+    40% {
+        opacity: 0.3;
+        translate: -7px 0;
+    }
+
+    80% {
+        opacity: 0.8;
+        translate: -2px 0;
+    }
+
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes move-out-enhanced {
+    entry 0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    entry 40% {
+        transform: translateY(60%);
+        opacity: 0.4;
+    }
+
+    entry 80% {
+        transform: translateY(20%);
+        opacity: 0.8;
+    }
+
+    entry 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    exit 0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    exit 40% {
+        transform: translateY(40%);
+        opacity: 0.6;
+    }
+
+    exit 80% {
+        transform: translateY(80%);
+        opacity: 0.2;
+    }
+
+    exit 100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}

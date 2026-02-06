@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPMF | Global Partnerships & Multidisciplinary Firm</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/gradient_background.css">
+    <link rel="stylesheet" href="css/mini_classes.css">
+    <link rel="stylesheet" href="css/video_embed.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,36 +20,43 @@
 
 <body class="bg-white text-charcoal font-sans antialiased">
 
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
+    <header id="header">
+        <div class="header-content">
+            <a href="#" id="header-logo" class="flex items-center gap-3">
                 <img src="Assets/logo.png" alt="GPMF Logo" class="h-10 w-auto">
                 <span class="text-black font-bold tracking-tight text-lg">Global Partnerships</span>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
-                <a href="about.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.firm">Firma</a>
-                <a href="aliados-equipo.html" class="text-gray-600 hover:text-burgundy"
+            <nav id="header-nav" class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="nav-link text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
+                <a href="about.html" class="nav-link text-gray-600 hover:text-burgundy" data-i18n="nav.firm">Firma</a>
+                <a href="aliados-equipo.html" class="nav-link text-gray-600 hover:text-burgundy"
                     data-i18n="nav.partners">Aliados</a>
 
-                <div class="relative group cursor-pointer py-4">
+                <div class="relative group cursor-pointer px-5 py-4">
                     <span class="text-gray-600 hover:text-burgundy flex items-center gap-1"
                         data-i18n="nav.services">Servicios</span>
                     <div
-                        class="absolute top-14 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
-                        <a href="internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
+                        class="absolute px-5 py-4 top-10 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
+                        <a href="internationalization.html" class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm"
                             data-i18n="nav.int">Internacionalización</a>
                         <a href="landing_GEN_IA_consultora_boutique.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp; Analítica</a>
-                        <a href="data-governance.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
+                            class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp;
+                            Analítica</a>
+                        <a href="data-governance.html" class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm"
                             data-i18n="nav.data">Datos e IA</a>
-                        <a href="business-development.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
-                            data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
                     </div>
                 </div>
-                <a href="contact.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26]"
-                    data-i18n="nav.contact">Agendar</a>
+                <a href="contact.html" class="hero-btn primary px-3">
+                    <span class="">Agendar</span>
+                    <span class="btn-icon">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                </a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-3 text-xs font-semibold">
@@ -76,16 +87,14 @@
                 <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
                 <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
                 <a href="data-governance.html" data-i18n="nav.data">Datos e IA</a>
-                <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
             </div>
             <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Agendar</a>
             <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
                 class="absolute top-6 right-6 text-3xl">✕</button>
         </div>
     </header>
-
     <main>
-        <section class="relative pt-40 pb-20 md:pt-48 md:pb-32 bg-warmgray/50 overflow-hidden">
+        <section id="gradient-background" class="relative pt-40 pb-20 md:pt-48 md:pb-32 bg-warmgray/50 overflow-hidden">
             <div class="max-w-6xl mx-auto px-6 relative z-10">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left">
@@ -98,37 +107,72 @@
                             Ayudamos a organizaciones a prosperar en ecosistemas complejos…
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                            <a href="./planes/planes.html"
-                                class="w-full sm:w-auto bg-burgundy text-white px-8 py-4 rounded-full font-semibold hover:bg-[#5e0b26]"
-                                data-i18n="home.hero.cta">Hablemos de su Estrategia</a>
-                            <a href="contact.html"
-                                class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-charcoal border border-gray-300 hover:bg-white"
-                                data-i18n="home.hero.services">Explorar Servicios</a>
+                            <a href="./planes/planes.html" class="hero-btn primary">
+                                <span data-i18n="home.hero.cta">Planes estrategicos</span>
+                                <span class="btn-icon">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                            <a href="#services" class="hero-btn secondary">
+                                <span data-i18n="home.hero.services">Explorar Servicios</span>
+                                <span class="btn-icon">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </a>
                         </div>
                     </div>
-                    <div class="relative">
-                        <div
-                            class="hidden sm:block absolute -top-6 -right-6 w-32 h-32 bg-burgundy/10 rounded-full blur-3xl">
-                        </div>
-                        <div
-                            class="hidden sm:block absolute -bottom-8 -left-4 w-40 h-40 bg-black/5 rounded-full blur-3xl">
-                        </div>
-                        <div class="relative">
-                            <img src="Assets/hero.jpg" alt="Consultora boutique global"
-                                class="w-full rounded-2xl shadow-xl ring-1 ring-black/5 animate-[float_10s_ease-in-out_infinite]"
-                                loading="lazy">
-                        </div>
+                    <div class="relative video-wrapper">
+                        <video id="bg-video" class="video-iframe" autoplay loop muted playsinline>
+                            <source src="Assets/video/background.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
                     </div>
                 </div>
-                <div class="mt-16 pt-8 border-t border-gray-200 text-center">
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mb-6" data-i18n="home.trust.title">
-                        Confianza generada en ecosistemas globales</p>
-                    <div
-                        class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                        <span class="font-bold text-xl tracking-wide">COLCIENCIAS</span>
-                        <span class="font-bold text-xl tracking-wide">INRAE</span>
-                        <span class="font-bold text-xl tracking-wide">Univ. Nacional</span>
-                        <span class="font-bold text-xl tracking-wide">Flordex</span>
+                <div class="mt-16 pt-8 border-t darker-border">
+                    <p class="text-xs uppercase tracking-widest mb-6 text-color-2 text-center" data-i18n="home.trust.title">
+                        Confianza generada en ecosistemas globales
+                    </p>
+
+                    <!--  here the logos ____________________________________________ -->
+
+                    <div class="slider" style="
+                        --width: 200px;
+                        --height: 90px;
+                        --quantity: 6;
+                    ">
+                        <div class="track">
+                            <div style="--position: 1" class="item">
+                                <img src="https://examtimeassets.s3.amazonaws.com/uploads/media/image/22862592/desktop_a32583e3-7845-4bb3-a70b-73fed439c2f8.jpg"
+                                    alt="">
+                            </div>
+                            <div style="--position: 2" class="item">
+                                <img src="https://www.ap2e.com/wp-content/uploads/inrae-logotype-def.png" alt="">
+                            </div>
+                            <div style="--position: 3" class="item">
+                                <img src="https://i.pinimg.com/736x/ad/54/5d/ad545dc8468d8a329f4085639202ebbf.jpg"
+                                    alt="">
+                            </div>
+                            <div style="--position: 4" class="item">
+                                <img src="./Assets/img/flordex_logo.png" alt="">
+                            </div>
+                            <div style="--position: 5" class="item">
+                                <img src="./Assets/img/koenigsegg_logo.png" alt="">
+                            </div>
+                            <div style="--position: 6" class="item">
+                                <img src="./Assets/img/etoro_logo.png" alt="">
+                            </div>
+                            <!-- add more logos here -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -251,11 +295,10 @@
                 </div>
             </div>
         </section>
-
         <section class="py-24 bg-warmgray text-charcoal">
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    <h2 class="fade-in-from-right text-3xl md:text-4xl font-bold mb-6">
                         <span class="text-charcoal" data-i18n="home.why.title">No traemos respuestas enlatadas.</span>
                         <span class="text-burgundy" data-i18n="home.why.span">Co-creamos soluciones.</span>
                     </h2>
@@ -264,7 +307,7 @@
                         transformarlos en acción.
                     </p>
                     <div class="space-y-4">
-                        <div class="flex gap-4">
+                        <div class="move-out flex gap-4">
                             <div class="w-12 h-1 bg-burgundy mt-3"></div>
                             <div>
                                 <h4 class="font-bold text-lg" data-i18n="home.why.pillar1.title">Rigurosidad
@@ -273,7 +316,7 @@
                                     estandarizados validados en Europa y Latam.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="move-out flex gap-4">
                             <div class="w-12 h-1 bg-burgundy mt-3"></div>
                             <div>
                                 <h4 class="font-bold text-lg" data-i18n="home.why.pillar2.title">Agilidad Boutique</h4>
@@ -281,7 +324,7 @@
                                     socias senior, sin burocracia.</p>
                             </div>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="move-out flex gap-4">
                             <div class="w-12 h-1 bg-burgundy mt-3"></div>
                             <div>
                                 <h4 class="font-bold text-lg" data-i18n="home.why.pillar3.title">Visión Global</h4>
@@ -297,9 +340,9 @@
                         ejecutable. No solo nos dieron un plan, nos ayudaron a construir la capacidad para ejecutarlo."
                     </blockquote>
                     <div class="flex items-center gap-4">
-                        <div class="h-12 w-12 bg-gray-200 rounded-full"></div>
+                        <img src="./Assets\Natalia.JPG" alt="Natalia Sánchez" class="w-12 h-12 rounded-full object-cover">
                         <div>
-                            <p class="font-bold text-sm" data-i18n="home.testimonial.person">David A. Rachid</p>
+                            <p class="font-bold text-sm" data-i18n="home.testimonial.person">Natalia Sánchez</p>
                             <p class="text-xs text-gray-500" data-i18n="home.testimonial.role">CEO, DCR Exponential
                                 (USA)</p>
                         </div>
@@ -307,7 +350,6 @@
                 </div>
             </div>
         </section>
-
         <section id="contact" class="py-20 bg-charcoal text-white text-center">
             <div class="max-w-4xl mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="home.cta.title">Listo para elevar el
@@ -340,6 +382,14 @@
     </a>
 
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('bg-video');
+            if (video) {
+                video.playbackRate = 0.7;
+            }
+        });
+    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 

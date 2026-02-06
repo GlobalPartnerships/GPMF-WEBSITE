@@ -7,6 +7,10 @@
     <title>Planes | GPMF</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/gradient_background.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/mini_classes.css">
+
     <script>
         tailwind.config = {
             theme: { extend: { colors: { burgundy: '#7A0F32', charcoal: '#2E2E2E', warmgray: '#F5F5F5', black: '#000000' }, fontFamily: { sans: ['Inter', 'sans-serif'] } } }
@@ -17,36 +21,43 @@
 
 <body class="bg-white text-charcoal font-sans antialiased">
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3">
+    <header id="header">
+        <div class="header-content">
+            <a href="#" id="header-logo" class="flex items-center gap-3">
                 <img src="../Assets/logo.png" alt="GPMF Logo" class="h-10 w-auto">
                 <span class="text-black font-bold tracking-tight text-lg">Global Partnerships</span>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="../index.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
-                <a href="../about.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.firm">Firma</a>
-                <a href="../aliados-equipo.html" class="text-gray-600 hover:text-burgundy"
+            <nav id="header-nav" class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="../index.html" class="nav-link text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
+                <a href="../about.html" class="nav-link text-gray-600 hover:text-burgundy" data-i18n="nav.firm">Firma</a>
+                <a href="../aliados-equipo.html" class="nav-link text-gray-600 hover:text-burgundy"
                     data-i18n="nav.partners">Aliados</a>
 
-                <div class="relative group cursor-pointer py-4">
+                <div class="relative group cursor-pointer px-5 py-4">
                     <span class="text-gray-600 hover:text-burgundy flex items-center gap-1"
                         data-i18n="nav.services">Servicios</span>
                     <div
-                        class="absolute top-14 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
-                        <a href="../internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
+                        class="absolute px-5 py-4 top-10 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
+                        <a href="../internationalization.html" class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm"
                             data-i18n="nav.int">Internacionalización</a>
                         <a href="../landing_GEN_IA_consultora_boutique.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp; Analítica</a>
-                        <a href="../data-governance.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
+                            class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp;
+                            Analítica</a>
+                        <a href="../data-governance.html" class="nav-link block px-4 py-3 hover:bg-gray-50 text-sm"
                             data-i18n="nav.data">Datos e IA</a>
-                        <a href="../business-development.html" class="block px-4 py-3 hover:bg-gray-50 text-sm"
-                            data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
                     </div>
                 </div>
-                <a href="../contact.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26]"
-                    data-i18n="nav.contact">Agendar</a>
+                <a href="../contact.html" class="hero-btn primary px-3">
+                    <span class="">Agendar</span>
+                    <span class="btn-icon">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+                                fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                </a>
             </nav>
 
             <div class="hidden lg:flex items-center gap-3 text-xs font-semibold">
@@ -77,7 +88,6 @@
                 <a href="../internationalization.html" data-i18n="nav.int">Internacionalización</a>
                 <a href="../landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
                 <a href="../data-governance.html" data-i18n="nav.data">Datos e IA</a>
-                <a href="../business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
             </div>
             <a href="../contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Agendar</a>
             <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
@@ -85,8 +95,8 @@
         </div>
     </header>
 
-    <main class="pt-20">
-        <section class="pricing-section">
+    <main>
+        <section id="gradient-background" class="pricing-section">
             <div class="pricing-header">
                 <h1 class="pricing-title">Planes Estratégicos</h1>
                 <p class="pricing-subtitle">Soluciones flexibles diseñadas para escalar su organización con inteligencia

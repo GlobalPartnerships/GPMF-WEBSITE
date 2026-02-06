@@ -63,7 +63,7 @@ const translations = {
         "home.why.pillar3.title": "Visión Global",
         "home.why.pillar3.desc": "ADN trilingüe y multicultural nativo.",
         "home.testimonial.quote": "GPMF entendió nuestra complejidad técnica y la tradujo en una estrategia de expansión clara y ejecutable. No solo nos dieron un plan, nos ayudaron a construir la capacidad para ejecutarlo.",
-        "home.testimonial.person": "David A. Rachid",
+        "home.testimonial.person": "Natalia Sánchez",
         "home.testimonial.role": "CEO, DCR Exponential (USA)",
         "home.cta.title": "Listo para elevar el estándar.",
         "home.cta.desc": "Agende una sesión de diagnóstico estratégico de 30 minutos sin costo.",
