@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internacionalización | GPMF Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,102 +19,600 @@
                         warmgray: '#F5F5F5',
                         black: '#000000',
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
                 }
             }
         }
     </script>
 </head>
+
 <body class="bg-white text-charcoal font-sans antialiased">
 
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur border-b border-neutral-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="Assets/logo.png" alt="GPMF Logo" class="h-10 w-auto">
-
-                <span class="text-black font-bold tracking-tight text-lg">Global Partnerships</span>
+                <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
-                <a href="index.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.home">Inicio</a>
-                <a href="about.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.firm">Firma</a>
-                <a href="aliados-equipo.html" class="text-gray-600 hover:text-burgundy" data-i18n="nav.partners">Aliados</a>
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.home">Inicio</a>
+                <span class="text-white/30">|</span>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.firm">Firma</a>
+                <span class="text-white/30">|</span>
+                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.partners">Aliados</a>
+                <span class="text-white/30">|</span>
+
                 <div class="relative group cursor-pointer py-4">
-                    <span class="text-gray-600 hover:text-burgundy flex items-center gap-1" data-i18n="nav.services">Servicios</span>
-                    <div class="absolute top-14 left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block">
-                        <a href="internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.int">Internacionalización</a>
-                        <a href="landing_GEN_IA_consultora_boutique.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.ai">IA &amp; Analítica</a>
-                        <a href="business-development.html" class="block px-4 py-3 hover:bg-gray-50 text-sm" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
+                    <a href="!Servicios Central.html" class="text-white hover:text-burgundy flex items-center gap-1"
+                        data-i18n="nav.services">
+                        Servicios
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
+                        <a href="internationalization.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Internacionalización
+                            y Alianzas</a>
+                        <a href="data-ai.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Transformación
+                            Digital & Cultura de Datos</a>
+                        <a href="Intercultural.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Gestión
+                            Intercultural</a>
+                        <a href="business-development.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Desarrollo
+                            de Negocios</a>
                     </div>
                 </div>
-                <a href="contact.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26]" data-i18n="nav.contact">Agendar</a>
+
             </nav>
 
-            <div class="hidden lg:flex items-center gap-3 text-xs font-semibold">
-                <button onclick="changeLanguage('es')" class="lang-btn text-burgundy font-bold" data-lang="es">ES</button>|
-                <button onclick="changeLanguage('en')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="en">EN</button>|
-                <button onclick="changeLanguage('de')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="de">DE</button>|
-                <button onclick="changeLanguage('fr')" class="lang-btn text-gray-400 hover:text-burgundy" data-lang="fr">FR</button>
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <button onclick="changeLanguage('es')" class="text-burgundy border-b border-burgundy"
+                        data-lang="es">ES</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
+                        data-lang="en">EN</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors"
+                        data-lang="de">DE</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors"
+                        data-lang="fr">FR</button>
+                </div>
+
+                <a href="diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Agendar
+                </a>
             </div>
-            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-charcoal">☰</button>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                ☰
+            </button>
         </div>
 
         <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
-            <a href="index.html" class="block text-2xl font-bold" data-i18n="nav.home">Inicio</a>
-            <a href="about.html" class="block text-2xl font-bold" data-i18n="nav.firm">Firma</a>
-            <a href="aliados-equipo.html" class="block text-2xl font-bold" data-i18n="nav.partners">Aliados</a>
-            <button class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left" aria-expanded="false">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Inicio</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firma</a>
+            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal"
+                data-i18n="nav.partners">Aliados</a>
+            <button
+                class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
+                aria-expanded="false">
                 <span data-i18n="nav.services">Servicios</span>
                 <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
-            <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
+            <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-charcoal pl-4">
                 <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
-                <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
+                <a href="data-ai.html" data-i18n="nav.ai">IA &amp; Analítica</a>
+                <a href="Intercultural.html">Gestión Intercultural</a>
                 <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
             </div>
-            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Agendar</a>
-
-            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-3xl">✕</button>
+            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+                class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
         </div>
     </header>
 
     <main class="pt-20">
-        
+
+        <!-- Hero Section -->
         <section class="bg-charcoal text-white py-24 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-burgundy/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
-            
-            <div class="max-w-5xl mx-auto px-6 relative z-10">
-                <a href="index.html#services" class="text-gray-400 text-sm mb-4 inline-block hover:text-white">← Volver a Servicios</a>
-                
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Internacionalización y <br><span class="text-burgundy">Alianzas Estratégicas</span></h1>
-                
-                <p class="text-xl text-gray-300 max-w-2xl leading-relaxed">
-                    Deje de ser un turista comercial. Construimos su arquitectura legal, digital y relacional para operar en Europa y Norteamérica como un jugador local.
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-burgundy/20 rounded-full blur-2xl -ml-16 -mb-16"></div>
+
+            <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+                <h1 class="text-4xl md:text-6xl font-serif mb-6 leading-tight">
+                    <span data-i18n="int.hero.title1">Expanda su Negocio Globalmente:</span><br>
+                    <span class="text-white" data-i18n="int.hero.title2">Internacionalización Estratégica</span>
+                    <span data-i18n="int.hero.title3">y Alianzas con Propósito</span>
+                </h1>
+
+                <p class="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8" data-i18n="int.hero.desc">
+                    En GPMF, somos su socio estratégico para navegar mercados internacionales, construir alianzas
+                    sólidas y asegurar una entrada exitosa (soft landing) en Europa y América Latina, transformando
+                    desafíos culturales en ventajas competitivas duraderas.
                 </p>
+
+                <a href="#diagnostico"
+                    class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all transform hover:scale-105 shadow-xl"
+                    data-i18n="int.hero.cta">
+                    Solicite su Diagnóstico Estratégico Gratuito
+                </a>
+            </div>
+        </section>
+        <!-- Nuestra Solución -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold text-black mb-6" data-i18n="int.method.title">Metodología Probada
+                            y Orientada a Resultados</h2>
+                        <p class="text-xl text-charcoal mb-8 leading-relaxed" data-i18n="int.method.desc">
+                            En GPMF, vamos más allá de la teoría. Le ayudamos a generar valor real y medible,
+                            convirtiendo la analítica y la IA en el núcleo de su estrategia y eficiencia operativa.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-burgundy rounded-full flex items-center justify-center text-white font-bold">
+                                    1</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.method.step1.title">
+                                        Análisis Riguroso</h3>
+                                    <p class="text-charcoal" data-i18n="int.method.step1.desc">Nuestra metodología
+                                        combina análisis riguroso, inteligencia
+                                        contextual y facilitación de alianzas clave para construir propuestas sólidas y
+                                        sostenibles.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-burgundy rounded-full flex items-center justify-center text-white font-bold">
+                                    2</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.method.step2.title">
+                                        Backward Planning</h3>
+                                    <p class="text-charcoal" data-i18n="int.method.step2.desc">Planificación hacia atrás
+                                        para definir objetivos claros a
+                                        largo plazo y trazar los pasos tecnológicos y organizacionales.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 bg-burgundy rounded-full flex items-center justify-center text-white font-bold">
+                                    3</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.method.step3.title">
+                                        Forward Planning</h3>
+                                    <p class="text-charcoal" data-i18n="int.method.step3.desc">Diseñamos una estrategia
+                                        de salida al mercado con pilotajes
+                                        en ciclos cortos para aprender, ajustar y escalar rápidamente, generando
+                                        "victorias rápidas" y hoja de ruta de expansión.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-warmgray p-12 rounded-3xl">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-charcoal mb-6" data-i18n="int.focus.title">Nuestro
+                                Enfoque
+                                Distintivo</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-burgundy text-xl">✓</span>
+                                    <span class="text-charcoal"><strong data-i18n="int.focus.1.bold">Global e
+                                            Interdisciplinario:</strong> <span data-i18n="int.focus.1.text">Combinamos
+                                            expertise internacional con conocimiento sectorial profundo</span></span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-burgundy text-xl">✓</span>
+                                    <span class="text-charcoal"><strong data-i18n="int.focus.2.bold">Enfoque
+                                            Intercultural:</strong> <span data-i18n="int.focus.2.text">Transformamos
+                                            barreras culturales en ventajas competitivas</span></span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-burgundy text-xl">✓</span>
+                                    <span class="text-charcoal"><strong data-i18n="int.focus.3.bold">Impulso por
+                                            Datos:</strong> <span data-i18n="int.focus.3.text">Decisiones basadas
+                                            en analítica avanzada e inteligencia artificial</span></span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-burgundy text-xl">✓</span>
+                                    <span class="text-charcoal"><strong data-i18n="int.focus.4.bold">Resultados
+                                            Medibles:</strong> <span data-i18n="int.focus.4.text">Cada iniciativa
+                                            tiene KPIs claros y seguimiento continuo</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="py-20 bg-white">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold text-black mb-6">La Trampa del "Micro-B2B"</h2>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Muchas empresas latinoamericanas tienen productos de clase mundial, pero fallan al cruzar la frontera. ¿La razón? Intentan vender volumen masivo con una imagen de operación informal.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-3">
-                                <span class="text-burgundy font-bold text-xl">✕</span>
-                                <p class="text-sm text-gray-700"><strong>Sin validación real:</strong> Lanzarse a un mercado sin entender los códigos culturales del comprador.</p>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-burgundy font-bold text-xl">✕</span>
-                                <p class="text-sm text-gray-700"><strong>Brecha de Credibilidad:</strong> Activos digitales y legales que gritan "Riesgo" a los compradores corporativos en USA/UE.</p>
-                            </li>
+        <!-- Servicios Clave -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-6" data-i18n="int.services.title">Nuestros Servicios
+                        Clave</h2>
+                    <p class="text-xl text-charcoal max-w-3xl mx-auto" data-i18n="int.services.subtitle">
+                        Soluciones integrales para su internacionalización y desarrollo de alianzas estratégicas
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                        <div class="text-burgundy text-4xl mb-6">🌐</div>
+                        <h3 class="text-xl font-bold text-black mb-4" data-i18n="int.services.card1.title">Desarrollo de
+                            Negocios y Alianzas Estratégicas
+                        </h3>
+                        <p class="text-charcoal mb-4" data-i18n="int.services.card1.desc">Ayuda a identificar
+                            oportunidades de crecimiento y establecer
+                            alianzas estratégicas en mercados globales.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li data-i18n="int.services.card1.b1">• Diagnóstico de capacidades</li>
+                            <li data-i18n="int.services.card1.b2">• Mapeo de actores estratégicos</li>
+                            <li data-i18n="int.services.card1.b3">• Diseño de propuestas colaborativas</li>
+                            <li data-i18n="int.services.card1.b4">• Facilitación de negociaciones</li>
                         </ul>
                     </div>
-                    <div class="bg-warmgray p-8 rounded-2xl border-l-8 border-burgundy shadow-lg">
-                        <h3 class="font-bold text-xl text-burgundy mb-4">Nuestro Enfoque:</h3>
-                        <p class="text-lg font-medium text-charcoal italic
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                        <div class="text-burgundy text-4xl mb-6">💼</div>
+                        <h3 class="text-xl font-bold text-black mb-4" data-i18n="int.services.card2.title">Diseño
+                            Estratégico para Matching Funds</h3>
+                        <p class="text-charcoal mb-4" data-i18n="int.services.card2.desc">Apoyo para ampliar impacto y
+                            financiamiento mediante acceso a
+                            fondos de cofinanciación.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li data-i18n="int.services.card2.b1">• Identificación de oportunidades</li>
+                            <li data-i18n="int.services.card2.b2">• Formulación de propuestas alineadas</li>
+                            <li data-i18n="int.services.card2.b3">• Integración de alianzas estratégicas</li>
+                            <li data-i18n="int.services.card2.b4">• Gestión de fondos europeos</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                        <div class="text-burgundy text-4xl mb-6">🎓</div>
+                        <h3 class="text-xl font-bold text-black mb-4" data-i18n="int.services.card3.title">Desarrollo de
+                            Habilidades Interculturales</h3>
+                        <p class="text-charcoal mb-4" data-i18n="int.services.card3.desc">Programas de formación para
+                            fortalecer competencias en equipos
+                            multiculturales.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li data-i18n="int.services.card3.b1">• Comunicación intercultural</li>
+                            <li data-i18n="int.services.card3.b2">• Gestión de equipos diversos</li>
+                            <li data-i18n="int.services.card3.b3">• Negociación intercultural</li>
+                            <li data-i18n="int.services.card3.b4">• Adaptación organizacional</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                        <div class="text-burgundy text-4xl mb-6">🤝</div>
+                        <h3 class="text-xl font-bold text-black mb-4" data-i18n="int.services.card4.title">Coordinación
+                            de Equipos Multiculturales</h3>
+                        <p class="text-charcoal mb-4" data-i18n="int.services.card4.desc">Gestión y acompañamiento para
+                            facilitar comunicación y
+                            colaboración global.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li data-i18n="int.services.card4.b1">• Facilitación de reuniones</li>
+                            <li data-i18n="int.services.card4.b2">• Resolución de conflictos</li>
+                            <li data-i18n="int.services.card4.b3">• Creación de ambientes inclusivos</li>
+                            <li data-i18n="int.services.card4.b4">• Coaching intercultural</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                        <div class="text-burgundy text-4xl mb-6">📈</div>
+                        <h3 class="text-xl font-bold text-black mb-4" data-i18n="int.services.card5.title">Benchmarking
+                            Internacional</h3>
+                        <p class="text-charcoal mb-4" data-i18n="int.services.card5.desc">Análisis comparativo de
+                            mejores prácticas globales para adaptación
+                            local.</p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li data-i18n="int.services.card5.b1">• Análisis de competidores</li>
+                            <li data-i18n="int.services.card5.b2">• Estudios de mejores prácticas</li>
+                            <li data-i18n="int.services.card5.b3">• Adaptación de modelos</li>
+                            <li data-i18n="int.services.card5.b4">• Informes estratégicos</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-burgundy p-8 rounded-2xl text-white">
+                        <div class="text-4xl mb-6">🚀</div>
+                        <h3 class="text-xl font-bold mb-4" data-i18n="int.services.card6.title">Solución Integral</h3>
+                        <p class="mb-6" data-i18n="int.services.card6.desc">Combine múltiples servicios para una
+                            transformación completa de su expansión
+                            internacional.</p>
+                        <a href="#diagnostico"
+                            class="bg-white text-burgundy px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                            data-i18n="int.services.card6.cta">
+                            Consultar Paquete Completo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Éxito -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-6" data-i18n="int.cases.title">Casos de Éxito con GPMF
+                    </h2>
+                    <p class="text-xl text-charcoal max-w-3xl mx-auto" data-i18n="int.cases.subtitle">
+                        Descubra cómo hemos transformado problemas en oportunidades para nuestros clientes
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-warmgray p-10 rounded-3xl">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                    CN</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-black" data-i18n="int.cases.1.title">Casa
+                                        Normandía</h3>
+                                    <p class="text-charcoal" data-i18n="int.cases.1.subtitle">Estrategia de Salida al
+                                        Mercado Internacional</p>
+                                </div>
+                            </div>
+                            <p class="text-charcoal mb-6 leading-relaxed" data-i18n="int.cases.1.desc">
+                                Diseñamos una estrategia de salida al mercado con pilotajes en ciclos cortos para
+                                aprender, ajustar y escalar rápidamente, generando "victorias rápidas" y hoja de ruta de
+                                expansión.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.1.b1">Estrategia de
+                                        internacionalización completa</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.1.b2">Pilotajes en ciclos cortos y
+                                        ajustes rápidos</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.1.b3">Hoja de ruta de expansión
+                                        clara</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-warmgray p-10 rounded-3xl">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                    DE</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-black" data-i18n="int.cases.2.title">Instituto
+                                        Científico Alemán-Colombiano</h3>
+                                    <p class="text-charcoal" data-i18n="int.cases.2.subtitle">Desarrollo de Alianzas
+                                        Estratégicas</p>
+                                </div>
+                            </div>
+                            <p class="text-charcoal mb-6 leading-relaxed" data-i18n="int.cases.2.desc">
+                                Se apoyó a un instituto científico alemán-colombiano a diseñar y ejecutar una estrategia
+                                de alianzas que generó un crecimiento sostenido de más del 10% anual.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.2.b1">Gestión de fondos por más de
+                                        €500.000</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.2.b2">Crecimiento anual superior al
+                                        10%</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-500">✓</span>
+                                    <span class="text-charcoal" data-i18n="int.cases.2.b3">Red de 15+ aliados
+                                        estratégicos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imágenes Relacionales Interculturales -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-6" data-i18n="int.relations.title">Relaciones
+                        Internacionales e Interculturales</h2>
+                    <p class="text-xl text-charcoal max-w-3xl mx-auto" data-i18n="int.relations.subtitle">
+                        Construimos puentes entre culturas y mercados, transformando la diversidad en ventaja
+                        competitiva
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg overflow-hidden">
+                        <img src="assets/2017.JPG" alt="Negocios internacionales"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.relations.c1.title">Conexiones
+                            Globales</h3>
+                        <p class="text-charcoal text-sm" data-i18n="int.relations.c1.desc">Facilitamos alianzas
+                            estratégicas entre empresas de diferentes
+                            continentes y culturas.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg overflow-hidden">
+                        <img src="assets/Diverso.jpg" alt="Equipos multiculturales"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.relations.c2.title">Equipos
+                            Diversos</h3>
+                        <p class="text-charcoal text-sm" data-i18n="int.relations.c2.desc">Desarrollamos competencias
+                            interculturales para equipos
+                            multiculturales de alto rendimiento.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg overflow-hidden">
+                        <img src="assets/Expansion.jpg" alt="Expansión internacional"
+                            class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="text-lg font-bold text-black mb-2" data-i18n="int.relations.c3.title">Expansión
+                            Sostenible</h3>
+                        <p class="text-charcoal text-sm" data-i18n="int.relations.c3.desc">Diseñamos estrategias de
+                            entrada a mercados que aseguren
+                            crecimiento sostenible a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- El Problema que Resolvemos -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-black mb-6" data-i18n="int.pain.title">¿Su Empresa Enfrenta Estos
+                        Desafíos?</h2>
+                    <p class="text-xl text-charcoal max-w-3xl mx-auto" data-i18n="int.pain.subtitle">
+                        Comprendemos sus "puntos de dolor" y hemos diseñado soluciones específicas para cada obstáculo
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-burgundy hover:shadow-xl transition-shadow">
+                        <div class="text-burgundy text-3xl mb-4">🌍</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c1.title">Expansión sin
+                            Estrategia</h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c1.desc">¿Su empresa busca expandirse
+                            internacionalmente pero le faltan los
+                            contactos o la estrategia clara?</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-charcoal hover:shadow-xl transition-shadow">
+                        <div class="text-charcoal text-3xl mb-4">🤝</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c2.title">Barreras Culturales
+                        </h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c2.desc">¿Necesita establecer alianzas estratégicas
+                            pero enfrenta barreras
+                            culturales o normativas?</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-warmgray hover:shadow-xl transition-shadow">
+                        <div class="text-warmgray text-3xl mb-4">✈️</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c3.title">Soft Landing
+                            Riesgoso</h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c3.desc">¿Le preocupa una entrada a nuevos mercados
+                            sin preparación cultural y
+                            logística adecuada?</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-burgundy/70 hover:shadow-xl transition-shadow">
+                        <div class="text-burgundy text-3xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c4.title">Financiación
+                            Ineficiente</h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c4.desc">¿Sus iniciativas de financiación
+                            internacional carecen de diseño
+                            estratégico para acceder a fondos de cofinanciación?</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-charcoal/70 hover:shadow-xl transition-shadow">
+                        <div class="text-charcoal text-3xl mb-4">👥</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c5.title">Competencias
+                            Interculturales</h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c5.desc">¿Su equipo necesita fortalecer sus
+                            competencias interculturales para
+                            operar eficazmente globalmente?</p>
+                    </div>
+
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-warmgray/70 hover:shadow-xl transition-shadow">
+                        <div class="text-warmgray text-3xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold text-black mb-3" data-i18n="int.pain.c6.title">Análisis
+                            Insuficiente</h3>
+                        <p class="text-charcoal" data-i18n="int.pain.c6.desc">¿Toma decisiones de expansión basadas en
+                            intuición en lugar de datos y
+                            análisis contextual?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="py-20 bg-burgundy text-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-6" data-i18n="int.cta.title">Dé el Primer Paso</h2>
+                <p class="text-xl mb-8 leading-relaxed" data-i18n="int.cta.desc">
+                    No espere a que la competencia le gane la delantera. Nuestro diagnóstico inicial es la forma más
+                    rápida de obtener un plan de acción claro y comenzar a transformar su negocio globalmente.
+                </p>
+
+                <a href="diagnostico.html"
+                    class="bg-white text-burgundy px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl mb-12 inline-block"
+                    data-i18n="int.cta.btn">
+                    ¡Quiero mi Diagnóstico Estratégico Gratuito!
+                </a>
+
+                <div class="text-left max-w-2xl mx-auto">
+                    <p class="text-lg mb-4 text-white font-semibold" data-i18n="int.cta.list_title">Complete el
+                        formulario y
+                        recibirá:</p>
+                    <ul class="space-y-2 text-white">
+                        <li class="flex items-center gap-3">
+                            <span class="text-white">✓</span>
+                            <span data-i18n="int.cta.list.1">Análisis gratuito de su potencial de
+                                internacionalización</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-white">✓</span>
+                            <span data-i18n="int.cta.list.2">Recomendaciones personalizadas en 48 horas</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-white">✓</span>
+                            <span data-i18n="int.cta.list.3">Hoja de ruta inicial para su expansión global</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 pr-12">© 2026 GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

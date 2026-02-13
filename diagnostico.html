@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Estratégico | GPMF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bg-burgundy {
+            background-color: #7A0F32;
+        }
+
+        .text-burgundy {
+            color: #7A0F32;
+        }
+
+        .border-burgundy {
+            border-color: #7A0F32;
+        }
+
+        .hover\:bg-burgundy:hover {
+            background-color: #7A0F32;
+        }
+
+        .hover\:text-burgundy:hover {
+            color: #7A0F32;
+        }
+
+        .focus\:ring-burgundy:focus {
+            --tw-ring-color: #7A0F32;
+        }
+
+        .focus\:border-burgundy:focus {
+            border-color: #7A0F32;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.home">Inicio</a>
+                <span class="text-white/30">|</span>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.firm">Firma</a>
+                <span class="text-white/30">|</span>
+                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors"
+                    data-i18n="nav.partners">Aliados</a>
+                <span class="text-white/30">|</span>
+
+                <div class="relative group cursor-pointer py-4">
+                    <a href="!Servicios Central.html" class="text-white hover:text-burgundy flex items-center gap-1"
+                        data-i18n="nav.services">
+                        Servicios
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
+                        <a href="internationalization.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Internacionalización
+                            y Alianzas</a>
+                        <a href="data-ai.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Transformación
+                            Digital & Cultura de Datos</a>
+                        <a href="Intercultural.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Gestión
+                            Intercultural</a>
+                        <a href="business-development.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Desarrollo
+                            de Negocios</a>
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <button onclick="changeLanguage('es')" class="text-burgundy border-b border-burgundy"
+                        data-lang="es">ES</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
+                        data-lang="en">EN</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors"
+                        data-lang="de">DE</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors"
+                        data-lang="fr">FR</button>
+                </div>
+
+                <a href="diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Agendar
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Inicio</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firma</a>
+            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal"
+                data-i18n="nav.partners">Aliados</a>
+            <button
+                class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
+                aria-expanded="false">
+                <span data-i18n="nav.services">Servicios</span>
+                <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
+                <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
+                <a href="data-ai.html" data-i18n="nav.ai">IA &amp; Analítica</a>
+                <a href="Intercultural.html">Gestión Intercultural</a>
+                <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
+            </div>
+            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+                class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="pt-12 pb-6 bg-gradient-to-b from-[#FAF3F6] to-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-serif mb-4">
+                    Diagnóstico <span class="text-burgundy">Estratégico</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
+                    Responde estas 5 preguntas clave para identificar oportunidades de crecimiento y alinear tu visión
+                    con nuestra experticia.
+                </p>
+            </div>
+        </section>
+
+        <!-- Radar Form Section -->
+        <section id="radar-form" class="pt-4 pb-8 bg-gray-50">
+            <div class="max-w-2xl mx-auto px-6">
+                <!-- Formulario -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-300">
+                    <form id="radarForm" class="p-8 space-y-8" onsubmit="handleSubmit(event)">
+
+                        <!-- Sección 1: El Desafío -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">1. ¿Cuál es
+                                el principal desafío estratégico a resolver?</label>
+                            <div class="space-y-2">
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
+                                    <input type="radio" name="desafio" value="internacionalizacion"
+                                        class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy" required>
+                                    <span class="ml-3 text-sm">Internacionalización (Nuevos mercados/Exportación)</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
+                                    <input type="radio" name="desafio" value="datos_ia"
+                                        class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
+                                    <span class="ml-3 text-sm">Inteligencia de Datos & IA (Toma de decisiones)</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
+                                    <input type="radio" name="desafio" value="intercultural"
+                                        class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
+                                    <span class="ml-3 text-sm">Gestión Intercultural (Equipos Globales)</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
+                                    <input type="radio" name="desafio" value="estrategia"
+                                        class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
+                                    <span class="ml-3 text-sm">Estrategia Corporativa (Hoja de ruta de expansión)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sección 2: Madurez -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">2. ¿En qué
+                                etapa se encuentra el proyecto?</label>
+                            <select name="etapa"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy bg-white text-sm"
+                                required>
+                                <option value="" disabled selected>Selecciona una opción...</option>
+                                <option value="exploracion">Exploración (Solo idea / Buscando viabilidad)</option>
+                                <option value="planeacion">Planeación (Tenemos presupuesto, falta ruta)</option>
+                                <option value="ejecucion">Ejecución (Ya inició, necesitamos orden)</option>
+                                <option value="escalamiento">Escalamiento (Optimización y crecimiento)</option>
+                            </select>
+                        </div>
+
+                        <!-- Sección 3: El Dolor (Open) -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">3. ¿Qué
+                                obstáculo te impide dormir tranquilo respecto a este proyecto?</label>
+                            <textarea name="dolor" rows="3"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
+                                placeholder="Sé específico. Ej: 'Mi equipo no se adapta a la cultura alemana' o 'Tenemos datos pero no sabemos usarlos'..."
+                                required></textarea>
+                        </div>
+
+                        <!-- Sección 4: Urgencia -->
+                        <div class="space-y-3">
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">4. ¿Qué tan
+                                urgente es la solución?</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label
+                                    class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
+                                    <input type="radio" name="urgencia" value="critico" class="sr-only peer" required>
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Crítico
+                                        (Este mes)</span>
+                                </label>
+                                <label
+                                    class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
+                                    <input type="radio" name="urgencia" value="alto" class="sr-only peer">
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Alto
+                                        (Q1/Q2)</span>
+                                </label>
+                                <label
+                                    class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
+                                    <input type="radio" name="urgencia" value="medio" class="sr-only peer">
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Medio
+                                        (Próximo año)</span>
+                                </label>
+                                <label
+                                    class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
+                                    <input type="radio" name="urgencia" value="bajo" class="sr-only peer">
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Bajo
+                                        (Curiosidad)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sección 5: Presupuesto (Velvet Rope) -->
+                        <div class="space-y-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">5. Rango de
+                                Inversión Considerado</label>
+                            <p class="text-xs text-gray-500 mb-2">Esto nos ayuda a asignar el nivel de consultor
+                                adecuado.</p>
+                            <select name="presupuesto"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy bg-white text-sm"
+                                required>
+                                <option value="" disabled selected>Selecciona el rango...</option>
+                                <option value="seed">
+                                    < $5,000 USD (Talleres / Semilla)</option>
+                                <option value="standard">$5,000 - $20,000 USD (Consultoría Estándar)</option>
+                                <option value="expansion">$20,000 - $50,000 USD (Expansión Core)</option>
+                                <option value="enterprise">$50,000 USD + (Soluciones Corporativas)</option>
+                                <option value="tbd">Por determinar</option>
+                            </select>
+                        </div>
+
+                        <!-- Datos de Contacto -->
+                        <div class="pt-6 border-t border-gray-200 space-y-4">
+                            <h3 class="text-lg font-medium">Tus Datos</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" name="nombre" placeholder="Nombre Completo"
+                                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
+                                    required>
+                                <input type="email" name="email" placeholder="Correo Corporativo"
+                                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
+                                    required>
+                            </div>
+                            <input type="text" name="empresa" placeholder="LinkedIn o Web de la Empresa"
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
+                                required>
+                        </div>
+
+                        <!-- Botón de Acción -->
+                        <div class="pt-4">
+                            <button type="submit"
+                                class="w-full bg-burgundy text-white font-semibold py-4 rounded-lg hover:bg-burgundy/90 transition duration-200 shadow-lg transform hover:-translate-y-0.5">
+                                SOLICITAR SESIÓN DE DIAGNÓSTICO
+                            </button>
+                            <p class="text-center text-xs text-gray-400 mt-4">Al enviar, nuestros socios revisarán tu
+                                perfil en 24h.</p>
+                        </div>
+                    </form>
+
+                    <!-- Mensaje de Éxito (Oculto inicialmente) -->
+                    <div id="successMessage" class="hidden p-12 text-center fade-in">
+                        <div
+                            class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Solicitud Recibida</h3>
+                        <p class="text-gray-600 mb-6">Gracias por compartir tu contexto. El equipo directivo de GPMF
+                            analizará tu Radar.</p>
+                        <p class="text-sm text-gray-500">Si tu desafío encaja con nuestra experticia, recibirás un
+                            correo personal para agendar la sesión.</p>
+                        <button onclick="location.reload()"
+                            class="mt-8 text-burgundy underline text-sm hover:text-burgundy/80">Volver al
+                            inicio</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-charcoal text-white text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu visión en realidad?</h2>
+                <p class="text-gray-300 mb-8 text-lg">Nuestro equipo de expertos está listo para analizar tu caso y
+                    diseñar una estrategia a medida.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu functionality
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.querySelector('.mobile-services-toggle').addEventListener('click', function () {
+            const panel = document.querySelector('.mobile-services-panel');
+            const arrow = this.querySelector('svg');
+            panel.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        });
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            // Recopilar datos del formulario
+            const formData = new FormData(e.target);
+            const data = {
+                desafio: formData.get('desafio'),
+                etapa: formData.get('etapa'),
+                dolor: formData.get('dolor'),
+                urgencia: formData.get('urgencia'),
+                presupuesto: formData.get('presupuesto'),
+                nombre: formData.get('nombre'),
+                email: formData.get('email'),
+                empresa: formData.get('empresa'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Enviar a Google Sheets y Email
+            sendToGoogleSheets(data);
+            sendEmailNotification(data);
+
+            // UI Feedback
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Enviando...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('radarForm').classList.add('hidden');
+                document.getElementById('successMessage').classList.remove('hidden');
+
+                // Analytics tracking
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'radar_submit', {
+                        'event_category': 'lead_generation',
+                        'event_label': data.desafio
+                    });
+                }
+            }, 2000);
+        }
+
+        // Función para enviar a Google Sheets
+        function sendToGoogleSheets(data) {
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbw1234567890abcdef1234567890abcdef/exec'; // Reemplazar con tu URL real
+            const payload = {
+                timestamp: data.timestamp,
+                nombre: data.nombre,
+                email: data.email,
+                empresa: data.empresa,
+                desafio: data.desafio,
+                etapa: data.etapa,
+                dolor: data.dolor,
+                urgencia: data.urgencia,
+                presupuesto: data.presupuesto
+            };
+
+            fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => console.log('Google Sheets response:', response))
+                .catch(error => console.error('Error sending to Google Sheets:', error));
+        }
+
+        // Función para enviar notificación por email
+        function sendEmailNotification(data) {
+            const subject = `Nuevo Diagnóstico Estratégico - ${data.nombre}`;
+            const body = `
+NUEVA SOLICITUD DE DIAGNÓSTICO ESTRATÉGICO
+
+DATOS DEL CONTACTO:
+• Nombre: ${data.nombre}
+• Email: ${data.email}
+• Empresa: ${data.empresa}
+
+RESPUESTAS DEL RADAR:
+• Desafío Principal: ${data.desafio}
+• Etapa del Proyecto: ${data.etapa}
+• Obstáculo Principal: ${data.dolor}
+• Urgencia: ${data.urgencia}
+• Presupuesto Considerado: ${data.presupuesto}
+
+Fecha y Hora: ${data.timestamp}
+
+---
+Este mensaje fue generado automáticamente desde el formulario de diagnóstico estratégico de GPMF.
+            `;
+
+            // Usar EmailJS o servicio similar
+            // Ejemplo con EmailJS (requiere configuración previa)
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send("service_gpmf", "template_radar", {
+                    to_email: "marcelasanchezv@gmail.com",
+                    subject: subject,
+                    message: body
+                })
+                    .then(function (response) {
+                        console.log('Email sent successfully!', response);
+                    })
+                    .catch(function (error) {
+                        console.error('Failed to send email:', error);
+                    });
+            } else {
+                // Fallback: Abrir cliente de email
+                window.location.href = `mailto:marcelasanchezv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
+        }
+
+        // Language switching (placeholder)
+        function changeLanguage(lang) {
+            console.log('Language changed to:', lang);
+            // Implementar lógica de idiomas si es necesario
+        }
+    </script>
+
+    <!-- EmailJS SDK (opcional - configurar cuenta) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Reemplazar con tu clave pública
+        })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 pr-12">© 2026 GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

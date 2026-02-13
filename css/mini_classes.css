@@ -1,0 +1,17 @@
+.text-area-max-height {
+    min-height: 6rem;
+    max-height: 10rem;
+}
+
+.text-color-1 {
+    color: #222222;
+}
+
+.text-color-2 {
+    color: #222222;
+    font-weight: bold;
+}
+
+.darker-border {
+    border-top: 1px solid #0000004f;
+}
