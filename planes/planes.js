@@ -9,22 +9,22 @@ const selectPlan = async (plan) => {
     const plans = {
         grow: {
             name: 'Grow',
-            price: 500,
+            price: 1200,
             img: 'https://greenlightgo.es/wp-content/uploads/2024/03/como-hacer-plan-desarrollo.webp'
         },
         expand: {
             name: 'Expand',
-            price: 1200,
+            price: 2500,
             img: 'https://a.storyblok.com/f/112937/568x400/686f87dc2f/50-things-you-need-to-do-on-your-next-trip_square-568x400.jpg/m/620x0/filters:quality(70)/'
         },
         corporate: {
             name: 'Corporate',
-            price: 2500,
+            price: 0,
             img: 'https://greenlightgo.es/wp-content/uploads/2024/03/como-hacer-plan-desarrollo.webp'
         },
         explore: {
             name: 'Explore',
-            price: 400,
+            price: 500,
             img: 'https://img.freepik.com/free-photo/nutshell-boats-explore-writing-near-travel-stuff_23-2147793489.jpg'
         }
     }
@@ -43,7 +43,7 @@ const selectPlan = async (plan) => {
         },
         body: JSON.stringify({ plan: "Compra de plan " + plans[plan].name, price: plans[plan].price, badge: badge, image_url: plans[plan].img })
     })
-    
+
     if (!response.ok) {
         console.log(`Error: ${response.status} ${response.statusText}`);
         return

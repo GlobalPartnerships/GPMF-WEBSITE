@@ -108,9 +108,9 @@
 }
 
 .pricing-card.featured {
-    background-color: var(--color-charcoal);
+    background-color: var(--color-burgundy);
     color: white;
-    border-color: var(--color-charcoal);
+    border-color: var(--color-burgundy);
 }
 
 .pricing-card.featured .plan-name,
@@ -120,11 +120,11 @@
 }
 
 .pricing-card.featured .feature-item {
-    color: #d1d5db;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .pricing-card.featured .feature-icon {
-    color: var(--color-burgundy);
+    color: white;
     /* Or white/lighter burgundy */
 }
 
@@ -139,7 +139,7 @@
 }
 
 .pricing-card.featured .plan-name {
-    color: var(--color-warmgray);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .plan-price {
@@ -153,6 +153,10 @@
     font-size: 1rem;
     font-weight: 400;
     color: #666;
+}
+
+.pricing-card.featured .plan-price span {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .plan-desc {
@@ -207,12 +211,12 @@
 }
 
 .pricing-card.featured .cta-button {
-    background-color: var(--color-burgundy);
-    color: white;
-    border-color: var(--color-burgundy);
+    background-color: white;
+    color: var(--color-burgundy);
+    border-color: white;
 }
 
 .pricing-card.featured .cta-button:hover {
-    background-color: white;
+    background-color: var(--color-warmgray);
     color: var(--color-burgundy);
 }
