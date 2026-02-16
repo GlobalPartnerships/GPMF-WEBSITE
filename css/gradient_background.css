@@ -6,7 +6,7 @@
             #7a0f3327,
             #ffffffff,
             #7a0f3327);
-    min-height: 100vh;
+    /* min-height: 100vh; Removed to fix excessive spacing on zoom out */
     background-size: 500% 500%;
     animation: gradient 15s ease infinite;
 }

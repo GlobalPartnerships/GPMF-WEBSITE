@@ -113,7 +113,7 @@
             <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
                 <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
                 <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
-                <a href="Intercultural.html">Gestión Intercultural</a>
+                <a href="Intercultural.html">Gestión Intercultural e Interdisciplinaria</a>
                 <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
             </div>
             <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
@@ -210,10 +210,11 @@
         </div>
     </main>
 
-    <!-- WhatsApp button removed -->
-
     <script src="js/main.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Footer -->
     <footer class="bg-black text-white py-12 border-t border-gray-900">
@@ -226,7 +227,8 @@
                         <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 pr-12">© 2026 GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-500 pr-12">© 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos
+                    los derechos reservados.</p>
             </div>
         </div>
     </footer>

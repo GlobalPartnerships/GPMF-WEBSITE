@@ -148,28 +148,33 @@
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
-            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Inicio</a>
-            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firma</a>
-            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal"
-                data-i18n="nav.partners">Aliados</a>
-            <button
-                class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
-                aria-expanded="false">
-                <span data-i18n="nav.services">Servicios</span>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 gap-6">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Home</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firm</a>
+            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.partners">Partners</a>
+            <button class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal" aria-expanded="false">
+                <span data-i18n="nav.services">Services</span>
                 <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </button>
             <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
-                <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
-                <a href="data-ai.html" data-i18n="nav.ai">IA &amp; Analítica</a>
-                <a href="Intercultural.html">Gestión Intercultural</a>
-                <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
+                <a href="internationalization.html" data-i18n="nav.int">Internationalization</a>
+                <a href="data-ai.html" data-i18n="nav.ai">AI & Analytics</a>
+                <a href="Intercultural.html">Intercultural Management</a>
+                <a href="business-development.html" data-i18n="nav.bizdev">Expansion & Sector Solutions</a>
             </div>
-            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
-            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
-                class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
+            <div class="flex items-center gap-4 text-xl font-bold text-charcoal py-2">
+                <button onclick="changeLanguage('es')" class="hover:text-burgundy transition-colors" data-lang="es">ES</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('en')" class="text-burgundy border-b-2 border-burgundy" data-lang="en">EN</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors" data-lang="de">DE</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors" data-lang="fr">FR</button>
+            </div>
+            <a href="contact.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.contact">Contact</a>
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
         </div>
     </header>
 
@@ -178,11 +183,15 @@
         <section class="pt-12 pb-6 bg-gradient-to-b from-[#FAF3F6] to-white">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-5xl font-serif mb-4">
-                    Diagnóstico <span class="text-burgundy">Estratégico</span>
+                    <div><strong>Diagnóstico <span class="text-burgundy">Estratégico</span></strong></div>
+                    <div class="text-gray-500 italic text-2xl mt-2">Strategic <span
+                            class="text-burgundy">Diagnostic</span></div>
                 </h1>
                 <p class="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-                    Responde estas 5 preguntas clave para identificar oportunidades de crecimiento y alinear tu visión
-                    con nuestra experticia.
+                    <strong>Responde estas 5 preguntas clave para identificar oportunidades de crecimiento y alinear tu
+                        visión con nuestra experticia.</strong><br>
+                    <span class="italic text-gray-500 text-sm">Answer these 5 key questions to identify growth
+                        opportunities and align your vision with our expertise.</span>
                 </p>
             </div>
         </section>
@@ -196,124 +205,178 @@
 
                         <!-- Sección 1: El Desafío -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">1. ¿Cuál es
-                                el principal desafío estratégico a resolver?</label>
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                                <strong>1. ¿Cuál es el principal desafío estratégico a resolver?</strong><br>
+                                <span class="italic text-gray-500 normal-case text-xs">What is the main strategic
+                                    challenge to solve?</span>
+                            </label>
                             <div class="space-y-2">
                                 <label
                                     class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
                                     <input type="radio" name="desafio" value="internacionalizacion"
                                         class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy" required>
-                                    <span class="ml-3 text-sm">Internacionalización (Nuevos mercados/Exportación)</span>
+                                    <span class="ml-3 text-sm">
+                                        <strong>Internacionalización (Nuevos mercados/Exportación)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Internationalization (New
+                                            markets/Export)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
                                     <input type="radio" name="desafio" value="datos_ia"
                                         class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
-                                    <span class="ml-3 text-sm">Inteligencia de Datos & IA (Toma de decisiones)</span>
+                                    <span class="ml-3 text-sm">
+                                        <strong>Inteligencia de Datos & IA (Toma de decisiones)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Data Intelligence & AI (Decision
+                                            making)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
                                     <input type="radio" name="desafio" value="intercultural"
                                         class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
-                                    <span class="ml-3 text-sm">Gestión Intercultural (Equipos Globales)</span>
+                                    <span class="ml-3 text-sm">
+                                        <strong>Gestión Intercultural (Equipos Globales)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Intercultural Management (Global
+                                            Teams)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition">
                                     <input type="radio" name="desafio" value="estrategia"
                                         class="h-4 w-4 text-burgundy border-gray-300 focus:ring-burgundy">
-                                    <span class="ml-3 text-sm">Estrategia Corporativa (Hoja de ruta de expansión)</span>
+                                    <span class="ml-3 text-sm">
+                                        <strong>Estrategia Corporativa (Hoja de ruta de expansión)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Corporate Strategy (Expansion
+                                            roadmap)</span>
+                                    </span>
                                 </label>
                             </div>
                         </div>
 
                         <!-- Sección 2: Madurez -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">2. ¿En qué
-                                etapa se encuentra el proyecto?</label>
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                                <strong>2. ¿En qué etapa se encuentra el proyecto?</strong><br>
+                                <span class="italic text-gray-500 normal-case text-xs">At what stage is the
+                                    project?</span>
+                            </label>
                             <select name="etapa"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy bg-white text-sm"
                                 required>
-                                <option value="" disabled selected>Selecciona una opción...</option>
-                                <option value="exploracion">Exploración (Solo idea / Buscando viabilidad)</option>
-                                <option value="planeacion">Planeación (Tenemos presupuesto, falta ruta)</option>
-                                <option value="ejecucion">Ejecución (Ya inició, necesitamos orden)</option>
-                                <option value="escalamiento">Escalamiento (Optimización y crecimiento)</option>
+                                <option value="" disabled selected>Selecciona una opción / Select an option...</option>
+                                <option value="exploracion">Exploración (Solo idea / Buscando viabilidad) / Exploration
+                                    (Just an idea / Seeking feasibility)</option>
+                                <option value="planeacion">Planeación (Tenemos presupuesto, falta ruta) / Planning (We
+                                    have budget, need roadmap)</option>
+                                <option value="ejecucion">Ejecución (Ya inició, necesitamos orden) / Execution (Already
+                                    started, need structure)</option>
+                                <option value="escalamiento">Escalamiento (Optimización y crecimiento) / Scaling
+                                    (Optimization and growth)</option>
                             </select>
                         </div>
 
                         <!-- Sección 3: El Dolor (Open) -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">3. ¿Qué
-                                obstáculo te impide dormir tranquilo respecto a este proyecto?</label>
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                                <strong>3. ¿Qué obstáculo te impide dormir tranquilo respecto a este
+                                    proyecto?</strong><br>
+                                <span class="italic text-gray-500 normal-case text-xs">What obstacle keeps you up at
+                                    night regarding this project?</span>
+                            </label>
                             <textarea name="dolor" rows="3"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
-                                placeholder="Sé específico. Ej: 'Mi equipo no se adapta a la cultura alemana' o 'Tenemos datos pero no sabemos usarlos'..."
+                                placeholder="Sé específico. Ej: 'Mi equipo no se adapta a la cultura alemana' / Be specific. Ex: 'My team doesn't adapt to German culture'..."
                                 required></textarea>
                         </div>
 
                         <!-- Sección 4: Urgencia -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">4. ¿Qué tan
-                                urgente es la solución?</label>
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                                <strong>4. ¿Qué tan urgente es la solución?</strong><br>
+                                <span class="italic text-gray-500 normal-case text-xs">How urgent is the
+                                    solution?</span>
+                            </label>
                             <div class="grid grid-cols-2 gap-3">
                                 <label
                                     class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
                                     <input type="radio" name="urgencia" value="critico" class="sr-only peer" required>
-                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Crítico
-                                        (Este mes)</span>
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">
+                                        <strong>Crítico (Este mes)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Critical (This month)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
                                     <input type="radio" name="urgencia" value="alto" class="sr-only peer">
-                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Alto
-                                        (Q1/Q2)</span>
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">
+                                        <strong>Alto (Q1/Q2)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">High (Q1/Q2)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
                                     <input type="radio" name="urgencia" value="medio" class="sr-only peer">
-                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Medio
-                                        (Próximo año)</span>
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">
+                                        <strong>Medio (Próximo año)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Medium (Next year)</span>
+                                    </span>
                                 </label>
                                 <label
                                     class="flex items-center justify-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer text-center transition">
                                     <input type="radio" name="urgencia" value="bajo" class="sr-only peer">
-                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">Bajo
-                                        (Curiosidad)</span>
+                                    <span class="text-sm peer-checked:font-bold peer-checked:text-burgundy">
+                                        <strong>Bajo (Curiosidad)</strong><br>
+                                        <span class="italic text-gray-500 text-xs">Low (Curiosity)</span>
+                                    </span>
                                 </label>
                             </div>
                         </div>
 
                         <!-- Sección 5: Presupuesto (Velvet Rope) -->
                         <div class="space-y-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">5. Rango de
-                                Inversión Considerado</label>
-                            <p class="text-xs text-gray-500 mb-2">Esto nos ayuda a asignar el nivel de consultor
-                                adecuado.</p>
+                            <label class="block text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                                <strong>5. Rango de Inversión Considerado</strong><br>
+                                <span class="italic text-gray-500 normal-case text-xs">Investment Range
+                                    Considered</span>
+                            </label>
+                            <p class="text-xs text-gray-500 mb-2">
+                                <strong>Esto nos ayuda a asignar el nivel de consultor adecuado.</strong><br>
+                                <span class="italic text-xs">This helps us assign the appropriate consultant
+                                    level.</span>
+                            </p>
                             <select name="presupuesto"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy bg-white text-sm"
                                 required>
-                                <option value="" disabled selected>Selecciona el rango...</option>
+                                <option value="" disabled selected>Selecciona el rango / Select range...</option>
                                 <option value="seed">
-                                    < $5,000 USD (Talleres / Semilla)</option>
-                                <option value="standard">$5,000 - $20,000 USD (Consultoría Estándar)</option>
-                                <option value="expansion">$20,000 - $50,000 USD (Expansión Core)</option>
-                                <option value="enterprise">$50,000 USD + (Soluciones Corporativas)</option>
-                                <option value="tbd">Por determinar</option>
+                                    < $5,000 USD (Talleres / Semilla) / (Workshops / Seed)</option>
+                                <option value="standard">$5,000 - $20,000 USD (Consultoría Estándar) / (Standard
+                                    Consulting)</option>
+                                <option value="expansion">$20,000 - $50,000 USD (Expansión Core) / (Core Expansion)
+                                </option>
+                                <option value="enterprise">$50,000 USD + (Soluciones Corporativas) / (Corporate
+                                    Solutions)</option>
+                                <option value="tbd">Por determinar / To be determined</option>
                             </select>
                         </div>
 
                         <!-- Datos de Contacto -->
                         <div class="pt-6 border-t border-gray-200 space-y-4">
-                            <h3 class="text-lg font-medium">Tus Datos</h3>
+                            <h3 class="text-lg font-medium">
+                                <strong>Tus Datos</strong><br>
+                                <span class="italic text-gray-500 text-sm">Your Information</span>
+                            </h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="text" name="nombre" placeholder="Nombre Completo"
+                                <input type="text" name="nombre" placeholder="Nombre Completo / Full Name"
                                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
                                     required>
-                                <input type="email" name="email" placeholder="Correo Corporativo"
+                                <input type="email" name="email" placeholder="Correo Corporativo / Corporate Email"
                                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
                                     required>
                             </div>
-                            <input type="text" name="empresa" placeholder="LinkedIn o Web de la Empresa"
+                            <input type="text" name="empresa"
+                                placeholder="LinkedIn o Web de la Empresa / LinkedIn or Company Website"
                                 class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-burgundy text-sm"
                                 required>
                         </div>
@@ -322,10 +385,14 @@
                         <div class="pt-4">
                             <button type="submit"
                                 class="w-full bg-burgundy text-white font-semibold py-4 rounded-lg hover:bg-burgundy/90 transition duration-200 shadow-lg transform hover:-translate-y-0.5">
-                                SOLICITAR SESIÓN DE DIAGNÓSTICO
+                                <strong>SOLICITAR SESIÓN DE DIAGNÓSTICO</strong><br>
+                                <span class="italic text-white/70 text-sm">REQUEST DIAGNOSTIC SESSION</span>
                             </button>
-                            <p class="text-center text-xs text-gray-400 mt-4">Al enviar, nuestros socios revisarán tu
-                                perfil en 24h.</p>
+                            <p class="text-center text-xs text-gray-400 mt-4">
+                                <strong>Al enviar, nuestros socios revisarán tu perfil en 24h.</strong><br>
+                                <span class="italic text-xs">Upon submission, our partners will review your profile
+                                    within 24h.</span>
+                            </p>
                         </div>
                     </form>
 
@@ -339,14 +406,24 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Solicitud Recibida</h3>
-                        <p class="text-gray-600 mb-6">Gracias por compartir tu contexto. El equipo directivo de GPMF
-                            analizará tu Radar.</p>
-                        <p class="text-sm text-gray-500">Si tu desafío encaja con nuestra experticia, recibirás un
-                            correo personal para agendar la sesión.</p>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                            Solicitud Recibida<br>
+                            <span class="text-gray-500 text-lg italic">Request Received</span>
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Gracias por compartir tu contexto. El equipo directivo de GPMF analizará tu Radar.<br>
+                            <span class="italic text-gray-500 text-sm">Thank you for sharing your context. GPMF's
+                                leadership team will analyze your Radar.</span>
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Si tu desafío encaja con nuestra experticia, recibirás un correo personal para agendar la
+                            sesión.<br>
+                            <span class="italic text-xs">If your challenge aligns with our expertise, you will receive a
+                                personal email to schedule the session.</span>
+                        </p>
                         <button onclick="location.reload()"
-                            class="mt-8 text-burgundy underline text-sm hover:text-burgundy/80">Volver al
-                            inicio</button>
+                            class="mt-8 text-burgundy underline text-sm hover:text-burgundy/80">Volver al inicio / Back
+                            to start</button>
                     </div>
                 </div>
             </div>
@@ -356,9 +433,11 @@
         <!-- CTA Section -->
         <section class="py-20 bg-charcoal text-white text-center">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu visión en realidad?</h2>
+                <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu visión en realidad? / Ready to transform
+                    your vision into reality?</h2>
                 <p class="text-gray-300 mb-8 text-lg">Nuestro equipo de expertos está listo para analizar tu caso y
-                    diseñar una estrategia a medida.</p>
+                    diseñar una estrategia a medida. / Our team of experts is ready to analyze your case and design a
+                    tailored strategy.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 </div>
             </div>
@@ -366,9 +445,17 @@
     </main>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // ============================================
+        // 🔧 CONFIGURACIÓN N8N WEBHOOK
+        // ============================================
+        // INSTRUCCIONES:
+        // 1. Durante pruebas: Pega aquí la URL de "Test" de tu webhook en n8n
+        // 2. En producción: Reemplaza con la URL de "Production" y activa el workflow
+        const WEBHOOK_URL = 'TU_URL_DE_N8N_AQUI';
 
-        // Mobile menu functionality
+        // ============================================
+        // 📱 FUNCIONALIDAD DEL MENÚ MÓVIL
+        // ============================================
         document.getElementById('mobile-menu-btn').addEventListener('click', function () {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
@@ -380,26 +467,36 @@
             arrow.classList.toggle('rotate-180');
         });
 
+        // ============================================
+        // 📝 MANEJO DEL FORMULARIO
+        // ============================================
         function handleSubmit(e) {
             e.preventDefault();
 
             // Recopilar datos del formulario
             const formData = new FormData(e.target);
-            const data = {
-                desafio: formData.get('desafio'),
+
+            // Preparar payload para n8n
+            const payload = {
+                // Fecha y hora
+                fecha: new Date().toLocaleDateString('es-CO'),
+                timestamp: new Date().toISOString(),
+
+                // Datos de contacto
+                nombre: formData.get('nombre'),
+                empresa: formData.get('empresa'),
+                email: formData.get('email'),
+
+                // Respuestas del diagnóstico
+                reto: formData.get('desafio'),
                 etapa: formData.get('etapa'),
                 dolor: formData.get('dolor'),
                 urgencia: formData.get('urgencia'),
                 presupuesto: formData.get('presupuesto'),
-                nombre: formData.get('nombre'),
-                email: formData.get('email'),
-                empresa: formData.get('empresa'),
-                timestamp: new Date().toISOString()
-            };
 
-            // Enviar a Google Sheets y Email
-            sendToGoogleSheets(data);
-            sendEmailNotification(data);
+                // WhatsApp (opcional - puedes agregarlo al formulario si lo necesitas)
+                whatsapp: formData.get('whatsapp') || 'No proporcionado'
+            };
 
             // UI Feedback
             const btn = e.target.querySelector('button[type="submit"]');
@@ -407,104 +504,48 @@
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
-            setTimeout(() => {
-                document.getElementById('radarForm').classList.add('hidden');
-                document.getElementById('successMessage').classList.remove('hidden');
-
-                // Analytics tracking
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'radar_submit', {
-                        'event_category': 'lead_generation',
-                        'event_label': data.desafio
-                    });
-                }
-            }, 2000);
-        }
-
-        // Función para enviar a Google Sheets
-        function sendToGoogleSheets(data) {
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbw1234567890abcdef1234567890abcdef/exec'; // Reemplazar con tu URL real
-            const payload = {
-                timestamp: data.timestamp,
-                nombre: data.nombre,
-                email: data.email,
-                empresa: data.empresa,
-                desafio: data.desafio,
-                etapa: data.etapa,
-                dolor: data.dolor,
-                urgencia: data.urgencia,
-                presupuesto: data.presupuesto
-            };
-
-            fetch(scriptUrl, {
+            // Enviar a n8n
+            fetch(WEBHOOK_URL, {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(payload)
             })
-                .then(response => console.log('Google Sheets response:', response))
-                .catch(error => console.error('Error sending to Google Sheets:', error));
-        }
+                .then(response => {
+                    console.log('✅ Datos enviados a n8n:', response);
 
-        // Función para enviar notificación por email
-        function sendEmailNotification(data) {
-            const subject = `Nuevo Diagnóstico Estratégico - ${data.nombre}`;
-            const body = `
-NUEVA SOLICITUD DE DIAGNÓSTICO ESTRATÉGICO
+                    // Mostrar mensaje de éxito
+                    document.getElementById('radarForm').classList.add('hidden');
+                    document.getElementById('successMessage').classList.remove('hidden');
 
-DATOS DEL CONTACTO:
-• Nombre: ${data.nombre}
-• Email: ${data.email}
-• Empresa: ${data.empresa}
-
-RESPUESTAS DEL RADAR:
-• Desafío Principal: ${data.desafio}
-• Etapa del Proyecto: ${data.etapa}
-• Obstáculo Principal: ${data.dolor}
-• Urgencia: ${data.urgencia}
-• Presupuesto Considerado: ${data.presupuesto}
-
-Fecha y Hora: ${data.timestamp}
-
----
-Este mensaje fue generado automáticamente desde el formulario de diagnóstico estratégico de GPMF.
-            `;
-
-            // Usar EmailJS o servicio similar
-            // Ejemplo con EmailJS (requiere configuración previa)
-            if (typeof emailjs !== 'undefined') {
-                emailjs.send("service_gpmf", "template_radar", {
-                    to_email: "marcelasanchezv@gmail.com",
-                    subject: subject,
-                    message: body
+                    // Analytics tracking (si tienes Google Analytics configurado)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'radar_submit', {
+                            'event_category': 'lead_generation',
+                            'event_label': payload.reto
+                        });
+                    }
                 })
-                    .then(function (response) {
-                        console.log('Email sent successfully!', response);
-                    })
-                    .catch(function (error) {
-                        console.error('Failed to send email:', error);
-                    });
-            } else {
-                // Fallback: Abrir cliente de email
-                window.location.href = `mailto:marcelasanchezv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            }
+                .catch(error => {
+                    console.error('❌ Error al enviar datos:', error);
+
+                    // Restaurar botón en caso de error
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+
+                    // Mostrar mensaje de error al usuario
+                    alert('Hubo un problema al enviar el formulario. Por favor, intenta nuevamente o contáctanos directamente.');
+                });
         }
 
-        // Language switching (placeholder)
+        // ============================================
+        // 🌐 CAMBIO DE IDIOMA (PLACEHOLDER)
+        // ============================================
         function changeLanguage(lang) {
             console.log('Language changed to:', lang);
             // Implementar lógica de idiomas si es necesario
         }
-    </script>
-
-    <!-- EmailJS SDK (opcional - configurar cuenta) -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Reemplazar con tu clave pública
-        })();
     </script>
 
     <!-- Footer -->
@@ -518,10 +559,20 @@ Este mensaje fue generado automáticamente desde el formulario de diagnóstico e
                         <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 pr-12">© 2026 GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-500 pr-12">© 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    <script>
+        // Actualizar año dinámico
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        function changeLanguage(lang) {
+            console.log('Language changed to:', lang);
+            // Implementar lógica de idiomas si es necesario
+        }
+    </script>
 </body>
 
 </html>

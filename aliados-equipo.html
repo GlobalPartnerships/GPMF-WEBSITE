@@ -100,26 +100,41 @@
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
-            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Inicio</a>
-            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firma</a>
-            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal"
-                data-i18n="nav.partners">Aliados</a>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-5">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal">Home</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal">Firm</a>
+            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal">Allies</a>
             <button
                 class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
                 aria-expanded="false">
-                <span data-i18n="nav.services">Servicios</span>
+                <span>Services</span>
                 <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
             <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
                 <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
-                <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
-                <a href="Intercultural.html">Gestión Intercultural</a>
+                <a href="data-ai.html" data-i18n="nav.ai">IA &amp; Analítica</a>
+                <a href="Intercultural.html">Gestión Intercultural e Interdisciplinaria</a>
                 <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
             </div>
-            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
+
+            <!-- Mobile Language Selector -->
+            <div class="flex items-center gap-4 text-xl font-bold text-charcoal py-2">
+                <button onclick="changeLanguage('es')" class="text-burgundy border-b-2 border-burgundy"
+                    data-lang="es">ES</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
+                    data-lang="en">EN</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors"
+                    data-lang="de">DE</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors"
+                    data-lang="fr">FR</button>
+            </div>
+
+            <a href="diagnostico.html" class="block text-2xl font-bold text-burgundy">Book Now</a>
             <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
                 class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
         </div>
@@ -128,67 +143,18 @@
     <main class="pt-32 bg-warmgray/30 min-h-screen">
         <section class="py-20">
             <div class="max-w-5xl mx-auto px-6 text-center">
-                <p class="text-sm tracking-[0.4em] uppercase text-gray-500 mb-4" data-i18n="allies.hero.kicker">Red
-                    Global</p>
-                <h1 class="text-4xl md:text-5xl font-serif text-charcoal mb-6" data-i18n="allies.hero.title">Personas y
-                    Firmas que amplifican nuestro impacto</h1>
-                <p class="text-lg text-gray-600" data-i18n="allies.hero.desc">Unimos liderazgo senior, estrategas
-                    especializados y aliados institucionales en Europa, Norteamérica y Latinoamérica para desbloquear
-                    proyectos complejos.</p>
+                <p class="text-sm tracking-[0.4em] uppercase text-gray-500 mb-4" data-i18n="allies.hero.kicker">Alianzas
+                    Estratégicas</p>
+                <h1 class="text-4xl md:text-5xl font-serif text-charcoal mb-6" data-i18n="allies.hero.title">Red de
+                    Especialistas. Un Ecosistema que amplifica nuestro impacto.</h1>
+                <p class="text-lg text-gray-600" data-i18n="allies.hero.desc">Creemos en la inteligencia colectiva. GPMF
+                    opera bajo un modelo de red multidisciplinar de expertos. Activamos consultores senior
+                    especializados según la necesidad específica de cada proyecto, vinculando el talento exacto que su
+                    reto requiere.</p>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: CORE TEAM -->
-        <section class="py-16">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
-                    <div>
-                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500">Core Team</p>
-                        <h2 class="text-3xl font-bold">Socias y directores de práctica</h2>
-                    </div>
-                    <span class="text-sm text-gray-500">Atención directa, sin intermediarios junior</span>
-                </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
-                        <div class="relative mb-5">
-                            <img src="Assets/marceperfil.jpg" alt="Marcela Sánchez"
-                                class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow"
-                                loading="lazy">
-                        </div>
-                        <h3 class="text-xl font-bold text-center">Marcela Sánchez</h3>
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Network Management</p>
-                        <p class="text-sm text-gray-600 text-center flex-1">Transformación digital y expansión comercial
-                            en ecosistemas trinlingües ES/EN/DE.</p>
-                    </article>
-
-                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
-                        <div class="relative mb-5">
-                            <img src="Assets/Adriana.JPG" alt="Adriana Sánchez"
-                                class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow"
-                                loading="lazy">
-                        </div>
-                        <h3 class="text-xl font-bold text-center">Adriana Sánchez</h3>
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Innovación & Políticas Públicas
-                        </p>
-                        <p class="text-sm text-gray-600 text-center flex-1">Ingeniera y estratega en ciencia, agro e
-                            inteligencia competitiva para gobiernos y multilaterales.</p>
-                    </article>
-
-                    <article class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col">
-                        <div class="relative mb-5">
-                            <img src="Assets/Natalia.JPG" alt="Natalia Sánchez"
-                                class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-white shadow"
-                                loading="lazy">
-                        </div>
-                        <h3 class="text-xl font-bold text-center">Natalia Sánchez</h3>
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Análisis & Operaciones</p>
-                        <p class="text-sm text-gray-600 text-center flex-1">Diseño de operaciones internas y analítica
-                            aplicada para escalabilidad organizacional.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
 
         <!-- SECCIÓN 4: RED DE ALIADOS -->
         <section class="py-20 bg-white">
@@ -217,12 +183,13 @@
                         <h3 class="text-xl font-bold text-center mb-2">Fany Barrera</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Experta en Finanzas y
-                            Contabilidad
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person1.role">Experta en Finanzas y Contabilidad
                         </p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Contadora pública especializada en la
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person1.desc">
+                            Contadora pública especializada en la
                             estructuración financiera sólida para proyectos de expansión y operaciones internacionales.
                         </p>
                     </article>
@@ -238,12 +205,14 @@
                         <h3 class="text-xl font-bold text-center mb-2">David Salazar</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Diseño Internacional & Real
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person2.role">Diseño Internacional & Real
                             Estate
                         </p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Arquitecto experto en diseño arquitectónico
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person2.desc">
+                            Arquitecto experto en diseño arquitectónico
                             internacional (con enfoque en el mercado de China) y procesos de transformación para el
                             sector de real estate & hospitality.</p>
                     </article>
@@ -260,10 +229,12 @@
                         <h3 class="text-xl font-bold text-center mb-2">Carlos Santiusti</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Data Architecture & IA</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person3.role">Data Architecture & IA</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Ingeniero de Sistemas, Arquitecto de Datos y
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person3.desc">
+                            Ingeniero de Sistemas, Arquitecto de Datos y
                             Analista de Negocios. Lidera el despliegue de soluciones de inteligencia artificial para
                             corporaciones.</p>
                     </article>
@@ -277,9 +248,11 @@
                         </div>
                         <h3 class="text-xl font-bold text-center mb-2">David Junco</h3>
 
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Back-End Developer</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person4.role">Back-End Developer</p>
 
-                        <p class="text-sm text-gray-600 text-center mb-4">Desarrollador especializado en ecosistemas
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person4.desc">
+                            Desarrollador especializado en ecosistemas
                             tecnológicos y bases de datos. Diseña y despliega arquitecturas de software eficientes
                             utilizando lenguajes como Python y TypeScript.</p>
                     </article>
@@ -298,11 +271,13 @@
                         <h3 class="text-xl font-bold text-center mb-2">Nidian Díaz</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Auditoría y Estructuración
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person5.role">Auditoría y Estructuración
                             Financiera</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Especialista en contabilidad corporativa y
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person5.desc">
+                            Especialista en contabilidad corporativa y
                             auditoría estratégica. Asegura que los procesos de expansión y nuevos modelos de negocio
                             tengan un respaldo financiero impecable y cumplan con las normativas internacionales.</p>
                     </article>
@@ -321,11 +296,13 @@
                         <h3 class="text-xl font-bold text-center mb-2">Aristides Sánchez</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Desarrollo de Proyectos &
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person6.role">Desarrollo de Proyectos &
                             Hospitalidad</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Líder detrás del posicionamiento de Casa
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person6.desc">Líder
+                            detrás del posicionamiento de Casa
                             Normandía. Experto en el desarrollo de ecosistemas, gestión de propiedades con valor
                             patrimonial y estrategias de hospitalidad de alto nivel.</p>
                     </article>
@@ -344,11 +321,13 @@
                         <h3 class="text-xl font-bold text-center mb-2">Esperanza Vargas</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Desarrollo Agroindustrial &
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person7.role">Desarrollo Agroindustrial &
                             Sostenibilidad</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Visionaria del sector rural y agropecuario a
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person7.desc">
+                            Visionaria del sector rural y agropecuario a
                             través del proyecto La Finca La Granja. Aporta el conocimiento técnico y de terreno
                             necesario para proyectos de inversión y desarrollo en el sector agro.</p>
                     </article>
@@ -363,10 +342,12 @@
                         </div>
                         <h3 class="text-xl font-bold text-center mb-2">Jorge Ordoñez</h3>
 
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Estratega de Imagen de Marca &
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3"
+                            data-i18n="allies.network.person8.role">Estratega de Imagen de Marca &
                             Dirección de Arte</p>
 
-                        <p class="text-sm text-gray-600 text-center mb-4">Diseñador gráfico con más de 16 años de
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.network.person8.desc">
+                            Diseñador gráfico con más de 16 años de
                             trayectoria en América y Europa. Especialista en traducir conceptos corporativos en
                             identidades visuales innovadoras, posicionamiento global a las marcas.</p>
                     </article>
@@ -379,11 +360,13 @@
             <div class="max-w-6xl mx-auto px-6">
                 <div class="flex items-center justify-between mb-12 flex-wrap gap-4">
                     <div>
-                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500">Firmas Asociadas</p>
-                        <h2 class="text-3xl font-bold">Partners y Firmas Corporativas</h2>
+                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500" data-i18n="allies.firms.kicker">
+                            Firmas Asociadas</p>
+                        <h2 class="text-3xl font-bold" data-i18n="allies.firms.title">Partners y Firmas Corporativas
+                        </h2>
                     </div>
-                    <span class="text-sm text-gray-500">Instituciones especializadas que extendemos según el
-                        proyecto</span>
+                    <span class="text-sm text-gray-500" data-i18n="allies.firms.subtitle">Instituciones especializadas
+                        que extendemos según el proyecto</span>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -400,10 +383,12 @@
                         <h3 class="text-xl font-bold text-center mb-2">Audiconet</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Firma Corporativa</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3" data-i18n="allies.firms.role">
+                            Firma Corporativa</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Firma especializada en auditoría financiera y
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.firms.audiconet.desc">Firma
+                            especializada en auditoría financiera y
                             consultoría contable para empresas internacionales.</p>
 
                     </article>
@@ -421,13 +406,14 @@
                         <h3 class="text-xl font-bold text-center mb-2">Aparato</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Firma Corporativa</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3" data-i18n="allies.firms.role">
+                            Firma Corporativa</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Agencia de desarrollo de software y soluciones
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.firms.aparato.desc">Agencia
+                            de desarrollo de software y soluciones
                             tecnológicas a medida para empresas.</p>
 
-                        </ul>
                     </article>
 
                     <!-- Factor Visual -->
@@ -443,14 +429,15 @@
                         <h3 class="text-xl font-bold text-center mb-2">Factor Visual</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Firma Corporativa</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3" data-i18n="allies.firms.role">
+                            Firma Corporativa</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Estudio de diseño gráfico y branding
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.firms.factor.desc">Estudio
+                            de diseño gráfico y branding
                             especializado en identidad visual corporativa.</p>
 
 
-                        </ul>
                     </article>
 
                     <!-- Epicerí Gourmet -->
@@ -466,10 +453,12 @@
                         <h3 class="text-xl font-bold text-center mb-2">Epicerí Gourmet</h3>
 
                         <!-- Etiqueta -->
-                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Firma Corporativa</p>
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3" data-i18n="allies.firms.role">
+                            Firma Corporativa</p>
 
                         <!-- Descripción -->
-                        <p class="text-sm text-gray-600 text-center mb-4">Empresa especializada en productos gourmet y
+                        <p class="text-sm text-gray-600 text-center mb-4" data-i18n="allies.firms.epiceri.desc">Empresa
+                            especializada en productos gourmet y
                             consultoría gastronómica de alta calidad.</p>
 
                     </article>
