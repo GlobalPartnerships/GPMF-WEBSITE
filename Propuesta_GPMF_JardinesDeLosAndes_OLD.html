@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta GPMF | Jardines de los Andes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { burgundy: '#7A0F32', charcoal: '#2E2E2E', warmgray: '#F5F5F5', black: '#000000' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
+        }
+    </script>
+    <style>
+        :root {
+            --burgundy: #7A0F32;
+            --black: #080808;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --gray: #6B7280;
+            --accent: #D4AF37;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            color: var(--black);
+        }
+
+        .main-container {
+            width: 100%;
+            margin: 0;
+            background-color: var(--white);
+            box-shadow: none;
+            position: relative;
+            padding-top: 96px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+        }
+
+        h2,
+        h3 {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 17px;
+            color: var(--gray);
+        }
+
+        section {
+            padding: 80px 100px;
+        }
+
+        header {
+            background: var(--black);
+            color: white;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--burgundy);
+        }
+
+        .nav-menu span {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .language-selector button {
+            color: white;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .language-selector button:hover {
+            color: var(--burgundy);
+        }
+
+        .language-selector button.active {
+            color: var(--burgundy);
+            font-weight: bold;
+            border-bottom: 1px solid var(--burgundy);
+        }
+
+        .language-selector span {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button {
+            background: var(--burgundy);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #5e0b26;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 100px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            color: white;
+            opacity: 0.9;
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-gpmf {
+            background-color: var(--burgundy);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-gpmf:hover {
+            background-color: #5a0b25;
+            box-shadow: 0 5px 15px rgba(122, 15, 50, 0.3);
+        }
+
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 48px 24px;
+            border-top: 1px solid #374151;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+            }
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .footer-logo {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-info {
+            font-size: 12px;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            margin: 0;
+            margin-bottom: 4px;
+        }
+
+        .footer-subtitle {
+            font-size: 12px;
+            color: #9ca3af;
+            margin: 0;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                padding: 12px 16px;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                order: 1;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+
+            .nav-menu {
+                order: 3;
+                position: static;
+                transform: none;
+                left: auto;
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+                margin: 8px 0;
+                font-size: 12px;
+            }
+
+            .header-right {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+                margin-bottom: 8px;
+            }
+
+            .main-container {
+                padding-top: 120px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+                </a>
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                    <a href="index.html" class="text-white hover:text-burgundy transition-colors">Inicio</a>
+                    <span class="text-white/30">|</span>
+                    <a href="about.html" class="text-white hover:text-burgundy transition-colors">Firma</a>
+                    <span class="text-white/30">|</span>
+                    <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors">Aliados</a>
+                    <span class="text-white/30">|</span>
+                    <a href="contact.html" class="text-white hover:text-burgundy transition-colors">Contacto</a>
+                </nav>
+                <div class="hidden lg:flex items-center gap-6">
+                    <div class="flex items-center gap-2 text-xs font-bold text-white">
+                        <button class="text-burgundy border-b border-burgundy">ES</button>
+                        <span class="text-white/30">|</span>
+                        <button class="hover:text-burgundy transition-colors">EN</button>
+                    </div>
+                    <a href="diagnostico.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">Agendar</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">☰</button>
+            </div>
+        </header>
+
+        <!-- 1. PORTADA -->
+        <section class="hero">
+            <h1>INTELIGENCIA DE MARGEN</h1>
+            <p>Pasar de reaccionar ante el clima y el mercado, a anticipar la rentabilidad.</p>
+            <div class="mt-12 text-sm opacity-80">
+                <p>Preparado para: <strong>JARDINES DE LOS ANDES</strong></p>
+                <p>Por: <strong>GPMF | Global Partnerships Multidisciplinary Firm</strong></p>
+            </div>
+        </section>
+
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-charcoal text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <strong class="block text-gray-800">Mapa de Decisiones Críticas</strong>
+                            <span class="text-xs text-gray-500">Documento PDF con la lógica de negocio.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-burgundy text-white rounded-full flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <strong class="block text-gray-800">Dashboard Ejecutivo</strong>
+                            <span class="text-xs text-gray-500">Power BI / Tableau con alertas en tiempo real.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-gold text-white rounded-full flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <strong class="block text-gray-800">Transferencia de Conocimiento</strong>
+                            <span class="text-xs text-gray-500">Entrenamiento al equipo interno.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CRONOGRAMA -->
+    <section id="cronograma" class="slide-section bg-white text-center">
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="font-heading text-4xl font-extrabold text-gpmf-black mb-12">Cronograma: Ejecución Acelerada</h2>
+            
+            <div class="relative flex flex-col md:flex-row justify-between items-center gap-8">
+                <!-- Line connector (Desktop only) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+
+                <!-- Phase 1 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gray-200 w-full md:w-1/3 hover:border-gpmf-burgundy transition-colors">
+                    <div class="text-xs font-bold text-gray-400 uppercase mb-2">Semanas 1-2</div>
+                    <h4 class="font-bold text-lg text-gpmf-burgundy mb-2">Entendimiento</h4>
+                    <p class="text-sm text-gray-600">Mapeo de variables y "Working Backwards" (Empezar por la respuesta necesaria).</p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gpmf-burgundy w-full md:w-1/3 shadow-lg transform scale-105">
+                    <div class="text-xs font-bold text-gpmf-burgundy uppercase mb-2">Semanas 3-5</div>
+                    <h4 class="font-bold text-lg text-gpmf-black mb-2">Construcción</h4>
+                    <p class="text-sm text-gray-600">Ingeniería de datos, integración de APIs (Clima/TRM) y diseño visual del tablero.</p>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gray-200 w-full md:w-1/3 hover:border-gpmf-burgundy transition-colors">
+                    <div class="text-xs font-bold text-gray-400 uppercase mb-2">Semana 6</div>
+                    <h4 class="font-bold text-lg text-gpmf-burgundy mb-2">Entrega y Ajustes</h4>
+                    <p class="text-sm text-gray-600">Despliegue final, sesión de entrenamiento y validación de datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INVERSIÓN (PROYECTO) -->
+    <section id="inversion" class="slide-section bg-gpmf-charcoal text-white">
+        <div class="max-w-4xl mx-auto w-full text-center">
+            <h2 class="font-heading text-4xl font-extrabold mb-4">Propuesta de Inversión</h2>
+            <p class="text-gray-400 mb-12">Proyecto llave en mano (Nivel 2: Consultoría Especializada)</p>
+
+            <div class="bg-white text-gpmf-charcoal rounded-2xl p-10 max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gpmf-gold"></div>
+                
+                <h3 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-2">MVP DE 6 SEMANAS</h3>
+                <div class="flex justify-center items-baseline gap-2 mb-6">
+                    <span class="text-5xl font-extrabold text-gpmf-burgundy">$18 - $25</span>
+                    <span class="text-xl font-bold text-gray-400">Millones COP</span>
+                </div>
+                <p class="text-xs text-gray-400 mb-8">+ IVA</p>
+
+                <div class="text-left space-y-4 border-t border-gray-200 pt-6 mb-8">
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Consultor Senior de Datos + Arquitecto de Negocio.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Licenciamiento de herramientas durante el desarrollo.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Entregables documentales y técnicos.</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded text-sm text-gray-600">
+                    <strong>Forma de Pago:</strong> 50% Inicio / 50% Contra entrega a satisfacción.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTINUIDAD (CIO FRACCIONADO) -->
+    <section id="continuidad" class="slide-section bg-white">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div class="order-2 md:order-1">
+                <div class="card bg-gpmf-warmGray border-l-8 border-gpmf-black">
+                    <h3 class="text-gpmf-burgundy font-bold uppercase tracking-widest text-sm mb-4">Opción de Continuidad</h3>
+                    <h2 class="font-heading text-3xl font-extrabold text-gpmf-black mb-4">CIO Estratégico Fraccionado</h2>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Reconocemos que para Jardines de los Andes la tecnología es un medio, no el fin. Para evitar la carga de contratar una Gerencia de Tecnología interna de alto costo, GPMF ofrece actuar como su <strong>"Brazo Derecho Tecnológico"</strong>.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
+                            <div>
+                                <strong class="block text-sm">Traducir</strong>
+                                <span class="text-xs text-gray-500">Convertir necesidades de negocio (márgenes, logística) en requerimientos técnicos claros para proveedores.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
+                            <div>
+                                <strong class="block text-sm">Auditar</strong>
+                                <span class="text-xs text-gray-500">Asegurar la veracidad de los datos mes a mes (Gobierno de Datos).</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
+                            <div>
+                                <strong class="block text-sm">Blindar</strong>
+                                <span class="text-xs text-gray-500">Evaluar y negociar con futuros proveedores de software para proteger sus intereses.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 text-center md:text-left">
+                <h2 class="font-heading text-4xl font-extrabold text-gpmf-black mb-6">Más allá del Tablero</h2>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Obtengan la experiencia de un <strong>Director de Tecnología Senior</strong> por una fracción del costo de nómina.
+                </p>
+                <p class="text-sm text-gray-500 mb-8">
+                    Aseguramos que la herramienta evolucione con el negocio y no se vuelva un "elefante blanco" obsoleto en 6 meses.
+                </p>
+                <button class="btn-gpmf">Agendar Sesión de Inicio</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gpmf-black text-white py-8 text-center text-xs opacity-80">
+        <p>GPMF - Global Partnerships Multidisciplinary Firm | Confidencial 2026</p>
+        <p>Bogotá - Berlín - Global Mindset</p>
+    </footer>
+
+    <script>
+        // Scroll spy script to update nav dots
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('href').includes(current)) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
