@@ -24,6 +24,7 @@
         h2, h3 { font-family: 'Inter', sans-serif; margin: 0; }
         p { line-height: 1.6; font-size: 17px; color: var(--gray); }
         section { padding: 80px 100px; }
+        @media (max-width: 768px) { section { padding: 40px 20px; } }
         header { background: var(--black); color: white; padding: 0; position: fixed; width: 100%; top: 0; z-index: 50; transition: all 0.3s ease; }
         .header-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 96px; display: flex; align-items: center; justify-content: space-between; position: relative; }
         .logo { display: flex; align-items: center; gap: 12px; }
@@ -41,19 +42,26 @@
         .cta-button { background: var(--burgundy); color: white; padding: 8px 20px; border-radius: 9999px; text-decoration: none; font-size: 14px; font-weight: 500; transition: background-color 0.3s; }
         .cta-button:hover { background: #5e0b26; color: white; }
         .hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop'); background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 100px; }
+        @media (max-width: 768px) { .hero { padding: 80px 20px; } }
         .hero h1 { font-size: 52px; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        @media (max-width: 768px) { .hero h1 { font-size: 32px; } }
         .hero p { color: white; opacity: 0.9; font-size: 22px; max-width: 700px; margin: 0 auto; }
+        @media (max-width: 768px) { .hero p { font-size: 18px; } }
         .firm-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        @media (max-width: 768px) { .firm-intro { grid-template-columns: 1fr; gap: 40px; } }
         .pillars { background: var(--off-white); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .pillars { grid-template-columns: 1fr; gap: 20px; } }
         .pillar-card { padding: 30px; background: white; border-top: 4px solid var(--burgundy); }
         .pillar-card i { font-size: 30px; color: var(--burgundy); margin-bottom: 20px; display: block; }
         .pillar-card h3 { font-size: 22px; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 700; }
         .track-record { background: #7A0F32; color: white; }
         .track-record h2 { color: white; font-size: 40px; margin-bottom: 50px; text-align: center; font-family: 'Inter', sans-serif; }
         .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; gap: 30px; } }
         .project-item { border-left: 2px solid #6B7280; padding-left: 30px; }
         .project-item h4 { font-family: 'Inter', sans-serif; font-size: 18px; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
         .partners { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        @media (max-width: 768px) { .partners { grid-template-columns: 1fr; gap: 40px; } }
         .partner-bio h3 { font-size: 24px; color: var(--burgundy); margin-bottom: 10px; font-family: 'Inter', sans-serif; }
         .partner-bio span { font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; color: var(--black); display: block; margin-bottom: 15px; }
         footer { background: var(--black); color: white; padding: 48px 24px; border-top: 1px solid #374151; }
@@ -68,7 +76,7 @@
         .control-panel { display: none; }
         @media (max-width: 1024px) { .header-container { padding: 0 16px; } .nav-menu { gap: 16px; font-size: 13px; } .header-right { gap: 16px; } .language-selector { font-size: 11px; gap: 6px; } .cta-button { font-size: 12px; padding: 6px 16px; } }
         @media (max-width: 768px) { .header-container { height: auto; padding: 12px 16px; flex-wrap: wrap; } .logo { order: 1; width: 100%; justify-content: center; margin-bottom: 8px; } .nav-menu { order: 3; position: static; transform: none; left: auto; width: 100%; justify-content: center; gap: 12px; margin: 8px 0; font-size: 12px; } .header-right { order: 2; width: 100%; justify-content: center; gap: 12px; margin-bottom: 8px; } .language-selector { gap: 4px; font-size: 10px; } .cta-button { font-size: 11px; padding: 4px 12px; } .main-container { padding-top: 120px; } #mobile-menu { padding-top: 120px; } }
-        @media (max-width: 480px) { .nav-menu { flex-wrap: wrap; gap: 8px; } .nav-menu span { display: none; } .language-selector { gap: 2px; } .language-selector button { padding: 2px 4px; font-size: 9px; } }
+        @media (max-width: 480px) { .nav-menu { flex-wrap: wrap; gap: 8px; } .nav-menu span { display: none; } .language-selector { gap: 2px; } .language-selector button { padding: 2px 4px; font-size: 9px; } .pillar-card { padding: 20px; } .project-item { padding-left: 20px; } .partner-bio h3 { font-size: 20px; } }
     </style>
 </head>
 <body>
@@ -217,6 +225,15 @@
                 </div>
             </div>
         </section>
+        <style>
+        @media (max-width: 768px) {
+            .cta-section { padding: 40px 20px !important; }
+            .cta-section > div { padding: 30px 20px !important; }
+            .cta-section h2 { font-size: 24px !important; }
+            .cta-section p { font-size: 16px !important; }
+            .cta-section a { font-size: 14px !important; padding: 12px 20px !important; }
+        }
+        </style>
         <footer>
             <div class="footer-container">
                 <div class="footer-brand">
