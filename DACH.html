@@ -241,7 +241,7 @@
             const success = document.getElementById('successMessage');
             
             // Enviar a Formspree
-            fetch(form.action, {
+            fetch('https://formspree.io/f/mjgarwdv', {
                 method: 'POST',
                 body: new FormData(form),
                 headers: {
