@@ -70,7 +70,7 @@
             <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
                 <div class="bg-burgundy h-2 w-full"></div>
                 
-                <form id="michaelDiagnostic" class="p-10 space-y-12" onsubmit="handleSubmit(event)">
+                <form id="michaelDiagnostic" class="p-10 space-y-12" onsubmit="handleSubmit(event)" action="https://formspree.io/f/mjgarwdv" method="POST">
 
                     <!-- SECTION I: VISION & STRATEGY -->
                     <div class="space-y-8">
@@ -240,8 +240,17 @@
             const form = document.getElementById('michaelDiagnostic');
             const success = document.getElementById('successMessage');
             
-            // Aquí iría el fetch al webhook de n8n o similar
-            console.log("Diagnostic submitted successfully");
+            // Enviar a Formspree
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this)
+            }).then(response => {
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    success.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
             
             form.classList.add('hidden');
             success.classList.remove('hidden');
