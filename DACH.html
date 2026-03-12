@@ -82,24 +82,24 @@
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">1. Core Business Model / <span class="text-gray-400 font-normal italic">Modelo de Negocio</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">Briefly describe the primary value proposition (e.g., Logistics, High-Tech Machinery, SaaS).</p>
-                            <input type="text" name="q1" placeholder="Type here..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required>
+                            <input type="text" name="Business_Model" placeholder="Type here..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required>
                         </div>
 
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">2. Success Indicators (Year 1) / <span class="text-gray-400 font-normal italic">Kpis de Éxito</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">What does a "successful landing" look like for your board in 12 months?</p>
-                            <textarea name="q2" rows="3" placeholder="Example: Operational autonomy, X% market share..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
+                            <textarea name="Success_Indicators" rows="3" placeholder="Example: Operational autonomy, X% market share..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
                         </div>
 
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">3. Geographic Scope / <span class="text-gray-400 font-normal italic">Alcance Geográfico</span></label>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <label class="flex items-center p-4 border rounded-xl hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="radio" name="q3" value="standalone" class="h-4 w-4 text-burgundy" required>
+                                    <input type="radio" name="Geographic_Scope" value="standalone" class="h-4 w-4 text-burgundy" required>
                                     <span class="ml-3 text-sm font-medium">Colombia Standalone</span>
                                 </label>
                                 <label class="flex items-center p-4 border rounded-xl hover:bg-gray-50 cursor-pointer transition">
-                                    <input type="radio" name="q3" value="hub" class="h-4 w-4 text-burgundy">
+                                    <input type="radio" name="Geographic_Scope" value="hub" class="h-4 w-4 text-burgundy">
                                     <span class="ml-3 text-sm font-medium">Regional Hub (Andean/LATAM)</span>
                                 </label>
                             </div>
@@ -120,7 +120,7 @@
                                 <span>Low Priority</span>
                                 <span>Strategic Priority</span>
                             </div>
-                            <input type="range" name="q4" min="1" max="10" step="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <input type="range" name="Legal_Urgency" min="1" max="10" step="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                             <div class="flex justify-between px-1 text-xs text-burgundy font-bold">
                                 <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
                             </div>
@@ -129,17 +129,17 @@
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">5. Talent Acquisition / <span class="text-gray-400 font-normal italic">Captación de Talento</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">List the top 3 roles required locally to ensure "German Quality" standards.</p>
-                            <textarea name="q5" rows="2" placeholder="1. Technical Lead, 2..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
+                            <textarea name="Talent_Acquisition" rows="2" placeholder="1. Technical Lead, 2..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
                         </div>
 
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">6. Outsourcing Preference / <span class="text-gray-400 font-normal italic">Preferencias de Outsourcing</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">Which back-office functions do you prefer to keep outsourced initially?</p>
                             <div class="grid grid-cols-2 gap-2">
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="q6" value="accounting" class="rounded text-burgundy"> Accounting</label>
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="q6" value="payroll" class="rounded text-burgundy"> Payroll (EOR)</label>
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="q6" value="legal" class="rounded text-burgundy"> Legal Liaison</label>
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="q6" value="it" class="rounded text-burgundy"> IT Infrastructure</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="Outsourcing_Preferences" value="accounting" class="rounded text-burgundy"> Accounting</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="Outsourcing_Preferences" value="payroll" class="rounded text-burgundy"> Payroll (EOR)</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="Outsourcing_Preferences" value="legal" class="rounded text-burgundy"> Legal Liaison</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" name="Outsourcing_Preferences" value="it" class="rounded text-burgundy"> IT Infrastructure</label>
                             </div>
                         </div>
                     </div>
@@ -154,13 +154,13 @@
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">7. Main Friction Concerns / <span class="text-gray-400 font-normal italic">Preocupaciones Principales</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">What is your biggest concern regarding the local business environment?</p>
-                            <textarea name="q7" rows="3" placeholder="Ex: Bureaucracy, transparency, labor law complexity..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
+                            <textarea name="Friction_Concerns" rows="3" placeholder="Ex: Bureaucracy, transparency, labor law complexity..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition" required></textarea>
                         </div>
 
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">8. Stakeholder Management / <span class="text-gray-400 font-normal italic">Gestión de Interesados</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">Will you require support in high-level networking?</p>
-                            <select name="q8" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition">
+                            <select name="Stakeholder_Management" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition">
                                 <option value="ahk">AHK / Local Chambers</option>
                                 <option value="government">Government Entities</option>
                                 <option value="full">Comprehensive Networking Support</option>
@@ -179,7 +179,7 @@
                         <div class="space-y-2">
                             <label class="block text-sm font-bold text-gray-800">9. Reporting Requirements / <span class="text-gray-400 font-normal italic">Requerimientos de Reporte</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">How often does the European HQ expect performance reports?</p>
-                            <select name="q9" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition">
+                            <select name="Reporting_Requirements" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-burgundy outline-none transition">
                                 <option value="realtime">Real-time Dashboards</option>
                                 <option value="weekly">Weekly Updates</option>
                                 <option value="monthly">Monthly Consolidated Reports</option>
@@ -190,8 +190,8 @@
                             <label class="block text-sm font-bold text-gray-800">10. Data Maturity / <span class="text-gray-400 font-normal italic">Madurez de Datos</span></label>
                             <p class="text-xs text-gray-500 mb-2 italic">Do you envision a data-driven operation from Day 1?</p>
                             <div class="flex gap-6">
-                                <label class="flex items-center gap-2"><input type="radio" name="q10" value="day1" class="text-burgundy"> Day 1 Priority</label>
-                                <label class="flex items-center gap-2"><input type="radio" name="q10" value="phase2" class="text-burgundy"> Phase 2 Objective</label>
+                                <label class="flex items-center gap-2"><input type="radio" name="Data_Maturity" value="day1" class="text-burgundy"> Day 1 Priority</label>
+                                <label class="flex items-center gap-2"><input type="radio" name="Data_Maturity" value="phase2" class="text-burgundy"> Phase 2 Objective</label>
                             </div>
                         </div>
                     </div>
@@ -212,11 +212,11 @@
                     <div class="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
                         <i class="fa-solid fa-check text-3xl"></i>
                     </div>
-                    <h3 class="text-3xl font-serif italic mb-4">Strategic Brief Received</h3>
+                    <h3 class="text-3xl font-serif italic mb-4">Diagnostic Received, Michael!</h3>
                     <p class="text-gray-600 mb-8">
-                        Michael, thank you for sharing your context. Our leadership team will analyze your responses to prepare a tailored Strategy Session.
+                        We've captured your strategic insights. Our team will analyze the data and contact you within the next 24 hours.
                     </p>
-                    <button onclick="location.reload()" class="text-burgundy font-bold underline">Review Responses</button>
+                    <a href="index.html" class="inline-block text-burgundy font-bold underline hover:text-burgundy/80 transition">Return to Homepage</a>
                 </div>
             </div>
         </div>
