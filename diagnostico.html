@@ -446,12 +446,9 @@
 
     <script>
         // ============================================
-        // 🔧 CONFIGURACIÓN N8N WEBHOOK
+        // 🔧 CONFIGURACIÓN GOOGLE APPS SCRIPT
         // ============================================
-        // INSTRUCCIONES:
-        // 1. Durante pruebas: Pega aquí la URL de "Test" de tu webhook en n8n
-        // 2. En producción: Reemplaza con la URL de "Production" y activa el workflow
-        const WEBHOOK_URL = 'https://marcelasanchezv.app.n8n.cloud/webhook/graciasporelapoyo';
+        const GAS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyeY_f9-UrIB7TX95Q7zipXon8cN1f71bQs3DGWcH0i7b8ylTt2msRb3NjXlytOgGYT/exec';
 
         // ============================================
         // 📱 FUNCIONALIDAD DEL MENÚ MÓVIL
@@ -476,7 +473,7 @@
             // Recopilar datos del formulario
             const formData = new FormData(e.target);
 
-            // Preparar payload para n8n
+            // Preparar payload para Google Apps Script
             const payload = {
                 // Fecha y hora
                 fecha: new Date().toLocaleDateString('es-CO'),
@@ -484,18 +481,15 @@
 
                 // Datos de contacto
                 nombre: formData.get('nombre'),
-                empresa: formData.get('empresa'),
                 email: formData.get('email'),
-
-                // Respuestas del diagnóstico
-                reto: formData.get('desafio'),
-                etapa: formData.get('etapa'),
-                dolor: formData.get('dolor'),
-                urgencia: formData.get('urgencia'),
+                empresa: formData.get('empresa'),
                 presupuesto: formData.get('presupuesto'),
 
-                // WhatsApp (opcional - puedes agregarlo al formulario si lo necesitas)
-                whatsapp: formData.get('whatsapp') || 'No proporcionado'
+                // Respuestas del diagnóstico
+                desafio: formData.get('desafio'),
+                etapa: formData.get('etapa'),
+                dolor: formData.get('dolor'),
+                urgencia: formData.get('urgencia')
             };
 
             // UI Feedback
@@ -504,8 +498,8 @@
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
-            // Enviar a n8n
-            fetch(WEBHOOK_URL, {
+            // Enviar a Google Apps Script
+            fetch(GAS_WEBHOOK_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -513,7 +507,25 @@
                 body: JSON.stringify(payload)
             })
                 .then(response => {
-                    console.log('✅ Datos enviados a n8n:', response);
+                    console.log('✅ Respuesta del servidor:', response.status, response.statusText);
+                    
+                    // Google Apps Script devuelve 200 incluso con errores, verificar el contenido
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    return response.json().catch(() => {
+                        // Si no hay JSON, asumir éxito por status 200
+                        return { success: true };
+                    });
+                })
+                .then(data => {
+                    console.log('✅ Datos enviados a Google Apps Script:', data);
+                    
+                    // Verificar respuesta específica de GAS
+                    if (data && data.success === false) {
+                        throw new Error(data.error || 'Error en el procesamiento del formulario');
+                    }
 
                     // Mostrar mensaje de éxito
                     document.getElementById('radarForm').classList.add('hidden');
@@ -523,7 +535,7 @@
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'radar_submit', {
                             'event_category': 'lead_generation',
-                            'event_label': payload.reto
+                            'event_label': payload.desafio
                         });
                     }
                 })
