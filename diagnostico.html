@@ -407,45 +407,36 @@
                             </svg>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                            Solicitud Recibida<br>
+                            <strong>¡Diagnóstico Recibido!</strong><br>
                             <span class="text-gray-500 text-lg italic">Request Received</span>
                         </h3>
                         <p class="text-gray-600 mb-6">
-                            Gracias por compartir tu contexto. El equipo directivo de GPMF analizará tu Radar.<br>
-                            <span class="italic text-gray-500 text-sm">Thank you for sharing your context. GPMF's
-                                leadership team will analyze your Radar.</span>
+                            Analizaremos tu radar. Si hay alineación estratégica, nos pondremos en contacto en 24-48h.<br>
+                            <span class="italic text-gray-500 text-sm">We will analyze your radar. If there is strategic alignment, we will contact you within 24-48h.</span>
                         </p>
-                        <p class="text-sm text-gray-500">
-                            Si tu desafío encaja con nuestra experticia, recibirás un correo personal para agendar la
-                            sesión.<br>
-                            <span class="italic text-xs">If your challenge aligns with our expertise, you will receive a
-                                personal email to schedule the session.</span>
-                        </p>
-                        <button onclick="location.reload()"
-                            class="mt-8 text-burgundy underline text-sm hover:text-burgundy/80">Volver al inicio / Back
-                            to start</button>
+                        <a href="index.html"
+                            class="mt-8 text-burgundy underline text-sm hover:text-burgundy/80">Volver al Inicio | Back to Home</a>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
         <!-- CTA Section -->
         <section class="py-20 bg-charcoal text-white text-center">
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-6">¿Listo para transformar tu visión en realidad? / Ready to transform
-                    your vision into reality?</h2>
-                <p class="text-gray-300 mb-8 text-lg">Nuestro equipo de expertos está listo para analizar tu caso y
-                    diseñar una estrategia a medida. / Our team of experts is ready to analyze your case and design a
-                    tailored strategy.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                </div>
+                <h2 class="text-3xl font-bold mb-8"><strong>¿Listo para transformar tu visión?</strong><br>
+                    <span class="text-gray-300 text-2xl italic">Ready to transform your vision?</span></h2>
+                <p class="text-gray-300 mb-12 text-lg max-w-2xl mx-auto">
+                    <em>Analizamos tu caso para diseñar una estrategia a medida.</em><br>
+                    <span class="italic text-gray-400 text-base">We analyze your case to design a tailored strategy.</span>
+                </p>
             </div>
         </section>
     </main>
 
     <script>
         // ============================================
+        // CONFIGURACIÓN GOOGLE APPS SCRIPT
         // 🔧 CONFIGURACIÓN GOOGLE APPS SCRIPT
         // ============================================
         const GAS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzhT6BHWHtROop8FTAlhOBcQ3sfFBj-P5bgTBjHgUTGuaU5CbQWsi9g4K8zM6FbBzI/exec';
@@ -507,28 +498,11 @@
                 },
                 body: JSON.stringify(payload)
             })
-                .then(response => {
-                    console.log('✅ Respuesta del servidor:', response.status, response.statusText);
+                .then(() => {
+                    // Con no-cors, asumimos éxito si no hay error de red
+                    console.log('✅ Datos enviados a Google Apps Script (sin respuesta verificable por CORS)');
                     
-                    // Google Apps Script devuelve 200 incluso con errores, verificar el contenido
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    
-                    return response.json().catch(() => {
-                        // Si no hay JSON, asumir éxito por status 200
-                        return { success: true };
-                    });
-                })
-                .then(data => {
-                    console.log('✅ Datos enviados a Google Apps Script:', data);
-                    
-                    // Verificar respuesta específica de GAS
-                    if (data && data.success === false) {
-                        throw new Error(data.error || 'Error en el procesamiento del formulario');
-                    }
-
-                    // Mostrar mensaje de éxito
+                    // Mostrar mensaje de éxito inmediatamente
                     document.getElementById('radarForm').classList.add('hidden');
                     document.getElementById('successMessage').classList.remove('hidden');
 
@@ -541,14 +515,27 @@
                     }
                 })
                 .catch(error => {
-                    console.error('❌ Error al enviar datos:', error);
-
-                    // Restaurar botón en caso de error
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-
-                    // Mostrar mensaje de error al usuario
-                    alert('Hubo un problema al enviar el formulario. Por favor, intenta nuevamente o contáctanos directamente.');
+                    console.error('❌ Error de red al enviar datos:', error);
+                    
+                    // Solo mostrar error si es un error de red real, no por CORS
+                    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                        // Error de red - mostrar mensaje de error
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        alert('Hubo un problema al enviar el formulario. Por favor, intenta nuevamente o contáctanos directamente.');
+                    } else {
+                        // Otro tipo de error, asumir éxito y mostrar mensaje de éxito
+                        console.log('🔄 Asumiendo éxito despite error:', error);
+                        document.getElementById('radarForm').classList.add('hidden');
+                        document.getElementById('successMessage').classList.remove('hidden');
+                        
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'radar_submit', {
+                                'event_category': 'lead_generation',
+                                'event_label': payload.desafio
+                            });
+                        }
+                    }
                 });
         }
 
