@@ -448,7 +448,7 @@
         // ============================================
         // 🔧 CONFIGURACIÓN GOOGLE APPS SCRIPT
         // ============================================
-        const GAS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyeY_f9-UrIB7TX95Q7zipXon8cN1f71bQs3DGWcH0i7b8ylTt2msRb3NjXlytOgGYT/exec';
+        const GAS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzhT6BHWHtROop8FTAlhOBcQ3sfFBj-P5bgTBjHgUTGuaU5CbQWsi9g4K8zM6FbBzI/exec';
 
         // ============================================
         // 📱 FUNCIONALIDAD DEL MENÚ MÓVIL
@@ -501,8 +501,9 @@
             // Enviar a Google Apps Script
             fetch(GAS_WEBHOOK_URL, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain',
                 },
                 body: JSON.stringify(payload)
             })
