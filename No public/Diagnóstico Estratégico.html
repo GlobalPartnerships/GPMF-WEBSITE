@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Estratégico | GPMF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-warmgray text-charcoal font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER SIMPLE -->
+    <header class="w-full bg-white py-6 border-b border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="Assets/logo.png" alt="GPMF Logo" class="h-10 w-auto object-contain">
+                <span class="text-black font-bold tracking-tight text-lg">GPMF</span>
+            </a>
+            <a href="index.html" class="text-sm text-gray-500 hover:text-burgundy flex items-center gap-2">
+                <i class="fas fa-times"></i> Salir
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-6">
+        <div class="w-full max-w-3xl bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            
+            <!-- Barra de Progreso -->
+            <div class="w-full h-2 bg-gray-100">
+                <div id="progress-bar" class="h-full bg-burgundy transition-all duration-500 ease-out" style="width: 20%"></div>
+            </div>
+
+            <div class="p-8 md:p-12">
+                
+                <form id="diagnosisForm">
+                    
+                    <!-- PASO 1: EL DESAFÍO (Contexto) -->
+                    <div id="step-1" class="step-content">
+                        <span class="text-burgundy font-bold text-xs uppercase tracking-widest mb-2 block">Paso 1 de 4</span>
+                        <h1 class="text-3xl font-serif font-bold text-black mb-6">¿Cuál es su principal desafío hoy?</h1>
+                        
+                        <div class="space-y-4">
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all group">
+                                <input type="radio" name="desafio" value="Internacionalización" class="w-5 h-5 text-burgundy focus:ring-burgundy" required>
+                                <div class="ml-4">
+                                    <span class="block font-bold text-charcoal group-hover:text-burgundy">Internacionalización</span>
+                                    <span class="text-sm text-gray-500">Quiero llevar mi empresa a nuevos mercados (Europa/LatAm).</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all group">
+                                <input type="radio" name="desafio" value="Datos e IA" class="w-5 h-5 text-burgundy focus:ring-burgundy">
+                                <div class="ml-4">
+                                    <span class="block font-bold text-charcoal group-hover:text-burgundy">Inteligencia de Datos & IA</span>
+                                    <span class="text-sm text-gray-500">Tengo datos desordenados y necesito tomar mejores decisiones.</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all group">
+                                <input type="radio" name="desafio" value="Gestión Intercultural" class="w-5 h-5 text-burgundy focus:ring-burgundy">
+                                <div class="ml-4">
+                                    <span class="block font-bold text-charcoal group-hover:text-burgundy">Gestión Intercultural</span>
+                                    <span class="text-sm text-gray-500">Mis equipos globales no se entienden o hay fricción cultural.</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all group">
+                                <input type="radio" name="desafio" value="Estrategia Corporativa" class="w-5 h-5 text-burgundy focus:ring-burgundy">
+                                <div class="ml-4">
+                                    <span class="block font-bold text-charcoal group-hover:text-burgundy">Estrategia Corporativa</span>
+                                    <span class="text-sm text-gray-500">Necesito una hoja de ruta clara para crecer.</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="mt-8 text-right">
+                            <button type="button" onclick="nextStep(2)" class="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-burgundy transition-all shadow-lg">
+                                Siguiente <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2: EL ESTADO (Etapa y Urgencia) -->
+                    <div id="step-2" class="step-content hidden">
+                        <span class="text-burgundy font-bold text-xs uppercase tracking-widest mb-2 block">Paso 2 de 4</span>
+                        <h2 class="text-3xl font-serif font-bold text-black mb-6">Diagnóstico de Situación</h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">¿En qué etapa está el proyecto?</label>
+                                <select name="etapa" class="w-full p-4 border border-gray-200 rounded-lg focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none bg-white">
+                                    <option value="" disabled selected>Seleccione una opción...</option>
+                                    <option value="Exploración">Exploración (Solo idea / Buscando viabilidad)</option>
+                                    <option value="Planeación">Planeación (Tenemos presupuesto, falta ruta)</option>
+                                    <option value="Ejecución">Ejecución (Ya inició, necesitamos orden)</option>
+                                    <option value="Escalamiento">Escalamiento (Optimización y crecimiento)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">¿Qué tan urgente es la solución?</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="urgencia" value="Crítica" class="peer sr-only" required>
+                                        <div class="p-4 border border-gray-200 rounded-lg text-center peer-checked:border-burgundy peer-checked:bg-burgundy peer-checked:text-white hover:bg-gray-50 transition-all">
+                                            <span class="font-bold block text-sm">Crítica</span>
+                                            <span class="text-xs opacity-70">Este mes</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="urgencia" value="Alta" class="peer sr-only">
+                                        <div class="p-4 border border-gray-200 rounded-lg text-center peer-checked:border-burgundy peer-checked:bg-burgundy peer-checked:text-white hover:bg-gray-50 transition-all">
+                                            <span class="font-bold block text-sm">Alta</span>
+                                            <span class="text-xs opacity-70">Q1 / Q2</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="urgencia" value="Media" class="peer sr-only">
+                                        <div class="p-4 border border-gray-200 rounded-lg text-center peer-checked:border-burgundy peer-checked:bg-burgundy peer-checked:text-white hover:bg-gray-50 transition-all">
+                                            <span class="font-bold block text-sm">Media</span>
+                                            <span class="text-xs opacity-70">Próximo año</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex justify-between items-center">
+                            <button type="button" onclick="prevStep(1)" class="text-gray-500 hover:text-black font-medium underline">Atrás</button>
+                            <button type="button" onclick="nextStep(3)" class="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-burgundy transition-all shadow-lg">
+                                Siguiente <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 3: INVERSIÓN (El Filtro) -->
+                    <div id="step-3" class="step-content hidden">
+                        <span class="text-burgundy font-bold text-xs uppercase tracking-widest mb-2 block">Paso 3 de 4</span>
+                        <h2 class="text-3xl font-serif font-bold text-black mb-6">Proyección de Inversión</h2>
+                        <p class="text-gray-600 mb-6">Esto nos ayuda a asignar el nivel de consultor adecuado para su caso.</p>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all">
+                                <input type="radio" name="presupuesto" value="Semilla (<5k)" class="text-burgundy focus:ring-burgundy h-5 w-5" required>
+                                <span class="ml-3 font-medium text-charcoal">< $5,000 USD (Talleres / Semilla)</span>
+                            </label>
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all">
+                                <input type="radio" name="presupuesto" value="Estándar (5k-20k)" class="text-burgundy focus:ring-burgundy h-5 w-5">
+                                <span class="ml-3 font-medium text-charcoal">$5,000 - $20,000 USD (Consultoría Estándar)</span>
+                            </label>
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all">
+                                <input type="radio" name="presupuesto" value="Expansión (20k-50k)" class="text-burgundy focus:ring-burgundy h-5 w-5">
+                                <span class="ml-3 font-medium text-charcoal">$20,000 - $50,000 USD (Expansión Core)</span>
+                            </label>
+                            <label class="flex items-center p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-burgundy hover:bg-burgundy/5 transition-all">
+                                <input type="radio" name="presupuesto" value="Corporativo (50k+)" class="text-burgundy focus:ring-burgundy h-5 w-5">
+                                <span class="ml-3 font-medium text-charcoal">$50,000 USD + (Soluciones Corporativas)</span>
+                            </label>
+                        </div>
+
+                        <div class="mt-8 flex justify-between items-center">
+                            <button type="button" onclick="prevStep(2)" class="text-gray-500 hover:text-black font-medium underline">Atrás</button>
+                            <button type="button" onclick="nextStep(4)" class="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-burgundy transition-all shadow-lg">
+                                Casi listo <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 4: DATOS DE CONTACTO (Cierre) -->
+                    <div id="step-4" class="step-content hidden">
+                        <span class="text-burgundy font-bold text-xs uppercase tracking-widest mb-2 block">Paso Final</span>
+                        <h2 class="text-3xl font-serif font-bold text-black mb-2">Hablemos ahora mismo.</h2>
+                        <p class="text-gray-600 mb-8">Déjenos sus datos para enviarle el diagnóstico preliminar.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Nombre Completo</label>
+                                <input type="text" name="nombre" class="w-full p-4 border border-gray-200 rounded-lg focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none transition-all" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Empresa</label>
+                                <input type="text" name="empresa" class="w-full p-4 border border-gray-200 rounded-lg focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none transition-all" placeholder="Ej: Tech Solutions SAS" required>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Email Corporativo</label>
+                                    <input type="email" name="email" class="w-full p-4 border border-gray-200 rounded-lg focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none transition-all" placeholder="juan@empresa.com" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">WhatsApp (Con código)</label>
+                                    <input type="tel" name="telefono" class="w-full p-4 border border-gray-200 rounded-lg focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none transition-all" placeholder="+57 300..." required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex justify-between items-center">
+                            <button type="button" onclick="prevStep(3)" class="text-gray-500 hover:text-black font-medium underline">Atrás</button>
+                            <button type="submit" id="submitBtn" class="bg-burgundy text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#5e0b26] transition-all shadow-xl w-full md:w-auto">
+                                Solicitar Diagnóstico
+                            </button>
+                        </div>
+                        <p class="text-center text-xs text-gray-400 mt-4">Al enviar, nuestros socios revisarán su perfil en 24h.</p>
+                    </div>
+
+                </form>
+
+                <!-- PANTALLAS DE ESTADO -->
+                <div id="loading-screen" class="hidden text-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-burgundy mx-auto mb-4"></div>
+                    <h3 class="text-xl font-bold text-charcoal">Procesando respuestas...</h3>
+                    <p class="text-gray-500">Conectando con nuestra base de conocimiento.</p>
+                </div>
+
+                <div id="success-screen" class="hidden text-center py-8">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-4xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-charcoal mb-4">¡Solicitud Recibida!</h3>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Gracias por compartir su contexto. El equipo directivo de GPMF analizará su Radar y lo contactaremos en breve.
+                    </p>
+                    <a href="index.html" class="inline-block border border-gray-300 text-charcoal px-8 py-3 rounded-full font-bold hover:bg-gray-50 transition-all">
+                        Volver al Inicio
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-xs text-gray-400">
+        &copy; <span id="year"></span> GPMF. Todos los derechos reservados.
+    </footer>
+
+    <!-- SCRIPT DE CONEXIÓN -->
+    <script>
+        // ⚠️⚠️⚠️ AQUÍ PEGAS TU URL DE N8N ⚠️⚠️⚠️
+        const WEBHOOK_N8N = 'PEGAR_AQUI_LA_URL_DE_TU_WEBHOOK'; 
+
+        // Actualizar año
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function nextStep(step) {
+            // Validación simple
+            const currentStepDiv = document.querySelector('.step-content:not(.hidden)');
+            const inputs = currentStepDiv.querySelectorAll('input[required], select[required]');
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    valid = false;
+                    input.reportValidity();
+                }
+            });
+            if (!valid) return;
+
+            document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = `${step * 25}%`;
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.step-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`step-${step}`).classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = `${step * 25}%`;
+        }
+
+        document.getElementById('diagnosisForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            document.getElementById('step-4').classList.add('hidden');
+            document.getElementById('loading-screen').classList.remove('hidden');
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            data.fecha = new Date().toLocaleString();
+            data.origen = "Web GPMF";
+
+            try {
+                if (WEBHOOK_N8N && WEBHOOK_N8N !== 'PEGAR_AQUI_LA_URL_DE_TU_WEBHOOK') {
+                    await fetch(WEBHOOK_N8N, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                } else {
+                    console.log("Simulación (Falta URL):", data);
+                    await new Promise(r => setTimeout(r, 1500));
+                }
+
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('success-screen').classList.remove('hidden');
+                document.getElementById('progress-bar').style.width = '100%';
+                document.getElementById('progress-bar').className = "h-full bg-green-500 transition-all duration-500 ease-out";
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error de conexión. Intente nuevamente.');
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('step-4').classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Semanal CEO GPMF - Compacta</title>
+    <style>
+        @media print {
+            body { margin: 0; padding: 10px; }
+            .no-print { display: none; }
+            .page-break { page-break-after: always; }
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px;
+            background: white;
+            font-size: 11pt;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+
+        .routine-bar {
+            background: #D1FAE5;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-left: 4px solid #059669;
+        }
+
+        .routine-item {
+            text-align: center;
+            font-size: 0.85em;
+        }
+
+        .routine-item strong {
+            display: block;
+            color: #065F46;
+            font-size: 1.1em;
+        }
+        
+        .week-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .day-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 10px;
+            border-left: 5px solid;
+            break-inside: avoid;
+        }
+        
+        .day-card.lunes { border-left-color: #3B82F6; }
+        .day-card.martes { border-left-color: #EF4444; }
+        .day-card.miercoles { border-left-color: #10B981; }
+        .day-card.jueves { border-left-color: #F59E0B; }
+        .day-card.viernes { border-left-color: #8B5CF6; }
+        .day-card.sabado { border-left-color: #EC4899; }
+        .day-card.domingo { border-left-color: #6366F1; }
+        
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .day-name {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .day-focus {
+            background: #f3f4f6;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        .time-block {
+            margin: 6px 0;
+            padding: 8px;
+            background: #f9fafb;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .time-header {
+            font-weight: bold;
+            color: #374151;
+            margin-bottom: 3px;
+        }
+        
+        .block-content {
+            color: #4B5563;
+            line-height: 1.3;
+            margin-left: 10px;
+        }
+
+        .highlight {
+            background: #FEF3C7;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .sport-block {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .metrics {
+            background: #FEF3C7;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .metrics h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+            color: #92400E;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            font-size: 0.85em;
+        }
+        
+        .metric-item {
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .metric-item strong {
+            display: block;
+            color: #92400E;
+            margin-bottom: 3px;
+        }
+        
+        .rules {
+            background: #DBEAFE;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #3B82F6;
+        }
+        
+        .rules h2 {
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+            color: #1E40AF;
+        }
+        
+        .rules ol {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 0.85em;
+        }
+        
+        .rules li {
+            margin: 5px 0;
+            color: #1E3A8A;
+            line-height: 1.4;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .print-btn:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 AGENDA SEMANAL CEO GPMF</h1>
+        <p>40h trabajo | 3 sesiones deporte | 30min meditación diaria | 7-8h sueño</p>
+    </div>
+
+    <div class="routine-bar">
+        <div class="routine-item">
+            <strong>🧘 AL DESPERTAR</strong>
+            15 min meditación
+        </div>
+        <div class="routine-item">
+            <strong>😴 ANTES DE DORMIR</strong>
+            15 min meditación
+        </div>
+        <div class="routine-item">
+            <strong>💤 CADA NOCHE</strong>
+            7-8 horas de sueño
+        </div>
+    </div>
+
+    <div class="week-grid">
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="column">
+            <!-- LUNES -->
+            <div class="day-card lunes">
+                <div class="day-header">
+                    <div class="day-name">LUNES 🏃‍♀️</div>
+                    <div class="day-focus">CEO & LAB</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">08:00-12:00 (4h)</div>
+                    <div class="block-content">
+                        • Webpage 2h + SQL 1h<br>
+                        • Planning semanal: 3 Must-Win
+                    </div>
+                </div>
+                <div class="sport-block">12:00-13:00 🏊 DEPORTE</div>
+                <div class="time-block">
+                    <div class="time-header">14:00-18:00 (4h)</div>
+                    <div class="block-content">
+                        • Finanzas & cobros<br>
+                        • Admin empresa<br>
+                        • Correos operativos
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIÉRCOLES -->
+            <div class="day-card miercoles">
+                <div class="day-header">
+                    <div class="day-name">MIÉRCOLES 🏃‍♀️</div>
+                    <div class="day-focus">OPERACIONES</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">08:00-12:00 (4h)</div>
+                    <div class="block-content">
+                        • Gestión Airbnb<br>
+                        • Proyectos activos<br>
+                        • Control calidad clientes
+                    </div>
+                </div>
+                <div class="sport-block">12:00-13:00 🏊 DEPORTE</div>
+                <div class="time-block">
+                    <div class="time-header">14:00-18:00 (4h)</div>
+                    <div class="block-content">
+                        • 1-2 aplicaciones trabajo<br>
+                        • Prep. entrevistas<br>
+                        • Networking LinkedIn
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIERNES -->
+            <div class="day-card viernes">
+                <div class="day-header">
+                    <div class="day-name">VIERNES 🏃‍♀️</div>
+                    <div class="day-focus">LAB & REVIEW</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">08:00-12:00 (4h)</div>
+                    <div class="block-content">
+                        • Webpage 2h + SQL 1h<br>
+                        • Weekly Review: OKRs
+                    </div>
+                </div>
+                <div class="sport-block">12:00-13:00 🏊 DEPORTE</div>
+                <div class="time-block">
+                    <div class="time-header">14:00-16:00 (2h)</div>
+                    <div class="block-content">
+                        • Pagos proveedores<br>
+                        • Agenda lunes siguiente<br>
+                        • <strong>Salida 16:00 si cumpliste ✨</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOMINGO -->
+            <div class="day-card domingo">
+                <div class="day-header">
+                    <div class="day-name">DOMINGO</div>
+                    <div class="day-focus">DESCANSO</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">19:00-19:15 (15min)</div>
+                    <div class="block-content">
+                        • Revisar calendario semana<br>
+                        • Llenar bloques vacíos
+                    </div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">Resto del día</div>
+                    <div class="block-content">
+                        <strong>DESCANSO TOTAL</strong><br>
+                        Familia, amigos, hobbies
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="column">
+            <!-- MARTES -->
+            <div class="day-card martes">
+                <div class="day-header">
+                    <div class="day-name">MARTES</div>
+                    <div class="day-focus">HUNTER I</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">08:00-13:00 (5h)</div>
+                    <div class="block-content">
+                        • 15-20 contactos nuevos<br>
+                        • <span class="highlight">Registro HubSpot</span> (todos)<br>
+                        • Follow-ups anteriores<br>
+                        • Investigar Dream Clients
+                    </div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">14:00-18:00 (4h)</div>
+                    <div class="block-content">
+                        • Virtual Coffees<br>
+                        • Networking<br>
+                        • Eventos (AHK, Cámara)
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUEVES -->
+            <div class="day-card jueves">
+                <div class="day-header">
+                    <div class="day-name">JUEVES 🧠</div>
+                    <div class="day-focus">HUNTER II</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">08:00-11:00 (3h)</div>
+                    <div class="block-content">
+                        • <strong>Regla:</strong> Reunión martes → Propuesta HOY<br>
+                        • 10-15 contactos adicionales<br>
+                        • <span class="highlight">Registro HubSpot</span><br>
+                        • Follow-up propuestas >5 días
+                    </div>
+                </div>
+                <div class="time-block" style="background: #E0E7FF;">
+                    <div class="time-header">11:00-13:00 (2h)</div>
+                    <div class="block-content">
+                        <strong>🧠 PSICÓLOGO (cita fija)</strong>
+                    </div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">14:00-18:00 (4h)</div>
+                    <div class="block-content">
+                        • Virtual Coffees<br>
+                        • Llamadas de cierre<br>
+                        • Networking/formación
+                    </div>
+                </div>
+            </div>
+
+            <!-- SÁBADO -->
+            <div class="day-card sabado">
+                <div class="day-header">
+                    <div class="day-name">SÁBADO</div>
+                    <div class="day-focus">FLEXIBLE</div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">09:00-12:00 (2-3h OPCIONAL)</div>
+                    <div class="block-content">
+                        <strong>Solo si hace falta:</strong><br>
+                        • Adelantar webpage/SQL<br>
+                        • Recuperar outreach<br>
+                        • Si vas bien: <strong>DESCANSAR</strong>
+                    </div>
+                </div>
+                <div class="time-block">
+                    <div class="time-header">Resto del día</div>
+                    <div class="block-content">
+                        <strong>TIEMPO PERSONAL</strong><br>
+                        Caminatas, cine, paseos, social
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MÉTRICAS -->
+    <div class="metrics">
+        <h2>📊 MÉTRICAS SEMANALES</h2>
+        <div class="metric-grid">
+            <div class="metric-item">
+                <strong>Outreach</strong>
+                75-100 contactos<br>
+                100% en HubSpot<br>
+                >15% respuesta<br>
+                2-4 reuniones
+            </div>
+            <div class="metric-item">
+                <strong>Job Hunt</strong>
+                1-2 aplicaciones<br>
+                Meta: 1-2<br>
+                entrevistas/mes
+            </div>
+            <div class="metric-item">
+                <strong>Desarrollo</strong>
+                10h webpage<br>
+                2h SQL<br>
+                MVP en 4-6 sem
+            </div>
+            <div class="metric-item">
+                <strong>Bienestar</strong>
+                3 deportes/sem<br>
+                30min meditación<br>
+                7-8h sueño<br>
+                Psicólogo Ju 11am
+            </div>
+        </div>
+    </div>
+
+    <!-- REGLAS -->
+    <div class="rules">
+        <h2>🚦 REGLAS DE ORO</h2>
+        <ol>
+            <li><strong>Modo Lab sagrado:</strong> Lu/Vi 8-12am = crear activos, no vender horas</li>
+            <li><strong>Batching:</strong> Reuniones solo Ma/Ju PM. No cambiar modo análisis↔social constantemente</li>
+            <li><strong>HubSpot no negociable:</strong> TODO contacto registrado mismo día. Si no está en HubSpot, no existe</li>
+            <li><strong>Domingo 19:00:</strong> 15min revisar calendario. Llenar bloques vacíos con tareas OKRs</li>
+        </ol>
+    </div>
+
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Imprimir</button>
+</body>
+</html>

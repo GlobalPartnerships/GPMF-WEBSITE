@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendador Inteligente | GPMF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-warmgray text-charcoal font-sans min-h-screen flex items-center justify-center p-6">
+
+    <!-- CONTENEDOR PRINCIPAL DEL WIDGET -->
+    <div class="bg-white max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col md:flex-row">
+        
+        <!-- PANEL IZQUIERDO: Info de la Reunión -->
+        <div class="w-full md:w-1/3 bg-charcoal text-white p-8 flex flex-col justify-between">
+            <div>
+                <h3 class="text-burgundy font-bold tracking-widest text-sm mb-6 uppercase">GPMF Consulting</h3>
+                <h1 class="text-2xl font-serif font-bold mb-4">Sesión de Diagnóstico Estratégico</h1>
+                
+                <div class="space-y-4 text-sm text-gray-300 mt-6">
+                    <div class="flex items-center gap-3">
+                        <i class="far fa-clock text-burgundy w-5"></i>
+                        <span>30 Minutos</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-video text-burgundy w-5"></i>
+                        <span>Google Meet / Teams</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-users text-burgundy w-5 mt-1"></i>
+                        <span>Con: Equipo Directivo GPMF<br><span class="text-xs text-gray-400">(Buscando disponibilidad conjunta)</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-xs text-gray-500 mt-12 border-t border-gray-700 pt-4">
+                Nuestra IA está cruzando las agendas de nuestros socios para ofrecerte el mejor horario.
+            </p>
+        </div>
+
+        <!-- PANEL DERECHO: Selector de Fecha y Hora -->
+        <div class="w-full md:w-2/3 p-8">
+            <h2 class="text-xl font-bold mb-6 text-center md:text-left">Selecciona una fecha y hora</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                
+                <!-- Calendario (Simulado) -->
+                <div class="w-full md:w-1/2">
+                    <div class="flex justify-between items-center mb-4">
+                        <button class="text-gray-400 hover:text-black"><i class="fas fa-chevron-left"></i></button>
+                        <span class="font-bold">Marzo 2026</span>
+                        <button class="text-gray-400 hover:text-black"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-1 text-center text-xs font-medium text-gray-500 mb-2">
+                        <div>DO</div><div>LU</div><div>MA</div><div>MI</div><div>JU</div><div>VI</div><div>SA</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-1 text-center text-sm" id="calendar-days">
+                        <!-- Días vacíos -->
+                        <div class="p-2 text-gray-300">1</div><div class="p-2 text-gray-300">2</div>
+                        <!-- Días activos -->
+                        <div class="p-2 hover:bg-burgundy/10 rounded-full cursor-pointer transition font-bold text-burgundy" onclick="showSlots('3 Mar')">3</div>
+                        <div class="p-2 hover:bg-burgundy/10 rounded-full cursor-pointer transition font-bold text-burgundy" onclick="showSlots('4 Mar')">4</div>
+                        <div class="p-2 hover:bg-gray-100 rounded-full cursor-pointer transition text-gray-700" onclick="showSlots('5 Mar')">5</div>
+                        <div class="p-2 hover:bg-gray-100 rounded-full cursor-pointer transition text-gray-700" onclick="showSlots('6 Mar')">6</div>
+                        <div class="p-2 text-gray-300">7</div>
+                        <!-- Más días... -->
+                        <div class="p-2 text-gray-300">8</div>
+                        <div class="p-2 hover:bg-gray-100 rounded-full cursor-pointer transition text-gray-700" onclick="showSlots('9 Mar')">9</div>
+                        <div class="p-2 hover:bg-gray-100 rounded-full cursor-pointer transition text-gray-700" onclick="showSlots('10 Mar')">10</div>
+                        <div class="p-2 hover:bg-burgundy/10 rounded-full cursor-pointer transition font-bold text-burgundy" onclick="showSlots('11 Mar')">11</div>
+                    </div>
+                </div>
+
+                <!-- Horarios Disponibles (Aparecen al hacer clic en un día) -->
+                <div class="w-full md:w-1/2 hidden md:block" id="time-slots-container">
+                    <p class="text-sm text-gray-500 mb-4" id="selected-date-text">Selecciona un día...</p>
+                    
+                    <div class="space-y-3 hidden" id="slots-list">
+                        <!-- Estos botones representan la "intersección" de agendas -->
+                        <button class="w-full py-3 border border-burgundy text-burgundy rounded-lg font-bold hover:bg-burgundy hover:text-white transition">09:00 AM</button>
+                        <button class="w-full py-3 border border-burgundy text-burgundy rounded-lg font-bold hover:bg-burgundy hover:text-white transition">11:30 AM</button>
+                        <button class="w-full py-3 border border-burgundy text-burgundy rounded-lg font-bold hover:bg-burgundy hover:text-white transition">02:00 PM</button>
+                        <button class="w-full py-3 border border-burgundy text-burgundy rounded-lg font-bold hover:bg-burgundy hover:text-white transition">04:30 PM</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSlots(dateStr) {
+            document.getElementById('time-slots-container').classList.remove('hidden');
+            document.getElementById('slots-list').classList.remove('hidden');
+            document.getElementById('selected-date-text').innerHTML = `Espacios comunes disponibles para el <strong>${dateStr}</strong>`;
+            
+            // Efecto visual en los días
+            const days = document.querySelectorAll('#calendar-days > div.cursor-pointer');
+            days.forEach(d => {
+                d.classList.remove('bg-burgundy', 'text-white');
+                if(d.innerText === dateStr.split(' ')[0]) {
+                    d.classList.add('bg-burgundy', 'text-white');
+                    d.classList.remove('text-burgundy', 'text-gray-700');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

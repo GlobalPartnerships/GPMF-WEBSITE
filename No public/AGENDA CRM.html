@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF SalesOS | Sistema de Ventas B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; height: 300px; }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid #e2e8f0; }
+        .tier-badge-vip { background-color: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+        .tier-badge-gold { background-color: #F3F4F6; color: #4B5563; border: 1px solid #D1D5DB; }
+        .tier-badge-silver { background-color: #F9FAFB; color: #9CA3AF; border: 1px solid #E5E7EB; }
+        /* Custom scrollbar for table */
+        .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Chosen Palette: Premium Navy & Slate (Consultancy Trust) -->
+    <!-- Application Structure Plan: Dashboard layout. Top: KPIs. Middle: Visual Analytics (Charts). Bottom: Detailed CRM Table & Script Library. Designed to give an "Executive View" of the sales effort. -->
+    <!-- Visualization & Content Choices: Chart.js for Pipeline and Sectors. HTML Tables for CRM. Tabs for Scripts. No SVG/Mermaid. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation / Header -->
+    <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold tracking-tight text-blue-400">GPMF</span>
+                    <span class="ml-2 text-sm font-light text-slate-300">| Sales Operating System</span>
+                </div>
+                <div class="flex items-center space-x-4 text-sm">
+                    <span class="px-3 py-1 rounded bg-slate-800 text-green-400 border border-green-900/50 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Sistema Activo
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Intro Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-slate-900">Tablero de Control: Sprint de Prospección</h1>
+            <p class="mt-2 text-lg text-slate-600 max-w-3xl">
+                Visualización consolidada de la estrategia de reactivación de red (Febrero 2026). 
+                Este tablero resume la gestión de 23 contactos de alto nivel en 48 horas, transformando la base de datos en un pipeline activo.
+            </p>
+        </div>
+
+        <!-- KPI Metrics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Metric 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Total Contactados</p>
+                <div class="mt-2 flex items-baseline">
+                    <span class="text-4xl font-bold text-slate-900">23</span>
+                    <span class="ml-2 text-sm font-medium text-green-600">En 2 días</span>
+                </div>
+                <div class="mt-4 w-full bg-slate-100 rounded-full h-1.5">
+                    <div class="bg-blue-600 h-1.5 rounded-full" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Reuniones Agendadas</p>
+                <div class="mt-2 flex items-baseline">
+                    <span class="text-4xl font-bold text-slate-900">3</span>
+                    <span class="ml-2 text-sm font-medium text-green-600">13% Conv.</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Dennis, Arturo, Valeria</p>
+                <div class="mt-3 w-full bg-slate-100 rounded-full h-1.5">
+                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 13%"></div>
+                </div>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Respuestas "Tibias"</p>
+                <div class="mt-2 flex items-baseline">
+                    <span class="text-4xl font-bold text-slate-900">2</span>
+                    <span class="ml-2 text-sm font-medium text-amber-600">Aplazados</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Claudia, Daniela (Marzo)</p>
+                <div class="mt-3 w-full bg-slate-100 rounded-full h-1.5">
+                    <div class="bg-amber-400 h-1.5 rounded-full" style="width: 9%"></div>
+                </div>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Tasa de Respuesta</p>
+                <div class="mt-2 flex items-baseline">
+                    <span class="text-4xl font-bold text-slate-900">21.7%</span>
+                    <span class="ml-2 text-sm font-medium text-blue-600">Proyección</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Basado en historial</p>
+                <div class="mt-3 w-full bg-slate-100 rounded-full h-1.5">
+                    <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 22%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            
+            <!-- Sector Distribution Chart -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4 border-b pb-2">Distribución por Sector Estratégico</h3>
+                <p class="text-sm text-slate-500 mb-4">Diversificación de los 23 prospectos contactados para asegurar múltiples frentes de ingreso.</p>
+                <div class="chart-container">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Funnel & Tiers Chart -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4 border-b pb-2">Composición por Nivel (Tier)</h3>
+                <p class="text-sm text-slate-500 mb-4">Calidad de los contactos activados. VIP = Tomadores de decisión clave.</p>
+                <div class="chart-container">
+                    <canvas id="tierChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRM Table Section -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 mb-8 overflow-hidden">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center flex-wrap gap-4">
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900">Pipeline de "Warm Contacts"</h3>
+                    <p class="text-sm text-slate-500">Lista maestra de los 23 contactos gestionados en la sesión.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="filterCRM('all')" class="px-3 py-1 text-sm bg-slate-100 hover:bg-slate-200 rounded-md font-medium transition">Todos</button>
+                    <button onclick="filterCRM('VIP')" class="px-3 py-1 text-sm bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-md font-medium transition border border-amber-200">VIP 🥇</button>
+                    <button onclick="filterCRM('Agendado')" class="px-3 py-1 text-sm bg-green-50 hover:bg-green-100 text-green-800 rounded-md font-medium transition border border-green-200">Agendados 🟢</button>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto custom-scroll">
+                <table class="min-w-full divide-y divide-slate-200">
+                    <thead class="bg-slate-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Nombre</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Organización</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Tier</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Estado</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Próxima Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crmBody" class="bg-white divide-y divide-slate-200 text-sm">
+                        <!-- Data populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Strategy & Scripts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- The Daily Routine -->
+            <div class="lg:col-span-1 bg-slate-900 text-white p-6 rounded-xl shadow-lg">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="p-2 bg-blue-600 rounded-lg">📅</div>
+                    <h3 class="text-lg font-bold">La Agenda GPMF</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="relative pl-4 border-l-2 border-blue-500">
+                        <span class="text-xs font-mono text-blue-300">08:30 - 09:15</span>
+                        <h4 class="font-bold text-white">🎯 La Hora de Poder</h4>
+                        <p class="text-xs text-slate-400 mt-1">Prospección pura. Sin abrir correo. Solo Excel y LinkedIn.</p>
+                    </div>
+                    <div class="relative pl-4 border-l-2 border-purple-500">
+                        <span class="text-xs font-mono text-purple-300">09:30 - 12:30</span>
+                        <h4 class="font-bold text-white">🧠 Deep Work</h4>
+                        <p class="text-xs text-slate-400 mt-1">Propuestas, Estrategia Técnica, Operaciones.</p>
+                    </div>
+                    <div class="relative pl-4 border-l-2 border-green-500">
+                        <span class="text-xs font-mono text-green-300">14:00 - 16:30</span>
+                        <h4 class="font-bold text-white">☕ Zona Social</h4>
+                        <p class="text-xs text-slate-400 mt-1">Cafés Virtuales (Dennis, Arturo, Valeria).</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-3 bg-slate-800 rounded border border-slate-700">
+                    <p class="text-xs font-medium text-slate-300">💡 Regla de Oro:</p>
+                    <p class="text-xs text-slate-400 italic">"Si no está en el CRM, no existe. Si no está en la agenda, no se hace."</p>
+                </div>
+            </div>
+
+            <!-- Scripts Vault -->
+            <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="mb-4 flex items-center justify-between">
+                    <h3 class="text-lg font-bold text-slate-900">📚 La Bóveda de Scripts</h3>
+                    <p class="text-xs text-slate-500">Plantillas validadas en esta campaña</p>
+                </div>
+                
+                <!-- Tab Headers -->
+                <div class="flex border-b border-slate-200 mb-4 overflow-x-auto">
+                    <button onclick="showScript('bump')" class="script-tab px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 focus:outline-none" id="tab-bump">El "Bump" (Seguimiento)</button>
+                    <button onclick="showScript('whatsapp')" class="script-tab px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 focus:outline-none" id="tab-whatsapp">Estrategia WhatsApp</button>
+                    <button onclick="showScript('institutional')" class="script-tab px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 focus:outline-none" id="tab-institutional">Pitch Institucional</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div id="content-bump" class="script-content">
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 font-mono text-sm text-slate-700">
+                        <p class="mb-2 font-bold text-slate-900">// Para retomar contactos fríos o perdidos en fechas malas (Enero/Dic)</p>
+                        <p>"Hola [Nombre], espero que estés teniendo un excelente arranque.</p>
+                        <br>
+                        <p>Revisando mis enviados vi que te escribí en una fecha pésima 😅. Seguro quedó sepultado.</p>
+                        <br>
+                        <p>Te lo refloto porque sigo convencida de que en <strong>GPMF</strong> podemos ser ese aliado para [Dolor Específico: Limpieza de datos / Internacionalización].</p>
+                        <br>
+                        <p>¿Tendrías 10 min la próxima semana? ¡Un abrazo!"</p>
+                    </div>
+                </div>
+
+                <div id="content-whatsapp" class="script-content hidden">
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200 font-mono text-sm text-green-900">
+                        <p class="mb-2 font-bold">// Para cuando ya enviaste el LinkedIn y tienes el número</p>
+                        <p>"¡Hola [Nombre]! Soy Marcela Sánchez. Te escribo por acá porque me compartiste tu número cuando [Contexto: nos conocimos en X / intentamos reunirnos].</p>
+                        <br>
+                        <p>Te acabo de dejar un mensajito más detallado por LinkedIn para ver si retomamos nuestra charla pendiente sobre [Tema]. Sería chévere por fin tomarnos ese café virtual.</p>
+                        <br>
+                        <p>¡Me cuentas cuando lo veas, un abrazo!"</p>
+                    </div>
+                </div>
+
+                <div id="content-institutional" class="script-content hidden">
+                    <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200 font-mono text-sm text-indigo-900">
+                        <p class="mb-2 font-bold">// Para respuesta formal a VIPs (Caso Arturo Dominici)</p>
+                        <p>"Estimado [Nombre], gracias por tu respuesta. Copio a [Equipo] como sugeriste.</p>
+                        <br>
+                        <p>Para contexto: Tras mi paso por CEMarin, fundé <strong>GPMF</strong>. Operamos como <strong>Directivas Fraccionadas</strong> enfocadas en:</p>
+                        <ul class="list-disc ml-4">
+                            <li>Internacionalización Táctica.</li>
+                            <li>Gestión de Alianzas Complejas.</li>
+                            <li>Optimización Operativa.</li>
+                        </ul>
+                        <br>
+                        <p>Operamos con nodos en <strong>Bogotá, Clermont-Ferrand y Montreal</strong>. Quedo atenta para nuestra reunión del [Fecha]."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <p>© 2026 GPMF. Dashboard generado automáticamente basado en el Sprint de Febrero.</p>
+    </footer>
+
+    <script>
+        // --- DATA ---
+        const crmData = [
+            { name: "Dennis Garcia", org: "CINTEL", tier: "Gold", status: "Agendado", action: "25/02 Videollamada", note: "H2020 / Boyacá TIC" },
+            { name: "Arturo Dominici", org: "UMIP Panamá", tier: "VIP", status: "Agendado", action: "03/03 Videollamada", note: "Alianza Institucional / Decana" },
+            { name: "Valeria Soler", org: "Young AI Leaders", tier: "VIP", status: "Agendado", action: "Reunión Sinergias", note: "IA + Biodiversidad / ONU" },
+            { name: "Claudia Romano", org: "CELAC / Uruguay", tier: "VIP", status: "Aplazado", action: "08/04 Retomar", note: "Hub Regional / Partnership" },
+            { name: "Daniela Fazenda", org: "CCMAR Portugal", tier: "Gold", status: "Aplazado", action: "18/03 Retomar", note: "Innovación / Casa Faro" },
+            { name: "Daniel Dippold", org: "EWOR", tier: "VIP", status: "Enviado", action: "Seguimiento", note: "Founder's Associate / Inversión" },
+            { name: "Julia Santander", org: "EcoEnterprises", tier: "VIP", status: "Enviado", action: "Confirmar Café", note: "Inversión Impacto / Berlín" },
+            { name: "Alberto Pacheco", org: "UNEP Nairobi", tier: "VIP", status: "Enviado", action: "Bump 26/02", note: "Regional Seas / ONU" },
+            { name: "Silvia Restrepo", org: "Boyce Thompson", tier: "VIP", status: "Enviado", action: "Bump 25/02", note: "Presidenta NY / Ex-Junta" },
+            { name: "Antonio Lira", org: "Ex-Medismart", tier: "VIP", status: "Conectado", action: "Enviar Mensaje", note: "Scale-ups Chile / IA" },
+            { name: "Sergio Cristancho", org: "Univ. Icesi", tier: "VIP", status: "Pendiente", action: "Enviar Intro", note: "Dir. Investigaciones / Ex-Vice" },
+            { name: "Carlos E. Navarro", org: "UKON", tier: "VIP", status: "Enviado", action: "Agendar", note: "Automatización / Ex-Rosario" },
+            { name: "David Osorio", org: "Flink", tier: "Gold", status: "Enviado", action: "Agendar", note: "CVC / Banca Inversión" },
+            { name: "Luciana Ayciriex", org: "Inmark Madrid", tier: "VIP", status: "Enviado", action: "Correo si no rta", note: "Consultora UE / ALCUE NET" },
+            { name: "Erick Varela", org: "PLT Engineering", tier: "Gold", status: "Enviado", action: "Confirmar", note: "Energía / Infraestructura" },
+            { name: "Carlos Salazar", org: "Logixtic", tier: "Gold", status: "Enviado (WA)", action: "Esperar Rta", note: "Logística / Fleetmon" },
+            { name: "Felipe Cadavid", org: "Automality", tier: "Silver", status: "Enviado (WA)", action: "Esperar Rta", note: "IA / Automatización" },
+            { name: "Andrés Roldán", org: "UNAL / Uninorte", tier: "Gold", status: "Enviado", action: "Esperar Rta", note: "Parque Innovación" },
+            { name: "Ignacio Ibañez", org: "GOPA Com.", tier: "Gold", status: "Enviado", action: "Bump 26/02", note: "Fondos UE / MarTERA" },
+            { name: "Francisco Pando", org: "CSIC España", tier: "Gold", status: "Enviado", action: "Bump 25/02", note: "CaixaForum / Real Jardín" },
+            { name: "Alejandro Espinoza", org: "ECOSUR", tier: "Gold", status: "Enviado", action: "Bump 25/02", note: "ZMT Santa Marta" },
+            { name: "Omar R. Lopez", org: "IAI Panamá", tier: "VIP", status: "Enviado", action: "Bump 25/02", note: "SargMarine / Colciencias" },
+            { name: "Francisco Mardones", org: "Chile Tec", tier: "VIP", status: "Bump Enviado", action: "27/02 Revisar", note: "Referido Optasalud" }
+        ];
+
+        // --- RENDER CRM TABLE ---
+        const crmBody = document.getElementById('crmBody');
+
+        function renderTable(filter) {
+            crmBody.innerHTML = '';
+            const filteredData = filter === 'all' 
+                ? crmData 
+                : crmData.filter(item => {
+                    if (filter === 'VIP') return item.tier === 'VIP';
+                    if (filter === 'Agendado') return item.status === 'Agendado';
+                    return true;
+                });
+
+            filteredData.forEach(contact => {
+                const tierClass = contact.tier === 'VIP' ? 'tier-badge-vip' : (contact.tier === 'Gold' ? 'tier-badge-gold' : 'tier-badge-silver');
+                const statusColor = contact.status === 'Agendado' ? 'text-green-600 font-bold' : (contact.status.includes('Aplazado') ? 'text-amber-600' : 'text-slate-600');
+                
+                const row = `
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-slate-900">${contact.name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-slate-500">${contact.org}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 py-1 text-xs rounded-full font-medium ${tierClass}">${contact.tier}</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap ${statusColor}">${contact.status}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-slate-500 text-xs">
+                            <div class="font-medium">${contact.action}</div>
+                            <div class="text-slate-400 truncate max-w-[150px]" title="${contact.note}">${contact.note}</div>
+                        </td>
+                    </tr>
+                `;
+                crmBody.innerHTML += row;
+            });
+        }
+
+        function filterCRM(filter) {
+            renderTable(filter);
+        }
+
+        // Initialize Table
+        renderTable('all');
+
+        // --- SCRIPTS TABS LOGIC ---
+        function showScript(scriptId) {
+            // Hide all
+            document.querySelectorAll('.script-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.script-tab').forEach(el => {
+                el.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+                el.classList.add('text-slate-500');
+            });
+
+            // Show selected
+            document.getElementById(`content-${scriptId}`).classList.remove('hidden');
+            const activeTab = document.getElementById(`tab-${scriptId}`);
+            activeTab.classList.remove('text-slate-500');
+            activeTab.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+        }
+
+        // --- CHARTS ---
+        
+        // 1. Sector Chart (Doughnut)
+        const ctxSector = document.getElementById('sectorChart').getContext('2d');
+        new Chart(ctxSector, {
+            type: 'doughnut',
+            data: {
+                labels: ['Academia & Ciencia', 'Tech & IA', 'Gobierno & Multilateral', 'Inversión & CVC', 'Privado (Ing/Log)'],
+                datasets: [{
+                    data: [6, 4, 6, 3, 4], // Approximate counts based on the 23 list
+                    backgroundColor: [
+                        '#3b82f6', // Blue (Academia)
+                        '#8b5cf6', // Purple (Tech)
+                        '#10b981', // Emerald (Gov)
+                        '#f59e0b', // Amber (Invest)
+                        '#64748b'  // Slate (Private)
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { usePointStyle: true, boxWidth: 8 } }
+                }
+            }
+        });
+
+        // 2. Tier Chart (Bar)
+        const ctxTier = document.getElementById('tierChart').getContext('2d');
+        new Chart(ctxTier, {
+            type: 'bar',
+            data: {
+                labels: ['VIP (C-Level/Strategic)', 'Gold (Connectors)', 'Silver (Others)'],
+                datasets: [{
+                    label: 'Cantidad de Prospectos',
+                    data: [11, 11, 1], // Count based on CRM data array above
+                    backgroundColor: ['#FCD34D', '#E5E7EB', '#F3F4F6'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
