@@ -17,7 +17,7 @@ const translations = {
         // HOME - HERO
         "home.hero.title": "Inteligencia Estratégica &",
         "home.hero.span": "Ejecución Global.",
-        "home.hero.desc": "Conectamos oportunidades entre Europa y Latam con metodologías de clase mundial y agilidad boutique.",
+        "home.hero.desc": "Ayudamos a PYMEs a entrar a Europa y Latam sin perder tiempo en burocracia ni cultura.",
         "home.hero.cta": "Planes estratégicos", // ← New change
         "home.hero.services": "Hablemos de su estrategia",
         "home.trust.title": "Confianza generada en ecosistemas globales",
