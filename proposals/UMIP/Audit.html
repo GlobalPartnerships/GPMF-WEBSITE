@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Propuesta Técnica GPMF - UMIP Panamá</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        
+
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        
+
+        /* Estilos para impresión PDF */
+
+        @media print {
+
+            body { background-color: white; }
+
+            .no-print { display: none; }
+
+            .page-break { page-break-before: always; }
+
+            .card { border: 1px solid #e5e7eb; box-shadow: none !important; }
+
+            .bg-burgundy { background-color: #7A0F32 !important; -webkit-print-color-adjust: exact; }
+
+            .text-burgundy { color: #7A0F32 !important; }
+
+        }
+
+
+
+        .bg-burgundy { background-color: #7A0F32; }
+
+        .text-burgundy { color: #7A0F32; }
+
+    </style>
+
+</head>
+
+<body class="p-4 md:p-10">
+
+
+
+    <!-- Botón de impresión (no sale en el PDF) -->
+
+    <div class="max-w-4xl mx-auto mb-6 no-print flex justify-end">
+
+        <button onclick="window.print()" class="bg-burgundy text-white px-6 py-2 rounded shadow hover:bg-red-900 transition-all flex items-center gap-2">
+
+            <span>🖨️ Guardar como PDF para Arturo</span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- Documento Principal -->
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200 card">
+
+        
+
+        <!-- Portada -->
+
+        <div class="bg-burgundy p-12 text-white">
+
+            <div class="flex justify-between items-start mb-12">
+
+                <div>
+
+                    <div class="w-12 h-12 bg-white text-burgundy flex items-center justify-center font-bold text-2xl mb-4">G</div>
+
+                    <p class="text-xs tracking-widest uppercase opacity-70">Global Partnerships & Multidisciplinary Firm</p>
+
+                </div>
+
+                <div class="text-right">
+
+                    <p class="text-sm">Propuesta: GPMF-2026-PA-001</p>
+
+                    <p class="text-sm">Fecha: 17 de marzo, 2026</p>
+
+                </div>
+
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Misión de Diagnóstico de Gobernanza In-Situ</h1>
+
+            <h2 class="text-xl opacity-90 font-light">Activación y Blindaje de la AIP "ITRE" para Fondos Internacionales</h2>
+
+            <div class="mt-8 pt-8 border-t border-white/20">
+
+                <p class="text-sm">Preparado para:</p>
+
+                <p class="text-lg font-semibold">Arturo Dominici / Nancy Cisneros</p>
+
+                <p class="text-sm opacity-80">Universidad Marítima Internacional de Panamá (UMIP)</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Cuerpo del Documento -->
+
+        <div class="p-12 space-y-10">
+
+            
+
+            <!-- Contexto y Tesis -->
+
+            <section>
+
+                <h3 class="text-2xl text-burgundy border-b-2 border-burgundy pb-2 mb-4">1. El Desafío Institucional</h3>
+
+                <p class="text-gray-700 leading-relaxed mb-4">
+
+                    Tras nuestra sesión inicial, se identifica que la UMIP se encuentra en una etapa de transición crítica con la creación de la <strong>Asociación de Interés Público (AIP) ITRE</strong>. Si bien la figura legal existe, la carencia de una <strong>Arquitectura de Gobernanza</strong> robusta genera un "cuello de botella" en la captación y ejecución de fondos de alta exigencia (UE, Global Affairs Canada, NSF).
+
+                </p>
+
+                <p class="text-gray-700 leading-relaxed">
+
+                    La ambición científica de la UMIP requiere un <strong>Blueprint Operativo</strong> que garantice trazabilidad absoluta y cumplimiento ante la <strong>OMI</strong>, evitando que la burocracia ralentice el impacto regional de la universidad.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- Metodología -->
+
+            <section>
+
+                <h3 class="text-2xl text-burgundy border-b-2 border-burgundy pb-2 mb-4">2. Estructura de la Misión (15 Días In-Situ)</h3>
+
+                <p class="text-sm text-gray-500 mb-6 italic">La intervención se divide en tres fases para asegurar la transferencia de conocimiento.</p>
+
+                
+
+                <div class="space-y-6">
+
+                    <div class="flex gap-6">
+
+                        <div class="bg-gray-100 text-burgundy font-bold p-4 rounded h-fit">01</div>
+
+                        <div>
+
+                            <h4 class="font-bold text-lg">Inmersión y Auditoría Operativa (Semana 1)</h4>
+
+                            <p class="text-sm text-gray-600">Presencia directa en la Dirección de Cooperación Técnica y Facultad de Ciencias. Entrevistas con stakeholders clave para mapear el "shadowing" de procesos actuales y brechas frente a estándares internacionales.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-6">
+
+                        <div class="bg-gray-100 text-burgundy font-bold p-4 rounded h-fit">02</div>
+
+                        <div>
+
+                            <h4 class="font-bold text-lg">Diseño del Blueprint de la AIP (Semana 2)</h4>
+
+                            <p class="text-sm text-gray-600">Mesas de trabajo con el equipo legal para diseñar la <strong>Gobernanza Mínima Viable</strong>. Establecimiento de protocolos de decisión que separen la política de la ejecución técnica.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-6">
+
+                        <div class="bg-gray-100 text-burgundy font-bold p-4 rounded h-fit">03</div>
+
+                        <div>
+
+                            <h4 class="font-bold text-lg">Hoja de Ruta de Elegibilidad (Cierre)</h4>
+
+                            <p class="text-sm text-gray-600">Presentación ante la Rectoría del plan de acción para el Q3 y Q4 de 2026. Entrega de los manuales de gobernanza listos para implementación inmediata.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <div class="page-break"></div>
+
+
+
+            <!-- Matriz de Readiness -->
+
+            <section class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+
+                <h3 class="text-2xl text-burgundy mb-6">Matriz de Institutional Readiness GPMF</h3>
+
+                <p class="text-sm text-gray-500 mb-6">Nivel de intervención objetivo durante la misión presencial.</p>
+
+                <table class="w-full text-xs text-left">
+
+                    <thead>
+
+                        <tr class="bg-gray-200">
+
+                            <th class="p-3 border">Variable Crítica</th>
+
+                            <th class="p-3 border">Estado UMIP</th>
+
+                            <th class="p-3 border">Meta Post-Misión</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td class="p-3 border font-bold">Trazabilidad de Fondos</td>
+
+                            <td class="p-3 border">Moderada (vía terceros)</td>
+
+                            <td class="p-3 border text-green-700 font-bold">Nivel 4: Audit-Ready</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="p-3 border font-bold">Gobernanza de la AIP</td>
+
+                            <td class="p-3 border">Etapa de Clarificación</td>
+
+                            <td class="p-3 border text-green-700 font-bold">Blueprint Operativo</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="p-3 border font-bold">Compliance OMI/UE</td>
+
+                            <td class="p-3 border">Cumplimiento formal</td>
+
+                            <td class="p-3 border text-green-700 font-bold">Certificación lógica</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+
+            <!-- Modalidades de Servicio GPMF -->
+
+            <section class="page-break">
+
+                <h3 class="text-2xl text-burgundy border-b-2 border-burgundy pb-2 mb-6">Nuestras Modalidades de Intervención</h3>
+
+                
+
+                <!-- Sprint de Diagnóstico -->
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-6 border border-blue-200">
+
+                    <div class="flex justify-between items-start mb-4">
+
+                        <div>
+
+                            <h4 class="text-xl font-bold text-blue-900">Sprint de Diagnóstico Operativo</h4>
+
+                            <p class="text-sm text-blue-700 font-semibold">15 Horas / Virtual</p>
+
+                        </div>
+
+                        <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Más Solicitado</span>
+
+                    </div>
+
+                    <p class="text-gray-700 mb-4">Intervención de alta velocidad para identificar los "blind spots" que bloquean el crecimiento o la elegibilidad de fondos.</p>
+
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+
+                        <li>• Mapeo de brechas operativas.</li>
+
+                        <li>• Evaluación de elegibilidad para Grants.</li>
+
+                        <li>• Hoja de ruta de acciones inmediatas.</li>
+
+                    </ul>
+
+                    <p class="text-xs text-blue-800 font-semibold">*Ideal para PYMES y fundaciones en fase de despegue.</p>
+
+                    <button class="mt-3 text-blue-600 text-sm font-semibold hover:text-blue-800">Ver Alcance Detallado →</button>
+
+                </div>
+
+
+
+                <!-- Misión de Diagnóstico In-Situ -->
+
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg mb-6 border border-green-200">
+
+                    <div class="flex justify-between items-start mb-4">
+
+                        <div>
+
+                            <h4 class="text-xl font-bold text-green-900">Misión de Diagnóstico In-Situ</h4>
+
+                            <p class="text-sm text-green-700 font-semibold">15 Días / Inmersión Presencial</p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-gray-700 mb-4">Auditoría profunda "en el barro". Diseñamos el Blueprint de Gobernanza directamente en el corazón de su operación.</p>
+
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+
+                        <li>✓ Workshop de Gobernanza y Procesos.</li>
+
+                        <li>✓ Activación de AIPs o figuras legales.</li>
+
+                        <li>✓ Auditoría de confianza y cumplimiento.</li>
+
+                        <li>✓ Shadowing de procesos críticos.</li>
+
+                    </ul>
+
+                    <p class="text-xs text-green-800 font-semibold">*Diseñado para Instituciones Multilaterales y Universidades.</p>
+
+                    <button class="mt-3 bg-green-600 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-green-700">Solicitar Misión Panamá/LatAm</button>
+
+                </div>
+
+
+
+                <!-- Dirección de Operaciones as a Service -->
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-6 border border-purple-200">
+
+                    <div class="flex justify-between items-start mb-4">
+
+                        <div>
+
+                            <h4 class="text-xl font-bold text-purple-900">Dirección de Operaciones as a Service</h4>
+
+                            <p class="text-sm text-purple-700 font-semibold">Fractional COO / Largo Plazo</p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-gray-700 mb-4">GPMF asume la responsabilidad operativa fraccionada. Actuamos como su brazo ejecutor senior sin el costo de un C-Level fijo.</p>
+
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+
+                        <li>• Gestión de fondos internacionales.</li>
+
+                        <li>• Orquestación de alianzas B2B/B2G.</li>
+
+                        <li>• Optimización continua de sistemas.</li>
+
+                        <li>• Reporte de integridad a socios/junta.</li>
+
+                    </ul>
+
+                    <p class="text-xs text-purple-800 font-semibold mb-3">Modelo de Inversión: Basado en fondos gestionados o volumen operativo (A convenir).</p>
+
+                </div>
+
+
+
+                <!-- Evaluación de Sinergia -->
+
+                <div class="bg-gray-100 p-6 rounded-lg border border-gray-300">
+
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Evaluación de Sinergia GPMF</h4>
+
+                    <p class="text-sm text-gray-600 mb-3">| Global Partnerships & Multidisciplinary Firm</p>
+
+                    <p class="text-sm text-gray-700 mb-4"><strong>Expertos en la Arquitectura de Confianza para la Ciencia y la Innovación.</strong></p>
+
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+
+                        <div>
+
+                            <h5 class="font-bold text-sm mb-2">🛡️ ¿Qué hacemos?</h5>
+
+                            <p class="text-xs text-gray-600">Diseñamos y operamos la Gobernanza Operativa que las instituciones necesitan para escalar su impacto global sin aumentar su carga administrativa.</p>
+
+                        </div>
+
+                        <div>
+
+                            <h5 class="font-bold text-sm mb-2">🎯 Nuestras Especialidades para el Sector Académico:</h5>
+
+                            <ul class="text-xs text-gray-600 space-y-1">
+
+                                <li>• Institutional Readiness para Grants</li>
+
+                                <li>• Gobernanza de AIPs y Fundaciones</li>
+
+                                <li>• Dirección Fraccionada de Internacionalización</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <div class="bg-white p-4 rounded border border-gray-200">
+
+                        <h5 class="font-bold text-sm mb-2">Casos de Éxito (Sello de Calidad)</h5>
+
+                        <ul class="text-xs text-gray-600 space-y-1">
+
+                            <li><strong>CEMarin (Colombia-Alemania):</strong> Gestión de más de €500,000 en fondos alemanes con CERO hallazgos de auditoría durante 7 años.</li>
+
+                            <li><strong>Ciencia Abierta (Colombia):</strong> Diseño de la arquitectura de política nacional para la gobernanza de datos científicos.</li>
+
+                            <li><strong>INRAE / Vegepolys (Francia):</strong> Pilotaje de alianzas R&D para conectar la ciencia de laboratorio con el mercado global.</li>
+
+                        </ul>
+
+                    </div>
+
+                    
+
+                    <div class="mt-4 p-4 bg-blue-50 rounded border border-blue-200">
+
+                        <h5 class="font-bold text-sm mb-2 text-blue-900">🚀 El Primer Paso: Sprint de Diagnóstico (15 dias)</h5>
+
+                        <p class="text-xs text-blue-800">En dos semanas, entregamos a su Rectoría o Consejo Directivo:</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Propuesta Económica -->
+
+            <section>
+
+                <h3 class="text-2xl text-burgundy border-b-2 border-burgundy pb-2 mb-6">3. Inversión Estratégica</h3>
+
+                <div class="bg-burgundy text-white p-8 rounded-lg">
+
+                    <div class="flex justify-between items-center mb-4">
+
+                        <span class="text-lg">Honorarios Consultoría Ejecutiva (15 días)</span>
+
+                        <span class="text-2xl font-bold">$6,500.00 USD</span>
+
+                    </div>
+
+                    <p class="text-xs opacity-70 mb-6 italic">* La UMIP asumirá los costos de logística (Tiquetes Bogotá-Panamá, Alojamiento 14 noches y traslados locales).</p>
+
+                    <div class="border-t border-white/20 pt-6">
+
+                        <h4 class="font-bold mb-2">Forma de Pago:</h4>
+
+                        <ul class="text-sm space-y-1 opacity-90">
+
+                            <li>• 50% para inicio de actividades y reserva de agenda in-situ ($3,250).</li>
+
+                            <li>• 50% al finalizar la misión y entrega del Blueprint ($3,250).</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Footer Interno -->
+
+            <footer class="pt-10 text-center border-t border-gray-100">
+
+                <div class="flex justify-center gap-12 mb-6 grayscale opacity-50">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Logo_de_la_Universidad_Nacional_de_Colombia.svg" class="h-10" alt="UNAL">
+
+                    <div class="font-bold border-l pl-4 border-gray-300">CEMarin Expert</div>
+
+                </div>
+
+                <p class="text-xs text-gray-400">GPMF Consultoría S.A.S. | Bogotá • Clermont-Ferrand • Montreal</p>
+
+                <p class="text-xs text-gray-400 mt-1">www.gpmf.com</p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Firma -->
+
+    <div class="max-w-4xl mx-auto mt-8 px-12 pb-20 italic text-gray-400 text-sm">
+
+        "No somos una consultoría de manuales; somos ingeniería de ejecución."
+
+    </div>
+
+
+
+</body>
+
+</html>

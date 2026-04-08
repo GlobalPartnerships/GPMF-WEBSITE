@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://globalpartnerships.github.io/GPMF-WEBSITE/sitemap.xml
+
+# Language-specific versions (for SEO clarity)
+Allow: /en/
+Allow: /es/
+Allow: /de/
+Allow: /fr/
+
+# Block unnecessary files
+Disallow: /css/
+Disallow: /js/
+Disallow: /Assets/
+Disallow: /borradores_gpmf/
+Disallow: /casa-normandia/
+Disallow: /No public/
+Disallow: /planes/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# Special handling for diagnostic tool (strategic exception)
+Allow: /diagnostico.html
+Allow: /en/diagnostic.html
+
+# Block duplicate content from drafts and templates
+Disallow: /*.html$

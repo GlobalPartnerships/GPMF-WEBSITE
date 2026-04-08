@@ -257,7 +257,7 @@
     </main>
 
     <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
-        <p>© 2026 GPMF. Dashboard generado automáticamente basado en el Sprint de Febrero.</p>
+        <p>© 2019 - <span id='year'></span> GPMF. Dashboard generado automáticamente basado en el Sprint de Febrero.</p>
     </footer>
 
     <script>
@@ -401,6 +401,7 @@
             }
         });
 
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta GPMF | Jardines de los Andes</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gpmf: {
+                            burgundy: '#7A0F32',
+                            black: '#000000',
+                            warmGray: '#F5F5F5',
+                            charcoal: '#2E2E2E',
+                            gold: '#C5A059'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F5F5F5; overflow-x: hidden; }
+        .slide-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding: 4rem 2rem; border-bottom: 1px solid #ddd; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1); padding: 2rem; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .btn-gpmf { background-color: #7A0F32; color: white; padding: 10px 24px; border-radius: 50px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
+        .btn-gpmf:hover { background-color: #5a0b25; box-shadow: 0 5px 15px rgba(122, 15, 50, 0.3); }
+        
+        /* Sticky Navigation */
+        .nav-sticky { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 50; display: flex; flex-direction: column; gap: 15px; }
+        .nav-dot { width: 12px; height: 12px; background-color: rgba(0,0,0,0.2); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+        .nav-dot.active { background-color: #7A0F32; transform: scale(1.3); }
+        .nav-dot:hover::after {
+            content: attr(data-label);
+            position: absolute; right: 20px; top: -2px;
+            background: #2E2E2E; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="text-gpmf-charcoal antialiased">
+
+    <!-- NAVIGATION -->
+    <div class="nav-sticky">
+        <a href="#inicio" class="nav-dot active" data-label="Inicio"></a>
+        <a href="#desafio" class="nav-dot" data-label="El Desafío"></a>
+        <a href="#solucion" class="nav-dot" data-label="Solución"></a>
+        <a href="#cronograma" class="nav-dot" data-label="Cronograma"></a>
+        <a href="#inversion" class="nav-dot" data-label="Inversión"></a>
+        <a href="#continuidad" class="nav-dot" data-label="CIO Fraccionado"></a>
+    </div>
+
+    <!-- 1. PORTADA -->
+    <section id="inicio" class="slide-section bg-gpmf-charcoal text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gpmf-burgundy opacity-10 skew-x-12 transform origin-top-right"></div>
+        <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-block bg-gpmf-burgundy px-4 py-1 mb-6 text-xs font-bold tracking-widest uppercase rounded-sm">
+                    Propuesta Estratégica
+                </div>
+                <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    INTELIGENCIA<br>DE MARGEN
+                </h1>
+                <p class="text-xl text-gray-300 font-light border-l-4 border-gpmf-gold pl-6 mb-8">
+                    Pasar de reaccionar ante el clima y el mercado, a anticipar la rentabilidad.
+                </p>
+                <div class="text-sm opacity-70 mt-12">
+                    Preparado para: <strong>JARDINES DE LOS ANDES</strong><br>
+                    Por: <strong> Carlos Santiusti GPMF | Global Partnerships Multidisciplinary Firm</strong>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <!-- Abstract Data Visualization Graphic -->
+                <div class="relative w-80 h-80">
+                    <div class="absolute inset-0 border-2 border-white/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 border-2 border-gpmf-gold/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="block text-4xl font-bold">DATA</span>
+                            <span class="block text-xs uppercase tracking-widest text-gpmf-gold">To Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. EL DESAFÍO (CONTEXTO) -->
+    <section id="desafio" class="slide-section bg-white">
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="font-heading text-4xl font-extrabold text-gpmf-burgundy mb-2">El Desafío</h2>
+            <h3 class="text-2xl font-light text-gray-500 mb-12">El enemigo no es el mercado, es la incertidumbre.</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card border-t-4 border-gray-400">
+                    <div class="text-4xl mb-4">🌦️</div>
+                    <h4 class="font-bold text-lg mb-2">Variables Externas</h4>
+                    <p class="text-sm text-gray-600">
+                        El margen se lo come lo que no controlamos: el clima que daña la cosecha, la TRM que dispara costos, la vía que se cierra.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card border-t-4 border-gpmf-burgundy bg-gray-50">
+                    <div class="text-4xl mb-4">🙈</div>
+                    <h4 class="font-bold text-lg mb-2 text-gpmf-burgundy">La Ceguera Actual</h4>
+                    <p class="text-sm text-gray-600">
+                        Jardines de los Andes tiene los datos internos, pero hoy está "ciego" ante el contexto externo en tiempo real.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card border-t-4 border-gpmf-gold">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="font-bold text-lg mb-2">La Oportunidad</h4>
+                    <p class="text-sm text-gray-600">
+                        Integrar datos internos + externos para <strong>anticipar</strong> decisiones de compra y logística antes de perder dinero.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LA SOLUCIÓN -->
+    <section id="solucion" class="slide-section bg-gpmf-warmGray">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-gpmf-gold font-bold uppercase text-sm tracking-widest">Nuestra Propuesta</span>
+                <h2 class="font-heading text-4xl font-extrabold text-gpmf-black mt-2 mb-6">Tablero de Control de Margen</h2>
+                <p class="text-gray-600 mb-8 text-lg">
+                    Implementación de un sistema de inteligencia de negocios en <strong>6 semanas</strong> diseñado para responder 3 preguntas críticas de dinero:
+                </p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
+                        <div class="bg-blue-100 text-blue-800 font-bold px-2 py-1 rounded text-xs">CLIMA</div>
+                        <span class="text-sm font-medium">¿Cómo afecta el clima de esta semana a mi merma proyectada?</span>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
+                        <div class="bg-green-100 text-green-800 font-bold px-2 py-1 rounded text-xs">DINERO</div>
+                        <span class="text-sm font-medium">¿Es momento de comprar insumos o esperar según la tendencia de la TRM?</span>
+                    </li>
+                    <li class="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm">
+                        <div class="bg-orange-100 text-orange-800 font-bold px-2 py-1 rounded text-xs">LOGÍSTICA</div>
+                        <span class="text-sm font-medium">¿Hay riesgo logístico en las vías hoy que afecte la promesa de entrega?</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Visual Representation of Deliverables -->
+            <div class="bg-white p-8 rounded-2xl shadow-xl relative">
+                <h4 class="font-bold text-gpmf-burgundy mb-6 text-center">Entregables Tangibles</h4>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-charcoal text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <strong class="block text-gray-800">Mapa de Decisiones Críticas</strong>
+                            <span class="text-xs text-gray-500">Documento PDF con la lógica de negocio.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-burgundy text-white rounded-full flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <strong class="block text-gray-800">Dashboard Ejecutivo</strong>
+                            <span class="text-xs text-gray-500">Power BI / Tableau con alertas en tiempo real.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gpmf-gold text-white rounded-full flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <strong class="block text-gray-800">Transferencia de Conocimiento</strong>
+                            <span class="text-xs text-gray-500">Entrenamiento al equipo interno.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CRONOGRAMA -->
+    <section id="cronograma" class="slide-section bg-white text-center">
+        <div class="max-w-5xl mx-auto w-full">
+            <h2 class="font-heading text-4xl font-extrabold text-gpmf-black mb-12">Cronograma: Ejecución Acelerada</h2>
+            
+            <div class="relative flex flex-col md:flex-row justify-between items-center gap-8">
+                <!-- Line connector (Desktop only) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+
+                <!-- Phase 1 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gray-200 w-full md:w-1/3 hover:border-gpmf-burgundy transition-colors">
+                    <div class="text-xs font-bold text-gray-400 uppercase mb-2">Semanas 1-2</div>
+                    <h4 class="font-bold text-lg text-gpmf-burgundy mb-2">Entendimiento</h4>
+                    <p class="text-sm text-gray-600">Mapeo de variables y "Working Backwards" (Empezar por la respuesta necesaria).</p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gpmf-burgundy w-full md:w-1/3 shadow-lg transform scale-105">
+                    <div class="text-xs font-bold text-gpmf-burgundy uppercase mb-2">Semanas 3-5</div>
+                    <h4 class="font-bold text-lg text-gpmf-black mb-2">Construcción</h4>
+                    <p class="text-sm text-gray-600">Ingeniería de datos, integración de APIs (Clima/TRM) y diseño visual del tablero.</p>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="bg-white p-6 rounded-xl border-2 border-gray-200 w-full md:w-1/3 hover:border-gpmf-burgundy transition-colors">
+                    <div class="text-xs font-bold text-gray-400 uppercase mb-2">Semana 6</div>
+                    <h4 class="font-bold text-lg text-gpmf-burgundy mb-2">Entrega y Ajustes</h4>
+                    <p class="text-sm text-gray-600">Despliegue final, sesión de entrenamiento y validación de datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INVERSIÓN (PROYECTO) -->
+    <section id="inversion" class="slide-section bg-gpmf-charcoal text-white">
+        <div class="max-w-4xl mx-auto w-full text-center">
+            <h2 class="font-heading text-4xl font-extrabold mb-4">Propuesta de Inversión</h2>
+            <p class="text-gray-400 mb-12">Proyecto llave en mano (Nivel 2: Consultoría Especializada)</p>
+
+            <div class="bg-white text-gpmf-charcoal rounded-2xl p-10 max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gpmf-gold"></div>
+                
+                <h3 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-2">MVP DE 6 SEMANAS</h3>
+                <div class="flex justify-center items-baseline gap-2 mb-6">
+                    <span class="text-5xl font-extrabold text-gpmf-burgundy">$18 - $25</span>
+                    <span class="text-xl font-bold text-gray-400">Millones COP</span>
+                </div>
+                <p class="text-xs text-gray-400 mb-8">+ IVA</p>
+
+                <div class="text-left space-y-4 border-t border-gray-200 pt-6 mb-8">
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Consultor Senior de Datos + Arquitecto de Negocio.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Licenciamiento de herramientas durante el desarrollo.</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-gpmf-burgundy font-bold">✓</span>
+                        <span class="text-sm">Entregables documentales y técnicos.</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded text-sm text-gray-600">
+                    <strong>Forma de Pago:</strong> 50% Inicio / 50% Contra entrega a satisfacción.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTINUIDAD (CIO FRACCIONADO) -->
+    <section id="continuidad" class="slide-section bg-white">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div class="order-2 md:order-1">
+                <div class="card bg-gpmf-warmGray border-l-8 border-gpmf-black">
+                    <h3 class="text-gpmf-burgundy font-bold uppercase tracking-widest text-sm mb-4">Opción de Continuidad</h3>
+                    <h2 class="font-heading text-3xl font-extrabold text-gpmf-black mb-4">CIO Estratégico Fraccionado</h2>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Reconocemos que para Jardines de los Andes la tecnología es un medio, no el fin. Para evitar la carga de contratar una Gerencia de Tecnología interna de alto costo, GPMF ofrece actuar como su <strong>"Brazo Derecho Tecnológico"</strong>.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
+                            <div>
+                                <strong class="block text-sm">Traducir</strong>
+                                <span class="text-xs text-gray-500">Convertir necesidades de negocio (márgenes, logística) en requerimientos técnicos claros para proveedores.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
+                            <div>
+                                <strong class="block text-sm">Auditar</strong>
+                                <span class="text-xs text-gray-500">Asegurar la veracidad de los datos mes a mes (Gobierno de Datos).</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
+                            <div>
+                                <strong class="block text-sm">Blindar</strong>
+                                <span class="text-xs text-gray-500">Evaluar y negociar con futuros proveedores de software para proteger sus intereses.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 text-center md:text-left">
+                <h2 class="font-heading text-4xl font-extrabold text-gpmf-black mb-6">Más allá del Tablero</h2>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Obtengan la experiencia de un <strong>Director de Tecnología Senior</strong> por una fracción del costo de nómina.
+                </p>
+                <p class="text-sm text-gray-500 mb-8">
+                    Aseguramos que la herramienta evolucione con el negocio y no se vuelva un "elefante blanco" obsoleto en 6 meses.
+                </p>
+                <button class="btn-gpmf">Agendar Sesión de Inicio</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gpmf-black text-white py-8 text-center text-xs opacity-80">
+        <p>GPMF - Global Partnerships Multidisciplinary Firm | Confidencial 2026</p>
+        <p>Bogotá - Clermont-Ferrand - Global Mindset</p>
+    </footer>
+
+    <script>
+        // Scroll spy script to update nav dots
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navDots.forEach(dot => {
+                dot.classList.remove('active');
+                if (dot.getAttribute('href').includes(current)) {
+                    dot.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

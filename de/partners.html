@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner & Team | GPMF</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                        amber: '#FFC857'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors">Startseite</a>
+                <span class="text-white/30">|</span>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors">Firma</a>
+                <span class="text-white/30">|</span>
+                <a href="partners.html" class="text-white hover:text-burgundy transition-colors">Partner</a>
+                <span class="text-white/30">|</span>
+
+                <div class="relative group cursor-pointer py-4">
+                    <a href="services.html" class="text-white hover:text-burgundy flex items-center gap-1">
+                        Dienstleistungen
+                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div
+                        class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
+                        <a href="internationalization.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Internationalisierung
+                            & Allianzen</a>
+                        <a href="data-ai.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Digitale
+                            Transformation & Datenkultur</a>
+                        <a href="intercultural.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Interkulturelles
+                            Management</a>
+                        <a href="bizdev.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Geschäftsentwicklung
+                            & Sektorlösungen</a>
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
+                    <span class="text-white/30">|</span>
+                    <a href="../es/index.html" class="hover:text-burgundy transition-colors">ES</a>
+                    <span class="text-white/30">|</span>
+                    <button class="text-burgundy border-b border-burgundy">DE</button>
+                    <span class="text-white/30">|</span>
+                    <a href="../fr/index.html" class="hover:text-burgundy transition-colors">FR</a>
+                </div>
+
+                <a href="../diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Termin vereinbaren
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-5">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal">Startseite</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal">Firma</a>
+            <a href="partners.html" class="block text-2xl font-bold text-charcoal">Partner</a>
+            <button
+                class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
+                aria-expanded="false">
+                <span>Dienstleistungen</span>
+                <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
+                <a href="internationalization.html">Internationalisierung & Allianzen</a>
+                <a href="data-ai.html">KI &amp; Analítica</a>
+                <a href="intercultural.html">Interkulturelles Management</a>
+                <a href="bizdev.html">Expansion &amp; Soluciones Sectoriales</a>
+            </div>
+
+            <!-- Mobile Language Selector -->
+            <div class="flex items-center gap-4 text-xl font-bold text-charcoal py-2">
+                <button onclick="changeLanguage('de')" class="text-burgundy border-b-2 border-burgundy"
+                    data-lang="de">DE</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
+                    data-lang="en">EN</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('es')" class="hover:text-burgundy transition-colors"
+                    data-lang="es">ES</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors"
+                    data-lang="fr">FR</button>
+            </div>
+
+            <a href="../diagnostico.html" class="block text-2xl font-bold text-burgundy">Jetzt vereinbaren</a>
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+                class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
+        </div>
+    </header>
+
+    <main class="pt-32 bg-warmgray/30 min-h-screen">
+        <section class="py-20">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <p class="text-sm tracking-[0.4em] uppercase text-gray-500 mb-4">Strategische Allianzen</p>
+                <h1 class="text-4xl md:text-5xl font-serif text-charcoal mb-6">Spezialistennetzwerk. Ein Ökosystem, das unsere Wirkung verstärkt.</h1>
+                <p class="text-lg text-gray-600">Wir glauben an kollektive Intelligenz. GPMF operiert unter einem multidisziplinären Experten-Netzwerkmodell. Wir aktivieren spezialisierte Senior-Berater je nach spezifischem Bedarf jedes Projekts und verknüpfen das exakte Talent, das Ihre Herausforderung erfordert.</p>
+            </div>
+        </section>
+
+
+
+        <!-- SECCIÓN 4: RED DE ALIADOS -->
+        <section class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12 flex-wrap gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500">Strategische Allianzen</p>
+                        <h2 class="text-3xl font-bold">Spezialistennetzwerk</h2>
+                    </div>
+                    <span class="text-sm text-gray-500">Experten-Talent, das wir je nach Projektanforderung integrieren.</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Aliado 1: Natalia Sánchez -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Natalia.JPG" alt="Natalia Sánchez"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Natalia Sánchez</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Project Manager in Tech & Data Analytics
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Expertin für Technologieprojektmanagement und Datenanalyse für den kanadischen Markt. Leitet digitale Transformationsinitiativen mit Fokus auf messbare Ergebnisse.
+                        </p>
+                    </article>
+
+                    <!-- Aliado 2: David Salazar -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/David.jpg" alt="David Salazar"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">David Salazar</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Architekt & Design-Experte
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Architekt spezialisiert auf internationales Design und Transformationsprozesse für den Immobilien- und Gastgewerbemarkt.
+                        </p>
+                    </article>
+
+                    <!-- Aliado 3: Matthias Halleux -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Mathias.jpg" alt="Matthias Halleux"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Matthias Halleux</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Strategischer Berater: Französischer Einzelhandel & Marktzugang
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Strategischer Berater: Marktzugang und französischer Einzelhandel, Verhandlungen und territoriale Expansion. +15 Jahre Erfahrung im Einzelhandels- und Konsumgüterökosystem (FMCG) in Frankreich.
+                        </p>
+                    </article>
+
+                    <!-- Aliado 4: Nidian Díaz -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Nidian.jpg" alt="Nidian Díaz"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Nidian Díaz</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Audit & Finanzstrukturierung
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Spezialist für Unternehmensbuchhaltung und strategische Audits. Stellt sicher, dass Expansionsprozesse und neue Geschäftsmodelle eine makellose finanzielle Absicherung haben.</p>
+                    </article>
+
+                    <!-- Aliado 5: Diego Quintero -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <span class="text-gray-400">Bild</span>
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Diego Quintero</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Politikwissenschaftler Experte für Sicherheit und öffentliche Politik
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Politikanalytiker spezialisiert auf Sicherheit und öffentliche Politik. Bietet strategischen Kontext für Projekte, die Verständnis des politischen und regulatorischen Umfelds erfordern.
+                        </p>
+                    </article>
+
+                    <!-- Aliado 6: Esperanza Vargas -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/espe.jpg" alt="Esperanza Vargas"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Esperanza Vargas</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Landwirtschaftliche Entwicklung &
+                            Nachhaltigkeit</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Visionärin des ländlichen und landwirtschaftlichen Sektors durch das Projekt La Finca La Granja. Bringt das notwendige technische und praktische Wissen für Investitions- und Entwicklungsprojekte im Agrarsektor.</p>
+                    </article>
+
+                    <!-- Aliado 7: Jorge Ordoñez -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Jorge.jpg" alt="Jorge Ordoñez"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Jorge Ordoñez</h3>
+
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Markenbild-Stratege &
+                            Art Direction</p>
+
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Grafikdesigner mit über 16 Jahren Erfahrung in Amerika und Europa. Spezialist darin, Unternehmenskonzepte in innovative visuelle Identitäten zu übersetzen, Marken global zu positionieren.</p>
+                    </article>
+
+                    <!-- Aliado 8: Carlos Santiusti -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <img src="../assets/carlos.jpeg?v=2" alt="Carlos Santiusti"
+                                class="w-20 h-20 rounded-full object-cover border-4 border-white shadow" loading="lazy">
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Carlos Santiusti</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Datenarchitektur & KI</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Systemingenieur, Datenarchitekt und Business Analyst. Leitet den Einsatz von KI-Lösungen für Unternehmen.</p>
+                    </article>
+
+                    <!-- Aliado 9: Aristides Sánchez -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Ari.jpg" alt="Aristides Sánchez"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Aristides Sánchez</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Projektentwicklung &
+                            Gastgewerbe</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">Führende
+                            Kraft hinter der Positionierung von Casa
+                            Normandía. Experte für Ökosystementwicklung, Immobilienverwaltung mit Ertragswert
+                            und Strategien für hochwertiges Gastgewerbe.</p>
+                    </article>
+
+                    <!-- Aliado 10: David Junco -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <span class="text-gray-400">Bild</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">David Junco</h3>
+
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Back-End Developer</p>
+
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Entwickler spezialisiert auf Technologieökosysteme
+                            und Datenbanken. Entwirft und implementiert effiziente Softwarearchitekturen
+                            mit Sprachen wie Python und TypeScript.</p>
+                    </article>
+
+                    <!-- Aliado 11: Fany Barrera -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Fany.jpg" alt="Fany Barrera"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Fany Barrera</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">Finanzen & Buchhaltung
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Wirtschaftsprüferin spezialisiert auf solide
+                            Finanzstrukturierung für Expansionsprojekte und internationale Operationen.
+                        </p>
+                    </article>
+
+                    <!-- Aliado 12: Anyelin Pérez -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Imagen/Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                                <img src="../Assets/Anyelin.jpg" alt="Anyelin Pérez"
+                                    class="w-20 h-20 rounded-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Anyelin Pérez</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Business Intelligence — Prozessreengineering und operative Effizienz
+                        </p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">
+                            Spezialistin für Business Intelligence und Prozessoptimierung. Verwandelt Daten in strategische Erkenntnisse und verbessert die operative Effizienz von Unternehmen.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4.5: FIRMAS CORPORATIVAS -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="flex items-center justify-between mb-12 flex-wrap gap-4">
+                    <div>
+                        <p class="text-sm uppercase tracking-[0.4em] text-gray-500">Assoziierte Firmen</p>
+                        <h2 class="text-3xl font-bold">Partner & Unternehmensfirmen
+                        </h2>
+                    </div>
+                    <span class="text-sm text-gray-500">Spezialisierte Institutionen,
+                        die wir je nach Projekt erweitern</span>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Audiconet -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-auto bg-gray-200 flex items-center justify-center px-4">
+                                <span class="text-gray-400">Logo</span>
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Audiconet</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Unternehmensfirma</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">Firma
+                            spezialisiert auf Finanzprüfung und
+                            Unternehmensberatung für internationale Unternehmen.</p>
+
+                    </article>
+
+                    <!-- Aparato -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-auto bg-gray-200 flex items-center justify-center px-4">
+                                <span class="text-gray-400">Logo</span>
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Aparato</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Unternehmensfirma</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">Agentur
+                            für Softwareentwicklung und maßgeschneiderte
+                            technologische Lösungen für Unternehmen.</p>
+
+                    </article>
+
+                    <!-- Factor Visual -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-auto bg-gray-200 flex items-center justify-center px-4">
+                                <span class="text-gray-400">Logo</span>
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Factor Visual</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Unternehmensfirma</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">Designstudio
+                            für Grafikdesign und Branding
+                            spezialisiert auf visuelle Unternehmensidentität.</p>
+
+                    </article>
+
+                    <!-- Epicerí Gourmet -->
+                    <article class="bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+                        <!-- Logo -->
+                        <div class="flex justify-center mb-4">
+                            <div class="h-16 w-auto bg-gray-200 flex items-center justify-center px-4">
+                                <span class="text-gray-400">Logo</span>
+                            </div>
+                        </div>
+
+                        <!-- Título -->
+                        <h3 class="text-xl font-bold text-center mb-2">Epicerí Gourmet</h3>
+
+                        <!-- Etiqueta -->
+                        <p class="text-burgundy font-semibold text-center text-sm mb-3">
+                            Unternehmensfirma</p>
+
+                        <!-- Descripción -->
+                        <p class="text-sm text-gray-600 text-center mb-4">Unternehmen
+                            spezialisiert auf Gourmetprodukte und
+                            hochwertige Gastronomieberatung.</p>
+
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-charcoal text-white">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <p class="text-sm uppercase tracking-[0.4em] text-white/60 mb-4">Erweiterte Zusammenarbeit</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ein lebendiges Netzwerk für
+                        Hochrisiko- und Hochwirkungsprojekte.</h2>
+                    <p class="text-white/80 mb-4">Wir aktivieren Squads je nach Herausforderung: Data
+                        Scientists, Rechtsexperten, wissenschaftliche Diplomaten, strategische Storyteller. Alles
+                        integriert unter demselben Playbook.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3"><span
+                                class="text-burgundy">★</span>
+                            <p>Transnationale Teams koordiniert in drei Zeitzonen.</p>
+                        </li>
+                        <li class="flex items-start gap-3"><span
+                                class="text-burgundy">★</span>
+                            <p>Flexible Verträge: Pod, Retainer oder Sprint-Beschleunigung.</p>
+                        </li>
+                        <li class="flex items-start gap-3"><span
+                                class="text-burgundy">★</span>
+                            <p>Kulturelle und technische Due Diligence vor jeder Partnerschaft.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-white/5 border border-white/10 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Möchten Sie sich als Partner anschließen?
+                    </h3>
+                    <p class="text-white/80 mb-6">Wir suchen Firmen und Fachleute mit
+                        Boutique-DNA und Fokus auf Ergebnisse. Wissenschaft, Technologie, Daten, Diplomatie und Expansion.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:contacto.gpmfsas@gmail.com?subject=Partnership%20GPMF"
+                            class="bg-white text-charcoal font-bold px-6 py-3 rounded-full text-center hover:bg-amber hover:text-black transition-all"
+                            data-i18n="allies.cta.join.btn.primary">Allianz beantragen</a>
+                        <a href="../diagnostico.html"
+                            class="border border-white/30 text-white font-bold px-6 py-3 rounded-full text-center hover:bg-white hover:text-charcoal transition-all"
+                            data-i18n="allies.cta.join.btn.secondary">Gespräch vereinbaren</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá · Clermont-Ferrand · Montreal</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

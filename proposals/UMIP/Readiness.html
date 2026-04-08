@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Institutional Readiness & Governance</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { 
+                extend: { 
+                    colors: { 
+                        burgundy: '#7A0F32', 
+                        charcoal: '#2E2E2E', 
+                        warmgray: '#F5F5F5'
+                    }, 
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'] 
+                    } 
+                } 
+            }
+        }
+    </script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .service-card:hover { transform: translateY(-8px); transition: all 0.3s ease; }
+    </style>
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <!-- Header (Estilo Web GPMF) -->
+    <header class="fixed w-full top-0 z-50 bg-black border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-burgundy flex items-center justify-center text-white font-bold">G</div>
+                <span class="text-white font-bold tracking-tighter text-xl">GPMF</span>
+            </div>
+            <nav class="hidden lg:flex gap-8 text-sm font-medium uppercase tracking-widest text-white/70">
+                <a href="#diagnostico" class="hover:text-burgundy transition-colors">Diagnóstico</a>
+                <a href="#mision" class="hover:text-burgundy transition-colors">Misión</a>
+                <a href="#fraccionado" class="hover:text-burgundy transition-colors">Fraccionado</a>
+            </nav>
+            <a href="mailto:contacto.gpmfsas@gmail.com" class="bg-burgundy text-white px-5 py-2 rounded-sm hover:bg-red-900 transition-colors text-sm">Agendar Sesión</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-40 pb-20 bg-warmgray/50 border-b border-gray-200 overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <span class="inline-block px-4 py-1 bg-burgundy/10 text-burgundy text-xs font-bold tracking-widest uppercase mb-6">Arquitectura de Sistemas</span>
+                <h1 class="text-5xl md:text-6xl font-serif text-black mb-8 leading-tight">Institutional Readiness & Governance</h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+                    Transformamos la excelencia científica y operativa en capacidad de ejecución global. Elija el nivel de intervención que su organización requiere para alcanzar el siguiente nivel de madurez.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tres Caminos de Intervención -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-serif italic text-burgundy mb-2">Modelos de Acompañamiento Estratégico</h2>
+                    <p class="text-gray-500">Diseñados para destrabar la ejecución y blindar el capital.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    
+                    <!-- Opción 1: Sprint 15 Horas -->
+                    <div id="diagnostico" class="service-card p-10 border border-gray-200 rounded-lg flex flex-col bg-white shadow-sm">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Sprint de Diagnóstico Operativo</h3>
+                            <p class="text-burgundy font-bold text-sm uppercase tracking-widest mb-4">15 Horas / Virtual</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">Intervención de alta velocidad para identificar los "blind spots" que bloquean el crecimiento o la elegibilidad de fondos.</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm text-gray-500">
+                            <li class="flex gap-2"><span>•</span> Mapeo de brechas operativas.</li>
+                            <li class="flex gap-2"><span>•</span> Evaluación de elegibilidad para Grants.</li>
+                            <li class="flex gap-2"><span>•</span> Hoja de ruta de acciones inmediatas.</li>
+                        </ul>
+                        <div class="pt-8 border-t border-gray-100 mt-auto">
+                            <p class="text-xs text-gray-400 mb-4">*Ideal para PYMES y fundaciones en fase de despegue.</p>
+                            <a href="#" class="block text-center border border-burgundy text-burgundy py-3 font-bold hover:bg-burgundy hover:text-white transition-all">Ver Alcance Detallado</a>
+                        </div>
+                    </div>
+
+                    <!-- Opción 2: Misión 15 Días -->
+                    <div id="mision" class="service-card p-10 border-2 border-burgundy rounded-lg flex flex-col bg-burgundy text-white shadow-2xl relative">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-[10px] px-4 py-1 tracking-widest font-bold uppercase rounded-full">Más Solicitado</div>
+                        <div class="mb-8 text-center lg:text-left">
+                            <h3 class="text-2xl font-bold mb-4">Misión de Diagnóstico In-Situ</h3>
+                            <p class="opacity-80 font-bold text-sm uppercase tracking-widest mb-4">15 Días / Inmersión Presencial</p>
+                            <p class="opacity-90 text-sm leading-relaxed">Auditoría profunda "en el barro". Diseñamos el Blueprint de Gobernanza directamente en el corazón de su operación.</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm opacity-90">
+                            <li class="flex gap-2"><span>✓</span> Workshop de Gobernanza y Procesos.</li>
+                            <li class="flex gap-2"><span>✓</span> Activación de AIPs o figuras legales.</li>
+                            <li class="flex gap-2"><span>✓</span> Auditoría de confianza y cumplimiento.</li>
+                            <li class="flex gap-2"><span>✓</span> Shadowing de procesos críticos.</li>
+                        </ul>
+                        <div class="pt-8 border-t border-white/20 mt-auto">
+                            <p class="text-xs opacity-60 mb-4">*Diseñado para Instituciones Multilaterales y Universidades.</p>
+                            <a href="#" class="block text-center bg-white text-burgundy py-3 font-bold hover:bg-gray-200 transition-all">Solicitar Misión Panamá/LatAm</a>
+                        </div>
+                    </div>
+
+                    <!-- Opción 3: Fractional COO -->
+                    <div id="fraccionado" class="service-card p-10 border border-gray-200 rounded-lg flex flex-col bg-white shadow-sm">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Dirección de Operaciones as a Service</h3>
+                            <p class="text-burgundy font-bold text-sm uppercase tracking-widest mb-4">Fractional COO / Largo Plazo</p>
+                            <p class="text-gray-600 text-sm leading-relaxed">GPMF asume la responsabilidad operativa fraccionada. Actuamos como su brazo ejecutor senior sin el costo de un C-Level fijo.</p>
+                        </div>
+                        <ul class="space-y-4 mb-10 flex-grow text-sm text-gray-500">
+                            <li class="flex gap-2"><span>•</span> Gestión de fondos internacionales.</li>
+                            <li class="flex gap-2"><span>•</span> Orquestación de alianzas B2B/B2G.</li>
+                            <li class="flex gap-2"><span>•</span> Optimización continua de sistemas.</li>
+                            <li class="flex gap-2"><span>•</span> Reporte de integridad a socios/junta.</li>
+                        </ul>
+                        <div class="pt-8 border-t border-gray-100 mt-auto">
+                            <div class="bg-gray-50 p-4 rounded mb-4">
+                                <p class="text-[10px] uppercase font-bold text-gray-400">Modelo de Inversión:</p>
+                                <p class="text-sm font-semibold text-burgundy italic">Basado en fondos gestionados o volumen operativo (A convenir).</p>
+                            </div>
+                            <a href="#" class="block text-center border border-charcoal text-charcoal py-3 font-bold hover:bg-charcoal hover:text-white transition-all">Evaluación de Sinergia</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Matriz (Referencia rápida) -->
+        <section class="py-20 bg-warmgray/30 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h3 class="text-2xl font-serif mb-8 text-black">Cualquiera de los tres caminos tiene un solo objetivo:</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <span class="block text-xl font-bold text-burgundy mb-1">01</span>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Elegibilidad</span>
+                    </div>
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <span class="block text-xl font-bold text-burgundy mb-1">02</span>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Trazabilidad</span>
+                    </div>
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <span class="block text-xl font-bold text-burgundy mb-1">03</span>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Confianza</span>
+                    </div>
+                    <div class="p-4 bg-white rounded shadow-sm">
+                        <span class="block text-xl font-bold text-burgundy mb-1">04</span>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Escala</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <div class="w-10 h-10 bg-burgundy flex items-center justify-center text-white font-bold mb-4 mx-auto md:mx-0">G</div>
+                <p class="font-bold text-sm tracking-widest uppercase">GPMF Consultoría S.A.S.</p>
+                <p class="text-xs text-gray-500 mt-2">Bogotá • Clermont-Ferrand • Montreal</p>
+            </div>
+            <div class="text-[10px] text-gray-600 uppercase tracking-[0.2em] text-center md:text-right">
+                Arquitectura de Gobernanza para Sistemas Complejos<br>
+                © 2019 - 2026
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

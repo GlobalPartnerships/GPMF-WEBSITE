@@ -36,19 +36,15 @@
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
-                <a href="index.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.home">Inicio</a>
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors">Inicio</a>
                 <span class="text-white/30">|</span>
-                <a href="about.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.firm">Firma</a>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors">Firma</a>
                 <span class="text-white/30">|</span>
-                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.partners">Aliados</a>
+                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors">Aliados</a>
                 <span class="text-white/30">|</span>
 
                 <div class="relative group cursor-pointer py-4">
-                    <a href="!Servicios Central.html" class="text-white hover:text-burgundy flex items-center gap-1"
-                        data-i18n="nav.services">
+                    <a href="Servicios Central.html" class="text-white hover:text-burgundy flex items-center gap-1">
                         Servicios
                         <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
@@ -76,17 +72,13 @@
 
             <div class="hidden lg:flex items-center gap-6">
                 <div class="flex items-center gap-2 text-xs font-bold text-white">
-                    <button onclick="changeLanguage('es')" class="text-burgundy border-b border-burgundy"
-                        data-lang="es">ES</button>
+                    <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
                     <span class="text-white/30">|</span>
-                    <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
-                        data-lang="en">EN</button>
+                    <button class="text-burgundy border-b border-burgundy">ES</button>
                     <span class="text-white/30">|</span>
-                    <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors"
-                        data-lang="de">DE</button>
+                    <a href="../de/aliados-equipo.html" class="hover:text-burgundy transition-colors">DE</a>
                     <span class="text-white/30">|</span>
-                    <button onclick="changeLanguage('fr')" class="hover:text-burgundy transition-colors"
-                        data-lang="fr">FR</button>
+                    <a href="../fr/aliados-equipo.html" class="hover:text-burgundy transition-colors">FR</a>
                 </div>
 
                 <a href="diagnostico.html"
@@ -614,17 +606,18 @@
                     <img src="Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
                     <div class="text-xs">
                         <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
-                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                        <p class="text-gray-400">Bogotá · Clermont-Ferrand · Montreal</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 pr-12">© 2026 GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp button removed -->
-
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

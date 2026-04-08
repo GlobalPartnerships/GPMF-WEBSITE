@@ -1,320 +1,639 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GPMF | One-Pager: Transformación Digital & Gobernanza de Datos</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+
         /* BRAND VARIABLES */
+
         :root {
+
             --gpmf-burgundy: #7A0F32;
+
             --gpmf-black: #000000;
+
             --warm-gray: #F5F5F5;
+
             --deep-charcoal: #2E2E2E;
+
             --white: #FFFFFF;
+
         }
+
+
 
         /* RESET & BASE */
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
+
             font-family: 'Lato', sans-serif;
+
             background-color: var(--warm-gray);
+
             color: var(--deep-charcoal);
+
             line-height: 1.6;
+
             -webkit-font-smoothing: antialiased;
+
         }
+
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; color: var(--gpmf-black); }
 
+
+
         /* CONTAINER */
+
         .one-pager-container {
+
             max-width: 1200px;
+
             margin: 40px auto;
+
             background: var(--white);
+
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+
             border-radius: 12px;
+
             overflow: hidden;
+
             display: flex;
+
             flex-direction: column;
+
         }
+
+
 
         /* HEADER */
+
         .header {
+
             background-color: var(--gpmf-black);
+
             color: var(--white);
+
             padding: 40px 60px;
+
             position: relative;
+
         }
+
         .header::after {
+
             content: '';
+
             position: absolute;
+
             bottom: 0;
+
             left: 0;
+
             width: 100%;
+
             height: 6px;
+
             background: linear-gradient(90deg, var(--deep-charcoal) 0%, var(--gpmf-burgundy) 100%);
+
         }
+
         .header-top {
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             margin-bottom: 30px;
+
         }
+
         .logo {
+
             font-family: 'Montserrat', sans-serif;
+
             font-weight: 800;
+
             font-size: 24px;
+
             letter-spacing: 2px;
+
             color: var(--white);
+
         }
+
         .badge {
+
             background-color: var(--gpmf-burgundy);
+
             padding: 6px 16px;
+
             border-radius: 20px;
+
             font-size: 12px;
+
             font-weight: 700;
+
             text-transform: uppercase;
+
             letter-spacing: 1px;
+
         }
+
         .header h1 {
+
             color: var(--white);
+
             font-size: 38px;
+
             max-width: 800px;
+
             line-height: 1.2;
+
             margin-bottom: 15px;
+
         }
+
         .header p {
+
             font-size: 18px;
+
             color: #d1d5db;
+
             max-width: 700px;
+
         }
+
+
 
         /* MAIN CONTENT PADDING */
+
         .content-section { padding: 50px 60px; }
 
+
+
         /* VALUE PROPOSITION (2 PILLARS) */
+
         .pillars-grid {
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 40px;
+
             margin-bottom: 50px;
+
         }
+
         .pillar-card {
+
             background: var(--warm-gray);
+
             padding: 30px;
+
             border-radius: 8px;
+
             border-left: 5px solid var(--gpmf-burgundy);
+
         }
+
         .pillar-card h3 {
+
             font-size: 22px;
+
             margin-bottom: 15px;
+
             display: flex;
+
             align-items: center;
+
             gap: 10px;
+
         }
+
         .pillar-card h3 i { color: var(--gpmf-burgundy); }
+
         .pillar-card p { margin-bottom: 15px; font-size: 15px; }
+
         .target-tag {
+
             display: inline-block;
+
             background: var(--deep-charcoal);
+
             color: var(--white);
+
             font-size: 12px;
+
             padding: 4px 10px;
+
             border-radius: 4px;
+
             font-weight: 700;
+
         }
+
+
 
         /* TIERED SERVICES (MENU DE WORK PACKAGES) */
+
         .section-title {
+
             text-align: center;
+
             font-size: 28px;
+
             margin-bottom: 40px;
+
             color: var(--gpmf-burgundy);
+
         }
+
         .tiers-grid {
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
+
         }
+
         .tier-card {
+
             border: 1px solid #e5e7eb;
+
             border-radius: 8px;
+
             padding: 30px 25px;
+
             text-align: center;
+
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+
             position: relative;
+
         }
+
         .tier-card:hover {
+
             transform: translateY(-5px);
+
             box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
             border-color: var(--gpmf-burgundy);
+
         }
+
         .tier-icon {
+
             width: 60px;
+
             height: 60px;
+
             background: var(--warm-gray);
+
             border-radius: 50%;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-size: 24px;
+
             color: var(--gpmf-burgundy);
+
             margin: 0 auto 20px;
+
         }
+
         .tier-card h4 { font-size: 18px; margin-bottom: 10px; height: 45px;}
+
         .tier-card p { font-size: 14px; color: #6b7280; margin-bottom: 20px; line-height: 1.5; }
+
         .deliverable {
+
             background: #fdf2f8;
+
             color: var(--gpmf-burgundy);
+
             padding: 10px;
+
             border-radius: 6px;
+
             font-size: 13px;
+
             font-weight: 700;
+
             text-align: left;
+
             margin-bottom: 15px;
+
         }
+
         .benefit {
+
             text-align: left;
+
             font-size: 13px;
+
             border-left: 2px solid var(--deep-charcoal);
+
             padding-left: 10px;
+
         }
+
+
 
         /* TRANSVERSAL BANNER */
+
         .transversal-banner {
+
             background: var(--deep-charcoal);
+
             color: var(--white);
+
             padding: 30px 60px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             border-radius: 8px;
+
             margin: 0 60px 40px;
+
         }
+
         .transversal-banner h3 { color: var(--white); margin-bottom: 5px; }
+
         .transversal-banner p { color: #9ca3af; font-size: 14px; max-width: 600px; }
+
         .transversal-banner i { font-size: 40px; color: var(--gpmf-burgundy); }
 
+
+
         /* FOOTER */
+
         .footer {
+
             background: var(--warm-gray);
+
             padding: 30px 60px;
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             border-top: 1px solid #e5e7eb;
+
         }
+
         .footer-stats {
+
             display: flex;
+
             gap: 30px;
+
         }
+
         .stat { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--gpmf-black); }
+
         .stat span { display: block; font-size: 12px; color: var(--gpmf-burgundy); text-transform: uppercase; font-weight: 600; font-family: 'Lato', sans-serif;}
 
+
+
     </style>
+
 </head>
+
 <body>
 
+
+
 <div class="one-pager-container">
+
     
+
     <!-- HEADER -->
+
     <header class="header">
+
         <div class="header-top">
+
             <div class="logo">GPMF</div>
+
             <div class="badge">Área de Práctica Especializada</div>
+
         </div>
+
         <h1>Transformación Digital & Gobernanza de Datos</h1>
+
         <p>Convertimos el caos de datos en certidumbre operativa. Actuamos como su <strong>Subcontratista Boutique Especializado</strong> o <strong>Technical Advisor</strong> para garantizar el éxito tecnológico y financiero.</p>
+
     </header>
 
+
+
     <div class="content-section">
+
         
+
         <!-- LOS 2 PILARES -->
+
         <div class="pillars-grid">
+
             <div class="pillar-card">
+
                 <h3><i class="fa-solid fa-broom"></i> Pilar 1: Saneamiento (Data Readiness)</h3>
+
                 <p>Aseguramos la calidad y estructura fundamental de los datos. Eliminamos el riesgo de ejecución en proyectos de implementación tecnológica (ERP/CRM/IA) asumiendo la "carpintería técnica".</p>
+
                 <div class="target-tag">Caso de Uso: Alianzas (Ej. CINTEL)</div>
+
             </div>
+
             <div class="pillar-card">
+
                 <h3><i class="fa-solid fa-chart-pie"></i> Pilar 2: Inteligencia de Margen</h3>
+
                 <p>Transformamos datos limpios en decisiones proactivas. Construimos tableros ejecutivos que cruzan variables internas y externas (clima, logística) para anticipar y proteger la rentabilidad.</p>
+
                 <div class="target-tag">Caso de Uso: Consultoría (Ej. Jardines de los Andes)</div>
+
             </div>
+
         </div>
+
+
 
         <hr style="border: 0; border-top: 1px solid #e5e7eb; margin-bottom: 40px;">
 
+
+
         <!-- MENU DE SERVICIOS (TIERS) -->
+
         <h2 class="section-title">El Modelo Operativo: Menú de Work Packages</h2>
+
         <div class="tiers-grid">
+
             
+
             <!-- TIER 1 -->
+
             <div class="tier-card">
+
                 <div class="tier-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+
                 <h4>Tier 1: Diagnóstico de Riesgo</h4>
+
                 <p>Mapeo quirúrgico para identificar dónde residen los riesgos de datos que paralizarán cualquier implementación.</p>
+
                 <div class="deliverable">
+
                     <strong><i class="fa-solid fa-box-open"></i> Entregable:</strong><br>Mapa de las 10 Decisiones Críticas y Estado Actual ("Limpieza de la casa").
+
                 </div>
+
                 <div class="benefit">
+
                     <strong>Beneficio:</strong> Reduce el riesgo inicial. Precio cerrado de corta duración (20-40 hrs).
+
                 </div>
+
             </div>
+
+
 
             <!-- TIER 2 -->
+
             <div class="tier-card">
+
                 <div class="tier-icon"><i class="fa-solid fa-database"></i></div>
+
                 <h4>Tier 2: Saneamiento Operativo</h4>
+
                 <p>Ejecución delegada llave en mano. Estructuramos y limpiamos los datasets para que el software funcione desde el día uno.</p>
+
                 <div class="deliverable">
+
                     <strong><i class="fa-solid fa-box-open"></i> Entregable:</strong><br>Datasets limpios, diccionarios de datos y arquitecturas para IA.
+
                 </div>
+
                 <div class="benefit">
+
                     <strong>Beneficio:</strong> Acelera la implementación. GPMF absorbe el cuello de botella técnico.
+
                 </div>
+
             </div>
+
+
 
             <!-- TIER 3 -->
+
             <div class="tier-card">
+
                 <div class="tier-icon"><i class="fa-solid fa-user-shield"></i></div>
+
                 <h4>Tier 3: Fractional CIO</h4>
+
                 <p>Dirección tecnológica de alto nivel (CIO-as-a-Service) sin la carga prestacional de una contratación a tiempo completo.</p>
+
                 <div class="deliverable">
+
                     <strong><i class="fa-solid fa-box-open"></i> Entregable:</strong><br>Roadmaps de transformación, acompañamiento en licitaciones y auditoría mensual.
+
                 </div>
+
                 <div class="benefit">
+
                     <strong>Beneficio:</strong> Fidelización y liderazgo. GPMF opera como Technical Advisor permanente (Retainer).
+
                 </div>
+
             </div>
 
+
+
         </div>
+
     </div>
+
+
 
     <!-- OFERTA TRANSVERSAL -->
+
     <div class="transversal-banner">
+
         <div>
+
             <h3><i class="fa-solid fa-chalkboard-user" style="color: var(--warm-gray); font-size: 24px; margin-right: 10px;"></i> Formación Transversal</h3>
+
             <p><strong>Taller Estratégico: Data Readiness Operativa.</strong> Empoderamos a equipos (ej. ONGs) con herramientas técnicas para medir costos, manejar ecosistemas y gestionar aliados.</p>
+
         </div>
+
         <div class="target-tag" style="background: var(--white); color: var(--gpmf-burgundy);">Línea: Formación Interdisciplinaria</div>
+
     </div>
 
+
+
     <!-- FOOTER -->
+
     <footer class="footer">
+
         <div class="footer-stats">
+
             <div class="stat">- 30% <span>Reducción Tiempos de Implementación</span></div>
+
             <div class="stat">100% <span>Garantía de Saneamiento Base</span></div>
+
         </div>
+
         <div style="font-size: 12px; color: #6b7280; font-weight: 700;">
+
             Global Partnerships Multidisciplinary Firm (GPMF)
+
         </div>
+
     </footer>
+
+
 
 </div>
 
+
+
 </body>
+
 </html>

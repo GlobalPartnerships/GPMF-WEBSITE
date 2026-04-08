@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Estratégica UMIP x GPMF - GPMF</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gpmf-burgundy: #7A0F32;
+            --gpmf-burgundy-light: #9A1A42;
+            --gpmf-black: #000000;
+            --warm-gray: #F5F5F5;
+            --deep-charcoal: #2E2E2E;
+            --white: #ffffff;
+        }
+        body { font-family: 'Montserrat', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 11px; line-height: 1.5; }
+        .gpmf-font { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+        @media print {
+            .no-print { display: none; }
+            body { background: white; padding: 0; margin: 0; font-size: 10px; }
+            .shadow-xl { box-shadow: none; border: none; }
+            .page-break { page-break-before: always; }
+            
+            .max-w-\[21cm\] { max-width: 100%; }
+            .min-h-\[29\.7cm\] { min-height: auto; }
+            .p-10 { padding: 0.3rem; }
+            .mb-6 { margin-bottom: 0.3rem; }
+            .mb-8 { margin-bottom: 0.4rem; }
+            .gap-4 { gap: 0.5rem; }
+            .gap-12 { gap: 1.5rem; }
+            .text-2xl { font-size: 1.1rem; }
+            .text-xl { font-size: 1rem; }
+            .text-lg { font-size: 0.9rem; }
+            .py-2 { padding: 0.2rem 0; }
+            .px-2 { padding: 0.1rem; }
+            .mt-2 { margin-top: 0.2rem; }
+            .mt-8 { margin-top: 0.3rem; }
+            .mt-1 { margin-top: 0.1rem; }
+            .h-12 { height: 1.5rem; }
+            .w-20 { width: 2.5rem; }
+            .space-y-2 > * + * { margin-top: 0.2rem; }
+            .space-y-1 > * + * { margin-top: 0.1rem; }
+            .leading-tight { line-height: 1.1; }
+        }
+        h1 { font-size: 24px; }
+        h2 { font-size: 18px; }
+        h3 { font-size: 12px; }
+        
+        .section-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            padding-bottom: 0.2rem;
+            border-bottom: 2px solid var(--gpmf-burgundy);
+        }
+        
+        .subsection-title {
+            font-weight: 600;
+            color: var(--gpmf-burgundy);
+            margin-bottom: 0.2rem;
+        }
+        
+        .highlight-box {
+            background: var(--warm-gray);
+            border-left: 4px solid var(--gpmf-burgundy);
+            padding: 0.3rem;
+            margin: 0.3rem 0;
+        }
+        
+        .proposal-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 0.4rem;
+            margin: 0.3rem 0;
+        }
+        
+        .proposal-item.featured {
+            background: var(--gpmf-burgundy);
+            color: white;
+            border-color: var(--gpmf-burgundy);
+        }
+        
+        .route-item {
+            background: var(--warm-gray);
+            padding: 0.3rem;
+            margin: 0.2rem 0;
+            border-left: 3px solid var(--gpmf-burgundy);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 0.2rem;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--gpmf-burgundy);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .proposal-item.featured li:before {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 py-10 text-gray-800">
+
+    <!-- BOTÓN -->
+    <div class="max-w-[21cm] mx-auto mb-6 text-right no-print">
+        <button onclick="window.print()" class="bg-[#7A0F32] text-white px-6 py-2 rounded font-bold shadow hover:bg-[#5A0A28] transition-colors">
+            DESCARGAR PDF
+        </button>
+    </div>
+
+    <!-- DOCUMENTO -->
+    <div class="max-w-[21cm] mx-auto bg-white p-10 shadow-xl border border-gray-200 min-h-[29.7cm]">
+        
+        <!-- HEADER -->
+        <div class="flex justify-between items-start border-b-2 border-[#7A0F32] pb-4 mb-6">
+            <div class="flex items-start gap-4">
+                <!-- Logo GPMF -->
+                <img src="../Assets/img/logo.png" alt="GPMF Logo" class="h-12 w-auto max-w-48">
+                <div>
+                    <h1 class="gpmf-font font-bold text-[#7A0F32] tracking-tighter text-2xl">GLOBAL PARTNERSHIPS</h1>
+                    <p class="text-gray-500 font-semibold tracking-widest text-[10px]">MULTIDISCIPLINARY FIRM</p>
+                    <div class="mt-2 text-gray-600">
+                        <p>NIT: 901186150-3 | Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-right">
+                <h2 class="font-bold text-gray-400">PROPUESTA ESTRATÉGICA</h2>
+                <p class="text-xl font-bold text-[#7A0F32]">UMIP</p>
+                <p class="font-bold text-gray-700 mt-1">FECHA: 24 de marzo de 2026</p>
+            </div>
+        </div>
+
+        <!-- 1. DATOS -->
+        <div class="mb-4 grid grid-cols-2 gap-3 bg-gray-50 p-3 rounded">
+            <div>
+                <h3 class="font-bold text-[#7A0F32] uppercase mb-1">PREPARADO PARA:</h3>
+                <p class="font-bold text-gray-900">Rectoría / Dirección de Cooperación Técnica</p>
+                <p class="text-gray-600">Atn: Arturo Dominici / Nancy Cisneros</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-[#7A0F32] uppercase mb-1">INSTITUCIÓN:</h3>
+                <p class="font-bold text-gray-900">Universidad Marítima Internacional de Panamá (UMIP)</p>
+                <p class="text-gray-600">Propuesta de Fortalecimiento Institucional y Gobernanza Operativa</p>
+            </div>
+        </div>
+
+        <!-- 1. DIAGNÓSTICO ESTRATÉGICO -->
+        <div class="mb-4">
+            <h3 class="section-title text-[#7A0F32]">1. DIAGNÓSTICO ESTRATÉGICO: El Riesgo de la Inacción</h3>
+            <div class="text-justify text-gray-700 space-y-1 leading-tight mb-3">
+                <p><strong>CONCEPTO FUNDAMENTAL:</strong> Tras evaluar la operación de la UMIP y su transición hacia la Asociación de Interés Público (AIP) ITRE, GPMF ha identificado un "techo de cristal" operativo. La UMIP posee la excelencia técnica para liderar el sector marítimo regional, pero enfrenta tres brechas críticas que bloquean la captación de fondos globales:</p>
+            </div>
+            
+            <div class="space-y-1">
+                <div class="proposal-item">
+                    <h4 class="subsection-title">A. El Cuello de Botella de la AIP</h4>
+                    <p class="text-xs text-gray-600 mb-1">La cautela ante el cumplimiento legal y las regulaciones de la OMI impide gestionar fondos internacionales ágilmente, obligando a delegar la ejecución y perdiendo autonomía.</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <h4 class="subsection-title">B. Crecimiento sin Estructura</h4>
+                    <p class="text-xs text-gray-600 mb-1">La capacidad administrativa sigue siendo estática. Líderes técnicos brillantes (como Arturo/José Julio) están saturados operando el día a día, en lugar de liderar estratégicamente.</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <h4 class="subsection-title">C. Falta de "Infraestructura de Confianza"</h4>
+                    <p class="text-xs text-gray-600 mb-1">La UMIP carece de la trazabilidad financiera y la proyección digital (Branding Institucional) que exigen donantes de alta rigurosidad (Horizon Europe, Global Affairs Canada).</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box mt-3">
+                <h4 class="subsection-title mb-1">El Problema Real</h4>
+                <p class="text-xs italic text-gray-700 leading-tight">
+                    No es falta de talento; es que la UMIP está dejando dinero internacional en la mesa por miedo al riesgo de cumplimiento (Compliance) y por una "vitrina" que no refleja su verdadera capacidad.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. LA SOLUCIÓN GPMF -->
+        <div class="mb-4">
+            <h3 class="section-title text-[#7A0F32]">2. LA SOLUCIÓN GPMF: El Triángulo de la Excelencia Institucional</h3>
+            <div class="text-justify text-gray-700 space-y-1 leading-tight mb-3">
+                <p><strong>CONCEPTO FUNDAMENTAL:</strong> No proponemos manuales teóricos. Proponemos construir la infraestructura operativa y tecnológica que permita a la UMIP operar como un referente global, bajo nuestro estándar de "Cero Hallazgos" en auditoría.</p>
+            </div>
+            
+            <div class="space-y-1">
+                <div class="proposal-item featured">
+                    <h4 class="subsection-title text-white">Pilar 1: Strategic Governance (El Blindaje Legal y Financiero)</h4>
+                    <p class="text-xs opacity-90 mb-1"><strong>El Valor:</strong> Instalamos un sistema de gobernanza de fondos internacionales donde cada dólar es trazable.</p>
+                    <p class="text-xs opacity-90"><strong>El Impacto:</strong> La Rectoría y Contraloría pueden dormir tranquilas. Operarán bajo estándares europeos de cumplimiento, eliminando el riesgo legal de la AIP.</p>
+                </div>
+                
+                <div class="proposal-item featured">
+                    <h4 class="subsection-title text-white">Pilar 2: Tech-Enabled Operations (El Motor Tecnológico)</h4>
+                    <p class="text-xs opacity-90 mb-1"><strong>El Valor:</strong> Implementamos Dashboards (BI) y flujos de trabajo automatizados para admisiones, convenios y ejecución de fondos.</p>
+                    <p class="text-xs opacity-90"><strong>El Impacto:</strong> El equipo académico recupera el 40% de su tiempo para hacer ciencia, mientras la tecnología gestiona la administración.</p>
+                </div>
+                
+                <div class="proposal-item featured">
+                    <h4 class="subsection-title text-white">Pilar 3: Institutional Branding (La Vitrina Global)</h4>
+                    <p class="text-xs opacity-90 mb-1"><strong>El Valor:</strong> Rediseño de la narrativa y presencia digital de los proyectos.</p>
+                    <p class="text-xs opacity-90"><strong>El Impacto:</strong> Cuando un gran donante en Bruselas o Washington investigue a la UMIP, verá una institución transparente, moderna y de clase mundial.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. RUTAS DE EJECUCIÓN Y PRESUPUESTO -->
+        <div class="mb-4">
+            <h3 class="section-title text-[#7A0F32]">3. RUTAS DE EJECUCIÓN Y PRESUPUESTO</h3>
+            <div class="text-justify text-gray-700 space-y-1 leading-tight mb-3">
+                <p><strong>CONCEPTO FUNDAMENTAL:</strong> Para minimizar el riesgo y asegurar victorias rápidas (Quick Wins), proponemos tres modalidades de intervención escalonada:</p>
+            </div>
+            
+            <div class="space-y-1">
+                <div class="route-item">
+                    <h4 class="font-semibold text-xs">RUTA I: Fase 0 - Diagnóstico "Fund Readiness" (Virtual)</h4>
+                    <p class="text-xs text-gray-700 mb-1">Diseñada para una activación técnica inmediata.</p>
+                    <ul class="text-xs">
+                        <li><strong>Alcance:</strong> 2 sesiones estratégicas directivas para auditar la AIP frente a estándares internacionales.</li>
+                        <li><strong>Entregable:</strong> Informe de Hallazgos Prioritarios y Hoja de Ruta de Elegibilidad.</li>
+                        <li><strong>Inversión:</strong> $5,000 USD (100% anticipado para reserva de agenda).</li>
+                    </ul>
+                </div>
+                
+                <div class="route-item">
+                    <h4 class="font-semibold text-xs">RUTA II: Sprint de Inmersión y Blindaje Operativo (15 Días In Situ)</h4>
+                    <p class="text-xs text-gray-700 mb-1">Intervención presencial de alta intensidad en Panamá para establecer la Infraestructura de Confianza.</p>
+                    <ul class="text-xs">
+                        <li><strong>Alcance:</strong> Auditoría operativa presencial, shadowing de procesos y mesas de trabajo con el equipo legal de la AIP.</li>
+                        <li><strong>Entregable:</strong> Blueprint de Gobernanza Operativa y Protocolo de Cumplimiento (Cero Hallazgos) para captar fondos en el Q4.</li>
+                        <li><strong>Inversión:</strong> $17,500 USD (50% anticipado para bloqueo de la misión internacional).</li>
+                    </ul>
+                </div>
+                
+                <div class="route-item">
+                    <h4 class="font-semibold text-xs">RUTA III: Fractional COO (Dirección de Operaciones Fraccionada)</h4>
+                    <p class="text-xs text-gray-700 mb-1">GPMF asume la responsabilidad operativa y de internacionalización como socio estratégico a largo plazo.</p>
+                    <ul class="text-xs">
+                        <li><strong>Alcance:</strong> Gestión de fondos de la AIP, orquestación de alianzas B2G y reporte de integridad a la Rectoría.</li>
+                        <li><strong>Modelo de Inversión:</strong> Retainer mensual base + Success Fee (Comisión por fondos internacionales gestionados). Precios a definir tras la ejecución de la Ruta I o II.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. EL ESTÁNDAR GPMF -->
+        <div class="mb-4">
+            <h3 class="section-title text-[#7A0F32]">4. EL ESTÁNDAR GPMF (Por qué nosotros)</h3>
+            <div class="text-justify text-gray-700 space-y-1 leading-tight mb-3">
+                <p><strong>SOMOS ESPECIALISTAS:</strong> En transformar instituciones académicas en vehículos de ejecución ágiles.</p>
+            </div>
+            
+            <div class="space-y-1">
+                <div class="proposal-item">
+                    <h4 class="subsection-title">Experiencia Comprobada</h4>
+                    <p class="text-xs text-gray-600">Gestión de €550.000 en fondos DACH (CEMarin Colombia-Alemania) con CERO hallazgos de auditoría durante 7 años.</p>
+                </div>
+                
+                <div class="proposal-item">
+                    <h4 class="subsection-title">Independencia Operativa</h4>
+                    <p class="text-xs text-gray-600">Eliminamos la dependencia de individuos clave mediante algoritmos de procesos sólidos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. PROTOCOLO DE RESERVA -->
+        <div class="mb-6 bg-gray-50 p-3 rounded border border-gray-200">
+            <h3 class="font-bold text-[#7A0F32] uppercase mb-1">5. PROTOCOLO DE RESERVA</h3>
+            <div class="text-justify text-gray-700 space-y-1 leading-tight">
+                <p>Debido a compromisos activos en Europa y Norteamérica, las misiones in situ requieren 4 semanas de antelación. Las fechas se bloquean formalmente tras el pago del anticipo. Esta propuesta tiene una validez de 10 días calendario.</p>
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="border-t border-gray-400 pt-3 mt-6">
+            <div class="flex justify-between items-center text-xs text-gray-600">
+                <div>
+                    <p class="font-semibold text-[#7A0F32]">GLOBAL PARTNERSHIPS MULTIDISCIPLINARY FIRM</p>
+                    <p>Bogotá • Clermont-Ferrand • Montreal</p>
+                    <p>© 2019-2026 GPMF Consultoría S.A.S.</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-semibold">Documento Confidencial</p>
+                    <p>Uso Exclusivo UMIP</p>
+                    <p>Versión 1.0 - 24/Mar/2026</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
