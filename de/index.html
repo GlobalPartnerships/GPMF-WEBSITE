@@ -1,242 +1,871 @@
 <!DOCTYPE html>
+
 <html lang="de" class="scroll-smooth">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GPMF | Global Partnerships & Multidisziplinäre Kanzlei</title>
+
     <link rel="stylesheet" href="../css/index.css">
+
     <link rel="stylesheet" href="../css/gradient_background.css">
+
     <link rel="stylesheet" href="../css/mini_classes.css">
+
     <link rel="stylesheet" href="../css/video_embed.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link
+
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
+
         tailwind.config = {
+
             theme: { extend: { colors: { burgundy: '#7A0F32', charcoal: '#2E2E2E', warmgray: '#F5F5F5', black: '#000000' }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
+
         }
+
     </script>
+
 </head>
+
+
 
 <body class="bg-white text-charcoal font-sans antialiased">
 
+
+
     <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+
             <a href="../index.html" class="flex items-center gap-3">
+
                 <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+
             </a>
 
+
+
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
-                <a href="../index.html" class="text-white hover:text-burgundy transition-colors">Home</a>
+
+                <a href="../index.html" class="text-white hover:text-burgundy transition-colors">Startseite</a>
+
                 <span class="text-white/30">|</span>
+
                 <a href="../about.html" class="text-white hover:text-burgundy transition-colors">Kanzlei</a>
+
                 <span class="text-white/30">|</span>
+
                 <a href="../partners.html" class="text-white hover:text-burgundy transition-colors">Partner</a>
+
                 <span class="text-white/30">|</span>
+
+
 
                 <div class="relative group cursor-pointer py-4">
+
                     <a href="../services.html" class="text-white hover:text-burgundy flex items-center gap-1">
+
                         Leistungen
+
                         <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+
+                            </path>
+
                         </svg>
+
                     </a>
-                    <div class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
-                        <a href="../internationalization.html" class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Internationalisierung & Allianzen</a>
-                        <a href="../data-ai.html" class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Digitale Transformation & Datenkultur</a>
-                        <a href="../intercultural.html" class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Interkulturelles Management</a>
-                        <a href="../bizdev.html" class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Business Development</a>
+
+                    <div
+
+                        class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
+
+                        <a href="../internationalization.html"
+
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Internationalisierung
+
+                            & Allianzen</a>
+
+                        <a href="../data-ai.html"
+
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Digitale
+
+                            Transformation & Datenkultur</a>
+
+                        <a href="../intercultural.html"
+
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Interkulturelles
+
+                            Management</a>
+
+                        <a href="../bizdev.html"
+
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-gray-700 hover:text-burgundy">Business
+
+                            Development</a>
+
                     </div>
+
                 </div>
+
+
+
             </nav>
 
+
+
             <div class="hidden lg:flex items-center gap-6">
+
                 <div class="flex items-center gap-2 text-xs font-bold text-white">
+
                     <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
+
                     <span class="text-white/30">|</span>
+
                     <a href="../es/index.html" class="hover:text-burgundy transition-colors">ES</a>
+
                     <span class="text-white/30">|</span>
+
                     <button class="text-burgundy border-b border-burgundy">DE</button>
+
                     <span class="text-white/30">|</span>
+
                     <a href="../fr/index.html" class="hover:text-burgundy transition-colors">FR</a>
+
                 </div>
-                <a href="../diagnostico.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">Termin</a>
+
+
+
+                <a href="../diagnostico.html" class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+
+                    Termin vereinbaren
+
+                </a>
+
             </div>
+
+
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+
+                </svg>
+
+            </button>
+
         </div>
+
+
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-5">
+
+            <a href="../index.html" class="block text-2xl font-bold text-charcoal">Startseite</a>
+
+            <a href="../about.html" class="block text-2xl font-bold text-charcoal">Kanzlei</a>
+
+            <a href="../partners.html" class="block text-2xl font-bold text-charcoal">Partner</a>
+
+            <button
+
+                class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
+
+                aria-expanded="false">
+
+                <span>Leistungen</span>
+
+                <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <path
+
+                        d="M19 9l-7 7-7-7" />
+
+                </svg>
+
+            </button>
+
+            <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-gray-600 pl-4">
+
+                <a href="../internationalization.html">Internationalisierung</a>
+
+                <a href="../data-ai.html">KI &amp; Analytics</a>
+
+                <a href="../intercultural.html">Interkulturelles Management</a>
+
+                <a href="../bizdev.html">Expansion &amp; Sektorlösungen</a>
+
+            </div>
+
+
+
+            <!-- Mobile Language Selector -->
+
+            <div class="flex items-center gap-4 text-xl font-bold text-charcoal py-2">
+
+                <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
+
+                <span class="text-gray-300">|</span>
+
+                <a href="../es/index.html" class="hover:text-burgundy transition-colors">ES</a>
+
+                <span class="text-gray-300">|</span>
+
+                <button class="text-burgundy border-b-2 border-burgundy">DE</button>
+
+                <span class="text-gray-300">|</span>
+
+                <a href="../fr/index.html" class="hover:text-burgundy transition-colors">FR</a>
+
+            </div>
+
+
+
+            <a href="../diagnostico.html" class="block text-2xl font-bold text-burgundy">Jetzt buchen</a>
+
+            <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+
+                class="absolute top-6 right-6 text-3xl text-charcoal">×
+
+            </button>
+
+        </div>
+
     </header>
 
     <main>
+
         <section id="gradient-background" class="relative pt-48 pb-12 md:pt-40 md:pb-12 bg-warmgray/50 overflow-hidden">
+
             <div class="max-w-6xl mx-auto px-6 relative z-10">
+
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
+
                     <div class="text-center lg:text-left">
+
                         <h1 class="text-4xl md:text-6xl font-serif text-black tracking-tight mb-6 leading-tight">
-                            <span>Navigieren in globaler Komplexität durch</span> <span class="text-burgundy">strategische Intelligenz.</span>
+
+                            <span>Navigation in globaler Komplexität durch</span> <span
+
+                                class="text-burgundy">strategische Intelligenz.</span>
+
                         </h1>
+
                         <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed font-light">
-                            Wir unterstützen KMU beim Markteintritt in Europa und Lateinamerika – effizient, rechtssicher und ohne kulturelle Barrieren.
+
+                            Wir unterstützen KMU beim Markteintritt in Europa und Lateinamerika ohne Zeitverlust durch Bürokratie oder kulturelle Barrieren.
+
                         </p>
+
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+
                             <a href="../planes/planes.html" class="hero-btn primary">
+
                                 <span>Strategische Pläne</span>
+
+                                <span class="btn-icon">
+
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+
+                                        xmlns="http://www.w3.org/2000/svg">
+
+                                        <path
+
+                                            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+
+                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+
+                                    </svg>
+
+                                </span>
+
                             </a>
+
                             <a href="#services" class="hero-btn secondary">
-                                <span>Leistungen entdecken</span>
+
+                                <span>Leistungen erkunden</span>
+
+                                <span class="btn-icon">
+
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+
+                                        xmlns="http://www.w3.org/2000/svg">
+
+                                        <path
+
+                                            d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
+
+                                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+
+                                    </svg>
+
+                                </span>
+
                             </a>
+
                         </div>
+
                     </div>
+
                     <div class="relative video-wrapper">
+
                         <video id="bg-video" class="video-iframe" autoplay loop muted playsinline>
+
                             <source src="../Assets/video/background.mp4" type="video/mp4">
+
                         </video>
+
                         <div class="video-overlay"></div>
+
                     </div>
+
+                    <!-- before -->
+
+                    <!-- <div class="relative">
+
+                        <div class="hidden sm:block absolute -top-6 -right-6 w-32 h-32 bg-burgundy/10 rounded-full blur-3xl"></div>
+
+                        <div class="hidden sm:block absolute -bottom-8 -left-4 w-40 h-40 bg-black/5 rounded-full blur-3xl"></div>
+
+                        <div class="relative">
+
+                            <img src="Assets/hero.jpg" alt="Global boutique consulting" class="w-full rounded-2xl shadow-xl ring-1 ring-black/5 animate-[float_10s_ease-in-out_infinite]" loading="lazy">
+
+                        </div>
+
+                    </div> -->
+
                 </div>
+
             </div>
+
         </section>
+
+
+
+
 
         <section id="services" class="py-12 bg-white">
+
             <div class="max-w-7xl mx-auto px-6">
+
                 <div class="mb-16 md:text-center max-w-3xl mx-auto">
+
                     <h2 class="text-3xl font-bold text-black mb-4">Fachbereiche</h2>
-                    <p class="text-gray-600">Wir vereinen Strategie, intelligentes Datenmanagement und interdisziplinäre Ausbildung für Ihr nachhaltiges Wachstum.</p>
+
+                    <p class="text-gray-600">Wir verbinden Strategie, intelligentes Datenmanagement
+
+                        und interdisziplinäre Ausbildung für solide Grundlagen.</p>
+
                 </div>
+
+
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl" style="--card-color: #7A0F32;">
+
+                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl"
+
+                        style="--card-color: #7A0F32;">
+
                         <div class="icon-container">
+
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+
                             </svg>
+
                         </div>
+
                         <h3 class="service-title">Internationalisierung</h3>
-                        <p class="service-desc">Expansion mit interkulturellem Fokus. Vom Benchmarking bis zum operativen Softlanding.</p>
+
+                        <p class="service-desc">Expansion mit interkulturellem
+
+                            Fokus. Von Benchmarking bis zu operativem Softlanding.</p>
+
                         <ul class="space-y-3 mb-8">
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-burgundy"></span>
-                                <span>Strategische Allianzen</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-burgundy bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Strategische Allianzen</span>
+
                             </li>
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-burgundy"></span>
-                                <span>Handelsmissionen</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-burgundy bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Handelsmissionen</span>
+
                             </li>
+
                         </ul>
-                        <a href="../internationalization.html" class="service-link">Details anzeigen →</a>
+
+                        <a href="../internationalization.html" class="service-link">Details
+
+                            anzeigen →</a>
+
                     </article>
 
-                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl" style="--card-color: #555555;">
+
+
+                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl"
+
+                        style="--card-color: #555555;">
+
                         <div class="icon-container">
+
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+
                             </svg>
+
                         </div>
+
                         <h3 class="service-title">Digitale Transformation</h3>
-                        <p class="service-desc">Wir verwandeln komplexe Daten in strategische Assets für fundierte Entscheidungen.</p>
+
+                        <p class="service-desc">Wir transformieren verteilte Daten
+
+                            in strategische Assets für informierte Entscheidungen.</p>
+
                         <ul class="space-y-3 mb-8">
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#555555]"></span>
-                                <span>Reifegrad-Diagnose</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-[#555555] bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Reifegrad-Diagnose</span>
+
                             </li>
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#555555]"></span>
-                                <span>Datenarchitektur</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-[#555555] bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Datenarchitektur</span>
+
                             </li>
+
                         </ul>
+
                         <a href="../data-ai.html" class="service-link">Details anzeigen →</a>
+
                     </article>
 
-                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl" style="--card-color: #2E2E2E;">
+
+
+                    <article class="service-card-bordered p-10 rounded-3xl shadow-sm hover:shadow-2xl"
+
+                        style="--card-color: #2E2E2E;">
+
                         <div class="icon-container">
+
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+
                             </svg>
+
                         </div>
+
                         <h3 class="service-title">Interkulturelles Management</h3>
-                        <p class="service-desc">Stärkung interner Kompetenzen, Führung und Unternehmenskultur.</p>
+
+                        <p class="service-desc">Stärkung interner
+
+                            Kompetenzen, Führung und Organisationskultur.</p>
+
                         <ul class="space-y-3 mb-8">
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#2E2E2E]"></span>
-                                <span>Teamentwicklung</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-[#2E2E2E] bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Teamtraining</span>
+
                             </li>
+
                             <li class="text-xs font-medium flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#2E2E2E]"></span>
-                                <span>Strategische Planung</span>
+
+                                <span
+
+                                    class="w-1.5 h-1.5 rounded-full bg-[#2E2E2E] bullet-dot transition-colors duration-500"></span>
+
+                                <span class="transition-colors duration-500">Strategische Planung</span>
+
                             </li>
+
                         </ul>
-                        <a href="../intercultural.html" class="service-link">Details anzeigen →</a>
+
+                        <a href="../intercultural.html" class="service-link">Details anzeigen
+
+                            →</a>
+
                     </article>
+
                 </div>
+
             </div>
+
         </section>
+
+
+
+        <!-- Trust Banner -->
 
         <section class="py-12 bg-charcoal">
-            <div class="max-w-7xl mx-auto px-6 text-center">
-                <p class="text-xs uppercase tracking-widest mb-6 text-white/60">Vertrauen in globalen Ökosystemen</p>
-                <div class="slider" style="--width: 200px; --height: 90px; --quantity: 6;">
-                    <div class="track">
-                        <div style="--position: 1" class="item"><img src="https://examtimeassets.s3.amazonaws.com/uploads/media/image/22862592/desktop_a32583e3-7845-4bb3-a70b-73fed439c2f8.jpg" alt=""></div>
-                        <div style="--position: 2" class="item"><img src="https://www.ap2e.com/wp-content/uploads/inrae-logotype-def.png" alt=""></div>
-                        <div style="--position: 3" class="item"><img src="https://i.pinimg.com/736x/ad/54/5d/ad545dc8468d8a329f4085639202ebbf.jpg" alt=""></div>
-                        <div style="--position: 4" class="item"><img src="../Assets/img/flordex_logo.png" alt=""></div>
-                        <div style="--position: 5" class="item"><img src="../Assets/img/koenigsegg_logo.png" alt=""></div>
-                        <div style="--position: 6" class="item"><img src="../Assets/img/etoro_logo.png" alt=""></div>
+
+            <div class="max-w-7xl mx-auto px-6">
+
+                <div>
+
+                    <p class="text-xs uppercase tracking-widest mb-6 text-white/60 text-center">
+
+                        Vertrauen in globalen Ökosystemen
+
+                    </p>
+
+
+
+                    <!--  here logos ____________________________________________ -->
+
+
+
+                    <div class="slider" style="
+
+                        --width: 200px;
+
+                        --height: 90px;
+
+                        --quantity: 6;
+
+                    ">
+
+                        <div class="track">
+
+                            <div style="--position: 1" class="item">
+
+                                <img src="https://examtimeassets.s3.amazonaws.com/uploads/media/image/22862592/desktop_a32583e3-7845-4bb3-a70b-73fed439c2f8.jpg"
+
+                                    alt="">
+
+                            </div>
+
+                            <div style="--position: 2" class="item">
+
+                                <img src="https://www.ap2e.com/wp-content/uploads/inrae-logotype-def.png" alt="">
+
+                            </div>
+
+                            <div style="--position: 3" class="item">
+
+                                <img src="https://i.pinimg.com/736x/ad/54/5d/ad545dc8468d8a329f4085639202ebbf.jpg"
+
+                                    alt="">
+
+                            </div>
+
+                            <div style="--position: 4" class="item">
+
+                                <img src="../Assets/img/flordex_logo.png" alt="">
+
+                            </div>
+
+                            <div style="--position: 5" class="item">
+
+                                <img src="../Assets/img/koenigsegg_logo.png" alt="">
+
+                            </div>
+
+                            <div style="--position: 6" class="item">
+
+                                <img src="../Assets/img/etoro_logo.png" alt="">
+
+                            </div>
+
+                            <!-- add more logos here -->
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section class="py-24 bg-warmgray text-charcoal">
+
+
+        <section class="py-24 bg-warmgray text-charcoal overflow-hidden">
+
             <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
+
                 <div class="lg:w-1/2">
+
                     <span class="philosophy-tag">Strategische Avantgarde</span>
+
                     <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                        <span class="text-charcoal">Keine Standardlösungen.</span><br>
-                        <span class="text-burgundy">Gemeinsam entwickelte Konzepte.</span>
+
+                        <span class="text-charcoal">Wir liefern keine Standardlösungen.</span>
+
+                        <br>
+
+                        <span class="text-burgundy">Wir schaffen gemeinsam Lösungen.</span>
+
                     </h2>
+
                     <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-                        In einer Welt voller Informationen liegt der Wert nicht in den Daten selbst, sondern in der Fähigkeit, diese in strategisches und nachhaltiges Handeln zu übersetzen.
+
+                        In einer Welt voller Informationen liegt der Wert nicht in den Daten, sondern in der Fähigkeit, diese in strategisches und nachhaltiges Handeln zu übersetzen.
+
                     </p>
-                </div>
-                <div class="lg:w-1/2 relative">
-                    <div class="rounded-2xl border border-neutral-200 p-6 bg-white hover:-translate-y-1 transition-transform duration-300">
-                        <h4 class="philosophy-quote font-normal">"Globales Denken, lokale Umsetzung" ist für uns kein Slogan, sondern unser operativer Kompass.</h4>
-                        <div class="space-y-6 mt-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-lg bg-burgundy/10 flex items-center justify-center text-burgundy font-bold">✓</div>
-                                <div>
-                                    <h5 class="font-bold text-sm">Methodische Strenge</h5>
-                                    <p class="text-xs text-gray-500">Standardisierte Prozesse, validiert in Europa und Lateinamerika.</p>
-                                </div>
-                            </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+
+                        <div class="flex flex-col gap-2">
+
+                            <span class="text-3xl font-bold text-burgundy">100%</span>
+
+                            <p class="text-xs uppercase tracking-wider font-bold text-charcoal/60">Boutique-Fokus</p>
+
                         </div>
+
+                        <div class="flex flex-col gap-2">
+
+                            <span class="text-3xl font-bold text-burgundy">3+</span>
+
+                            <p class="text-xs uppercase tracking-wider font-bold text-charcoal/60">Aktive Kontinente</p>
+
+                        </div>
+
                     </div>
+
                 </div>
+
+                <div class="lg:w-1/2 relative">
+
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-burgundy/5 rounded-full blur-3xl"></div>
+
+                    <div class="rounded-2xl border border-neutral-200 p-6 bg-white hover:-translate-y-1 transition-transform duration-300">
+
+                        <div class="mb-8">
+
+                            <svg class="w-12 h-12 text-burgundy/20" fill="currentColor" viewBox="0 0 24 24">
+
+                                <path
+
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+                            </svg>
+
+                        </div>
+
+                        <h4 class="philosophy-quote font-normal">
+
+                            "Globales Denken, lokale Umsetzung" ist nicht nur ein Slogan; es ist unser operativer Kompass.
+
+                        </h4>
+
+                        <div class="space-y-6">
+
+                            <div class="philosophy-benefit">
+
+                                <div
+
+                                    class="w-10 h-10 rounded-lg bg-burgundy/10 flex items-center justify-center shrink-0">
+
+                                    <svg class="w-5 h-5 text-burgundy" fill="none" stroke="currentColor"
+
+                                        viewBox="0 0 24 24">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                                            d="M5 13l4 4L19 7" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h5 class="font-bold text-sm">Methodische
+
+                                        Strenge</h5>
+
+                                    <p class="text-xs text-gray-500">Standardisierte
+
+                                        Prozesse, validiert in Europa und Lateinamerika.</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="philosophy-benefit">
+
+                                <div
+
+                                    class="w-10 h-10 rounded-lg bg-burgundy/10 flex items-center justify-center shrink-0">
+
+                                    <svg class="w-5 h-5 text-burgundy" fill="none" stroke="currentColor"
+
+                                        viewBox="0 0 24 24">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div>
+
+                                    <h5 class="font-bold text-sm">Boutique-Agilität
+
+                                    </h5>
+
+                                    <p class="text-xs text-gray-500">Jedes Projekt wird von Partnern entwickelt und validiert.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
+
+
 
         <section id="contact" class="py-20 bg-charcoal text-white text-center">
+
             <div class="max-w-4xl mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit, den Standard zu setzen.</h2>
-                <p class="text-gray-300 mb-8 text-lg">Vereinbaren Sie eine kostenlose 30-minütige Strategie-Diagnose.</p>
-                <a href="../diagnostico.html" class="bg-burgundy text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-burgundy transition-all">Diagnose anfordern</a>
-                <p class="mt-4 text-xs text-white/40 italic">Diagnose-Tool auf Englisch/Spanisch verfügbar</p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit, den
+
+                    Standard zu heben.</h2>
+
+                <p class="text-gray-300 mb-8 text-lg">Vereinbaren Sie eine 30-minütige strategische
+
+                    Diagnosesitzung kostenlos.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                    <a href="../diagnostico.html"
+
+                        class="bg-burgundy text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-burgundy transition-all">
+
+                        Diagnose anfordern
+
+                    </a>
+
+                </div>
+
             </div>
+
         </section>
+
+
+
     </main>
 
-    <footer class="bg-black text-white py-12 text-center border-t border-gray-900">
+
+
+    <!-- Footer -->
+
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+
         <div class="max-w-7xl mx-auto px-6">
-            <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto mx-auto mb-4">
-            <p class="text-xs text-gray-500">© 2019 - <span id='year'></span> GPMF Consulting S.A.S. Alle Rechte vorbehalten.</p>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                <div class="flex items-center gap-8">
+
+                    <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+
+                    <div class="text-xs">
+
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+
+                    </div>
+
+                </div>
+
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consulting S.A.S. Alle
+
+                    Rechte vorbehalten.</p>
+
+            </div>
+
         </div>
+
     </footer>
 
+    <script src="../js/main.js"></script>
+
     <script>
+
         document.addEventListener('DOMContentLoaded', function () {
+
             const video = document.getElementById('bg-video');
-            if (video) video.playbackRate = 0.7;
+
+            if (video) {
+
+                video.playbackRate = 0.7;
+
+            }
+
         });
+
         document.getElementById('year').textContent = new Date().getFullYear();
+
     </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </body>
+
+
+
 </html>
