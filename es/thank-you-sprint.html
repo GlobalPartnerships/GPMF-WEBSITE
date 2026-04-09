@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Strategic Sprint | GPMF</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                        amber: '#FFC857'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/gradient_background.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mini_classes.css">
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="../index.html" class="text-white hover:text-burgundy transition-colors">Inicio</a>
+                <span class="text-white/30">|</span>
+                <a href="../about.html" class="text-white hover:text-burgundy transition-colors">Firma</a>
+                <span class="text-white/30">|</span>
+                <a href="../partners.html" class="text-white hover:text-burgundy transition-colors">Aliados</a>
+                <span class="text-white/30">|</span>
+                <a href="../services.html" class="text-white hover:text-burgundy transition-colors">Servicios</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <a href="../plans.html" class="hover:text-burgundy transition-colors">EN</a>
+                    <span class="text-white/30">|</span>
+                    <button class="text-burgundy border-b border-burgundy">ES</button>
+                    <span class="text-white/30">|</span>
+                    <a href="../de/plans.html" class="hover:text-burgundy transition-colors">DE</a>
+                </div>
+
+                <a href="../diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Agendar
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 min-h-screen flex items-center justify-center">
+        <section class="py-20 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Success Icon -->
+                <div class="mb-8">
+                    <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto">
+                        <svg class="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Welcome Message -->
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-black mb-6 tracking-tight">
+                    ¡Bienvenido al Strategic Sprint!
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    El primer paso es su sesión de alineación. Agende su espacio de 60 minutos aquí:
+                </p>
+
+                <!-- Action Button -->
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-8 max-w-2xl mx-auto">
+                    <p class="text-amber-900 font-medium mb-6">Agende Su Sesión de Alineación de 60 Minutos</p>
+                    <a href="../diagnostico.html" class="inline-flex items-center gap-3 bg-amber-500 text-black px-8 py-4 rounded-full font-bold hover:bg-amber-400 transition-all hover:-translate-y-1 shadow-lg">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Agendar Sesión con Senior Partner
+                    </a>
+                    <p class="text-sm text-gray-600 mt-4">Duración: 60 minutos con Senior Partner</p>
+                </div>
+
+                <!-- Sprint Info -->
+                <div class="mt-12 grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Sesión 1</h3>
+                        <p class="text-sm text-gray-600">Análisis del Estado Actual y Alineación de Objetivos</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Sesión 2</h3>
+                        <p class="text-sm text-gray-600">Desarrollo de Roadmap Estratégico y Plan de Implementación</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Entregable</h3>
+                        <p class="text-sm text-gray-600">Playbook Estratégico Personalizado con Timeline Priorizado</p>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-12 text-gray-500">
+                    <p class="mb-2">Recibirá una invitación al calendario shortly.</p>
+                    <p>¿Preguntas? Contáctenos en <a href="mailto:contact@gpmf.co" class="text-burgundy hover:underline">contact@gpmf.co</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá · Clermont-Ferrand · Montreal</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

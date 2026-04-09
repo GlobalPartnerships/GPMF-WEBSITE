@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias - Retainer Activado | GPMF</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                        amber: '#FFC857'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/gradient_background.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/mini_classes.css">
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="../index.html" class="text-white hover:text-burgundy transition-colors">Inicio</a>
+                <span class="text-white/30">|</span>
+                <a href="../about.html" class="text-white hover:text-burgundy transition-colors">Firma</a>
+                <span class="text-white/30">|</span>
+                <a href="../partners.html" class="text-white hover:text-burgundy transition-colors">Aliados</a>
+                <span class="text-white/30">|</span>
+                <a href="../services.html" class="text-white hover:text-burgundy transition-colors">Servicios</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <a href="../plans.html" class="hover:text-burgundy transition-colors">EN</a>
+                    <span class="text-white/30">|</span>
+                    <button class="text-burgundy border-b border-burgundy">ES</button>
+                    <span class="text-white/30">|</span>
+                    <a href="../de/plans.html" class="hover:text-burgundy transition-colors">DE</a>
+                </div>
+
+                <a href="../diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Agendar
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-32 min-h-screen flex items-center justify-center">
+        <section class="py-20 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Success Icon -->
+                <div class="mb-8">
+                    <div class="w-20 h-20 bg-burgundy rounded-full flex items-center justify-center mx-auto">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Congratulations Message -->
+                <h1 class="text-4xl md:text-5xl font-serif font-bold text-black mb-6 tracking-tight">
+                    ¡Felicidades!
+                </h1>
+                
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    Ha activado su Socio Operativo Fraccionado. En las próximas 4 horas, recibirá un correo de nuestras fundadoras para coordinar el Onboarding oficial.
+                </p>
+
+                <!-- Onboarding Info -->
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-8 max-w-2xl mx-auto">
+                    <p class="text-amber-900 font-medium mb-6">¿Qué Sucede Después?</p>
+                    <div class="space-y-4 text-left">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Correo de Bienvenida de Fundadoras</h4>
+                                <p class="text-sm text-gray-600">Mensaje personalizado de nuestras fundadoras dentro de 4 horas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Llamada de Onboarding</h4>
+                                <p class="text-sm text-gray-600">Sesión de 30 minutos para definir su proceso prioritario</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Configuración Operativa</h4>
+                                <p class="text-sm text-gray-600">Junior Director asignado y gestión de procesos comienza</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retainer Benefits -->
+                <div class="mt-12 grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Gestión de Procesos</h3>
+                        <p class="text-sm text-gray-600">Supervisión dedicada de 1 proceso operativo específico</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Reuniones Quincenales</h3>
+                        <p class="text-sm text-gray-600">Check-ins regulares y actualizaciones de progreso</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-burgundy mb-2">Reportes Mensuales</h3>
+                        <p class="text-sm text-gray-600">Seguimiento integral de progreso e insights</p>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-12 text-gray-500">
+                    <p class="mb-2">La facturación mensual comenzará después de completar su onboarding.</p>
+                    <p>¿Preguntas? Contáctenos en <a href="mailto:contact@gpmf.co" class="text-burgundy hover:underline">contact@gpmf.co</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá · Clermont-Ferrand · Montreal</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
