@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios y Áreas de Práctica | GPMF</title>
+    <title>Services & Practice Areas | GPMF</title>
     <meta name="description"
-        content="Explore nuestras áreas de práctica: Internacionalización y Alianzas, Transformación Digital & Cultura de Datos, Gestión Intercultural e Interdisciplinaria y Desarrollo de Negocios.">
+        content="Explore our practice areas: Internationalization & Alliances, Digital Transformation & Data Culture, Intercultural & Interdisciplinary Management, and Business Development.">
 
     <!-- Fuentes y Estilos -->
     <link
@@ -41,20 +41,16 @@
             </a>
 
             <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
-                <a href="index.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.home">Inicio</a>
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors">Home</a>
                 <span class="text-white/30">|</span>
-                <a href="about.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.firm">Firma</a>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors">Firm</a>
                 <span class="text-white/30">|</span>
-                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors"
-                    data-i18n="nav.partners">Aliados</a>
+                <a href="partners.html" class="text-white hover:text-burgundy transition-colors">Partners</a>
                 <span class="text-white/30">|</span>
 
                 <div class="relative group cursor-pointer py-4">
-                    <a href="!Servicios Central.html" class="text-white hover:text-burgundy flex items-center gap-1"
-                        data-i18n="nav.services">
-                        Servicios
+                    <a href="services.html" class="text-white hover:text-burgundy flex items-center gap-1">
+                        Services
                         <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
@@ -63,17 +59,17 @@
                     <div
                         class="absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block p-2 text-left">
                         <a href="internationalization.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Internacionalización
-                            y Alianzas</a>
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Internationalization
+                            & Alliances</a>
                         <a href="data-ai.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Transformación
-                            Digital & Cultura de Datos</a>
-                        <a href="Intercultural.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Gestión
-                            Intercultural e Interdisciplinaria</a>
-                        <a href="business-development.html"
-                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Desarrollo
-                            de Negocios</a>
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Digital
+                            Transformation & Data Culture</a>
+                        <a href="intercultural.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Intercultural
+                            Management</a>
+                        <a href="bizdev.html"
+                            class="block px-4 py-3 hover:bg-gray-50 text-sm rounded-md text-charcoal hover:text-burgundy">Business
+                            Development</a>
                     </div>
                 </div>
 
@@ -81,11 +77,11 @@
 
             <div class="hidden lg:flex items-center gap-6">
                 <div class="flex items-center gap-2 text-xs font-bold text-white">
-                    <button onclick="changeLanguage('es')" class="text-burgundy border-b border-burgundy"
-                        data-lang="es">ES</button>
-                    <span class="text-white/30">|</span>
-                    <button onclick="changeLanguage('en')" class="hover:text-burgundy transition-colors"
+                    <button onclick="changeLanguage('en')" class="text-burgundy border-b border-burgundy"
                         data-lang="en">EN</button>
+                    <span class="text-white/30">|</span>
+                    <button onclick="changeLanguage('es')" class="hover:text-burgundy transition-colors"
+                        data-lang="es">ES</button>
                     <span class="text-white/30">|</span>
                     <button onclick="changeLanguage('de')" class="hover:text-burgundy transition-colors"
                         data-lang="de">DE</button>
@@ -96,7 +92,7 @@
 
                 <a href="diagnostico.html"
                     class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
-                    Agendar
+                    Schedule
                 </a>
             </div>
 
@@ -106,25 +102,24 @@
         </div>
 
         <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
-            <a href="index.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.home">Inicio</a>
-            <a href="about.html" class="block text-2xl font-bold text-charcoal" data-i18n="nav.firm">Firma</a>
-            <a href="aliados-equipo.html" class="block text-2xl font-bold text-charcoal"
-                data-i18n="nav.partners">Aliados</a>
+            <a href="index.html" class="block text-2xl font-bold text-charcoal">Home</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal">Firm</a>
+            <a href="partners.html" class="block text-2xl font-bold text-charcoal">Partners</a>
             <button
                 class="mobile-services-toggle flex items-center justify-between text-2xl font-bold w-full text-left text-charcoal"
                 aria-expanded="false">
-                <span data-i18n="nav.services">Servicios</span>
+                <span>Services</span>
                 <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
             <div class="mobile-services-panel hidden flex flex-col gap-4 text-xl text-charcoal pl-4">
-                <a href="internationalization.html" data-i18n="nav.int">Internacionalización</a>
-                <a href="landing_GEN_IA_consultora_boutique.html" data-i18n="nav.ai">IA &amp; Analítica</a>
-                <a href="Intercultural.html">Gestión Intercultural e Interdisciplinaria</a>
-                <a href="business-development.html" data-i18n="nav.bizdev">Expansión &amp; Soluciones Sectoriales</a>
+                <a href="../internationalization.html">Internacionalización</a>
+                <a href="../data-ai.html">IA & Analítica</a>
+                <a href="../intercultural.html">Gestión Intercultural e Interdisciplinaria</a>
+                <a href="../bizdev.html">Expansión & Soluciones Sectoriales</a>
             </div>
-            <a href="contact.html" class="block text-2xl font-bold text-burgundy" data-i18n="nav.contact">Contacto</a>
+            <a href="contact.html" class="block text-2xl font-bold text-burgundy">Contact</a>
             <button onclick="document.getElementById('mobile-menu').classList.add('hidden')"
                 class="absolute top-6 right-6 text-3xl text-charcoal">✕</button>
         </div>
@@ -141,16 +136,14 @@
             <div class="absolute top-10 right-10 w-64 h-64 bg-burgundy/5 rounded-full blur-3xl"></div>
 
             <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-                <span class="text-burgundy font-bold tracking-widest uppercase text-sm mb-4 block"
-                    data-i18n="servcentral.hero.kicker">Nuestros Servicios</span>
+                <span class="text-burgundy font-bold tracking-widest uppercase text-sm mb-4 block">Our Services</span>
                 <h1 class="text-4xl md:text-6xl font-serif text-black mb-6 leading-tight">
-                    <span data-i18n="servcentral.hero.title">Soluciones de Expansión</span>
-                    <span class="text-burgundy italic" data-i18n="servcentral.hero.title_highlight">& Eficiencia.</span>
+                    <span>Expansion Solutions</span>
+                    <span class="text-burgundy italic"> & Efficiency.</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
-                    data-i18n="servcentral.hero.desc">
-                    No vendemos horas, diseñamos puentes de crecimiento entre Latam, Norteamérica y Europa con nuestros
-                    tres focos, integrando estrategia, tecnología y diplomacia corporativa.
+                <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    We don't sell hours, we design growth bridges between Latam, North America and Europe with our
+                    three focuses, integrating strategy, technology and corporate diplomacy.
                 </p>
             </div>
         </section>
@@ -171,17 +164,15 @@
                                 class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-white mb-8 group-hover:bg-white group-hover:text-burgundy transition-colors">
                                 <i class="fas fa-plane-departure text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4"
-                                data-i18n="servcentral.card1.title">
-                                Internacionalización y Alianzas</h3>
-                            <p class="text-white/80 text-lg leading-relaxed mb-8 flex-grow"
-                                data-i18n="servcentral.card1.desc">
-                                Dejamos de lado la intuición. Estructuramos su entrada a Europa y Latam con validación
-                                de mercado, blindaje legal y adaptación cultural.
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Internationalization & Alliances</h3>
+                            <p class="text-white/80 text-lg leading-relaxed mb-8 flex-grow">
+                                We leave intuition aside. We structure your entry to Europe and Latam with market
+                                validation, legal shielding and cultural adaptation.
                             </p>
                             <span
                                 class="inline-flex items-center text-white font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all">
-                                <span data-i18n="servcentral.card1.cta">Explorar Vertical</span> <i
+                                <span>Explore Vertical</span> <i
                                     class="fas fa-arrow-right ml-2"></i>
                             </span>
                         </div>
@@ -201,24 +192,22 @@
                                 class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-white mb-8 group-hover:bg-white group-hover:text-black transition-colors">
                                 <i class="fas fa-microchip text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4"
-                                data-i18n="servcentral.card2.title">Transformación Digital & Cultura
-                                de Datos</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-grow"
-                                data-i18n="servcentral.card2.desc">
-                                No implementamos tecnología por moda. Diseñamos sistemas de IA a medida que resuelven
-                                cuellos de botella operativos y aceleran la toma de decisiones.
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Digital Transformation & Data
+                                Culture</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+                                We don't implement technology for trends. We design custom AI systems that solve
+                                operational bottlenecks and accelerate decision-making.
                             </p>
                             <span
                                 class="inline-flex items-center text-white font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all">
-                                <span data-i18n="servcentral.card2.cta">Ver Soluciones IA</span> <i
+                                <span>See AI Solutions</span> <i
                                     class="fas fa-arrow-right ml-2"></i>
                             </span>
                         </div>
                     </a>
 
                     <!-- TARJETA 3: GESTIÓN INTERCULTURAL (Intermediate Gray Theme) -->
-                    <a href="Intercultural.html"
+                    <a href="intercultural.html"
                         class="group relative block h-full bg-charcoal rounded-2xl border border-charcoal p-8 lg:p-12 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                         <!-- Fondo oscuro para consistencia -->
                         <div class="absolute inset-0 bg-charcoal opacity-100"></div>
@@ -230,17 +219,15 @@
                                 class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center text-white mb-8 group-hover:bg-white group-hover:text-charcoal transition-colors">
                                 <i class="fas fa-handshake text-2xl"></i>
                             </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4"
-                                data-i18n="servcentral.card3.title">
-                                Gestión Intercultural e Interdisciplinaria</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-grow"
-                                data-i18n="servcentral.card3.desc">
-                                Conectamos innovación científica y técnica con capital y mercado. Especialistas en
-                                cadenas de valor complejas como Agro-Tech y Bioeconomía.
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Intercultural & Interdisciplinary Management</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+                                We connect scientific and technological innovation with capital and market. Specialists in
+                                complex value chains such as Agro-Tech and Bioeconomy.
                             </p>
                             <span
                                 class="inline-flex items-center text-white font-bold uppercase tracking-widest text-sm group-hover:gap-3 transition-all">
-                                <span data-i18n="servcentral.card3.cta">Ver Estrategias</span> <i
+                                <span>See Strategies</span> <i
                                     class="fas fa-arrow-right ml-2"></i>
                             </span>
                         </div>
@@ -253,16 +240,13 @@
         <!-- CTA GENERAL -->
         <section class="py-20 bg-warmgray text-center border-t border-gray-200">
             <div class="max-w-3xl mx-auto px-6">
-                <h2 class="text-3xl font-bold text-charcoal mb-6" data-i18n="servcentral.cta.title">¿No está seguro de
-                    qué solución necesita?</h2>
-                <p class="text-charcoal mb-8 text-lg" data-i18n="servcentral.cta.desc">
-                    Los retos complejos rara vez encajan en una sola categoría. Hablemos para diagnosticar su situación
-                    real.
+                <h2 class="text-3xl font-bold text-charcoal mb-6">Not sure which solution you need?</h2>
+                <p class="text-charcoal mb-8 text-lg">
+                    Complex challenges rarely fit into a single category. Let's talk to diagnose your real situation.
                 </p>
                 <a href="diagnostico.html"
-                    class="inline-block bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-burgundy transition-all hover:-translate-y-1 shadow-xl"
-                    data-i18n="servcentral.cta.btn">
-                    Agendar Diagnóstico General
+                    class="inline-block bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-burgundy transition-all hover:-translate-y-1 shadow-xl">
+                    Schedule General Diagnosis
                 </a>
             </div>
         </section>
@@ -280,14 +264,11 @@
                         <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consulting S.A.S. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Button eliminado -->
-
-    <script src="js/main.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
