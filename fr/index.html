@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Partenariats Stratégiques Mondiaux</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        warmgray: '#F5F5F5'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-charcoal font-sans antialiased">
+
+    <header id="header" class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-10 w-auto">
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors">Accueil</a>
+                <span class="text-white/30">|</span>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors">Firme</a>
+                <span class="text-white/30">|</span>
+                <a href="partners.html" class="text-white hover:text-burgundy transition-colors">Partenaires</a>
+                <span class="text-white/30">|</span>
+                <a href="../index.html#services" class="text-white hover:text-burgundy transition-colors">Services</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-xs font-bold text-white">
+                    <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
+                    <span class="text-white/30">|</span>
+                    <a href="../es/index.html" class="hover:text-burgundy transition-colors">ES</a>
+                    <span class="text-white/30">|</span>
+                    <a href="../de/index.html" class="hover:text-burgundy transition-colors">DE</a>
+                    <span class="text-white/30">|</span>
+                    <button class="text-burgundy border-b border-burgundy">FR</button>
+                </div>
+
+                <a href="../diagnostico.html"
+                    class="bg-burgundy text-white px-5 py-2 rounded-full hover:bg-[#5e0b26] text-sm font-medium transition-colors">
+                    Planifier
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-2xl text-white">
+                &#9776;
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 flex flex-col pt-24 px-6 gap-6">
+            <a href="index.html" class="block text-2xl font-bold text-charcoal">Accueil</a>
+            <a href="about.html" class="block text-2xl font-bold text-charcoal">Firme</a>
+            <a href="partners.html" class="block text-2xl font-bold text-charcoal">Partenaires</a>
+            <a href="../index.html#services" class="block text-2xl font-bold text-charcoal">Services</a>
+            
+            <div class="flex items-center gap-4 text-xl font-bold text-charcoal py-2">
+                <a href="../index.html" class="hover:text-burgundy transition-colors">EN</a>
+                <span class="text-gray-300">|</span>
+                <a href="../es/index.html" class="hover:text-burgundy transition-colors">ES</a>
+                <span class="text-gray-300">|</span>
+                <a href="../de/index.html" class="hover:text-burgundy transition-colors">DE</a>
+                <span class="text-gray-300">|</span>
+                <button class="text-burgundy border-b-2 border-burgundy">FR</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-[#FAF3F6] via-white to-[#ECF3FF]"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-xs tracking-[0.4em] uppercase text-charcoal mb-4">Partenariats · Stratégies · 
+                            Mondiales</p>
+                        <h1 class="text-4xl md:text-5xl font-serif text-charcoal mb-6">
+                            Partenariats Stratégiques <span class="text-burgundy">Mondiaux</span>
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8 max-w-2xl">
+                            Nous connectons votre entreprise avec des opportunités stratégiques internationales, 
+                            facilitant les alliances et l'expansion dans les marchés mondiaux.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="../diagnostico.html"
+                                class="inline-flex items-center justify-center gap-2 rounded-full bg-burgundy px-6 py-3 text-white font-semibold hover:bg-[#5e0b26]">
+                                Commencer
+                            </a>
+                            <a href="#services"
+                                class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 px-6 py-3 font-semibold text-neutral-800 hover:bg-neutral-50">
+                                Nos Services
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-burgundy/10 to-burgundy/5 p-8 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-6xl font-bold text-burgundy mb-4">GPMF</div>
+                                <p class="text-gray-600">Global Partnerships Multidisciplinary Firm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-20 bg-warmgray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-4">Nos Services</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Des solutions complètes pour votre expansion internationale
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-burgundy font-bold">1</span>
+                        </div>
+                        <h3 class="font-semibold text-charcoal mb-2">Internationalisation</h3>
+                        <p class="text-sm text-gray-600">Stratégies d'expansion mondiale</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-burgundy font-bold">2</span>
+                        </div>
+                        <h3 class="font-semibold text-charcoal mb-2">IA & Analytics</h3>
+                        <p class="text-sm text-gray-600">Solutions de transformation numérique</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-burgundy font-bold">3</span>
+                        </div>
+                        <h3 class="font-semibold text-charcoal mb-2">Management Interculturel</h3>
+                        <p class="text-sm text-gray-600">Gestion de la diversité culturelle</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-burgundy/10 rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-burgundy font-bold">4</span>
+                        </div>
+                        <h3 class="font-semibold text-charcoal mb-2">Développement Commercial</h3>
+                        <p class="text-sm text-gray-600">Solutions sectorielles sur mesure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white py-12 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-8">
+                        <img src="../Assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                        <div class="text-xs">
+                            <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                            <p class="text-gray-400">Bogotá · Clermont-Ferrand · Montreal</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 pr-12"> 2019 - <span id='year'></span> GPMF Consulting S.A.S. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
