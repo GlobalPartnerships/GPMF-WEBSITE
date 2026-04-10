@@ -1,0 +1,32 @@
+# GPMF PROJECT RULES - MANDATORY
+
+## 1. DIAGNOSTICO.HTML (THE GOLDEN RULE)
+- **Status:** READ-ONLY for translations.
+- **Content:** Must remain BILINGUAL (EN/ES) as designed.
+- **Location:** ONLY in the root directory (`/diagnostico.html`).
+- **Linking:** All language folders (/es/, /de/, /fr/) must link to the root version: `../diagnostico.html`.
+- **Action:** NEVER create localized versions of this file.
+
+## 2. FILE STRUCTURE & NAMING
+- **Case Sensitivity:** ALL file names and folder names MUST be in lowercase (e.g., `assets/`, `css/`, `bizdev.html`).
+- **Organization:** - Root (/) = English (EN)
+  - /es/ = Spanish (ES)
+  - /de/ = German (DE)
+  - /fr/ = French (FR)
+
+## 3. ASSETS & PATHS
+- Always use relative paths.
+- From subfolders: `../assets/` or `../css/`.
+- From root: `assets/` or `css/`.
+
+## 4. UI COMPONENTS (HEADER & FOOTER)
+- **Consistency:** Every page must have the same Header and Footer structure.
+- **Header:** Logo GPMF (left), Menu (About, Services, Partners, Plans), Language Switcher (right).
+- **Footer:** GPMF Logo, Locations (Bogotá, Clermont-Ferrand, Montreal), dynamic JS Year.
+- **Language Switcher:** Must link to the equivalent page in other languages (e.g., from `/es/about.html` to `../about.html`).
+- **Navigation:** "Services" links must point to `index.html#practice-areas`.
+
+## 5. BUSINESS LOGIC
+- GPMF is a multicultural boutique firm. Founders speak EN, ES, DE, FR. 
+- Direct contact (Diagnostic) is the priority.
+- Redundant service pages have been removed in favor of deep-dive technical pages.
