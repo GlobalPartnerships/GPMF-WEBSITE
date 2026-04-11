@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Políticas de Casa Normandía | Reglas y Guías</title>
-    <meta name="description" content="Políticas completas de Casa Normandía: reglas de la casa, política de mascotas, registro de huéspedes y guías para una estancia perfecta.">
+    <title>Políticas de Casa Normandía | Reglas y Normas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>??</text></svg>">
+    <meta name="description" content="Políticas y reglas de Casa Normandía. Conoce nuestras normas de convivencia, política de mascotas y registro de huéspedes para una estancia productiva.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,17 +49,6 @@
             background: #A45C40;
             border-radius: 4px;
         }
-
-        /* Smooth transitions */
-        .fade-enter {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-        }
-        .fade-enter-active {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body class="bg-rooted-cream text-rooted-dark font-sans antialiased selection:bg-rooted-terra selection:text-white">
@@ -66,19 +56,27 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-rooted-cream/95 backdrop-blur-sm border-b border-rooted-terra/20 py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="mistery.html" class="text-2xl font-serif font-bold text-rooted-green tracking-tight">
+            <a href="index.html" class="text-2xl font-serif font-bold text-rooted-green tracking-tight">
                 Casa Normandía
             </a>
             
             <div class="hidden md:flex space-x-8 items-center font-medium text-sm tracking-wide">
-                <a href="mistery.html#bogota" class="hover:text-rooted-terra transition-colors">BOGOTÁ (Urban)</a>
-                <a href="mistery.html#nilo" class="hover:text-rooted-terra transition-colors">NILO (Rural)</a>
-                <a href="mistery.html#booking" class="hover:text-rooted-terra transition-colors">RESERVAR</a>
-                <a href="politicas.html" class="text-rooted-terra font-bold">POLÍTICAS</a>
+                <!-- Language Selector -->
+                <div class="flex items-center space-x-1 bg-white/80 px-3 py-1 rounded-full border border-rooted-terra/20">
+                    <span class="text-rooted-green font-bold px-2 py-1 rounded bg-rooted-cream">ES</span>
+                    <a href="politicas-en.html" class="text-gray-600 hover:text-rooted-terra transition-colors px-2 py-1">EN</a>
+                </div>
+                
+                <a href="index.html#bogota" class="hover:text-rooted-terra transition-colors">BOGOTÁ</a>
+                <a href="index.html#nilo" class="hover:text-rooted-terra transition-colors">NILO</a>
+                <a href="#reglas-casa" class="hover:text-rooted-terra transition-colors">REGLAS</a>
+                <button onclick="window.location.href='index.html#booking'" class="bg-rooted-terra text-white px-6 py-2 rounded-full hover:bg-rooted-green transition-colors shadow-lg transform hover:-translate-y-0.5">
+                    RESERVAR
+                </button>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-rooted-green">?</button>
+            <!-- Mobile Menu Button (Unicode) -->
+            <button class="md:hidden text-2xl text-rooted-green">??</button>
         </div>
     </nav>
 
@@ -94,17 +92,58 @@
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="#reglas-casa" class="bg-rooted-terra text-white px-6 py-3 rounded-full hover:bg-rooted-green transition-colors shadow-lg">
-                    📋 Reglas de la Casa
+                    ?? Reglas de la Casa
                 </a>
                 <a href="#politica-mascotas" class="bg-white text-rooted-terra border border-rooted-terra px-6 py-3 rounded-full hover:bg-rooted-terra hover:text-white transition-colors">
-                    🐾 Política de Mascotas
+                    ?? Política de Mascotas
                 </a>
                 <a href="#registro-huespedes" class="bg-rooted-green text-white px-6 py-3 rounded-full hover:bg-rooted-terra transition-colors shadow-lg">
-                    ? Registro de Huéspedes
+                    &#128203; Registro de Huéspedes
                 </a>
             </div>
         </div>
     </header>
+
+    <!-- Quick Info Box -->
+    <section class="py-8 bg-rooted-sand">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-2xl shadow-lg border border-rooted-terra/20 p-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-serif font-bold text-rooted-green mb-6 text-center">
+                    Lo que debes saber en 1 minuto
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl text-rooted-terra mt-1">&#128263;</div>
+                        <div>
+                            <h3 class="font-bold text-rooted-dark mb-1">Silencio total</h3>
+                            <p class="text-gray-600">Desde las 10 PM para garantizar descanso profundo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl text-rooted-terra mt-1">&#128263;</div>
+                        <div>
+                            <h3 class="font-bold text-rooted-dark mb-1">Espacio 100% libre de humo</h3>
+                            <p class="text-gray-600">Prohibido fumar en todas las áreas.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl text-rooted-terra mt-1">&#128263;</div>
+                        <div>
+                            <h3 class="font-bold text-rooted-dark mb-1">Lavandería disponible</h3>
+                            <p class="text-gray-600">Servicio por $100,000 COP por carga.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="text-2xl text-rooted-terra mt-1">&#128263;</div>
+                        <div>
+                            <h3 class="font-bold text-rooted-dark mb-1">Check-out</h3>
+                            <p class="text-gray-600">A las 11:00 AM, favor seguir el checklist digital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Main Content -->
     <main class="py-16">
@@ -114,7 +153,7 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-rooted-cream/50 rounded-2xl p-8 md:p-12 shadow-sm border border-rooted-terra/10">
-                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">📋 Reglas de la Casa</h2>
+                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">?? Reglas de la Casa</h2>
                         
                         <div class="prose prose-lg max-w-none text-gray-700">
                             <p class="mb-8">
@@ -123,7 +162,7 @@
                                 aborden el problema de manera respetuosa y profesional.
                             </p>
 
-                            <h3 class="text-2xl font-serif text-rooted-green mt-8 mb-4">📝 Normas Generales</h3>
+                            <h3 class="text-2xl font-serif text-rooted-green mt-8 mb-4">?? Normas Generales</h3>
                             
 
                             <div class="space-y-6 mb-8">
@@ -212,7 +251,7 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-rooted-terra/10">
-                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">🐾 Política de Mascotas</h2>
+                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">?? Política de Mascotas</h2>
                         
                         <div class="prose prose-lg max-w-none text-gray-700">
                             <p class="mb-8">
@@ -275,7 +314,7 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-rooted-cream/50 rounded-2xl p-8 md:p-12 shadow-sm border border-rooted-terra/10">
-                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">📝 Registro de Huéspedes Obligatorio</h2>
+                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">?? Registro de Huéspedes Obligatorio</h2>
                         
                         <div class="prose prose-lg max-w-none text-gray-700">
                             <p class="mb-8">
@@ -286,7 +325,7 @@
                             <div class="text-center mb-8">
                                 <a href="https://forms.gle/JRicQokLquVgCDU97" target="_blank" rel="noopener" 
                                    class="inline-block bg-rooted-terra text-white px-8 py-4 rounded-full hover:bg-rooted-green transition-colors shadow-lg text-lg font-bold">
-                                    ?? Completar Formulario de Registro
+                                    &#128203; Completar Formulario de Registro
                                 </a>
                             </div>
 
@@ -299,25 +338,21 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Contact Info -->
-                    <div class="bg-rooted-green text-white rounded-2xl p-8 md:p-12 mt-8 shadow-lg">
-                        <h3 class="text-2xl font-serif font-bold mb-6 text-center">📞 Contacto del Anfitrión</h3>
-                        <div class="text-center space-y-2">
-                            <p class="text-xl"><strong>Aristides Sánchez Segura</strong></p>
-                            <p class="text-lg">Casa Normandía by GPMF</p>
-                            <p>Carrera 71 no 53-72, Bogotá</p>
-                            <p class="text-lg">📱 +57 3156166760</p>
-                            <p>💼 <a href="https://www.linkedin.com/company/casa-normandia-coliving" target="_blank" rel="noopener" class="hover:text-rooted-terra transition-colors">LinkedIn</a></p>
-                        </div>
+        <!-- Política de Privacidad -->
+        <section id="privacidad" class="py-16 bg-rooted-cream">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-rooted-terra/10">
+                        <h2 class="text-3xl font-serif text-rooted-green font-bold mb-6">Política de Privacidad</h2>
                         
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <a href="mistery.html" class="bg-white text-rooted-green px-6 py-3 rounded-full hover:bg-rooted-cream transition-colors font-bold text-center">
-                                🏠 Volver al Inicio
-                            </a>
-                            <a href="mailto:contacto.gpmfsas@gmail.com" class="bg-rooted-terra text-white px-6 py-3 rounded-full hover:bg-white hover:text-rooted-terra transition-colors font-bold text-center">
-                                📧 Contactar por Email
-                            </a>
+                        <div class="prose prose-lg max-w-none text-gray-700">
+                            <p class="mb-6">
+                                <strong>Protección de Datos Personales (Ley 1581 de 2012):</strong> Casa Normandía y GPMF SAS informan que los datos personales recolectados (Nombre, ID, Contacto) se utilizan exclusivamente para el registro legal de huéspedes ante las autoridades migratorias (SIRE/TRA), la gestión de su reserva y el envío de información sobre nuestros servicios. No compartimos sus datos con terceros con fines comerciales. Para ejercer sus derechos de actualización o supresión, contáctenos al correo de la administración.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -333,18 +368,18 @@
                     <h3 class="text-2xl font-serif font-bold mb-4">Casa Normandía</h3>
                     <p class="text-gray-400 text-sm mb-4">Un ecosistema de hospitalidad gestionado por GPMF. Conectando lo urbano y lo rural.</p>
                     <div class="flex gap-4 text-xl">
-                        <a href="#" class="hover:text-rooted-terra">??</a>
-                        <a href="#" class="hover:text-rooted-terra">??</a>
-                        <a href="mailto:contacto.gpmfsas@gmail.com" class="hover:text-rooted-terra">??</a>
+                        <a href="https://www.instagram.com/casanormandia/" class="hover:text-rooted-terra">Instagram</a>
+                        <a href="https://www.linkedin.com/company/casa-normandia-coliving" class="hover:text-rooted-terra">LinkedIn</a>
+                        <a href="mailto:contacto.gpmfsas@gmail.com" class="hover:text-rooted-terra">Email</a>
                     </div>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4 text-white">Enlaces Rápidos</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="mistery.html#bogota" class="hover:text-white transition-colors">Bogotá Studios</a></li>
-                        <li><a href="mistery.html#nilo" class="hover:text-white transition-colors">Granja Nilo</a></li>
+                        <li><a href="index.html#bogota" class="hover:text-white transition-colors">Bogotá Studios</a></li>
+                        <li><a href="index.html#nilo" class="hover:text-white transition-colors">Granja Nilo</a></li>
                         <li><a href="politicas.html" class="hover:text-white transition-colors">Políticas y Reglas de la Casa</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="politicas.html#privacidad" class="hover:text-white transition-colors">Política de Privacidad</a></li>
                     </ul>
                 </div>
                 <div>
@@ -352,7 +387,7 @@
                     <p class="text-xs text-gray-400 mb-4">Recibe nuestra "Guía Local de Bogotá" gratis.</p>
                     <form onsubmit="event.preventDefault(); alert('¡Gracias! Te hemos enviado la guía.');" class="flex gap-2">
                         <input type="email" placeholder="Tu correo..." class="bg-gray-800 border-none rounded px-4 py-2 text-sm w-full focus:ring-1 focus:ring-rooted-terra">
-                        <button class="bg-rooted-terra px-4 py-2 rounded text-white font-bold hover:bg-white hover:text-rooted-terra transition-colors">??</button>
+                        <button class="bg-rooted-terra px-4 py-2 rounded text-white font-bold hover:bg-white hover:text-rooted-terra transition-colors">?</button>
                     </form>
                 </div>
             </div>
