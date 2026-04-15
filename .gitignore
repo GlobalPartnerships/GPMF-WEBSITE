@@ -1,1 +1,4 @@
-borradores_gpmf/
+_internal/
+No public/
+*.log
+_temp.html
