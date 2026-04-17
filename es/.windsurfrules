@@ -30,3 +30,8 @@
 - GPMF is a multicultural boutique firm. Founders speak EN, ES, DE, FR. 
 - Direct contact (Diagnostic) is the priority.
 - Redundant service pages have been removed in favor of deep-dive technical pages.
+
+## 6. CLIENT-SPECIFIC FILES
+- The file `DACH.html` is a priority lead-gen tool for a specific client.
+- DO NOT DELETE, DO NOT RENAME, and DO NOT OVERWRITE with general diagnostics.
+- It must remain in the root directory.

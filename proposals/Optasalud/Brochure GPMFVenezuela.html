@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Arquitectura de Ejecución Venezuela</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        gold: '#FFC857',
+                        softgray: '#F9F9F9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos de impresión - aplicados también en pantalla para vista previa */
+        .no-print { display: none; }
+        body { background: white; margin: 0; padding: 0; font-size: 10px; }
+        .page-break { page-break-before: always; }
+        
+        /* Optimización extrema para una página */
+        .max-w-4xl { max-width: 100%; }
+        .min-h-\[1100px\] { min-height: auto; }
+        .my-8 { margin: 0.25rem; }
+        .p-12 { padding: 0.5rem; }
+        .px-12 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .pb-8 { padding-bottom: 0.25rem; }
+        .py-8 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-12 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .gap-12 { gap: 0.5rem; }
+        .gap-8 { gap: 0.25rem; }
+        .gap-6 { gap: 0.25rem; }
+        .gap-4 { gap: 0.125rem; }
+        .gap-3 { gap: 0.125rem; }
+        .space-y-8 > * + * { margin-top: 0.25rem; }
+        .space-y-6 > * + * { margin-top: 0.25rem; }
+        .space-y-4 > * + * { margin-top: 0.125rem; }
+        .space-y-3 > * + * { margin-top: 0.125rem; }
+        .space-y-2 > * + * { margin-top: 0.125rem; }
+        .space-y-1 > * + * { margin-top: 0.125rem; }
+        .text-3xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.125rem; }
+        .text-xl { font-size: 1rem; }
+        .text-lg { font-size: 0.875rem; }
+        .text-sm { font-size: 0.625rem; }
+        .text-xs { font-size: 0.5625rem; }
+        .text-\[10px\] { font-size: 0.5rem; }
+        .p-8 { padding: 0.25rem; }
+        .p-6 { padding: 0.25rem; }
+        .p-4 { padding: 0.125rem; }
+        .pl-6 { padding-left: 0.5rem; }
+        .mb-4 { margin-bottom: 0.125rem; }
+        .mb-6 { margin-bottom: 0.25rem; }
+        .mb-8 { margin-bottom: 0.25rem; }
+        .mt-8 { margin-top: 0.25rem; }
+        .mt-1 { margin-top: 0.125rem; }
+        .mt-2 { margin-top: 0.125rem; }
+        .pt-8 { padding-top: 0.25rem; }
+        .pt-4 { padding-top: 0.125rem; }
+        .border-t-8 { border-top-width: 2px; }
+        .border-l-4 { border-left-width: 2px; }
+        .border-b-2 { border-bottom-width: 1px; }
+        .h-12 { height: 1.5rem; }
+        .h-8 { height: 0.75rem; }
+        .w-10 { width: 0.75rem; }
+        .w-32 { width: 2rem; }
+        .h-32 { height: 2rem; }
+        .w-48 { width: 6rem; }
+        .max-w-2xl { max-width: 100%; }
+        .max-w-7xl { max-width: 100%; }
+        .grid-cols-3 { grid-template-columns: 1fr; }
+        .grid-cols-2 { grid-template-columns: 1fr; }
+        .col-span-2 { grid-column: span 1; }
+        .col-span-1 { grid-column: span 1; }
+        .leading-relaxed { line-height: 1.2; }
+        .leading-tight { line-height: 1.1; }
+        .shadow-2xl { box-shadow: none; }
+        .shadow-xl { box-shadow: none; }
+        .shadow-sm { box-shadow: none; }
+        .rounded-sm { border-radius: 2px; }
+        .rounded-full { border-radius: 4px; }
+        .bg-softgray\/30 { background: transparent; }
+        
+        @media print {
+            body { font-size: 9px; margin: 0; padding: 0; }
+            html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            footer { background: #000000 !important; color: #ffffff !important; }
+            .bg-black { background: #000000 !important; }
+            .text-white { color: #ffffff !important; }
+            .text-gray-400 { color: #9ca3af !important; }
+            .text-gray-500 { color: #6b7280 !important; }
+            .no-print { display: none !important; }
+            @page { 
+                size: A4; 
+                margin: 0.5cm; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="bg-softgray text-charcoal antialiased">
+
+    <!-- Barra de Acción (No se imprime) -->
+    <div class="no-print bg-charcoal text-white p-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
+        <p class="text-sm font-medium">GPMF | Brochure Estratégico Especializado</p>
+        <button onclick="window.print()" class="bg-burgundy hover:bg-red-900 text-white px-6 py-2 rounded-full text-sm font-bold transition-all">
+            Descargar como PDF
+        </button>
+    </div>
+
+    <!-- Documento Principal -->
+    <div class="max-w-4xl mx-auto my-8 bg-white shadow-2xl min-h-[1100px] flex flex-col border-t-8 border-burgundy">
+        
+        <!-- Encabezado -->
+        <header class="p-12 flex justify-between items-start pb-8">
+            <div class="flex items-start gap-6">
+                <!-- Logo GPMF -->
+                <img src="../../assets/img/logo.png" alt="GPMF Logo" class="h-12 w-auto max-w-48">
+                <div class="space-y-3">
+                    <h1 class="font-serif text-burgundy tracking-tight text-2xl">GLOBAL PARTNERSHIPS</h1>
+                    <p class="text-gray-500 font-semibold tracking-widest text-[10px]">MULTIDISCIPLINARY FIRM</p>
+                </div>
+            </div>
+            <div class="text-right space-y-2">
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">Alumni Focus / High-Level Consulting</p>
+                <p class="text-xs text-gray-500 italic">"German Rigor, Local Execution"</p>
+            </div>
+        </header>
+
+        <!-- Sección Hero -->
+        <section class="px-12 pb-8">
+            <div class="border-l-4 border-gold pl-6 space-y-4">
+                <h2 class="text-3xl font-serif text-charcoal leading-tight">
+                    Arquitectura de Ejecución para la <span class="italic text-burgundy">Reactivación en Venezuela 2026-2027</span>
+                </h2>
+                <p class="text-gray-600 leading-relaxed max-w-2xl">
+                    Ante la inminente reactivación de los sectores Minero y Petrolero, el éxito no depende solo del capital, sino de la capacidad de <strong>operativizar la gobernanza</strong> en entornos de alta incertidumbre y complejidad institucional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contenido Principal -->
+        <main class="flex-grow px-12 grid grid-cols-3 gap-12 py-8 bg-softgray/30">
+            
+            <!-- Columna Izquierda: El Vacío -->
+            <div class="col-span-2 space-y-8">
+                <div>
+                    <h3 class="text-burgundy font-bold text-sm uppercase tracking-widest mb-4">El Desafío de la Reactivación</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        La entrada de inversores y grupos estratégicos (como el Grupo Gilinski) demanda una trazabilidad que el mercado local no siempre puede garantizar. GPMF actúa como el <strong>nodo de confianza</strong> para asegurar:
+                    </p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold font-bold">I.</span>
+                            <span><strong>Gobernanza de Datos:</strong> Información centralizada para cumplimiento de estándares internacionales y reporte a donantes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold font-bold">II.</span>
+                            <span><strong>Continuidad Operativa:</strong> Procesos blindados que funcionan independientemente de las rotaciones de liderazgo institucional.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold font-bold">III.</span>
+                            <span><strong>Interculturalidad Estratégica:</strong> Alineación profunda entre las expectativas del inversor global y la realidad del ejecutor local.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Caja de Oferta: Strategic Scan -->
+                <div class="bg-burgundy text-white p-8 rounded-sm shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                    <h3 class="font-serif text-2xl mb-4">Strategic Scan: Blindaje Inicial</h3>
+                    <p class="text-sm opacity-90 mb-6 italic">
+                        Un diagnóstico de 3 horas diseñado para identificar los cuellos de botella antes de que se conviertan en pérdidas de capital o crisis operativas.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-xs font-semibold">
+                        <div class="bg-white/10 p-4 rounded border border-white/20">
+                            <p class="uppercase tracking-widest mb-2 opacity-70 italic text-[10px]">Metodología</p>
+                            <p class="text-base text-gold font-bold tracking-tight">Audit Socrático Express</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded border border-white/20">
+                            <p class="uppercase tracking-widest mb-2 opacity-70 italic text-[10px]">Entregable</p>
+                            <p class="text-base text-gold font-bold tracking-tight">Roadmap de Ejecución</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Detalles -->
+            <div class="col-span-1 space-y-6">
+                <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Enfoque Alumni DAAD</h4>
+                    <p class="text-xs leading-relaxed text-gray-600 italic">
+                        "Entendemos que el rigor alemán y el pensamiento sistémico son las únicas herramientas capaces de transformar la expectativa de 'lluvia de dinero' en sistemas institucionales sostenibles."
+                    </p>
+                </div>
+
+                <div class="space-y-4 pt-4">
+                    <h4 class="text-xs font-bold text-burgundy uppercase tracking-widest">Inversión del Scan</h4>
+                    <div class="border-b border-gray-200 pb-2">
+                        <p class="text-2xl font-serif text-charcoal">USD $850</p>
+                        <p class="text-[10px] text-gray-400 uppercase">Tarifa única corporativa</p>
+                    </div>
+                    <p class="text-[10px] leading-tight text-gray-500">
+                        *Este valor es 100% acreditable a la contratación de servicios mensuales de Hub Operativo o Management Fraccionado.
+                    </p>
+                </div>
+
+                <div class="pt-8 space-y-2">
+                    <p class="text-[10px] font-bold text-charcoal tracking-widest uppercase">Dirección Estratégica</p>
+                    <p class="text-sm font-semibold text-burgundy">Marcela Sánchez Vargas</p>
+                    <p class="text-[10px] text-gray-500 leading-tight">
+                        Managing Partner | GPMF<br>
+                        DAAD Alumni Strategic Rapporteur
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white py-12 border-t border-gray-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-8">
+                        <img src="../../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+                        <div class="text-xs">
+                            <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                            <p class="text-gray-400">Bogotá · Panamá · Santiago</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 pr-12"> 2019 - 2026 GPMF Consulting S.A.S. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
