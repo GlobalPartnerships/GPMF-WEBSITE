@@ -1,0 +1,9 @@
+- index.html
+- planes.html
+- diagnostico.html
+- about.html
+- partners.html
+- internationalization.html
+- data-ia.html
+- intercultural.html
+- contact.html

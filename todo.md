@@ -1,6 +1,7 @@
 **Proyect enhancement**
 
 [] migrate from raw HTML and CSS to Next.js + Tailwind CSS (this project)
+    [] Structure for multi-languages
     [] Map all the current html files to Next.js pages
     [] add animations
     [] Add a cursor effect to follow the cursor

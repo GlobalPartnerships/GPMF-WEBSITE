@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\ccair\\\\OneDrive\\\\Documentos\\\\programming_stuff_5.0\\\\freelance\\\\2026\\\\GPMF\\\\GPMF-WEBSITE\\\\node_modules\\\\next\\\\dist\\\\docs\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object Name)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
