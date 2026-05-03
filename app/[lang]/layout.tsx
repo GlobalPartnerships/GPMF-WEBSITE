@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { getDictionary, hasLocale, locales, type Locale } from "./dictionaries";
+import {
+  getDictionary,
+  hasLocale,
+  locales,
+  type Locale,
+} from "@/app/dictionaries";
+import { Header } from "@/app/components/layout/Header";
+import { Footer } from "@/app/components/layout/Footer";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
@@ -23,7 +30,7 @@ export async function generateMetadata({
 
   if (!hasLocale(lang)) return {};
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getDictionary(lang as Locale, "layout");
 
   const alternateLanguages = Object.fromEntries(
     locales.map((l) => [l, `/${l}`])
@@ -46,12 +53,19 @@ export default async function LangLayout({
 
   if (!hasLocale(lang)) notFound();
 
+  const locale = lang as Locale;
+  const dict = await getDictionary(locale, "layout");
+
   return (
     <html
       lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
+        <Header lang={locale} dict={dict.nav} />
+        <main className="flex-1">{children}</main>
+        <Footer dict={dict.footer} />
+      </body>
     </html>
   );
 }

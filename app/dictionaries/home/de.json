@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Globale Strategie · Gegr. 2019",
+    "headlinePart1": "Globale\nKomplexität navigieren mit",
+    "headlineAccent": "strategischer Intelligenz",
+    "headlinePart3": "und Präzision.",
+    "description": "GPMF bietet die anspruchsvollen Werkzeuge und Beratung, die Unternehmen benötigen, die Präzision in jedem Markt fordern — und Geduld in jeder Partnerschaft.",
+    "ctaPrimary": "Starten Sie Ihre Strategie",
+    "ctaSecondary": "Portfolio Ansehen",
+    "stats": [
+      { "value": "128", "label": "Projekte\ndieses Jahr" },
+      { "value": "26", "label": "Senior-\nBerater" },
+      { "value": "4.9", "label": "Durchschn.\nBewertung" }
+    ],
+    "ratingLabel": "Durchschnittliche Kundenbewertung über 1.420 Bewertungen",
+    "verticalCaption": "Ausgabe N°XII — Quartalsbericht"
+  },
+  "trustedBy": {
+    "label": "Vertraut von führenden Unternehmen weltweit",
+    "brands": ["European Commission", "ProColombia", "Business France", "Montreal International", "ICEX", "KOTRA", "Enterprise Ireland"]
+  },
+  "principles": {
+    "eyebrow": "Prinzipien",
+    "headline": "Drei Überzeugungen",
+    "headlineAccent": "die jede Strategie prägen, die wir entwickeln.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Präzisionshandwerk",
+        "description": "Akribische Aufmerksamkeit für Markteintritts-Mechanismen und regulatorische Abstimmung. Jede Variable wird gewichtet, jedes Szenario kartiert, jedes Risiko belastungstestet.",
+        "deliverables": ["Marktanalyse", "Regulatorische Kartierung", "Risikobewertung"]
+      },
+      {
+        "number": "02",
+        "title": "Zeitlose Logik",
+        "description": "Strategie basierend auf bewährten Frameworks und interkultureller Intelligenz. Wir respektieren die Grundlagen und finden gleichzeitig neue Wege.",
+        "deliverables": ["Strategische Planung", "Kulturelle Abstimmung", "Partnerschaftsaufbau"]
+      },
+      {
+        "number": "03",
+        "title": "Moderne Reichweite",
+        "description": "Digitale Distribution ohne Verlust strategischer Tiefe. Heritage-Methodik mit der globalen Geschwindigkeit heutiger Märkte verbinden.",
+        "deliverables": ["Multi-Markt", "Distribution", "Skalierung"]
+      }
+    ]
+  },
+  "methodology": {
+    "eyebrow": "Methodik",
+    "headline": "Unsere",
+    "headlineAccent": "Spezialität.",
+    "description": "Eine Vier-Stufen-Methode, die strategische Tradition mit technologischer Präzision verbindet. Jedes Projekt durchläuft Bewertung, Strategie, Umsetzung und Lieferung — ohne seine Vision zu verlieren.",
+    "steps": [
+      { "number": "01", "title": "Bewerten", "description": "Tiefgehende Analyse Ihrer aktuellen Position, Marktlandschaft und Wettbewerbsumgebung." },
+      { "number": "02", "title": "Strategisieren", "description": "Hochpräzise Analysetools einsetzen, um Chancen, Risiken und Partnerschaftswege zu kartieren." },
+      { "number": "03", "title": "Umsetzen", "description": "Unser Netzwerk lokaler Partner und kultureller Brücken einsetzen, um Märkte zu öffnen." },
+      { "number": "04", "title": "Liefern", "description": "Messbare Ergebnisse und nachhaltige Marktpräsenz für dauerhaftes Wachstum generieren." }
+    ],
+    "quote": {
+      "text": "GPMF ist die seltene Firma, die Ihr Unternehmen als lebendigen Organismus respektiert — nicht als Tabellenkalkulation. Nach fünfzehn Jahren im internationalen Handel habe ich nicht die Partner gewechselt. Ich habe die Perspektive gewechselt.",
+      "author": "— H. Marlowe, Direktor, ProColombia"
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Ausgewählte Arbeiten",
+    "headline": "Erfolgsgeschichten.",
+    "cases": [
+      {
+        "number": "N° 01",
+        "category": "Markteintritt · 2023",
+        "title": "Casa Normandia",
+        "description": "Eine Erkundung von Markteintritt und kultureller Brückenbildung zwischen Kolumbien und Frankreich, über neun Monate strategischer Zusammenarbeit.",
+        "cta": "Projekt erkunden"
+      },
+      {
+        "number": "N° 02",
+        "category": "Gesundheit · 2024",
+        "title": "Health Care Hospital",
+        "description": "Neugestaltung internationaler Gesundheitskommunikation durch eine minimalistische strategische Sprache und ein rigoroses operatives Raster.",
+        "cta": "Projekt erkunden"
+      },
+      {
+        "number": "N° 03",
+        "category": "Strategie · 2023",
+        "title": "The Art of Precision",
+        "description": "Ein Manifest über strategische Beratung im Zeitalter der digitalen Transformation — als begrenztes Engagement über 3 Märkte umgesetzt.",
+        "cta": "Projekt erkunden"
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "Das Studio",
+    "headlinePart1": "Lernen Sie das",
+    "headlineAccent": "GPMF-Team kennen.",
+    "description": "Unsere Spezialisten vereinen Jahrzehnte kollektiver Weisheit im internationalen Geschäft — Strategen, Analysten, kulturelle Mediatoren und ehemalige Handelsbeamte unter einem Dach.",
+    "members": [
+      { "name": "Helena Marlowe", "role": "Geschäftsführerin" },
+      { "name": "August Devlin", "role": "Senior-Stratege" },
+      { "name": "Mira Okafor", "role": "Marktanalystin" },
+      { "name": "Tomás Valverde", "role": "Kulturberater" }
+    ],
+    "cta": "Unser Team kennenlernen",
+    "studioLocation": "Studio · Bogotá, CO"
+  },
+  "legacy": {
+    "eyebrow": "Beginnen",
+    "headline": "Werden Sie Teil des",
+    "headlineAccent": "Vermächtnisses.",
+    "description": "Treten Sie in eine Partnerschaft ein, in der Ihre Vision mit der Ehrfurcht behandelt wird, die sie verdient. Schließen Sie sich einem exklusiven Kreis von Unternehmen an, die Ambition in dauerhafte internationale Präsenz verwandeln.",
+    "ctaPlaceholder": "ihre@email.com",
+    "ctaButton": "Loslegen",
+    "note": "Einladungen vierteljährlich offen · Derzeit Frühjahrseinreichungen akzeptiert",
+    "triptych": [
+      { "label": "N° 01", "title": "Vergangenheit", "subtitle": "Erbe" },
+      { "label": "N° 02", "title": "Gegenwart", "subtitle": "Praxis" },
+      { "label": "N° 03", "title": "Zukunft", "subtitle": "Vermächtnis" }
+    ]
+  }
+}

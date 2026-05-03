@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Estrategia Global · Est. 2019",
+    "headlinePart1": "Navegando\nla complejidad global con",
+    "headlineAccent": "inteligencia estratégica",
+    "headlinePart3": "y precisión.",
+    "description": "GPMF provee las herramientas sofisticadas y la asesoría requerida para empresas que exigen precisión en cada mercado — y paciencia en cada alianza.",
+    "ctaPrimary": "Comienza Tu Estrategia",
+    "ctaSecondary": "Ver Portafolio",
+    "stats": [
+      { "value": "128", "label": "Proyectos\neste año" },
+      { "value": "26", "label": "Consultores\nsenior" },
+      { "value": "4.9", "label": "Calificación\npromedio" }
+    ],
+    "ratingLabel": "Calificación promedio de clientes en 1.420 reseñas",
+    "verticalCaption": "Edición N°XII — Boletín Trimestral"
+  },
+  "trustedBy": {
+    "label": "Con la confianza de empresas líderes a nivel mundial",
+    "brands": ["European Commission", "ProColombia", "Business France", "Montreal International", "ICEX", "KOTRA", "Enterprise Ireland"]
+  },
+  "principles": {
+    "eyebrow": "Principios",
+    "headline": "Tres convicciones",
+    "headlineAccent": "que dan forma a cada estrategia que creamos.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Precisión artesanal",
+        "description": "Atención meticulosa a las mecánicas de entrada al mercado y alineación regulatoria. Cada variable es ponderada, cada escenario mapeado, cada riesgo sometido a pruebas de estrés.",
+        "deliverables": ["Análisis de mercado", "Mapeo regulatorio", "Evaluación de riesgos"]
+      },
+      {
+        "number": "02",
+        "title": "Lógica atemporal",
+        "description": "Estrategia basada en marcos probados e inteligencia intercultural. Respetamos los fundamentos mientras encontramos nuevos caminos a través de ellos.",
+        "deliverables": ["Planificación estratégica", "Alineación cultural", "Construcción de alianzas"]
+      },
+      {
+        "number": "03",
+        "title": "Alcance moderno",
+        "description": "Distribución digital sin perder profundidad estratégica. Conectando metodología patrimonial con la velocidad global de los mercados actuales.",
+        "deliverables": ["Multi-mercado", "Distribución", "Escala"]
+      }
+    ]
+  },
+  "methodology": {
+    "eyebrow": "Metodología",
+    "headline": "Nuestra",
+    "headlineAccent": "especialidad.",
+    "description": "Un método de cuatro etapas que combina tradición estratégica con precisión tecnológica. Cada proyecto pasa por evaluación, estrategia, ejecución y entrega — sin perder su visión.",
+    "steps": [
+      { "number": "01", "title": "Evaluar", "description": "Inmersión profunda en tu posición actual, panorama de mercado y entorno competitivo." },
+      { "number": "02", "title": "Estrategizar", "description": "Aplicamos herramientas analíticas de alta fidelidad para mapear oportunidades, riesgos y rutas de alianza." },
+      { "number": "03", "title": "Ejecutar", "description": "Desplegamos nuestra red de socios locales y puentes culturales para abrir mercados." },
+      { "number": "04", "title": "Entregar", "description": "Generamos resultados medibles y presencia sostenible en el mercado para un crecimiento duradero." }
+    ],
+    "quote": {
+      "text": "GPMF es la firma poco común que respeta tu negocio como un organismo vivo — no como una hoja de cálculo. Después de quince años en comercio internacional, no cambié de socios. Cambié de perspectiva.",
+      "author": "— H. Marlowe, Director, ProColombia"
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Trabajo Selecto",
+    "headline": "Casos de éxito.",
+    "cases": [
+      {
+        "number": "N° 01",
+        "category": "Entrada al mercado · 2023",
+        "title": "Casa Normandia",
+        "description": "Una exploración de entrada al mercado y puente cultural entre Colombia y Francia, ejecutada a lo largo de nueve meses de colaboración estratégica.",
+        "cta": "Explorar proyecto"
+      },
+      {
+        "number": "N° 02",
+        "category": "Salud · 2024",
+        "title": "Health Care Hospital",
+        "description": "Redefiniendo la comunicación sanitaria internacional mediante un lenguaje estratégico minimalista y una grilla operativa rigurosa.",
+        "cta": "Explorar proyecto"
+      },
+      {
+        "number": "N° 03",
+        "category": "Estrategia · 2023",
+        "title": "The Art of Precision",
+        "description": "Un manifiesto sobre consultoría estratégica en la era de la transformación digital — ejecutado como un compromiso limitado en 3 mercados.",
+        "cta": "Explorar proyecto"
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "El Estudio",
+    "headlinePart1": "Conoce al",
+    "headlineAccent": "equipo GPMF.",
+    "description": "Nuestros especialistas reúnen décadas de sabiduría colectiva en negocios internacionales — estrategas, analistas, mediadores culturales y ex funcionarios comerciales trabajando bajo un mismo techo.",
+    "members": [
+      { "name": "Helena Marlowe", "role": "Directora General" },
+      { "name": "August Devlin", "role": "Estratega Senior" },
+      { "name": "Mira Okafor", "role": "Analista de Mercado" },
+      { "name": "Tomás Valverde", "role": "Asesor Cultural" }
+    ],
+    "cta": "Conoce a nuestro equipo",
+    "studioLocation": "Estudio · Bogotá, CO"
+  },
+  "legacy": {
+    "eyebrow": "Comenzar",
+    "headline": "Únete al",
+    "headlineAccent": "legado.",
+    "description": "Entra en una alianza donde tu visión es tratada con la reverencia que merece. Únete a un círculo exclusivo de empresas que transforman ambición en presencia internacional duradera.",
+    "ctaPlaceholder": "tu@email.com",
+    "ctaButton": "Comenzar",
+    "note": "Invitaciones abiertas trimestralmente · Actualmente aceptando solicitudes de primavera",
+    "triptych": [
+      { "label": "N° 01", "title": "Pasado", "subtitle": "Herencia" },
+      { "label": "N° 02", "title": "Presente", "subtitle": "Práctica" },
+      { "label": "N° 03", "title": "Futuro", "subtitle": "Legado" }
+    ]
+  }
+}

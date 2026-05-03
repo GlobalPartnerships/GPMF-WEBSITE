@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "GPMF | Firma Multidisciplinaria y Alianzas Globales",
+    "description": "Ayudamos a las PYMES a entrar en Europa y Latinoamérica con estrategia, inteligencia intercultural y gestión de datos."
+  },
+  "nav": {
+    "home": "Inicio",
+    "firm": "Firma",
+    "partners": "Socios",
+    "services": "Servicios"
+  },
+  "footer": {
+    "companyName": "Global Partnerships Multidisciplinary Firm",
+    "tagline": "Definiendo la próxima generación de alianzas estratégicas globales e inteligencia intercultural.",
+    "cities": "Bogotá · Clermont-Ferrand · Montreal",
+    "rights": "Todos los derechos reservados",
+    "typeset": "Tipografía Playfair & Inter · Bogotá, CO",
+    "explore": "Explorar",
+    "studio": "Estudio",
+    "legal": "Legal",
+    "links": {
+      "home": "Inicio",
+      "principles": "Principios",
+      "methodology": "Metodología",
+      "work": "Trabajo Selecto",
+      "team": "Equipo",
+      "manifesto": "Manifiesto",
+      "press": "Prensa",
+      "careers": "Carreras",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "imprint": "Aviso Legal"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Global Strategy · Est. 2019",
+    "headlinePart1": "Navigating\nglobal complexity with",
+    "headlineAccent": "strategic intelligence",
+    "headlinePart3": "& precision.",
+    "description": "GPMF provides the sophisticated tools and advisory required for businesses who demand precision in every market — and patience in every partnership.",
+    "ctaPrimary": "Begin Your Strategy",
+    "ctaSecondary": "View Portfolio",
+    "stats": [
+      { "value": "128", "label": "Projects\nthis year" },
+      { "value": "26", "label": "Senior\nconsultants" },
+      { "value": "4.9", "label": "Average\nclient rating" }
+    ],
+    "ratingLabel": "Average client rating across 1,420 reviews",
+    "verticalCaption": "Issue N°XII — Spring Quarterly"
+  },
+  "trustedBy": {
+    "label": "As trusted by leading enterprises worldwide",
+    "brands": ["European Commission", "ProColombia", "Business France", "Montreal International", "ICEX", "KOTRA", "Enterprise Ireland"]
+  },
+  "principles": {
+    "eyebrow": "Principles",
+    "headline": "Three convictions",
+    "headlineAccent": "that shape every strategy we craft.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Precision craft",
+        "description": "Meticulous attention to market entry mechanics and regulatory alignment. Every variable is weighted, every scenario mapped, every risk stress-tested.",
+        "deliverables": ["Market analysis", "Regulatory mapping", "Risk assessment"]
+      },
+      {
+        "number": "02",
+        "title": "Timeless logic",
+        "description": "Strategy grounded in proven frameworks and intercultural intelligence. We respect the fundamentals while finding new pathways through them.",
+        "deliverables": ["Strategic planning", "Cultural alignment", "Partnership building"]
+      },
+      {
+        "number": "03",
+        "title": "Modern reach",
+        "description": "Digital-first distribution without losing strategic depth. Connecting heritage methodology with the global velocity of today's markets.",
+        "deliverables": ["Multi-market", "Distribution", "Scale"]
+      }
+    ]
+  },
+  "methodology": {
+    "eyebrow": "Methodology",
+    "headline": "Our",
+    "headlineAccent": "specialty.",
+    "description": "A four-stage method combining strategic tradition with technological precision. Every project moves through assessment, strategy, execution, and delivery — without losing its vision.",
+    "steps": [
+      { "number": "01", "title": "Assess", "description": "Deep-dive into your current position, market landscape, and competitive environment." },
+      { "number": "02", "title": "Strategize", "description": "Apply high-fidelity analytical tools to map opportunities, risks, and partnership pathways." },
+      { "number": "03", "title": "Execute", "description": "Deploy our network of on-the-ground partners and cultural bridges to open markets." },
+      { "number": "04", "title": "Deliver", "description": "Generate measurable outcomes and sustainable market presence for lasting growth." }
+    ],
+    "quote": {
+      "text": "GPMF is the rare firm that respects your business as a living organism — not a spreadsheet. After fifteen years in international trade, I have not changed partners. I have changed perspective.",
+      "author": "— H. Marlowe, Director, ProColombia"
+    }
+  },
+  "caseStudies": {
+    "eyebrow": "Selected Work",
+    "headline": "Success stories.",
+    "cases": [
+      {
+        "number": "N° 01",
+        "category": "Market Entry · 2023",
+        "title": "Casa Normandia",
+        "description": "An exploration of market entry and cultural bridging between Colombia and France, executed across nine months of strategic collaboration.",
+        "cta": "Explore project"
+      },
+      {
+        "number": "N° 02",
+        "category": "Healthcare · 2024",
+        "title": "Health Care Hospital",
+        "description": "Redefining international healthcare communication through a minimalist strategic language and a rigorous operational grid.",
+        "cta": "Explore project"
+      },
+      {
+        "number": "N° 03",
+        "category": "Strategy · 2023",
+        "title": "The Art of Precision",
+        "description": "A manifesto on strategic consulting in an age of digital transformation — executed as a limited engagement across 3 markets.",
+        "cta": "Explore project"
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The Studio",
+    "headlinePart1": "Meet the",
+    "headlineAccent": "GPMF team.",
+    "description": "Our specialists bring together decades of collective wisdom in international business — strategists, analysts, cultural mediators and former trade officials working under one careful roof.",
+    "members": [
+      { "name": "Helena Marlowe", "role": "Managing Director" },
+      { "name": "August Devlin", "role": "Senior Strategist" },
+      { "name": "Mira Okafor", "role": "Market Analyst" },
+      { "name": "Tomás Valverde", "role": "Cultural Advisor" }
+    ],
+    "cta": "Meet our team",
+    "studioLocation": "Studio · Bogotá, CO"
+  },
+  "legacy": {
+    "eyebrow": "Begin",
+    "headline": "Join the",
+    "headlineAccent": "legacy.",
+    "description": "Step into a partnership where your vision is treated with the reverence it deserves. Join an exclusive circle of businesses transforming ambition into lasting international presence.",
+    "ctaPlaceholder": "your@email.com",
+    "ctaButton": "Get started",
+    "note": "Invitations open quarterly · Currently accepting Spring submissions",
+    "triptych": [
+      { "label": "N° 01", "title": "Past", "subtitle": "Heritage" },
+      { "label": "N° 02", "title": "Present", "subtitle": "Practice" },
+      { "label": "N° 03", "title": "Future", "subtitle": "Legacy" }
+    ]
+  }
+}

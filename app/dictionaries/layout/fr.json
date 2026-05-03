@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "GPMF | Conseil Stratégique International",
+    "description": "Nous aidons les PME à entrer en Europe et en Amérique latine avec stratégie, intelligence interculturelle et gestion des données."
+  },
+  "nav": {
+    "home": "Accueil",
+    "firm": "Cabinet",
+    "partners": "Partenaires",
+    "services": "Services"
+  },
+  "footer": {
+    "companyName": "Global Partnerships Multidisciplinary Firm",
+    "tagline": "Définir la prochaine génération de partenariats stratégiques mondiaux et d'intelligence interculturelle.",
+    "cities": "Bogotá · Clermont-Ferrand · Montréal",
+    "rights": "Tous droits réservés",
+    "typeset": "Typographie Playfair & Inter · Bogotá, CO",
+    "explore": "Explorer",
+    "studio": "Studio",
+    "legal": "Juridique",
+    "links": {
+      "home": "Accueil",
+      "principles": "Principes",
+      "methodology": "Méthodologie",
+      "work": "Travaux Sélectionnés",
+      "team": "Équipe",
+      "manifesto": "Manifeste",
+      "press": "Presse",
+      "careers": "Carrières",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "imprint": "Mentions Légales"
+    }
+  }
+}

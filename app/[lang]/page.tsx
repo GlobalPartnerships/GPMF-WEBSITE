@@ -1,5 +1,13 @@
 import { notFound } from "next/navigation";
-import { getDictionary, hasLocale, type Locale } from "./dictionaries";
+import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
+import { HeroSection } from "@/app/components/home/HeroSection";
+import { TrustedByMarquee } from "@/app/components/home/TrustedByMarquee";
+import { PrinciplesSection } from "@/app/components/home/PrinciplesSection";
+import { MethodologySection } from "@/app/components/home/MethodologySection";
+import { CaseStudiesSection } from "@/app/components/home/CaseStudiesSection";
+import { TeamSection } from "@/app/components/home/TeamSection";
+import { LegacyCtaSection } from "@/app/components/home/LegacyCtaSection";
+import { RevealObserver } from "@/app/components/home/RevealObserver";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -8,22 +16,18 @@ export default async function HomePage({ params }: PageParams) {
 
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale);
+  const dict = await getDictionary(lang as Locale, "home");
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-32 text-center">
-      <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-        {dict.hero.headline}
-      </h1>
-      <p className="mt-4 max-w-xl text-lg text-zinc-600 dark:text-zinc-400">
-        {dict.hero.subheadline}
-      </p>
-      <a
-        href="#contact"
-        className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-background transition-colors hover:bg-zinc-700 dark:hover:bg-zinc-300"
-      >
-        {dict.hero.cta}
-      </a>
-    </main>
+    <>
+      <RevealObserver />
+      <HeroSection dict={dict.hero} lang={lang} />
+      <TrustedByMarquee dict={dict.trustedBy} />
+      <PrinciplesSection dict={dict.principles} />
+      <MethodologySection dict={dict.methodology} />
+      <CaseStudiesSection dict={dict.caseStudies} />
+      <TeamSection dict={dict.team} lang={lang} />
+      <LegacyCtaSection dict={dict.legacy} />
+    </>
   );
 }

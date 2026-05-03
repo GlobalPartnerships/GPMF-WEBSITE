@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "GPMF | Global Partnerships & Multidisciplinary Firm",
+    "description": "We help SMEs enter Europe and Latin America with strategy, intercultural intelligence, and data management."
+  },
+  "nav": {
+    "home": "Home",
+    "firm": "Firm",
+    "partners": "Partners",
+    "services": "Services"
+  },
+  "footer": {
+    "companyName": "Global Partnerships Multidisciplinary Firm",
+    "tagline": "Defining the next generation of global strategic partnerships and intercultural intelligence.",
+    "cities": "Bogotá · Clermont-Ferrand · Montreal",
+    "rights": "All rights reserved",
+    "typeset": "Set in Playfair & Inter · Bogotá, CO",
+    "explore": "Explore",
+    "studio": "Studio",
+    "legal": "Legal",
+    "links": {
+      "home": "Home",
+      "principles": "Principles",
+      "methodology": "Methodology",
+      "work": "Selected Work",
+      "team": "Team",
+      "manifesto": "Manifesto",
+      "press": "Press",
+      "careers": "Careers",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "imprint": "Imprint"
+    }
+  }
+}

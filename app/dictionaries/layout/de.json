@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "GPMF | Internationale Strategieberatung",
+    "description": "Wir helfen KMUs beim Eintritt in Europa und Lateinamerika mit Strategie, interkultureller Intelligenz und Datenmanagement."
+  },
+  "nav": {
+    "home": "Startseite",
+    "firm": "Kanzlei",
+    "partners": "Partner",
+    "services": "Leistungen"
+  },
+  "footer": {
+    "companyName": "Global Partnerships Multidisciplinary Firm",
+    "tagline": "Die nächste Generation globaler strategischer Partnerschaften und interkultureller Intelligenz definieren.",
+    "cities": "Bogotá · Clermont-Ferrand · Montreal",
+    "rights": "Alle Rechte vorbehalten",
+    "typeset": "Schriftart Playfair & Inter · Bogotá, CO",
+    "explore": "Erkunden",
+    "studio": "Studio",
+    "legal": "Rechtliches",
+    "links": {
+      "home": "Startseite",
+      "principles": "Prinzipien",
+      "methodology": "Methodik",
+      "work": "Ausgewählte Arbeiten",
+      "team": "Team",
+      "manifesto": "Manifest",
+      "press": "Presse",
+      "careers": "Karriere",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "imprint": "Impressum"
+    }
+  }
+}
