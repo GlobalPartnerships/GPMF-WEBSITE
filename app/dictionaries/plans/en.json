@@ -1,0 +1,97 @@
+{
+  "eyebrow": "Pricing",
+  "headlinePart1": "Choose your",
+  "headlineAccent": "plan.",
+  "subtitle": "Tailored strategic solutions for teams of every scale — from growing enterprises to bespoke engagements.",
+  "tabs": {
+    "enterprise": "Enterprise",
+    "custom": "Custom"
+  },
+  "sideText": {
+    "line1": "Global Partnerships &",
+    "line2": "Multidisciplinary Firm"
+  },
+  "enterprise": [
+    {
+      "icon": "runner",
+      "name": "GPMF Diagnostic",
+      "description": "Express Business Readiness Audit",
+      "price": "$500 USD",
+      "priceSuffix": "One-time payment",
+      "cta": "Buy Diagnostic",
+      "features": [
+        { "text": "Extended diagnostic questionnaire access" },
+        { "text": "Maturity Report (PDF) delivered in 48h" },
+        { "text": "30-min session to review findings" }
+      ]
+    },
+    {
+      "icon": "team",
+      "name": "Strategic Sprint",
+      "description": "Custom Internationalization or Data Roadmap",
+      "price": "$1,500 USD",
+      "priceSuffix": "One-time payment",
+      "cta": "Hire Sprint",
+      "featured": true,
+      "features": [
+        { "text": "2 intensive consulting sessions (1h each)" },
+        { "text": "Custom Strategic Playbook (Execution Map)" },
+        { "text": "Priority implementation timeline" }
+      ]
+    },
+    {
+      "icon": "enterprise",
+      "name": "Tactical Retainer",
+      "description": "Continuous operational support",
+      "price": "$2,500 USD",
+      "priceSuffix": "Per month",
+      "cta": "Subscribe Now",
+      "inheritLabel": "Everything in Strategic Sprint, plus:",
+      "features": [
+        { "text": "Management of 1 specific process (partner search, data cleanup, etc.)" },
+        { "text": "Bi-weekly follow-up meetings" },
+        { "text": "Monthly progress reports" }
+      ]
+    }
+  ],
+  "custom": [
+    {
+      "icon": "location",
+      "name": "Scale-Up Accelerator",
+      "description": "For organizations entering new international markets",
+      "price": "Custom",
+      "priceSuffix": "Starting from $5,000 – $10,000 USD",
+      "cta": "Schedule a Call",
+      "features": [
+        { "text": "Market feasibility study" },
+        { "text": "Regulatory landscape mapping" },
+        { "text": "Partner identification & vetting" },
+        { "text": "Go-to-market strategy design" },
+        { "text": "Local network activation" },
+        { "text": "90-day implementation support" }
+      ]
+    },
+    {
+      "icon": "support",
+      "name": "GPMF Executive Partner",
+      "description": "End-to-end strategic direction for complex organizations",
+      "price": "Custom",
+      "priceSuffix": "Starting from $10,000 – $50,000 USD",
+      "cta": "Request Proposal",
+      "featured": true,
+      "inheritLabel": "Everything in Scale-Up Accelerator, plus:",
+      "features": [
+        { "text": "Strategic governance and board advisory" },
+        { "text": "International donor relationship management" },
+        { "text": "Complex transformation program oversight" },
+        { "text": "Data governance and compliance frameworks" },
+        { "text": "Multi-market expansion strategy" },
+        { "text": "Advanced analytics and AI implementation" }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Plans & Pricing | GPMF",
+    "description": "Explore GPMF strategic consulting plans — from diagnostics and sprints to executive partnerships."
+  }
+}

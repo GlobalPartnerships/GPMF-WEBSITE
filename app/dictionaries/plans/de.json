@@ -1,0 +1,97 @@
+{
+  "eyebrow": "Preise",
+  "headlinePart1": "Wählen Sie Ihren",
+  "headlineAccent": "Plan.",
+  "subtitle": "Maßgeschneiderte strategische Lösungen für Teams jeder Größe — von wachsenden Unternehmen bis hin zu individuellen Engagements.",
+  "tabs": {
+    "enterprise": "Unternehmen",
+    "custom": "Individuell"
+  },
+  "sideText": {
+    "line1": "Global Partnerships &",
+    "line2": "Multidisciplinary Firm"
+  },
+  "enterprise": [
+    {
+      "icon": "runner",
+      "name": "GPMF Diagnose",
+      "description": "Express-Audit zur Unternehmensreife",
+      "price": "500 $ USD",
+      "priceSuffix": "Einmalige Zahlung",
+      "cta": "Diagnose Kaufen",
+      "features": [
+        { "text": "Zugang zum erweiterten Diagnose-Fragebogen" },
+        { "text": "Reifegradreport (PDF) innerhalb von 48h" },
+        { "text": "30-minütige Sitzung zur Besprechung der Ergebnisse" }
+      ]
+    },
+    {
+      "icon": "team",
+      "name": "Strategischer Sprint",
+      "description": "Individuelle Internationalisierungs- oder Daten-Roadmap",
+      "price": "1.500 $ USD",
+      "priceSuffix": "Einmalige Zahlung",
+      "cta": "Sprint Buchen",
+      "featured": true,
+      "features": [
+        { "text": "2 intensive Beratungssitzungen (je 1 Stunde)" },
+        { "text": "Individuelles Strategisches Playbook (Ausführungskarte)" },
+        { "text": "Priorisierter Implementierungsplan" }
+      ]
+    },
+    {
+      "icon": "enterprise",
+      "name": "Taktischer Retainer",
+      "description": "Kontinuierliche operative Unterstützung",
+      "price": "2.500 $ USD",
+      "priceSuffix": "Pro Monat",
+      "cta": "Jetzt Abonnieren",
+      "inheritLabel": "Alles im Strategischen Sprint, plus:",
+      "features": [
+        { "text": "Verwaltung von 1 spezifischem Prozess (Partnersuche, Datenbereinigung usw.)" },
+        { "text": "Zweiwöchentliche Follow-up-Meetings" },
+        { "text": "Monatliche Fortschrittsberichte" }
+      ]
+    }
+  ],
+  "custom": [
+    {
+      "icon": "location",
+      "name": "Expansionsbeschleuniger",
+      "description": "Für Organisationen, die in neue internationale Märkte eintreten",
+      "price": "Individuell",
+      "priceSuffix": "Ab 5.000 – 10.000 $ USD",
+      "cta": "Gespräch Vereinbaren",
+      "features": [
+        { "text": "Machbarkeitsstudie für den Zielmarkt" },
+        { "text": "Kartierung der regulatorischen Landschaft" },
+        { "text": "Partneridentifikation und -prüfung" },
+        { "text": "Go-to-Market-Strategieentwicklung" },
+        { "text": "Aktivierung lokaler Netzwerke" },
+        { "text": "Implementierungsbegleitung für 90 Tage" }
+      ]
+    },
+    {
+      "icon": "support",
+      "name": "GPMF Executive Partner",
+      "description": "Umfassende strategische Führung für komplexe Organisationen",
+      "price": "Individuell",
+      "priceSuffix": "Ab 10.000 – 50.000 $ USD",
+      "cta": "Angebot Anfordern",
+      "featured": true,
+      "inheritLabel": "Alles im Expansionsbeschleuniger, plus:",
+      "features": [
+        { "text": "Strategische Governance und Beiratsberatung" },
+        { "text": "Management internationaler Geberbeziehungen" },
+        { "text": "Steuerung komplexer Transformationsprogramme" },
+        { "text": "Daten-Governance- und Compliance-Frameworks" },
+        { "text": "Multi-Markt-Expansionsstrategie" },
+        { "text": "Implementierung fortschrittlicher Analytik und KI" }
+      ]
+    }
+  ],
+  "meta": {
+    "title": "Angebote und Preise | GPMF",
+    "description": "Entdecken Sie die strategischen Beratungsangebote von GPMF — von Diagnosen und Sprints bis zu Executive-Partnerschaften."
+  }
+}
