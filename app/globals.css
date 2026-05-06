@@ -155,6 +155,53 @@ body {
   clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
 }
 
+/* Login clip-path (diagonal on right side) */
+.login-clip {
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+@media (max-width: 1023px) {
+  .login-clip {
+    clip-path: none;
+  }
+}
+
+/* Login input focus */
+.login-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(137, 113, 116, 0.25);
+}
+.login-input:focus {
+  border-color: #7a0f32;
+  box-shadow: 0 2px 12px rgba(122, 15, 50, 0.08);
+  outline: none;
+}
+
+/* Social button hover */
+.social-btn {
+  transition: all 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border: 1px solid rgba(137, 113, 116, 0.3);
+}
+.social-btn:hover {
+  border-color: #7a0f32;
+  box-shadow: 0 4px 16px rgba(122, 15, 50, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Quote fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.quote-animate {
+  animation: fadeInUp 1.2s ease 0.6s both;
+}
+
 /* Hide scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;

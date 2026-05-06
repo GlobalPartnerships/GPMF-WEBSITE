@@ -7,7 +7,9 @@
     "home": "Home",
     "firm": "Firm",
     "partners": "Partners",
-    "services": "Services"
+    "services": "Services",
+    "login": "Log in",
+    "plans": "Plans"
   },
   "footer": {
     "companyName": "Global Partnerships Multidisciplinary Firm",

@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import type { LayoutDict, Locale } from "@/app/dictionaries";
+import type { Locale } from "@/app/dictionaries";
+import type { LayoutDict } from "@/app/dictionaries/layout/types";
 
 const allLocales = ["es", "en", "fr", "de"] as const;
 
@@ -76,10 +77,10 @@ export function Header({ lang, dict }: HeaderProps) {
 
             {/* Sign in */}
             <Link
-              href={`/${lang}/signin`}
+              href={`/${lang}/login`}
               className="hidden xl:inline whitespace-nowrap text-[11px] uppercase tracking-[0.22em] text-foreground/60 hover:text-burgundy transition-colors"
             >
-              Sign in
+              {dict.login}
             </Link>
 
             {/* Plans — get started style with sweep */}
@@ -87,7 +88,7 @@ export function Header({ lang, dict }: HeaderProps) {
               href={`/${lang}/plans`}
               className="btn-sweep bg-burgundy text-white px-6 py-3 text-[11px] uppercase tracking-[0.22em] rounded whitespace-nowrap"
             >
-              <span>Plans</span>
+              <span>{dict.plans}</span>
             </Link>
 
             {/* Mobile hamburger */}
@@ -141,11 +142,11 @@ export function Header({ lang, dict }: HeaderProps) {
           </div>
 
           <Link
-            href={`/${lang}/signin`}
+            href={`/${lang}/login`}
             className="text-lg text-foreground/60 uppercase tracking-[0.22em]"
             onClick={() => setMobileOpen(false)}
           >
-            Sign in
+            {dict.login}
           </Link>
 
           <Link
@@ -153,7 +154,7 @@ export function Header({ lang, dict }: HeaderProps) {
             className="btn-sweep bg-burgundy text-white px-6 py-4 text-[12px] uppercase tracking-[0.22em] rounded text-center"
             onClick={() => setMobileOpen(false)}
           >
-            <span>Plans</span>
+            <span>{dict.plans}</span>
           </Link>
 
           <Link

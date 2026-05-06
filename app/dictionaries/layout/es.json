@@ -7,7 +7,9 @@
     "home": "Inicio",
     "firm": "Firma",
     "partners": "Socios",
-    "services": "Servicios"
+    "services": "Servicios",
+    "login": "Iniciar sesión",
+    "plans": "Planes"
   },
   "footer": {
     "companyName": "Global Partnerships Multidisciplinary Firm",

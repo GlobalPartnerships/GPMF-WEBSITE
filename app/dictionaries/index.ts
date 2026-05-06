@@ -2,7 +2,7 @@ import "server-only";
 
 import type { DictMap, DictSection } from "./types";
 
-export type { LayoutDict, HomeDict, DictSection, DictMap } from "./types";
+export type { DictSection, DictMap } from "./types";
 
 export const locales = ["es", "en", "fr", "de"] as const;
 export type Locale = (typeof locales)[number];
@@ -25,6 +25,12 @@ const loaders: {
     en: () => import("./home/en.json").then((m) => m.default as DictMap["home"]),
     fr: () => import("./home/fr.json").then((m) => m.default as DictMap["home"]),
     de: () => import("./home/de.json").then((m) => m.default as DictMap["home"]),
+  },
+  login: {
+    es: () => import("./login/es.json").then((m) => m.default as DictMap["login"]),
+    en: () => import("./login/en.json").then((m) => m.default as DictMap["login"]),
+    fr: () => import("./login/fr.json").then((m) => m.default as DictMap["login"]),
+    de: () => import("./login/de.json").then((m) => m.default as DictMap["login"]),
   },
 };
 

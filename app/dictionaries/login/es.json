@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Cuenta",
+  "headlinePart1": "Bienvenido",
+  "headlineAccent": "de vuelta",
+  "description": "Ingresá tus credenciales para acceder a tu archivo.",
+  "socialGoogle": "Continuar con Google",
+  "socialApple": "Continuar con Apple",
+  "divider": "O",
+  "emailLabel": "Correo electrónico",
+  "emailPlaceholder": "j.doe@gpmf.com",
+  "passwordLabel": "Contraseña",
+  "passwordPlaceholder": "••••••••",
+  "rememberMe": "Recordarme",
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "submitButton": "Iniciar sesión",
+  "noAccount": "¿No tenés cuenta?",
+  "signUpLink": "Registrate acá",
+  "imageQuote": "La pluma es la lengua del alma.",
+  "imageQuoteAuthor": "Miguel de Cervantes",
+  "verticalCaption": "GPMF · Iniciar sesión",
+  "imageAlt": "Consultoría estratégica patrimonial",
+  "meta": {
+    "title": "Iniciar sesión | GPMF",
+    "description": "Accedé a tu archivo de consultoría estratégica GPMF."
+  }
+}
