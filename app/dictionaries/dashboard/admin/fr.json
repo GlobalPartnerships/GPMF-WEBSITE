@@ -1,0 +1,65 @@
+{
+  "sidebarTitle": "Aurelius",
+  "sidebarSubtitle": "Suite de Gestion",
+  "dashboard": "Tableau de bord",
+  "sales": "Ventes",
+  "plans": "Forfaits",
+  "traffic": "Trafic",
+  "meetings": "Réunions",
+  "reports": "Rapports",
+  "users": "Utilisateurs",
+  "settings": "Paramètres",
+
+  "searchPlaceholder": "Rechercher des analyses...",
+  "downloadReports": "Télécharger les Rapports",
+
+  "totalEarnings": "Revenus Totaux",
+  "salesThisYear": "Ventes Cette Année",
+  "salesThisMonth": "Ventes Ce Mois",
+  "salesThisWeek": "Ventes Cette Semaine",
+  "vsLastPeriod": "Vs. période précédente",
+  "growthSinceJan": "Croissance depuis jan.",
+  "target": "Objectif : 3 000",
+  "activeWeek": "Semaine active 42",
+
+  "latestPurchases": "Derniers Achats",
+  "latestPurchasesSubtitle": "Acquisitions récentes de forfaits par les clients",
+  "viewAllOrders": "Voir Toutes les Commandes",
+  "customer": "Client",
+  "plan": "Forfait",
+  "meetingsCount": "Réunions",
+  "date": "Date",
+  "amount": "Montant",
+  "status": "Statut",
+  "completed": "Terminé",
+  "pending": "En attente",
+
+  "trafficAnalytics": "Analytiques de Trafic",
+  "trafficAnalyticsSubtitle": "Pages vues globales sur les 30 derniers jours",
+  "daily": "Quotidien",
+  "weekly": "Hebdomadaire",
+  "monthly": "Mensuel",
+
+  "registeredUsers": "Utilisateurs Inscrits",
+  "quarterlyGoal": "de l'objectif trimestriel atteint",
+
+  "trafficBreakdown": "Répartition du Trafic",
+  "dailyUnique": "Uniques Quotidiens",
+  "weeklyAverage": "Moyenne Hebdomadaire",
+  "monthlyTotal": "Total Mensuel",
+  "viewSources": "Voir les Sources",
+
+  "upcomingMeetings": "Réunions à Venir",
+  "upcomingMeetingsSubtitle": "Coordination interne et revues fournisseurs",
+  "manageCalendar": "Gérer le Calendrier",
+  "participant": "Participant",
+  "topic": "Sujet",
+  "time": "Heure",
+  "confirmed": "Confirmée",
+  "cancelled": "Annulée",
+
+  "meta": {
+    "title": "Tableau de bord Admin | GPMF",
+    "description": "Gérez les ventes, le trafic et les réunions sur GPMF."
+  }
+}

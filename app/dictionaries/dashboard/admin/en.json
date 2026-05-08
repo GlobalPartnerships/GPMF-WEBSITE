@@ -1,0 +1,65 @@
+{
+  "sidebarTitle": "Aurelius",
+  "sidebarSubtitle": "Management Suite",
+  "dashboard": "Dashboard",
+  "sales": "Sales",
+  "plans": "Plans",
+  "traffic": "Traffic",
+  "meetings": "Meetings",
+  "reports": "Reports",
+  "users": "Users",
+  "settings": "Settings",
+
+  "searchPlaceholder": "Search analytics...",
+  "downloadReports": "Download Reports",
+
+  "totalEarnings": "Total Earnings",
+  "salesThisYear": "Sales This Year",
+  "salesThisMonth": "Sales This Month",
+  "salesThisWeek": "Sales This Week",
+  "vsLastPeriod": "Vs. last period",
+  "growthSinceJan": "Growth since Jan 1st",
+  "target": "Target: 3,000",
+  "activeWeek": "Active week 42",
+
+  "latestPurchases": "Latest Purchases",
+  "latestPurchasesSubtitle": "Recent plan acquisitions by customers",
+  "viewAllOrders": "View All Orders",
+  "customer": "Customer",
+  "plan": "Plan",
+  "meetingsCount": "Meetings",
+  "date": "Date",
+  "amount": "Amount",
+  "status": "Status",
+  "completed": "Completed",
+  "pending": "Pending",
+
+  "trafficAnalytics": "Traffic Analytics",
+  "trafficAnalyticsSubtitle": "Global page views over the last 30 days",
+  "daily": "Daily",
+  "weekly": "Weekly",
+  "monthly": "Monthly",
+
+  "registeredUsers": "Registered Users",
+  "quarterlyGoal": "of quarterly goal reached",
+
+  "trafficBreakdown": "Traffic Breakdown",
+  "dailyUnique": "Daily Unique",
+  "weeklyAverage": "Weekly Average",
+  "monthlyTotal": "Monthly Total",
+  "viewSources": "View Sources",
+
+  "upcomingMeetings": "Upcoming Meetings",
+  "upcomingMeetingsSubtitle": "Internal coordination and vendor reviews",
+  "manageCalendar": "Manage Calendar",
+  "participant": "Participant",
+  "topic": "Topic",
+  "time": "Time",
+  "confirmed": "Confirmed",
+  "cancelled": "Cancelled",
+
+  "meta": {
+    "title": "Admin Dashboard | GPMF",
+    "description": "Manage sales, traffic, and meetings at GPMF."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "sidebarTitle": "Aurelius",
+  "sidebarSubtitle": "Suite de Gestión",
+  "dashboard": "Panel",
+  "sales": "Ventas",
+  "plans": "Planes",
+  "traffic": "Tráfico",
+  "meetings": "Reuniones",
+  "reports": "Informes",
+  "users": "Usuarios",
+  "settings": "Configuración",
+
+  "searchPlaceholder": "Buscar analíticas...",
+  "downloadReports": "Descargar Informes",
+
+  "totalEarnings": "Ganancias Totales",
+  "salesThisYear": "Ventas Este Año",
+  "salesThisMonth": "Ventas Este Mes",
+  "salesThisWeek": "Ventas Esta Semana",
+  "vsLastPeriod": "Vs. período anterior",
+  "growthSinceJan": "Crecimiento desde ene.",
+  "target": "Objetivo: 3.000",
+  "activeWeek": "Semana activa 42",
+
+  "latestPurchases": "Últimas Compras",
+  "latestPurchasesSubtitle": "Adquisiciones recientes de planes por clientes",
+  "viewAllOrders": "Ver Todas las Órdenes",
+  "customer": "Cliente",
+  "plan": "Plan",
+  "meetingsCount": "Reuniones",
+  "date": "Fecha",
+  "amount": "Monto",
+  "status": "Estado",
+  "completed": "Completado",
+  "pending": "Pendiente",
+
+  "trafficAnalytics": "Analíticas de Tráfico",
+  "trafficAnalyticsSubtitle": "Vistas de página globales en los últimos 30 días",
+  "daily": "Diario",
+  "weekly": "Semanal",
+  "monthly": "Mensual",
+
+  "registeredUsers": "Usuarios Registrados",
+  "quarterlyGoal": "del objetivo trimestral alcanzado",
+
+  "trafficBreakdown": "Desglose de Tráfico",
+  "dailyUnique": "Únicos Diarios",
+  "weeklyAverage": "Promedio Semanal",
+  "monthlyTotal": "Total Mensual",
+  "viewSources": "Ver Fuentes",
+
+  "upcomingMeetings": "Próximas Reuniones",
+  "upcomingMeetingsSubtitle": "Coordinación interna y revisiones con proveedores",
+  "manageCalendar": "Gestionar Calendario",
+  "participant": "Participante",
+  "topic": "Tema",
+  "time": "Hora",
+  "confirmed": "Confirmada",
+  "cancelled": "Cancelada",
+
+  "meta": {
+    "title": "Panel Admin | GPMF",
+    "description": "Gestioná ventas, tráfico y reuniones en GPMF."
+  }
+}

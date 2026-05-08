@@ -1,0 +1,65 @@
+{
+  "sidebarTitle": "Aurelius",
+  "sidebarSubtitle": "Verwaltungssuite",
+  "dashboard": "Dashboard",
+  "sales": "Verkäufe",
+  "plans": "Pläne",
+  "traffic": "Verkehr",
+  "meetings": "Meetings",
+  "reports": "Berichte",
+  "users": "Benutzer",
+  "settings": "Einstellungen",
+
+  "searchPlaceholder": "Analysen durchsuchen...",
+  "downloadReports": "Berichte herunterladen",
+
+  "totalEarnings": "Gesamteinnahmen",
+  "salesThisYear": "Verkäufe dieses Jahr",
+  "salesThisMonth": "Verkäufe diesen Monat",
+  "salesThisWeek": "Verkäufe diese Woche",
+  "vsLastPeriod": "Ggü. Vorperiode",
+  "growthSinceJan": "Wachstum seit Jan.",
+  "target": "Ziel: 3.000",
+  "activeWeek": "Aktive Woche 42",
+
+  "latestPurchases": "Letzte Käufe",
+  "latestPurchasesSubtitle": "Aktuelle Planakquisitionen von Kunden",
+  "viewAllOrders": "Alle Bestellungen anzeigen",
+  "customer": "Kunde",
+  "plan": "Plan",
+  "meetingsCount": "Meetings",
+  "date": "Datum",
+  "amount": "Betrag",
+  "status": "Status",
+  "completed": "Abgeschlossen",
+  "pending": "Ausstehend",
+
+  "trafficAnalytics": "Traffic-Analytik",
+  "trafficAnalyticsSubtitle": "Globale Seitenaufrufe der letzten 30 Tage",
+  "daily": "Täglich",
+  "weekly": "Wöchentlich",
+  "monthly": "Monatlich",
+
+  "registeredUsers": "Registrierte Benutzer",
+  "quarterlyGoal": "des Quartalsziels erreicht",
+
+  "trafficBreakdown": "Traffic-Aufschlüsselung",
+  "dailyUnique": "Tägliche Unique",
+  "weeklyAverage": "Wochendurchschnitt",
+  "monthlyTotal": "Monatstotal",
+  "viewSources": "Quellen anzeigen",
+
+  "upcomingMeetings": "Bevorstehende Meetings",
+  "upcomingMeetingsSubtitle": "Interne Koordination und Lieferantenbewertungen",
+  "manageCalendar": "Kalender verwalten",
+  "participant": "Teilnehmer",
+  "topic": "Thema",
+  "time": "Uhrzeit",
+  "confirmed": "Bestätigt",
+  "cancelled": "Abgesagt",
+
+  "meta": {
+    "title": "Admin Dashboard | GPMF",
+    "description": "Verwalten Sie Verkäufe, Traffic und Meetings bei GPMF."
+  }
+}
