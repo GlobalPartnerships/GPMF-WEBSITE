@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { DashboardDict } from "@/app/dictionaries/dashboard/types";
+import type { DashboardDict } from "@/app/dictionaries/dashboard/user/types";
 
 interface SidebarProps {
   dict: Pick<

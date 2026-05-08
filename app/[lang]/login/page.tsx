@@ -47,7 +47,7 @@ export default async function LoginPage({ params }: PageParams) {
               </p>
             </div>
 
-            <SocialButtons dict={dict} />
+            <SocialButtons dict={dict} lang={lang} />
             <Divider label={dict.divider} />
             <LoginForm dict={dict} />
 

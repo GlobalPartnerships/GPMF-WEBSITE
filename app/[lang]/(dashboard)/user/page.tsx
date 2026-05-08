@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
-import { Sidebar } from "@/app/components/dashboard/Sidebar";
-import { UserInfoHeader } from "@/app/components/dashboard/UserInfoHeader";
-import { SummaryCard } from "@/app/components/dashboard/SummaryCard";
-import { MeetingsTable } from "@/app/components/dashboard/MeetingsTable";
-import { EmptyState } from "@/app/components/dashboard/EmptyState";
-import type { Meeting } from "@/app/components/dashboard/MeetingsTable";
+import { Sidebar } from "@/app/components/dashboard/user/Sidebar";
+import { UserInfoHeader } from "@/app/components/dashboard/user/UserInfoHeader";
+import { SummaryCard } from "@/app/components/dashboard/user/SummaryCard";
+import { MeetingsTable } from "@/app/components/dashboard/user/MeetingsTable";
+import { EmptyState } from "@/app/components/dashboard/user/EmptyState";
+import type { Meeting } from "@/app/components/dashboard/user/MeetingsTable";
 
 type PageParams = { params: Promise<{ lang: string }> };
 

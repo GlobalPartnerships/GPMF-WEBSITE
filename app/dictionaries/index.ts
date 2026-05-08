@@ -39,10 +39,16 @@ const loaders: {
     de: () => import("./plans/de.json").then((m) => m.default as DictMap["plans"]),
   },
   dashboard: {
-    es: () => import("./dashboard/es.json").then((m) => m.default as DictMap["dashboard"]),
-    en: () => import("./dashboard/en.json").then((m) => m.default as DictMap["dashboard"]),
-    fr: () => import("./dashboard/fr.json").then((m) => m.default as DictMap["dashboard"]),
-    de: () => import("./dashboard/de.json").then((m) => m.default as DictMap["dashboard"]),
+    es: () => import("./dashboard/user/es.json").then((m) => m.default as DictMap["dashboard"]),
+    en: () => import("./dashboard/user/en.json").then((m) => m.default as DictMap["dashboard"]),
+    fr: () => import("./dashboard/user/fr.json").then((m) => m.default as DictMap["dashboard"]),
+    de: () => import("./dashboard/user/de.json").then((m) => m.default as DictMap["dashboard"]),
+  },
+  admin: {
+    es: () => import("./dashboard/admin/es.json").then((m) => m.default as DictMap["admin"]),
+    en: () => import("./dashboard/admin/en.json").then((m) => m.default as DictMap["admin"]),
+    fr: () => import("./dashboard/admin/fr.json").then((m) => m.default as DictMap["admin"]),
+    de: () => import("./dashboard/admin/de.json").then((m) => m.default as DictMap["admin"]),
   },
 };
 

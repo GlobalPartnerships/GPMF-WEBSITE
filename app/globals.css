@@ -353,6 +353,21 @@ body {
   scrollbar-width: none;
 }
 
+/* Chart bar animation */
+@keyframes bar-rise {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.chart-bar {
+  transform-origin: bottom;
+  animation: bar-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: var(--delay, 0s);
+}
+
 /* Dashboard sidebar nav */
 .dash-nav-item {
   transition: background-color 0.3s ease, color 0.3s ease;

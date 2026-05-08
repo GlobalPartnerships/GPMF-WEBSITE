@@ -1,4 +1,4 @@
-import type { DashboardDict } from "@/app/dictionaries/dashboard/types";
+import type { DashboardDict } from "@/app/dictionaries/dashboard/user/types";
 import { EmptyState } from "./EmptyState";
 import { MeetingStatusBadge } from "./MeetingStatusBadge";
 

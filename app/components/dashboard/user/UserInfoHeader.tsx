@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { DashboardDict } from "@/app/dictionaries/dashboard/types";
+import type { DashboardDict } from "@/app/dictionaries/dashboard/user/types";
 
 interface UserInfoHeaderProps {
   dict: Pick<DashboardDict, "welcomeMessage" | "profileAlt">;
