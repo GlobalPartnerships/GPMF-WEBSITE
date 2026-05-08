@@ -352,3 +352,38 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Dashboard sidebar nav */
+.dash-nav-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dashboard card */
+.dash-card {
+  border: 1px solid rgba(137, 113, 116, 0.12);
+  transition:
+    border-color 0.4s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.5s ease;
+}
+.dash-card:hover {
+  border-color: rgba(122, 15, 50, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Status badges */
+.badge-confirmed {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
+}
+.badge-pending {
+  background: #fef7e0;
+  color: #b06000;
+  border: 1px solid #fadd9e;
+}
+.badge-cancelled {
+  background: #fce8e6;
+  color: #c5221f;
+  border: 1px solid #f5c6c2;
+}

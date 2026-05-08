@@ -38,6 +38,12 @@ const loaders: {
     fr: () => import("./plans/fr.json").then((m) => m.default as DictMap["plans"]),
     de: () => import("./plans/de.json").then((m) => m.default as DictMap["plans"]),
   },
+  dashboard: {
+    es: () => import("./dashboard/es.json").then((m) => m.default as DictMap["dashboard"]),
+    en: () => import("./dashboard/en.json").then((m) => m.default as DictMap["dashboard"]),
+    fr: () => import("./dashboard/fr.json").then((m) => m.default as DictMap["dashboard"]),
+    de: () => import("./dashboard/de.json").then((m) => m.default as DictMap["dashboard"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { LoginDict } from "@/app/dictionaries";
+import type { LoginDict } from "@/app/dictionaries/login/types";
 
 interface LoginFormProps {
   dict: Pick<

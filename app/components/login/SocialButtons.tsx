@@ -1,4 +1,4 @@
-import type { LoginDict } from "@/app/dictionaries";
+import type { LoginDict } from "@/app/dictionaries/login/types";
 
 interface SocialButtonsProps {
   dict: Pick<LoginDict, "socialGoogle" | "socialApple">;

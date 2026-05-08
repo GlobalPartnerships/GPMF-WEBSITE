@@ -1,0 +1,41 @@
+{
+  "sidebarTitle": "Dashboard",
+  "myAccount": "Mein Konto",
+  "purchases": "Käufe",
+  "schedule": "Terminplan",
+  "reports": "Berichte",
+  "settings": "Einstellungen",
+
+  "welcomeMessage": "Willkommen zurück",
+  "profileAlt": "Profilfoto",
+
+  "currentPlanLabel": "Aktueller Plan",
+  "currentPlanTitle": "Kein aktiver Plan",
+  "nextBilling": "Nächste Abrechnung",
+  "managePlan": "Plan verwalten",
+  "lastReportLabel": "Letzter Bericht",
+  "lastReportTitle": "Noch keine Berichte",
+  "completedOn": "Abgeschlossen am",
+  "downloadPdf": "PDF herunterladen",
+
+  "upcomingMeetings": "Bevorstehende Meetings",
+  "scheduleNew": "Neu planen",
+  "participant": "Teilnehmer",
+  "topic": "Thema",
+  "date": "Datum",
+  "time": "Uhrzeit",
+  "status": "Status",
+  "confirmed": "Bestätigt",
+  "pending": "Ausstehend",
+  "cancelled": "Abgesagt",
+
+  "noData": "Keine Daten verfügbar",
+  "noPlan": "Sie haben noch keinen aktiven Plan",
+  "noReport": "Keine Berichte verfügbar",
+  "noMeetings": "Keine bevorstehenden Meetings geplant",
+
+  "meta": {
+    "title": "Dashboard | GPMF",
+    "description": "Verwalten Sie Ihr Konto, Pläne und Meetings bei GPMF."
+  }
+}

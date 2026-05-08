@@ -1,0 +1,41 @@
+{
+  "sidebarTitle": "Dashboard",
+  "myAccount": "My Account",
+  "purchases": "Purchases",
+  "schedule": "Schedule",
+  "reports": "Reports",
+  "settings": "Settings",
+
+  "welcomeMessage": "Welcome Back",
+  "profileAlt": "Profile photo",
+
+  "currentPlanLabel": "Current Plan",
+  "currentPlanTitle": "No active plan",
+  "nextBilling": "Next billing",
+  "managePlan": "Manage Plan",
+  "lastReportLabel": "Last Report",
+  "lastReportTitle": "No reports yet",
+  "completedOn": "Completed on",
+  "downloadPdf": "Download PDF",
+
+  "upcomingMeetings": "Upcoming Meetings",
+  "scheduleNew": "Schedule New",
+  "participant": "Participant",
+  "topic": "Topic",
+  "date": "Date",
+  "time": "Time",
+  "status": "Status",
+  "confirmed": "Confirmed",
+  "pending": "Pending",
+  "cancelled": "Cancelled",
+
+  "noData": "No data available",
+  "noPlan": "You don't have an active plan yet",
+  "noReport": "No reports available",
+  "noMeetings": "No upcoming meetings scheduled",
+
+  "meta": {
+    "title": "Dashboard | GPMF",
+    "description": "Manage your account, plans, and meetings at GPMF."
+  }
+}

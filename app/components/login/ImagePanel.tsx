@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { LoginDict } from "@/app/dictionaries";
+import type { LoginDict } from "@/app/dictionaries/login/types";
 
 interface ImagePanelProps {
   dict: Pick<LoginDict, "imageQuote" | "imageQuoteAuthor" | "verticalCaption" | "imageAlt">;
