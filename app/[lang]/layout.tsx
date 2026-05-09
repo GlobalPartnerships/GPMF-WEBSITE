@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
-import "../globals.css";
 import {
   getDictionary,
   hasLocale,
@@ -10,12 +8,7 @@ import {
 } from "@/app/dictionaries";
 import { Header } from "@/app/components/layout/Header";
 import { Footer } from "@/app/components/layout/Footer";
-
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
+import { SetHtmlLang } from "@/app/components/layout/SetHtmlLang";
 
 type LangParams = { params: Promise<{ lang: string }> };
 
@@ -57,15 +50,11 @@ export default async function LangLayout({
   const dict = await getDictionary(locale, "layout");
 
   return (
-    <html
-      lang={lang}
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
-        <Header lang={locale} dict={dict.nav} />
-        <main className="flex-1">{children}</main>
-        <Footer dict={dict.footer} />
-      </body>
-    </html>
+    <>
+      <SetHtmlLang lang={lang} />
+      <Header lang={locale} dict={dict.nav} />
+      <main className="flex-1">{children}</main>
+      <Footer dict={dict.footer} />
+    </>
   );
 }

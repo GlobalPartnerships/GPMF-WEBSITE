@@ -21,7 +21,7 @@ function GoogleIcon() {
 }
 
 export function SocialButtons({ dict, lang }: SocialButtonsProps) {
-  const [loading, setLoading] = useState<"google" | "apple" | null>(null);
+  const [loading, setLoading] = useState<"google" | null>(null);
 
   async function handleOAuthLogin(provider: "google") {
     setLoading(provider);

@@ -61,15 +61,22 @@ export async function proxy(request: NextRequest) {
 
   if (!locale) {
     const detectedLocale = getLocale(request);
-    request.nextUrl.pathname = `/${detectedLocale}${pathname}`;
+    request.nextUrl.pathname = `/${detectedLocale}/${pathname}`;
     return NextResponse.redirect(request.nextUrl);
   }
 
   const pathAfterLocale = getPathAfterLocale(pathname, locale);
+
+  if (pathAfterLocale.startsWith("/auth/callback")) {
+    return NextResponse.next({ request });
+  }
+
   const response = NextResponse.next({ request });
   const supabase = createSupabaseClient(request, response);
 
   const { data: { user } } = await supabase.auth.getUser();
+
+  console.log(`[proxy] path: ${pathAfterLocale}, user: ${user?.email ?? "none"}, cookies: ${request.cookies.getAll().map(c => c.name).join(", ")}`);
 
   const isProtected = protectedPaths.some(
     (p) => pathAfterLocale.startsWith(p + "/") || pathAfterLocale === p
