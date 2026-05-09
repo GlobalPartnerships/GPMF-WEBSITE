@@ -1,4 +1,5 @@
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 export interface Purchase {
   id: string;
@@ -34,12 +35,12 @@ function statusLabel(status: Purchase["status"], dict: Pick<AdminDict, "complete
 }
 
 function statusClass(status: Purchase["status"]): string {
-  return status === "completed" ? "badge-confirmed" : "badge-pending";
+  return status === "completed" ? dashStyles.badgeConfirmed : dashStyles.badgePending;
 }
 
 export function PurchasesTable({ dict, purchases }: PurchasesTableProps) {
   return (
-    <section className="dash-card whisper-shadow bg-white rounded-sm overflow-hidden">
+    <section className={`${dashStyles.card} whisper-shadow bg-white rounded-sm overflow-hidden`}>
       <div className="p-6 border-b border-outline/8 flex items-center justify-between">
         <div>
           <h3 className="font-serif text-[22px] font-semibold text-burgundy">

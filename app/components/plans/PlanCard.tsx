@@ -1,5 +1,6 @@
 import type { Plan } from "@/app/dictionaries/plans/types";
 import { PlanIcon } from "./PlanIcon";
+import styles from "./PlanCard.module.css";
 
 interface PlanCardProps {
   plan: Plan;
@@ -7,7 +8,7 @@ interface PlanCardProps {
 
 export function PlanCard({ plan }: PlanCardProps) {
   return (
-    <div className="plan-card bg-white rounded-[2px] p-10 flex flex-col relative">
+    <div className={`${styles.card} bg-white rounded-[2px] p-10 flex flex-col relative`}>
       {plan.featured && (
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-burgundy rounded-t-[2px]" />
       )}
@@ -35,7 +36,7 @@ export function PlanCard({ plan }: PlanCardProps) {
         <ul className="space-y-4">
           {plan.features.map((feature) => (
             <li key={feature.text} className="flex items-start gap-3">
-              <span className="check-icon material-symbols-outlined">check</span>
+              <span className={`${styles.checkIcon} material-symbols-outlined`}>check</span>
               <span className="text-[14px] text-surface-variant leading-relaxed">
                 {feature.text}
               </span>

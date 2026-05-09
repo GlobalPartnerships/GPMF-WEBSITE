@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { LoginDict } from "@/app/dictionaries/login/types";
+import styles from "./LoginForm.module.css";
 
 interface LoginFormProps {
   dict: Pick<
@@ -46,7 +47,7 @@ export function LoginForm({ dict }: LoginFormProps) {
           {dict.emailLabel}
         </label>
         <input
-          className="login-input w-full px-4 py-3.5 bg-white text-[15px] rounded-sm"
+          className={`${styles.input} w-full px-4 py-3.5 bg-white text-[15px] rounded-sm`}
           id="email"
           placeholder={dict.emailPlaceholder}
           type="email"
@@ -63,7 +64,7 @@ export function LoginForm({ dict }: LoginFormProps) {
         </label>
         <div className="relative">
           <input
-            className="login-input w-full px-4 py-3.5 bg-white text-[15px] rounded-sm pr-12"
+            className={`${styles.input} w-full px-4 py-3.5 bg-white text-[15px] rounded-sm pr-12`}
             id="password"
             placeholder={dict.passwordPlaceholder}
             type={showPassword ? "text" : "password"}

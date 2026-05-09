@@ -1,0 +1,12 @@
+.clip {
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+@media (max-width: 1023px) {
+  .clip {
+    clip-path: none;
+  }
+}
+
+.quoteAnimate {
+  animation: fadeInUp 1.2s ease 0.6s both;
+}

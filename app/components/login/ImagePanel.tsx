@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { LoginDict } from "@/app/dictionaries/login/types";
+import styles from "./ImagePanel.module.css";
 
 interface ImagePanelProps {
   dict: Pick<LoginDict, "imageQuote" | "imageQuoteAuthor" | "verticalCaption" | "imageAlt">;
@@ -11,7 +12,7 @@ export function ImagePanel({ dict }: ImagePanelProps) {
       <div className="absolute inset-0">
         <Image
           alt={dict.imageAlt}
-          className="w-full h-full object-cover login-clip"
+          className={`w-full h-full object-cover ${styles.clip}`}
           src="https://lh3.googleusercontent.com/aida/ADBb0uglV-j1-ujBGKBywH75vdfYGvWV-RJLnjHWENISpUjtrsHGYw4E1_ztvT3JdU88Fz1bfxRapuIZN-q44_0_V-JkClbEWG_pmwczJ0NhwtBYCvvEl-WM_aPvLNQQSAQZXkBDj31sARPwcx3TgBBmxlLgSOF81OLcg_5IZdi64HgQciaWpF-u_MEvl8kIw1I8Txudh_Ln7Yxlj_3PIN38d38V0frsqwyS1RpR5og7OmP-SMheVXk5pch70HHmhXDe9n1nBbMHuBD7"
           width={800}
           height={900}
@@ -19,9 +20,9 @@ export function ImagePanel({ dict }: ImagePanelProps) {
         />
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent login-clip" />
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent ${styles.clip}`} />
 
-      <div className="absolute bottom-16 left-16 right-24 quote-animate">
+      <div className={`absolute bottom-16 left-16 right-24 ${styles.quoteAnimate}`}>
         <p className="font-serif italic text-[28px] leading-[1.3] text-white/90 mb-6">
           &ldquo;{dict.imageQuote}&rdquo;
         </p>

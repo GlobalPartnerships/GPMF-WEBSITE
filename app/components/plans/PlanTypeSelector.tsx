@@ -1,5 +1,7 @@
 "use client";
 
+import tabStyles from "@/app/components/shared/tabs.module.css";
+
 interface PlanTypeSelectorProps {
   tabs: { enterprise: string; custom: string };
   activeTab: string;
@@ -17,8 +19,8 @@ export function PlanTypeSelector({
         {(["enterprise", "custom"] as const).map((tab) => (
           <button
             key={tab}
-            className={`tab-btn px-6 py-3 text-[11px] uppercase tracking-[0.22em] font-medium rounded-[2px] ${
-              activeTab === tab ? "active" : "text-surface-variant"
+            className={`${tabStyles.tabBtn} px-6 py-3 text-[11px] uppercase tracking-[0.22em] font-medium rounded-[2px] ${
+              activeTab === tab ? tabStyles.active : "text-surface-variant"
             }`}
             onClick={() => onTabChange(tab)}
           >

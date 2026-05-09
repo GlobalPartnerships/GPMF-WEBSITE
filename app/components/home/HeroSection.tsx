@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { HomeDict } from "@/app/dictionaries";
+import styles from "./HeroSection.module.css";
 
 interface HeroSectionProps {
   dict: HomeDict["hero"];
@@ -67,7 +68,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
           <div className="absolute inset-0">
             <Image
               alt="GPMF strategic consulting"
-              className="w-full h-full object-cover hero-split-image"
+              className={`w-full h-full object-cover ${styles.heroSplitImage}`}
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBefVwhAFEmouIsyqSRVC4dve7b6kmXbZO7jjWWij4UcW5diB-7P7zS2yyEkrIjCcMcU3dMImKdoP3lh17FRWvjqkSlSvf482jRz9_HO_VHJcduGRcNu5hMjfKqusSfNMYmXi4FkkkG-TxIm3niRxC3LATSgmbf-l9ay3foigfnQwjBrwiX8VDdeCWuEalcLZbDsYPJlHLEnZ3n8tGsLfn3QhDrlxuxQYBJGTF1PABJsBf5828fficH5V4G4nE1ziysR2_1An_p0v4"
               width={800}
               height={900}

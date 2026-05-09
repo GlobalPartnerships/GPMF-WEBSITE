@@ -1,4 +1,5 @@
 import type { HomeDict } from "@/app/dictionaries";
+import styles from "./LegacyCtaSection.module.css";
 
 interface LegacyCtaSectionProps {
   dict: HomeDict["legacy"];
@@ -10,8 +11,8 @@ export function LegacyCtaSection({ dict }: LegacyCtaSectionProps) {
       <div className="max-w-[1280px] mx-auto px-8">
         <div className="grid grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="col-span-12 lg:col-span-7 relative min-h-[500px] flex items-center justify-center">
-            <div className="triptych relative w-full max-w-[520px] aspect-square">
-              <div className="past absolute top-0 right-0 w-1/2 h-1/2 bg-burgundy p-7 flex flex-col justify-between whisper-shadow z-20">
+            <div className={`${styles.triptych} relative w-full max-w-[520px] aspect-square`}>
+              <div className={`${styles.past} absolute top-0 right-0 w-1/2 h-1/2 bg-burgundy p-7 flex flex-col justify-between whisper-shadow z-20`}>
                 <span className="text-white/50 text-[10px] tracking-[0.22em] uppercase">
                   {dict.triptych[0].label}
                 </span>
@@ -24,7 +25,7 @@ export function LegacyCtaSection({ dict }: LegacyCtaSectionProps) {
                   </p>
                 </div>
               </div>
-              <div className="present absolute bottom-0 left-0 w-1/2 h-1/2 bg-charcoal p-7 flex flex-col justify-between whisper-shadow z-10">
+              <div className={`${styles.present} absolute bottom-0 left-0 w-1/2 h-1/2 bg-charcoal p-7 flex flex-col justify-between whisper-shadow z-10`}>
                 <span className="text-white/50 text-[10px] tracking-[0.22em] uppercase">
                   {dict.triptych[1].label}
                 </span>
@@ -37,7 +38,7 @@ export function LegacyCtaSection({ dict }: LegacyCtaSectionProps) {
                   </p>
                 </div>
               </div>
-              <div className="future absolute bottom-0 right-0 w-1/2 h-1/2 bg-warmgray p-7 flex flex-col justify-between z-0 border border-foreground/5">
+              <div className={`${styles.future} absolute bottom-0 right-0 w-1/2 h-1/2 bg-warmgray p-7 flex flex-col justify-between z-0 border border-foreground/5`}>
                 <span className="text-surface-variant/60 text-[10px] tracking-[0.22em] uppercase">
                   {dict.triptych[2].label}
                 </span>

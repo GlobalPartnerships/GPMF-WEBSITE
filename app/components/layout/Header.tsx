@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { Locale } from "@/app/dictionaries";
 import type { LayoutDict } from "@/app/dictionaries/layout/types";
+import headerStyles from "./Header.module.css";
 
 const allLocales = ["es", "en", "fr", "de"] as const;
 
@@ -46,7 +47,7 @@ export function Header({ lang, dict }: HeaderProps) {
           {/* Desktop nav — centered */}
           <div className="hidden lg:flex items-center justify-center gap-10 text-[11px] uppercase tracking-[0.22em] text-foreground/70 font-medium">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="nav-link">
+              <Link key={link.href} href={link.href} className={headerStyles.navLink}>
                 {link.label}
               </Link>
             ))}

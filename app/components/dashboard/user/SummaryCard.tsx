@@ -1,4 +1,5 @@
 import Link from "next/link";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface SummaryCardProps {
   label: string;
@@ -28,7 +29,7 @@ function ChartIcon() {
 
 export function SummaryCard({ label, icon, children, action }: SummaryCardProps) {
   return (
-    <div className="dash-card whisper-shadow bg-white rounded-sm p-6 flex flex-col gap-4 relative overflow-hidden">
+    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6 flex flex-col gap-4 relative overflow-hidden`}>
       {/* Decorative blurred circle for chart variant */}
       {icon === "chart" && (
         <div

@@ -1,0 +1,9 @@
+.btn {
+  transition: all 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border: 1px solid rgba(137, 113, 116, 0.3);
+}
+.btn:hover {
+  border-color: #7a0f32;
+  box-shadow: 0 4px 16px rgba(122, 15, 50, 0.08);
+  transform: translateY(-1px);
+}

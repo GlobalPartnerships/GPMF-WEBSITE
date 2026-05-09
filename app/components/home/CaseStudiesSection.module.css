@@ -1,0 +1,9 @@
+.caseCard {
+  transition:
+    border-color 0.5s ease,
+    background-color 0.5s ease,
+    transform 0.5s ease;
+}
+.caseCard:hover {
+  transform: translateY(-4px);
+}

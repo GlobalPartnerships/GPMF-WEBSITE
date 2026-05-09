@@ -22,6 +22,8 @@ function TrendDownIcon() {
   );
 }
 
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
+
 function EarningsIcon() {
   return (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -66,7 +68,7 @@ export function StatCard({ label, value, trend, subtitle, icon }: StatCardProps)
   const isUp = trend.direction === "up";
 
   return (
-    <div className="dash-card whisper-shadow bg-white rounded-sm p-6">
+    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
       <div className="flex items-center justify-between mb-3">
         <span className="text-[11px] tracking-[0.12em] uppercase text-surface-variant font-semibold">
           {label}

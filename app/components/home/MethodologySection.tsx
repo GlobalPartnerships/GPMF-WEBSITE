@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { HomeDict } from "@/app/dictionaries";
+import styles from "./MethodologySection.module.css";
 
 interface MethodologySectionProps {
   dict: HomeDict["methodology"];
@@ -17,7 +18,7 @@ export function MethodologySection({ dict }: MethodologySectionProps) {
 
   return (
     <section id="process" className="py-32 lg:py-40 px-8 bg-[#111111] text-white relative overflow-hidden">
-      <div className="absolute inset-0 paper-noise opacity-40 pointer-events-none" />
+      <div className={`absolute inset-0 ${styles.paperNoise} opacity-40 pointer-events-none`} />
 
       <div className="max-w-[1280px] mx-auto relative">
         <div className="grid grid-cols-12 gap-8 mb-24 items-end">
@@ -47,7 +48,7 @@ export function MethodologySection({ dict }: MethodologySectionProps) {
                 </span>
                 <span className="text-[10px] tracking-[0.22em] uppercase text-white/40">Stage</span>
               </div>
-              <div className="process-card bg-white text-on-background whisper-shadow">
+              <div className={`${styles.processCard} bg-white text-on-background whisper-shadow`}>
                 {i < cardImages.length ? (
                   <div className="aspect-[4/5] overflow-hidden bg-paper">
                     <Image

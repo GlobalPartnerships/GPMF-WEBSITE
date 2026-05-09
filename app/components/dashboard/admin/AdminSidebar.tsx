@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface AdminSidebarProps {
   dict: Pick<
@@ -128,7 +129,7 @@ export function AdminSidebar({ dict, lang }: AdminSidebarProps) {
             <Link
               key={href}
               href={href}
-              className={`dash-nav-item flex items-center gap-3 px-3 py-2.5 rounded-sm text-[13px] font-medium ${
+              className={`${dashStyles.navItem} flex items-center gap-3 px-3 py-2.5 rounded-sm text-[13px] font-medium ${
                 active
                   ? "bg-warmgray text-foreground"
                   : "text-surface-variant hover:bg-warmgray/50 hover:text-foreground"
@@ -143,7 +144,7 @@ export function AdminSidebar({ dict, lang }: AdminSidebarProps) {
         <div className="mt-auto">
           <Link
             href={`/${lang}/admin/settings`}
-            className={`dash-nav-item flex items-center gap-3 px-3 py-2.5 rounded-sm text-[13px] font-medium ${
+            className={`${dashStyles.navItem} flex items-center gap-3 px-3 py-2.5 rounded-sm text-[13px] font-medium ${
               isActive(`/${lang}/admin/settings`)
                 ? "bg-warmgray text-foreground"
                 : "text-surface-variant hover:bg-warmgray/50 hover:text-foreground"

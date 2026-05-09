@@ -1,3 +1,5 @@
+import styles from "./PlanIcon.module.css";
+
 interface PlanIconProps {
   icon: string;
 }
@@ -56,7 +58,7 @@ const icons: Record<string, React.ReactNode> = {
 
 export function PlanIcon({ icon }: PlanIconProps) {
   return (
-    <div className="plan-icon mb-6 text-burgundy">
+    <div className={`${styles.icon} mb-6 text-burgundy`}>
       {icons[icon] ?? icons.runner}
     </div>
   );

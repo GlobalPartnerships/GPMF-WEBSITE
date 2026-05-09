@@ -1,4 +1,5 @@
 import type { HomeDict } from "@/app/dictionaries";
+import styles from "./TrustedByMarquee.module.css";
 
 interface TrustedByMarqueeProps {
   dict: HomeDict["trustedBy"];
@@ -15,7 +16,7 @@ export function TrustedByMarquee({ dict }: TrustedByMarqueeProps) {
         </p>
       </div>
       <div className="overflow-hidden">
-        <div className="marquee-track flex gap-20 whitespace-nowrap font-serif italic text-2xl text-foreground/40">
+        <div className={`${styles.track} flex gap-20 whitespace-nowrap font-serif italic text-2xl text-foreground/40`}>
           {items.map((brand, i) => (
             <span key={`${brand}-${i}`}>
               {brand}

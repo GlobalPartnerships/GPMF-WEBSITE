@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { PlansDict } from "@/app/dictionaries/plans/types";
 import { PlanTypeSelector } from "./PlanTypeSelector";
 import { PlanCard } from "./PlanCard";
+import styles from "./PlansGrid.module.css";
 
 interface PlansGridProps {
   dict: PlansDict;
@@ -38,7 +39,7 @@ export function PlansGrid({ dict }: PlansGridProps) {
 
       <div className="max-w-[1280px] mx-auto px-8 relative z-10">
         <div
-          className={`plans-grid grid gap-8 ${gridCols} ${fading ? "fading" : ""}`}
+          className={`${styles.grid} grid gap-8 ${gridCols} ${fading ? styles.fading : ""}`}
         >
           {plans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />

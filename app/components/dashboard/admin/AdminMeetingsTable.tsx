@@ -1,4 +1,5 @@
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 export interface AdminMeeting {
   id: string;
@@ -38,14 +39,14 @@ function statusLabel(
 }
 
 function statusBadgeClass(status: AdminMeeting["status"]): string {
-  if (status === "confirmed") return "badge-confirmed";
-  if (status === "pending") return "badge-pending";
-  return "badge-cancelled";
+  if (status === "confirmed") return dashStyles.badgeConfirmed;
+  if (status === "pending") return dashStyles.badgePending;
+  return dashStyles.badgeCancelled;
 }
 
 export function AdminMeetingsTable({ dict, meetings }: AdminMeetingsTableProps) {
   return (
-    <section className="dash-card whisper-shadow bg-white rounded-sm overflow-hidden">
+    <section className={`${dashStyles.card} whisper-shadow bg-white rounded-sm overflow-hidden`}>
       <div className="p-6 border-b border-outline/8 flex items-center justify-between">
         <div>
           <h3 className="font-serif text-[22px] font-semibold text-burgundy">

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import type { HomeDict } from "@/app/dictionaries";
+import styles from "./CaseStudiesSection.module.css";
 
 interface CaseStudiesSectionProps {
   dict: HomeDict["caseStudies"];
@@ -63,7 +64,7 @@ export function CaseStudiesSection({ dict }: CaseStudiesSectionProps) {
         {dict.cases.map((c, i) => (
           <article
             key={c.number}
-            className="case-card min-w-[80vw] md:min-w-[58%] lg:min-w-[44%] snap-start group cursor-pointer"
+            className={`${styles.caseCard} min-w-[80vw] md:min-w-[58%] lg:min-w-[44%] snap-start group cursor-pointer`}
           >
             <div className="bg-black border border-white/10 hover:border-rose-dim/40 h-full flex flex-col">
               <div className="aspect-[5/3] bg-[#1a1a1a] overflow-hidden relative">

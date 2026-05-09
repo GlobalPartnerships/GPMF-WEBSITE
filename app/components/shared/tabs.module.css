@@ -1,0 +1,12 @@
+.tabBtn {
+  border: 1.5px solid transparent;
+  transition: all 0.35s ease;
+}
+.active {
+  background: transparent;
+  color: #7a0f32;
+  border-color: #7a0f32;
+}
+.tabBtn:not(.active):hover {
+  background: rgba(122, 15, 50, 0.06);
+}

@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
+import tabStyles from "@/app/components/shared/tabs.module.css";
+import styles from "./TrafficChart.module.css";
 
 interface TrafficChartProps {
   dict: Pick<AdminDict, "trafficAnalytics" | "trafficAnalyticsSubtitle" | "daily" | "weekly" | "monthly">;
@@ -21,7 +24,7 @@ export function TrafficChart({ dict }: TrafficChartProps) {
   ];
 
   return (
-    <div className="dash-card whisper-shadow bg-white rounded-sm p-6">
+    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="font-serif text-[22px] font-semibold text-burgundy">
@@ -36,8 +39,8 @@ export function TrafficChart({ dict }: TrafficChartProps) {
             <button
               key={key}
               onClick={() => setActiveTab(key)}
-              className={`tab-btn px-4 py-1.5 text-[11px] uppercase tracking-[0.14em] font-medium rounded-sm ${
-                activeTab === key ? "active" : "text-surface-variant"
+              className={`${tabStyles.tabBtn} px-4 py-1.5 text-[11px] uppercase tracking-[0.14em] font-medium rounded-sm ${
+                activeTab === key ? tabStyles.active : "text-surface-variant"
               }`}
             >
               {label}
@@ -59,7 +62,7 @@ export function TrafficChart({ dict }: TrafficChartProps) {
           {barHeights.map((height, i) => (
             <div key={i} className="flex-1 flex justify-center">
               <div
-                className="chart-bar w-full max-w-[28px] bg-burgundy/15 hover:bg-burgundy/25 rounded-t-sm transition-colors"
+                className={`${styles.chartBar} w-full max-w-[28px] bg-burgundy/15 hover:bg-burgundy/25 rounded-t-sm transition-colors`}
                 style={{
                   height: `${height}%`,
                   "--delay": `${0.05 + i * 0.05}s`,

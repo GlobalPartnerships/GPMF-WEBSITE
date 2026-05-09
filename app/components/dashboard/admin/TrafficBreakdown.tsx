@@ -1,4 +1,5 @@
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface TrafficBreakdownProps {
   dict: Pick<AdminDict, "trafficBreakdown" | "dailyUnique" | "weeklyAverage" | "monthlyTotal" | "viewSources">;
@@ -25,7 +26,7 @@ export function TrafficBreakdown({ dict, data }: TrafficBreakdownProps) {
   ];
 
   return (
-    <div className="dash-card whisper-shadow bg-white rounded-sm p-6 flex-1">
+    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6 flex-1`}>
       <h3 className="font-serif text-[20px] font-semibold text-burgundy mb-5">
         {dict.trafficBreakdown}
       </h3>
