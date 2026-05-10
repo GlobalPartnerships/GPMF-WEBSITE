@@ -58,7 +58,26 @@ export interface AdminDict {
   confirmed: string;
   cancelled: string;
 
+  plansTitle: string;
+  standardPlans: string;
+  customPlans: string;
+  mostBoughtPlan: string;
+  newPlan: string;
+  stats: string;
+  edit: string;
+  details: string;
+  earnings: string;
+  sold: string;
+  conversionRate: string;
+  inCartRightNow: string;
+  searchPlans: string;
+  downloadReport: string;
+
   meta: {
+    title: string;
+    description: string;
+  };
+  plansMeta: {
     title: string;
     description: string;
   };

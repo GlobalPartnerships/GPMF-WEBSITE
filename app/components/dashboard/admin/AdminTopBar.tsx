@@ -2,6 +2,9 @@ import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
 
 interface AdminTopBarProps {
   dict: Pick<AdminDict, "dashboard" | "searchPlaceholder" | "downloadReports">;
+  title?: string;
+  searchPlaceholder?: string;
+  actionLabel?: string;
 }
 
 function SearchIcon() {
@@ -36,12 +39,12 @@ function GridIcon() {
   );
 }
 
-export function AdminTopBar({ dict }: AdminTopBarProps) {
+export function AdminTopBar({ dict, title, searchPlaceholder, actionLabel }: AdminTopBarProps) {
   return (
     <header className="flex items-center justify-between pb-8 border-b border-outline/15">
       <div className="flex items-center gap-5">
         <h1 className="font-serif text-[22px] font-semibold text-burgundy tracking-wide">
-          {dict.dashboard}
+          {title ?? dict.dashboard}
         </h1>
         <div className="relative ml-3 hidden sm:block">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-surface-variant/50">
@@ -49,7 +52,7 @@ export function AdminTopBar({ dict }: AdminTopBarProps) {
           </span>
           <input
             className="pl-10 pr-4 py-2 bg-warmgray border border-outline/15 rounded-sm text-[13px] w-64 focus:ring-1 focus:ring-burgundy/40 focus:border-burgundy/40 focus:outline-none transition-all placeholder:text-surface-variant/40"
-            placeholder={dict.searchPlaceholder}
+            placeholder={searchPlaceholder ?? dict.searchPlaceholder}
             type="text"
           />
         </div>
@@ -58,7 +61,7 @@ export function AdminTopBar({ dict }: AdminTopBarProps) {
         <button className="btn-sweep bg-burgundy text-white px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] rounded-sm flex items-center gap-2 font-medium">
           <span className="flex items-center gap-2">
             <DownloadIcon />
-            {dict.downloadReports}
+            {actionLabel ?? dict.downloadReports}
           </span>
         </button>
         <button className="p-2 text-surface-variant hover:text-burgundy hover:bg-burgundy/5 rounded-sm transition-all">

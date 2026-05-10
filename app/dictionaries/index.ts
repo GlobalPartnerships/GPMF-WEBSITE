@@ -45,10 +45,22 @@ const loaders: {
     de: () => import("./dashboard/user/de.json").then((m) => m.default as DictMap["dashboard"]),
   },
   admin: {
-    es: () => import("./dashboard/admin/es.json").then((m) => m.default as DictMap["admin"]),
-    en: () => import("./dashboard/admin/en.json").then((m) => m.default as DictMap["admin"]),
-    fr: () => import("./dashboard/admin/fr.json").then((m) => m.default as DictMap["admin"]),
-    de: () => import("./dashboard/admin/de.json").then((m) => m.default as DictMap["admin"]),
+    es: () => Promise.all([
+      import("./dashboard/admin/es.json").then((m) => m.default),
+      import("./dashboard/admin/plans/es.json").then((m) => m.default),
+    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
+    en: () => Promise.all([
+      import("./dashboard/admin/en.json").then((m) => m.default),
+      import("./dashboard/admin/plans/en.json").then((m) => m.default),
+    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
+    fr: () => Promise.all([
+      import("./dashboard/admin/fr.json").then((m) => m.default),
+      import("./dashboard/admin/plans/fr.json").then((m) => m.default),
+    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
+    de: () => Promise.all([
+      import("./dashboard/admin/de.json").then((m) => m.default),
+      import("./dashboard/admin/plans/de.json").then((m) => m.default),
+    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
   },
 };
 

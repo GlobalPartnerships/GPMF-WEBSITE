@@ -1,0 +1,20 @@
+{
+  "plansTitle": "Pläne",
+  "standardPlans": "Standardpläne",
+  "customPlans": "Individuelle Pläne",
+  "mostBoughtPlan": "Meistgekaufter Plan",
+  "newPlan": "+ neuer Plan",
+  "stats": "Stats",
+  "edit": "Bearbeiten",
+  "details": "Details",
+  "earnings": "Einnahmen",
+  "sold": "Verkauft",
+  "conversionRate": "Konversionsrate",
+  "inCartRightNow": "Im Warenkorb",
+  "searchPlans": "Pläne durchsuchen...",
+  "downloadReport": "Bericht herunterladen",
+  "plansMeta": {
+    "title": "Planverwaltung | GPMF",
+    "description": "Verwalten Sie Servicepläne, Preise und Statistiken."
+  }
+}

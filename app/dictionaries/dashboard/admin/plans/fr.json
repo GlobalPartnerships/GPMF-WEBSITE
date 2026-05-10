@@ -1,0 +1,20 @@
+{
+  "plansTitle": "Forfaits",
+  "standardPlans": "Forfaits Standard",
+  "customPlans": "Forfaits Personnalisés",
+  "mostBoughtPlan": "Forfait le plus acheté",
+  "newPlan": "+ nouveau forfait",
+  "stats": "Stats",
+  "edit": "Modifier",
+  "details": "Détails",
+  "earnings": "Revenus",
+  "sold": "Vendus",
+  "conversionRate": "Taux de conversion",
+  "inCartRightNow": "Dans le panier",
+  "searchPlans": "Rechercher des forfaits...",
+  "downloadReport": "Télécharger le rapport",
+  "plansMeta": {
+    "title": "Gestion des Forfaits | GPMF",
+    "description": "Gérez les forfaits, les prix et les statistiques."
+  }
+}

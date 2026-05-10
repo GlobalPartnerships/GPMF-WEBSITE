@@ -1,0 +1,20 @@
+{
+  "plansTitle": "Planes",
+  "standardPlans": "Planes Estándar",
+  "customPlans": "Planes Personalizados",
+  "mostBoughtPlan": "Plan más comprado",
+  "newPlan": "+ nuevo plan",
+  "stats": "Stats",
+  "edit": "Editar",
+  "details": "Detalles",
+  "earnings": "Ganancias",
+  "sold": "Vendidos",
+  "conversionRate": "Tasa de conversión",
+  "inCartRightNow": "En carrito ahora",
+  "searchPlans": "Buscar planes...",
+  "downloadReport": "Descargar informe",
+  "plansMeta": {
+    "title": "Gestión de Planes | GPMF",
+    "description": "Gestioná planes de servicio, precios y estadísticas."
+  }
+}
