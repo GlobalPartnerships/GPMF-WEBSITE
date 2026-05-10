@@ -16,5 +16,27 @@
   "plansMeta": {
     "title": "Planverwaltung | GPMF",
     "description": "Verwalten Sie Servicepläne, Preise und Statistiken."
+  },
+  "plansModal": {
+    "editStandard": "Standardplan bearbeiten",
+    "editCustom": "Individuellen Plan bearbeiten",
+    "createStandard": "Standardplan erstellen",
+    "createCustom": "Individuellen Plan erstellen",
+    "labelTitle": "Titel",
+    "labelSubtitle": "Untertitel",
+    "labelPlanType": "Plantyp",
+    "labelPrice": "Preis (USD)",
+    "labelIcon": "Symbol",
+    "labelIncludes": "Enthält",
+    "searchIcon": "Symbol suchen",
+    "uploadSvg": "SVG hochladen",
+    "deleteIcon": "Löschen",
+    "addFeature": "Hinzufügen",
+    "newFeaturePlaceholder": "Neue Funktion hinzufügen...",
+    "titlePlaceholder": "Plantitel eingeben",
+    "subtitlePlaceholder": "Untertitel eingeben",
+    "pricePlaceholder": "z.B. 5.000 $",
+    "saveChanges": "Änderungen speichern",
+    "createPlan": "Plan erstellen"
   }
 }

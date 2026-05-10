@@ -16,5 +16,27 @@
   "plansMeta": {
     "title": "Gestion des Forfaits | GPMF",
     "description": "Gérez les forfaits, les prix et les statistiques."
+  },
+  "plansModal": {
+    "editStandard": "Modifier le forfait standard",
+    "editCustom": "Modifier le forfait personnalisé",
+    "createStandard": "Créer un forfait standard",
+    "createCustom": "Créer un forfait personnalisé",
+    "labelTitle": "Titre",
+    "labelSubtitle": "Sous-titre",
+    "labelPlanType": "Type de forfait",
+    "labelPrice": "Prix (USD)",
+    "labelIcon": "Icône",
+    "labelIncludes": "Inclus",
+    "searchIcon": "Rechercher une icône",
+    "uploadSvg": "Télécharger SVG",
+    "deleteIcon": "Supprimer",
+    "addFeature": "Ajouter",
+    "newFeaturePlaceholder": "Ajouter une fonctionnalité...",
+    "titlePlaceholder": "Entrez le titre du forfait",
+    "subtitlePlaceholder": "Entrez le sous-titre",
+    "pricePlaceholder": "ex. 5 000 $",
+    "saveChanges": "Enregistrer",
+    "createPlan": "Créer le forfait"
   }
 }

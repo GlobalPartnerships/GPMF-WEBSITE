@@ -4,6 +4,16 @@ export interface Plan {
   subtitle: string;
   price: string;
   type: "standard" | "custom";
+  includes?: string[];
+  iconId?: string;
+}
+
+export type ModalMode = "create" | "edit";
+
+export interface ModalState {
+  mode: ModalMode;
+  planType: Plan["type"];
+  plan?: Plan;
 }
 
 export interface MostBoughtPlanData {

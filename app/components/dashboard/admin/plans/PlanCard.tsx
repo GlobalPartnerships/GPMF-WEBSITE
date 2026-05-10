@@ -5,6 +5,7 @@ import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 interface PlanCardProps {
   plan: Plan;
   dict: Pick<AdminDict, "stats" | "edit">;
+  onEdit?: (plan: Plan) => void;
 }
 
 function PackageIcon() {
@@ -15,14 +16,17 @@ function PackageIcon() {
   );
 }
 
-export function PlanCard({ plan, dict }: PlanCardProps) {
+export function PlanCard({ plan, dict, onEdit }: PlanCardProps) {
   return (
     <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-5 relative`}>
       <div className="absolute top-4 right-4 flex gap-2">
         <button className="text-[10px] uppercase tracking-wider border border-outline/15 rounded-sm px-2 py-0.5 text-surface-variant hover:bg-warmgray transition-colors font-medium">
           {dict.stats}
         </button>
-        <button className="text-[10px] uppercase tracking-wider border border-outline/15 rounded-sm px-2 py-0.5 text-surface-variant hover:bg-warmgray transition-colors font-medium">
+        <button
+          onClick={() => onEdit?.(plan)}
+          className="text-[10px] uppercase tracking-wider border border-outline/15 rounded-sm px-2 py-0.5 text-surface-variant hover:bg-warmgray transition-colors font-medium"
+        >
           {dict.edit}
         </button>
       </div>

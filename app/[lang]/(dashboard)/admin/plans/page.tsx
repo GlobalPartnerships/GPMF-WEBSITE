@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
-import { PlansSection } from "@/app/components/dashboard/admin/plans/PlansSection";
-import { MostBoughtPlan } from "@/app/components/dashboard/admin/plans/MostBoughtPlan";
+import { PlansManagerClient } from "@/app/components/dashboard/admin/plans/PlansManagerClient";
 import {
   mockStandardPlans,
   mockCustomPlans,
@@ -42,21 +41,12 @@ export default async function AdminPlansPage({ params }: PageParams) {
           actionLabel={dict.downloadReport}
         />
 
-        <div className="mt-8 space-y-8">
-          <PlansSection
-            title={dict.standardPlans}
-            plans={mockStandardPlans}
-            dict={dict}
-          />
-
-          <PlansSection
-            title={dict.customPlans}
-            plans={mockCustomPlans}
-            dict={dict}
-          />
-
-          <MostBoughtPlan plan={mockMostBoughtPlan} dict={dict} />
-        </div>
+        <PlansManagerClient
+          standardPlans={mockStandardPlans}
+          customPlans={mockCustomPlans}
+          mostBoughtPlan={mockMostBoughtPlan}
+          dict={dict}
+        />
       </main>
     </div>
   );

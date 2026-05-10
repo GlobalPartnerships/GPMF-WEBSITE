@@ -16,5 +16,27 @@
   "plansMeta": {
     "title": "Gestión de Planes | GPMF",
     "description": "Gestioná planes de servicio, precios y estadísticas."
+  },
+  "plansModal": {
+    "editStandard": "Editar Plan Estándar",
+    "editCustom": "Editar Plan Personalizado",
+    "createStandard": "Crear Plan Estándar",
+    "createCustom": "Crear Plan Personalizado",
+    "labelTitle": "Título",
+    "labelSubtitle": "Subtítulo",
+    "labelPlanType": "Tipo de plan",
+    "labelPrice": "Precio (USD)",
+    "labelIcon": "Ícono",
+    "labelIncludes": "Incluye",
+    "searchIcon": "Buscar ícono",
+    "uploadSvg": "Subir SVG",
+    "deleteIcon": "Eliminar",
+    "addFeature": "Agregar",
+    "newFeaturePlaceholder": "Agregar nueva función...",
+    "titlePlaceholder": "Ingresá el título del plan",
+    "subtitlePlaceholder": "Ingresá el subtítulo",
+    "pricePlaceholder": "ej. $5.000",
+    "saveChanges": "Guardar cambios",
+    "createPlan": "Crear plan"
   }
 }

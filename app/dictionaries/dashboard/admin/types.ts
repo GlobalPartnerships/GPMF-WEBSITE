@@ -81,4 +81,26 @@ export interface AdminDict {
     title: string;
     description: string;
   };
+  plansModal: {
+    editStandard: string;
+    editCustom: string;
+    createStandard: string;
+    createCustom: string;
+    labelTitle: string;
+    labelSubtitle: string;
+    labelPlanType: string;
+    labelPrice: string;
+    labelIcon: string;
+    labelIncludes: string;
+    searchIcon: string;
+    uploadSvg: string;
+    deleteIcon: string;
+    addFeature: string;
+    newFeaturePlaceholder: string;
+    titlePlaceholder: string;
+    subtitlePlaceholder: string;
+    pricePlaceholder: string;
+    saveChanges: string;
+    createPlan: string;
+  };
 }
