@@ -13,6 +13,9 @@
   "inCartRightNow": "Im Warenkorb",
   "searchPlans": "Pläne durchsuchen...",
   "downloadReport": "Bericht herunterladen",
+  "noPlansYet": "Noch keine Pläne",
+  "noStandardPlansMessage": "Es wurden noch keine Standardpläne erstellt.",
+  "noCustomPlansMessage": "Es wurden noch keine individuellen Pläne erstellt.",
   "plansMeta": {
     "title": "Planverwaltung | GPMF",
     "description": "Verwalten Sie Servicepläne, Preise und Statistiken."

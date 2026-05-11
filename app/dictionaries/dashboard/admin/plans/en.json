@@ -13,6 +13,9 @@
   "inCartRightNow": "In cart right now",
   "searchPlans": "Search plans...",
   "downloadReport": "Download report",
+  "noPlansYet": "No plans yet",
+  "noStandardPlansMessage": "No standard plans have been created yet.",
+  "noCustomPlansMessage": "No custom plans have been created yet.",
   "plansMeta": {
     "title": "Plans Management | GPMF",
     "description": "Manage service plans, pricing, and statistics."

@@ -72,6 +72,9 @@ export interface AdminDict {
   inCartRightNow: string;
   searchPlans: string;
   downloadReport: string;
+  noPlansYet: string;
+  noStandardPlansMessage: string;
+  noCustomPlansMessage: string;
 
   meta: {
     title: string;

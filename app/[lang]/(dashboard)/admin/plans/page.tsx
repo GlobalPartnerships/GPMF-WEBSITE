@@ -4,11 +4,9 @@ import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
 import { PlansManagerClient } from "@/app/components/dashboard/admin/plans/PlansManagerClient";
-import {
-  mockStandardPlans,
-  mockCustomPlans,
-  mockMostBoughtPlan,
-} from "@/app/components/dashboard/admin/plans/mock-data";
+import { mockMostBoughtPlan } from "@/app/components/dashboard/admin/plans/mock-data";
+import { getPlans } from "@/lib/api/plans";
+import type { PlanResponse } from "@/app/components/dashboard/admin/plans/types";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -29,6 +27,18 @@ export default async function AdminPlansPage({ params }: PageParams) {
 
   const dict = await getDictionary(lang as Locale, "admin");
 
+  let allPlans: PlanResponse[] = [];
+  let fetchError = false;
+
+  try {
+    allPlans = await getPlans();
+  } catch {
+    fetchError = true;
+  }
+
+  const standardPlans = allPlans.filter((p) => p.category === "standard");
+  const customPlans = allPlans.filter((p) => p.category === "custom");
+
   return (
     <div className="min-h-screen pt-[88px] flex bg-background">
       <AdminSidebar dict={dict} lang={lang} />
@@ -41,9 +51,15 @@ export default async function AdminPlansPage({ params }: PageParams) {
           actionLabel={dict.downloadReport}
         />
 
+        {fetchError && (
+          <div className="mb-4 rounded-sm border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            Failed to load plans from the server. Showing cached data if available.
+          </div>
+        )}
+
         <PlansManagerClient
-          standardPlans={mockStandardPlans}
-          customPlans={mockCustomPlans}
+          standardPlans={standardPlans}
+          customPlans={customPlans}
           mostBoughtPlan={mockMostBoughtPlan}
           dict={dict}
         />

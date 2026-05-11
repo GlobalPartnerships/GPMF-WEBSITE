@@ -13,6 +13,9 @@
   "inCartRightNow": "Dans le panier",
   "searchPlans": "Rechercher des forfaits...",
   "downloadReport": "Télécharger le rapport",
+  "noPlansYet": "Aucun forfait",
+  "noStandardPlansMessage": "Aucun forfait standard n'a encore été créé.",
+  "noCustomPlansMessage": "Aucun forfait personnalisé n'a encore été créé.",
   "plansMeta": {
     "title": "Gestion des Forfaits | GPMF",
     "description": "Gérez les forfaits, les prix et les statistiques."

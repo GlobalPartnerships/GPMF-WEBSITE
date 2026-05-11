@@ -1,11 +1,14 @@
-import type { Plan } from "./types";
+import type { PlanResponse } from "./types";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import { formatPrice } from "@/lib/utils/format";
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface PlanCardProps {
-  plan: Plan;
+  plan: PlanResponse;
   dict: Pick<AdminDict, "stats" | "edit">;
-  onEdit?: (plan: Plan) => void;
+  onEdit?: (plan: PlanResponse) => void;
+  onDelete?: (plan: PlanResponse) => void;
+  isPending?: boolean;
 }
 
 function PackageIcon() {
@@ -16,9 +19,9 @@ function PackageIcon() {
   );
 }
 
-export function PlanCard({ plan, dict, onEdit }: PlanCardProps) {
+export function PlanCard({ plan, dict, onEdit, onDelete, isPending }: PlanCardProps) {
   return (
-    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-5 relative`}>
+    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-5 relative ${isPending ? "opacity-50 pointer-events-none" : ""}`}>
       <div className="absolute top-4 right-4 flex gap-2">
         <button className="text-[10px] uppercase tracking-wider border border-outline/15 rounded-sm px-2 py-0.5 text-surface-variant hover:bg-warmgray transition-colors font-medium">
           {dict.stats}
@@ -29,10 +32,18 @@ export function PlanCard({ plan, dict, onEdit }: PlanCardProps) {
         >
           {dict.edit}
         </button>
+        {onDelete && (
+          <button
+            onClick={() => onDelete(plan)}
+            className="text-[10px] uppercase tracking-wider border border-red-200 rounded-sm px-2 py-0.5 text-red-400 hover:bg-red-50 hover:text-red-600 transition-colors font-medium"
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       <div className="mt-6 mb-4 flex items-start justify-between">
-        <h3 className="font-serif text-xl text-foreground pr-8">{plan.title}</h3>
+        <h3 className="font-serif text-xl text-foreground pr-8">{plan.name}</h3>
         <span className="text-surface-variant/40 mt-1">
           <PackageIcon />
         </span>
@@ -42,7 +53,14 @@ export function PlanCard({ plan, dict, onEdit }: PlanCardProps) {
         {plan.subtitle}
       </p>
 
-      <div className="font-serif text-xl font-bold text-foreground">{plan.price}</div>
+      <div className="flex items-end justify-between">
+        <div className="font-serif text-xl font-bold text-foreground">
+          {formatPrice(plan.base_price, plan.currency)}
+        </div>
+        <div className="text-[11px] text-surface-variant/60 font-medium uppercase tracking-wide">
+          {plan.billing_type.name}
+        </div>
+      </div>
     </div>
   );
 }

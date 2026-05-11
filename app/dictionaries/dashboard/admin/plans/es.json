@@ -13,6 +13,9 @@
   "inCartRightNow": "En carrito ahora",
   "searchPlans": "Buscar planes...",
   "downloadReport": "Descargar informe",
+  "noPlansYet": "Sin planes aún",
+  "noStandardPlansMessage": "Todavía no hay planes estándar creados.",
+  "noCustomPlansMessage": "Todavía no hay planes personalizados creados.",
   "plansMeta": {
     "title": "Gestión de Planes | GPMF",
     "description": "Gestioná planes de servicio, precios y estadísticas."
