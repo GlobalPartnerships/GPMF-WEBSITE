@@ -10,12 +10,18 @@ import {
   getFeaturesByPlan,
   getBillingTypes,
 } from "@/lib/api/plans";
+import { apiGet, apiUpload, apiDelete } from "@/lib/api/client";
 import type {
   CreatePlanPayload,
   UpdatePlanPayload,
   ActionResult,
   BillingType,
 } from "@/app/components/dashboard/admin/plans/types";
+import type {
+  CloudinaryImage,
+  UploadResponse,
+  SvgListResponse,
+} from "@/app/components/dashboard/admin/plans/svg-upload/types";
 
 export async function createPlanAction(
   payload: CreatePlanPayload,
@@ -87,6 +93,53 @@ export async function deletePlanAction(
     return {
       success: false,
       error: error instanceof Error ? error.message : "Failed to delete plan",
+    };
+  }
+}
+
+export async function uploadPlanSvgAction(
+  formData: FormData
+): Promise<ActionResult<UploadResponse["data"]>> {
+  try {
+    const result = await apiUpload<UploadResponse>(
+      "/assets/upload/plan-svg",
+      formData
+    );
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true, data: result.data };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to upload SVG",
+    };
+  }
+}
+
+export async function getPlanSvgsAction(): Promise<
+  ActionResult<CloudinaryImage[]>
+> {
+  try {
+    const result = await apiGet<SvgListResponse>("/assets/plan-svgs");
+    return { success: true, data: result.data };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to fetch SVGs",
+    };
+  }
+}
+
+export async function deletePlanSvgAction(
+  imageId: string
+): Promise<ActionResult<void>> {
+  try {
+    await apiDelete(`/assets/${imageId}`);
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to delete SVG",
     };
   }
 }

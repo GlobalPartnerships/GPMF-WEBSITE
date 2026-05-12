@@ -4,6 +4,7 @@ import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
 import { PlansManagerClient } from "@/app/components/dashboard/admin/plans/PlansManagerClient";
+import { SvgUploadManager } from "@/app/components/dashboard/admin/plans/svg-upload/SvgUploadManager";
 import { mockMostBoughtPlan } from "@/app/components/dashboard/admin/plans/mock-data";
 import { getPlans } from "@/lib/api/plans";
 import type { PlanResponse } from "@/app/components/dashboard/admin/plans/types";
@@ -63,6 +64,11 @@ export default async function AdminPlansPage({ params }: PageParams) {
           mostBoughtPlan={mockMostBoughtPlan}
           dict={dict}
         />
+
+        <section className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <SvgUploadManager dict={dict} />
+          <div className="rounded-xl border border-outline/10 bg-white p-6 min-h-[200px]" />
+        </section>
       </main>
     </div>
   );

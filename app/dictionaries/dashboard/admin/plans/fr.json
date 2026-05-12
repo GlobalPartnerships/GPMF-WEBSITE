@@ -41,5 +41,16 @@
     "pricePlaceholder": "ex. 5 000 $",
     "saveChanges": "Enregistrer",
     "createPlan": "Créer le forfait"
+  },
+  "svgManager": {
+    "title": "Icônes SVG",
+    "uploadButton": "Télécharger SVG",
+    "dragText": "Glissez-déposez un fichier SVG ici, ou cliquez pour parcourir",
+    "uploading": "Téléchargement...",
+    "uploadSuccess": "Icône téléchargée",
+    "uploadError": "Échec du téléchargement",
+    "deleteConfirm": "Supprimer cette icône ?",
+    "emptyState": "Aucune icône téléchargée",
+    "invalidFile": "Seuls les fichiers SVG sont autorisés"
   }
 }

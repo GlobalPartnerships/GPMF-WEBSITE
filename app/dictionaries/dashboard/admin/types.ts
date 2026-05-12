@@ -106,4 +106,15 @@ export interface AdminDict {
     saveChanges: string;
     createPlan: string;
   };
+  svgManager: {
+    title: string;
+    uploadButton: string;
+    dragText: string;
+    uploading: string;
+    uploadSuccess: string;
+    uploadError: string;
+    deleteConfirm: string;
+    emptyState: string;
+    invalidFile: string;
+  };
 }

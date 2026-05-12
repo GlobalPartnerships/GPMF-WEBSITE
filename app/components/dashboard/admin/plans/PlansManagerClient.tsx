@@ -5,7 +5,7 @@ import type { MostBoughtPlanData, ModalState, PlanResponse } from "./types";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
 import { PlansSection } from "./PlansSection";
 import { MostBoughtPlan } from "./MostBoughtPlan";
-import { PlanModal } from "./PlanModal";
+import { PlanModal } from "./plan-modal/PlanModal";
 import { EmptyState } from "@/app/components/EmptyState";
 import { deletePlanAction } from "@/app/[lang]/(dashboard)/admin/plans/actions";
 

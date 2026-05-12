@@ -41,5 +41,16 @@
     "pricePlaceholder": "z.B. 5.000 $",
     "saveChanges": "Änderungen speichern",
     "createPlan": "Plan erstellen"
+  },
+  "svgManager": {
+    "title": "SVG-Symbole",
+    "uploadButton": "SVG hochladen",
+    "dragText": "SVG-Datei hierher ziehen oder klicken zum Durchsuchen",
+    "uploading": "Wird hochgeladen...",
+    "uploadSuccess": "Symbol hochgeladen",
+    "uploadError": "Hochladen fehlgeschlagen",
+    "deleteConfirm": "Dieses Symbol löschen?",
+    "emptyState": "Noch keine Symbole hochgeladen",
+    "invalidFile": "Nur SVG-Dateien erlaubt"
   }
 }

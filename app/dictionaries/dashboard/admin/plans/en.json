@@ -41,5 +41,16 @@
     "pricePlaceholder": "e.g. $5,000",
     "saveChanges": "Save Changes",
     "createPlan": "Create Plan"
+  },
+  "svgManager": {
+    "title": "SVG Icons",
+    "uploadButton": "Upload SVG",
+    "dragText": "Drag & drop an SVG file here, or click to browse",
+    "uploading": "Uploading...",
+    "uploadSuccess": "Icon uploaded",
+    "uploadError": "Upload failed",
+    "deleteConfirm": "Delete this icon?",
+    "emptyState": "No icons uploaded yet",
+    "invalidFile": "Only SVG files are allowed"
   }
 }

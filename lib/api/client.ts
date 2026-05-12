@@ -62,3 +62,25 @@ export function apiDelete<T = void>(
 ): Promise<T> {
   return request<T>(path, "DELETE", undefined, options);
 }
+
+export async function apiUpload<T>(
+  path: string,
+  formData: FormData,
+  options?: RequestOptions
+): Promise<T> {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    method: "POST",
+    headers: { ...options?.headers },
+    body: formData,
+    next: options?.next,
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text().catch(() => "");
+    throw new Error(
+      `API POST ${path} failed (${response.status}): ${errorBody}`
+    );
+  }
+
+  return response.json();
+}
