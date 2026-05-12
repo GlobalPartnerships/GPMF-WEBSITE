@@ -31,7 +31,7 @@ export function Header({ lang, dict }: HeaderProps) {
   return (
     <>
       <header className="fixed top-0 w-full z-50 transition-all duration-500 bg-white/80 backdrop-blur-md border-b border-gray-100/80">
-        <nav className="max-w-[1280px] mx-auto grid grid-cols-3 items-center px-8 py-5 gap-8">
+        <nav className="max-w-[1280px] mx-auto flex items-center justify-between lg:grid lg:grid-cols-3 px-8 py-5 gap-8">
           {/* Logo */}
           <Link href={`/${lang}`}>
             <Image
