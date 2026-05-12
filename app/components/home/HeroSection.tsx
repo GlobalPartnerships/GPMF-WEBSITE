@@ -11,7 +11,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
   return (
     <section id="home" className="min-h-screen flex items-center pt-24 overflow-hidden">
       <div className="w-full grid grid-cols-12 items-stretch">
-        <div className="col-span-12 lg:col-span-6 flex items-center px-8 lg:px-20 py-20 lg:py-32">
+        <div className="col-span-12 lg:col-span-6 flex items-center justify-center px-8 lg:px-20 py-20 lg:py-32">
           <div className="max-w-xl reveal">
             <span className="tick text-[11px] tracking-[0.28em] uppercase text-burgundy font-semibold">
               {dict.eyebrow}

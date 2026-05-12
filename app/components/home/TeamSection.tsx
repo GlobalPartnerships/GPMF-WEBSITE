@@ -24,7 +24,7 @@ export function TeamSection({ dict, lang }: TeamSectionProps) {
             </div>
           </div>
 
-          <div className="px-8 lg:px-24 py-20 lg:py-0 flex flex-col justify-center min-h-[560px] lg:min-h-[820px]">
+          <div className="px-8 lg:px-24 py-20 lg:py-0 flex flex-col justify-center items-center min-h-[560px] lg:min-h-[820px]">
             <div className="max-w-xl">
               <span className="tick text-[11px] tracking-[0.28em] uppercase text-burgundy font-semibold">
                 {dict.eyebrow}

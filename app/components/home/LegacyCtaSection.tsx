@@ -54,7 +54,7 @@ export function LegacyCtaSection({ dict }: LegacyCtaSectionProps) {
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-5">
+          <div className="col-span-12 lg:col-span-5 flex items-center justify-center">
             <div className="max-w-md">
               <span className="tick text-[11px] tracking-[0.28em] uppercase text-burgundy font-semibold">
                 {dict.eyebrow}
