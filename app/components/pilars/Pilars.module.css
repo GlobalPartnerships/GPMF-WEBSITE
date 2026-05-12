@@ -1,0 +1,466 @@
+/* ─── Page layout ─── */
+.pageMain {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 96px;
+  padding: 0 32px;
+}
+
+.headerEyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.headerTitle {
+  font-size: 56px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.headerAccent {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.headerSubtitle {
+  font-size: 18px;
+  max-width: 32rem;
+  margin: 0 auto;
+  line-height: 1.625;
+}
+
+@media (min-width: 1024px) {
+  .headerTitle {
+    font-size: 76px;
+  }
+}
+
+/* ─── Section spacing ─── */
+.accordionSection {
+  margin-bottom: 0;
+}
+
+.separatorSection {
+  max-width: 1280px;
+  margin: 96px auto 0;
+  padding: 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.ctaSection {
+  max-width: 1280px;
+  margin: 80px auto 32px;
+  padding: 0 32px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ─── Accordion columns ─── */
+.accordionContainer {
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(26, 28, 28, 0.08);
+  border-radius: 2px;
+}
+
+.accordionColumn {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.accordionColumn + .accordionColumn {
+  border-left: 1px solid rgba(26, 28, 28, 0.08);
+}
+
+.accordionContainer:hover .accordionColumn {
+  flex: 0.6;
+}
+.accordionContainer:hover .accordionColumn:hover {
+  flex: 2.4;
+}
+
+/* Background image */
+.accordionBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accordionBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.accordionOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(86, 0, 31, 0.88) 0%,
+    rgba(86, 0, 31, 0.3) 40%,
+    transparent 100%
+  );
+}
+.accordionColumn:hover .accordionBg {
+  opacity: 1;
+}
+
+/* Content */
+.accordionContent {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px;
+}
+
+/* Number */
+.accordionNumber {
+  font-size: 120px;
+  line-height: 1;
+  font-weight: 600;
+  color: rgba(26, 28, 28, 0.06);
+  position: absolute;
+  top: 40px;
+  left: 48px;
+  transition: color 0.5s ease, opacity 0.5s ease;
+}
+.accordionColumn:hover .accordionNumber {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+/* Text color transitions */
+.accordionLabel {
+  transition: color 0.5s ease;
+  color: #564144;
+}
+.accordionColumn:hover .accordionLabel {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.accordionTitle {
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 600;
+  transition: color 0.5s ease;
+  color: #1a1c1c;
+}
+
+@media (min-width: 1024px) {
+  .accordionTitle {
+    font-size: 40px;
+  }
+}
+.accordionColumn:hover .accordionTitle {
+  color: #ffffff;
+}
+
+.accordionDesc {
+  transition: color 0.5s ease, opacity 0.5s ease,
+    max-height 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  color: #564144;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.accordionColumn:hover .accordionDesc {
+  color: rgba(255, 255, 255, 0.75);
+  max-height: 200px;
+  opacity: 1;
+}
+
+.accordionDivider {
+  width: 40px;
+  height: 1px;
+  background: rgba(122, 15, 50, 0.4);
+  margin: 16px 0;
+  transition: background 0.5s ease, width 0.5s ease;
+}
+.accordionColumn:hover .accordionDivider {
+  background: rgba(255, 178, 190, 0.5);
+  width: 60px;
+}
+
+.accordionCta {
+  transition: color 0.5s ease, opacity 0.5s ease,
+    max-height 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.accordionColumn:hover .accordionCta {
+  max-height: 80px;
+  opacity: 1;
+  color: #ffffff;
+}
+
+/* ─── CTA Bento Grid ─── */
+.ctaBento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 24px 16px;
+  position: relative;
+  min-height: 520px;
+}
+
+.ctaBoxHero {
+  grid-column: 1 / 7;
+  grid-row: 1 / 3;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(26, 28, 28, 0.08);
+  border-radius: 2px;
+  height: 360px;
+  z-index: 2;
+  transition: box-shadow 0.5s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.ctaBoxHero:hover {
+  box-shadow: 0 24px 48px -12px rgba(122, 15, 50, 0.1);
+  transform: translateY(-4px);
+}
+
+.ctaGeoArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ctaBoxHeroContent {
+  position: relative;
+  z-index: 2;
+  padding: 36px 40px;
+}
+
+.ctaBoxDisplay {
+  grid-column: 7 / 13;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px 0 0 48px;
+  z-index: 1;
+}
+
+.displayText {
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .displayText {
+    font-size: 110px;
+  }
+}
+
+.ctaBoxImg1 {
+  grid-column: 4 / 7;
+  grid-row: 1 / 3;
+  align-self: end;
+  z-index: 3;
+}
+
+.ctaBoxImg2 {
+  grid-column: 7 / 10;
+  grid-row: 2 / 3;
+  z-index: 3;
+}
+
+.ctaImgWrap {
+  border: 1px solid rgba(26, 28, 28, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: box-shadow 0.5s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.ctaImgWrap:hover {
+  box-shadow: 0 20px 40px -10px rgba(122, 15, 50, 0.1);
+  transform: translateY(-4px);
+}
+
+.ctaBoxImg1 .ctaImgWrap {
+  height: 180px;
+}
+.ctaBoxImg2 .ctaImgWrap {
+  height: 200px;
+}
+.ctaImgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ctaImgCaption {
+  padding: 20px 4px 0;
+}
+
+/* ─── Decorative elements ─── */
+.decoLine {
+  position: absolute;
+  background: currentColor;
+  pointer-events: none;
+  z-index: 0;
+}
+.decoHorizontal {
+  height: 1px;
+}
+.decoVertical {
+  width: 1px;
+}
+.decoDot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  pointer-events: none;
+  z-index: 0;
+}
+.decoCross {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.decoCross::before,
+.decoCross::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+.decoCross::before {
+  width: 12px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.decoCross::after {
+  width: 1px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.decoRect {
+  position: absolute;
+  border: 1px solid currentColor;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floatAnim {
+  animation: float-subtle 6s ease-in-out infinite;
+}
+.floatAnimDelay {
+  animation: float-subtle 7s ease-in-out 1.5s infinite;
+}
+.floatAnimSlow {
+  animation: float-subtle 9s ease-in-out 3s infinite;
+}
+
+/* ─── Vertical side text ─── */
+.sideText {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  z-index: 40;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) translateY(50%);
+}
+
+/* ─── Mobile accordion fallback ─── */
+@media (max-width: 768px) {
+  .accordionContainer {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+  .accordionColumn {
+    flex: none !important;
+    min-height: 200px;
+  }
+  .accordionContainer:hover .accordionColumn {
+    flex: none;
+  }
+  .accordionContainer:hover .accordionColumn:hover {
+    flex: none;
+  }
+  .accordionColumn + .accordionColumn {
+    border-left: none;
+    border-top: 1px solid rgba(26, 28, 28, 0.08);
+  }
+  .accordionNumber {
+    font-size: 72px;
+  }
+  .accordionContent {
+    padding: 32px 24px;
+  }
+  .accordionDesc {
+    max-height: 200px;
+    opacity: 1;
+  }
+  .accordionCta {
+    max-height: 80px;
+    opacity: 1;
+  }
+
+  /* Bento mobile */
+  .ctaBento {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 0;
+  }
+  .ctaBoxHero {
+    height: 280px;
+  }
+  .ctaBoxDisplay {
+    padding: 0;
+  }
+  .displayText {
+    font-size: 48px;
+  }
+  .ctaBoxImg1 .ctaImgWrap {
+    height: 160px;
+  }
+  .ctaBoxImg2 .ctaImgWrap {
+    height: 180px;
+  }
+  .headerTitle {
+    font-size: 40px;
+  }
+  .separatorSection {
+    margin-top: 48px;
+  }
+  .ctaSection {
+    margin-top: 40px;
+  }
+  .sideText {
+    display: none;
+  }
+}

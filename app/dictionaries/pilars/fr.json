@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Fondement",
+  "headline": "Nos",
+  "headlineAccent": "principes.",
+  "subtitle": "Trois convictions qui façonnent chaque engagement que nous entreprenons — du premier audit à la transformation finale.",
+  "separator": "Et ensuite",
+  "principles": [
+    {
+      "number": "01",
+      "label": "Premier Principe",
+      "title": "Gouvernance",
+      "titleLine2": "Stratégique",
+      "description": "Nous concevons des architectures de conformité et des flux de travail auditables qui offrent aux institutions internationales, aux consortiums scientifiques et aux gestionnaires de fonds la traçabilité financière nécessaire pour opérer sans aucune anomalie fiscale.",
+      "deliverables": [
+        "Ingénierie des processus institutionnels",
+        "Éligibilité aux fonds internationaux",
+        "Architecture de conformité",
+        "Systèmes de traçabilité financière"
+      ],
+      "ctaLabel": "Explorer l'approche"
+    },
+    {
+      "number": "02",
+      "label": "Deuxième Principe",
+      "title": "Opérations",
+      "titleLine2": "Technologiques",
+      "description": "Nous construisons des moteurs opérationnels — tableaux de bord en temps réel, flux RevOps automatisés et systèmes BI — qui éliminent l'intervention humaine dans le reporting et récupèrent la capacité stratégique des équipes.",
+      "deliverables": [
+        "Tableaux de bord de Business Intelligence",
+        "Automatisation des flux RevOps",
+        "Digitalisation des processus",
+        "Récupération de 40% du temps stratégique"
+      ],
+      "ctaLabel": "Notre méthodologie"
+    },
+    {
+      "number": "03",
+      "label": "Troisième Principe",
+      "title": "Image",
+      "titleLine2": "Institutionnelle",
+      "description": "Nous transformons la présence digitale en vitrines mondiales de premier plan pour les réseaux de recherche, les cabinets de conseil et les entités d'entreprise — en gérant l'identité, les écosystèmes web et la narration multimédia de bout en bout.",
+      "deliverables": [
+        "Gestion d'identité de bout en bout",
+        "Conception d'écosystèmes web",
+        "Production multimédia et audiovisuelle",
+        "Positionnement auprès des décideurs mondiaux"
+      ],
+      "ctaLabel": "Voir les études de cas"
+    }
+  ],
+  "cta": {
+    "eyebrow": "Explorer",
+    "headline": "Découvrez nos\noffres",
+    "description": "Découvrez des solutions institutionnelles sur mesure et trouvez le chemin qui correspond à votre vision.",
+    "displayText": "next",
+    "globalReachTitle": "Portée Mondiale",
+    "globalReachDescription": "Étendre l'excellence opérationnelle à travers les continents, connectant les institutions aux résultats dans le monde entier.",
+    "artfulDetailTitle": "Détail Artisanal",
+    "artfulDetailDescription": "Chaque engagement reçoit l'attention soignée et réfléchie qui transforme la complexité en clarté."
+  },
+  "meta": {
+    "title": "GPMF | Principes Aurelius",
+    "description": "Trois piliers imbriqués — gouvernance, technologie et positionnement institutionnel — qui définissent comment GPMF traduit la complexité en résultats."
+  }
+}

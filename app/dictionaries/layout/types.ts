@@ -5,7 +5,7 @@ export interface LayoutDict {
     };
     nav: {
         home: string;
-        firm: string;
+        pilars: string;
         partners: string;
         services: string;
         schedule: string;

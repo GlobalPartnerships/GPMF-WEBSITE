@@ -23,7 +23,7 @@ export function Header({ lang, dict }: HeaderProps) {
 
   const navLinks = [
     { label: dict.home, href: `/${lang}` },
-    { label: dict.firm, href: `/${lang}/firm` },
+    { label: dict.pilars, href: `/${lang}/pilars` },
     { label: dict.partners, href: `/${lang}/partners` },
     { label: dict.services, href: `/${lang}#services` },
   ];

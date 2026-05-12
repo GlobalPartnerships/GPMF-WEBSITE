@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Grundlage",
+  "headline": "Unsere",
+  "headlineAccent": "Prinzipien.",
+  "subtitle": "Drei Überzeugungen, die jedes Engagement prägen — von der ersten Prüfung bis zur finalen Transformation.",
+  "separator": "Was kommt als Nächstes",
+  "principles": [
+    {
+      "number": "01",
+      "label": "Erstes Prinzip",
+      "title": "Strategische",
+      "titleLine2": "Governance",
+      "description": "Wir entwerfen Compliance-Architekturen und prüfbare Arbeitsabläufe, die internationalen Institutionen, wissenschaftlichen Konsortien und Fondsmanagern die finanzielle Rückverfolgbarkeit bieten, die sie für einen Betrieb ohne Beanstandungen benötigen.",
+      "deliverables": [
+        "Institutionelles Prozess-Engineering",
+        "Internationale Förderfähigkeit",
+        "Compliance-Architektur",
+        "Systeme zur finanziellen Rückverfolgbarkeit"
+      ],
+      "ctaLabel": "Ansatz erkunden"
+    },
+    {
+      "number": "02",
+      "label": "Zweites Prinzip",
+      "title": "Technologie-",
+      "titleLine2": "gestützte Abläufe",
+      "description": "Wir bauen operative Motoren — Echtzeit-Dashboards, automatisierte RevOps-Workflows und BI-Systeme — die menschliche Eingriffe in das Reporting eliminieren und strategische Teamkapazitäten zurückgewinnen.",
+      "deliverables": [
+        "Business-Intelligence-Dashboards",
+        "Automatisierung von RevOps-Workflows",
+        "Prozessdigitalisierung",
+        "40% Rückgewinnung strategischer Zeit"
+      ],
+      "ctaLabel": "Unsere Methodik"
+    },
+    {
+      "number": "03",
+      "label": "Drittes Prinzip",
+      "title": "Institutionelles",
+      "titleLine2": "Branding",
+      "description": "Wir verwandeln digitale Präsenz in weltklasse Schaufenster für Forschungsnetzwerke, Beratungsunternehmen und Unternehmenseinheiten — und verwalten Identität, Web-Ökosysteme und Multimedia-Narrative von Anfang bis Ende.",
+      "deliverables": [
+        "End-to-End-Identitätsmanagement",
+        "Web-Ökosystem-Design",
+        "Multimedia- und audiovisuelle Produktion",
+        "Globale Stakeholder-Positionierung"
+      ],
+      "ctaLabel": "Fallstudien ansehen"
+    }
+  ],
+  "cta": {
+    "eyebrow": "Entdecken",
+    "headline": "Entdecken Sie\nunsere Angebote",
+    "description": "Entdecken Sie maßgeschneiderte institutionelle Lösungen und finden Sie den Weg, der zu Ihrer Vision passt.",
+    "displayText": "next",
+    "globalReachTitle": "Globale Reichweite",
+    "globalReachDescription": "Operationelle Exzellenz über Kontinente hinweg erweitern und Institutionen weltweit mit Ergebnissen verbinden.",
+    "artfulDetailTitle": "Kunstvolles Detail",
+    "artfulDetailDescription": "Jedes Engagement erhält die sorgfältige, durchdachte Aufmerksamkeit, die Komplexität in Klarheit verwandelt."
+  },
+  "meta": {
+    "title": "GPMF | Aurelius-Prinzipien",
+    "description": "Drei ineinandergreifende Säulen — Governance, Technologie und institutionelle Positionierung — die definieren, wie GPMF Komplexität in Ergebnisse übersetzt."
+  }
+}

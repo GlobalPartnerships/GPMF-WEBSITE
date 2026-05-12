@@ -62,6 +62,12 @@ const loaders: {
       import("./dashboard/admin/plans/de.json").then((m) => m.default),
     ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
   },
+  pilars: {
+    es: () => import("./pilars/es.json").then((m) => m.default as DictMap["pilars"]),
+    en: () => import("./pilars/en.json").then((m) => m.default as DictMap["pilars"]),
+    fr: () => import("./pilars/fr.json").then((m) => m.default as DictMap["pilars"]),
+    de: () => import("./pilars/de.json").then((m) => m.default as DictMap["pilars"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

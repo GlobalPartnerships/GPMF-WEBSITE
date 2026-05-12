@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Foundation",
+  "headline": "Our",
+  "headlineAccent": "principles.",
+  "subtitle": "Three convictions that shape every engagement we undertake — from first audit to final transformation.",
+  "separator": "What's next",
+  "principles": [
+    {
+      "number": "01",
+      "label": "Principle One",
+      "title": "Strategic",
+      "titleLine2": "Governance",
+      "description": "We design compliance architectures and auditable workflows that give international institutions, scientific consortia, and fund managers the financial traceability they need to operate with zero fiscal findings.",
+      "deliverables": [
+        "Institutional process engineering",
+        "International fund eligibility",
+        "Compliance architecture",
+        "Financial traceability systems"
+      ],
+      "ctaLabel": "Explore approach"
+    },
+    {
+      "number": "02",
+      "label": "Principle Two",
+      "title": "Technology-Enabled",
+      "titleLine2": "Operations",
+      "description": "We build operational engines — real-time dashboards, automated RevOps workflows, and BI systems — that remove human intervention from reporting and recover strategic team capacity.",
+      "deliverables": [
+        "Business intelligence dashboards",
+        "RevOps workflow automation",
+        "Process digitization",
+        "40% strategic time recovery"
+      ],
+      "ctaLabel": "Our methodology"
+    },
+    {
+      "number": "03",
+      "label": "Principle Three",
+      "title": "Institutional",
+      "titleLine2": "Branding",
+      "description": "We transform digital presence into world-class showcases for research networks, consultancies, and corporate entities — managing identity, web ecosystems, and multimedia narrative from end to end.",
+      "deliverables": [
+        "End-to-end identity management",
+        "Web ecosystem design",
+        "Multimedia and audiovisual production",
+        "Global stakeholder positioning"
+      ],
+      "ctaLabel": "View case studies"
+    }
+  ],
+  "cta": {
+    "eyebrow": "Explore",
+    "headline": "Meet our\nplans",
+    "description": "Discover tailored institutional solutions and find the path that fits your vision.",
+    "displayText": "next",
+    "globalReachTitle": "Global Reach",
+    "globalReachDescription": "Extending operational excellence across continents, connecting institutions to results worldwide.",
+    "artfulDetailTitle": "Artful Detail",
+    "artfulDetailDescription": "Every engagement receives the careful, considered attention that transforms complexity into clarity."
+  },
+  "meta": {
+    "title": "GPMF | Aurelius Principles",
+    "description": "Three interlocking pillars — governance, technology, and institutional positioning — that define how GPMF translates complexity into results."
+  }
+}
