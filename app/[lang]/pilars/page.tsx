@@ -6,7 +6,7 @@ import { PilarsHeader } from "@/app/components/pilars/PilarsHeader";
 import { PilarsAccordion } from "@/app/components/pilars/PilarsAccordion";
 import { PilarsCta } from "@/app/components/pilars/PilarsCta";
 import { PilarsDecorations } from "@/app/components/pilars/PilarsDecorations";
-import styles from "@/app/components/pilars/Pilars.module.css";
+import { DecoElements } from "@/app/components/plans/DecoElements";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -32,8 +32,9 @@ export default async function PilarsPage({ params }: PageParams) {
   return (
     <>
       <RevealObserver />
-      <main className={styles.pageMain}>
+      <main className="pt-32 pb-32 relative overflow-hidden">
         <PilarsDecorations />
+        <DecoElements />
         <PilarsHeader dict={dict} />
         <PilarsAccordion principles={dict.principles} />
         <PilarsCta cta={dict.cta} separator={dict.separator} />
