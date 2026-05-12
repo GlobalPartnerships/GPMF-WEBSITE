@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Allies & Partners | GPMF",
+    "description": "A multidisciplinary network of experts and corporate firms that amplify GPMF's impact on every project."
+  },
+  "hero": {
+    "eyebrow": "Strategic Alliances",
+    "headline": "Network of",
+    "headlineKeyword": "Specialists.",
+    "headlineAccent": "An Ecosystem that amplifies our impact.",
+    "description": "We believe in collective intelligence. GPMF operates under a multidisciplinary expert network model. We activate specialized senior consultants based on the specific need of each project, connecting the exact talent your challenge requires."
+  },
+  "professionals": {
+    "eyebrow": "Strategic Alliances",
+    "title": "Network of Specialists",
+    "subtitle": "Expert talent we integrate on demand according to each project's challenge.",
+    "items": [
+      {
+        "name": "Natalia Sánchez",
+        "role": "Project Manager in Tech & Data Analytics",
+        "description": "Expert in technology project management and data analytics for the Canadian market. Leads digital transformation initiatives focused on measurable results.",
+        "image": "/professionals/natalia.jpg"
+      },
+      {
+        "name": "David Salazar",
+        "role": "Architect & Design Expert",
+        "description": "Architect expert in international architectural design and transformation processes for the Real Estate and Hospitality sector.",
+        "image": "/professionals/david-salazar.jpg"
+      },
+      {
+        "name": "Matthias Halleux",
+        "role": "Strategic Advisor: French Retail & Market Access",
+        "description": "Strategic advisor in market access and retail France, negotiations and territory expansion. 15+ years of experience in the Retail and FMCG ecosystem in France.",
+        "image": "/professionals/matthias.jpg"
+      },
+      {
+        "name": "Nidian Díaz",
+        "role": "Audit & Financial Structuring",
+        "description": "Specialist in corporate accounting and strategic audit. Ensures that expansion processes and new business models have impeccable financial backing.",
+        "image": "/professionals/nidian.jpg"
+      },
+      {
+        "name": "Diego Quintero",
+        "role": "Political Scientist — Security & Public Policy",
+        "description": "Political analyst specialized in security and public policies. Provides strategic context for projects that require understanding of the political and regulatory environment.",
+        "image": null
+      },
+      {
+        "name": "Esperanza Vargas",
+        "role": "Agricultural Development & Sustainability",
+        "description": "Visionary of the rural and agricultural sector through the La Finca La Granja project. Brings the technical and field knowledge necessary for investment and development projects in the agro sector.",
+        "image": "/professionals/esperanza.jpg"
+      },
+      {
+        "name": "Jorge Ordoñez",
+        "role": "Brand Image Strategist & Art Director",
+        "description": "Graphic designer with more than 16 years of career in the Americas and Europe. Specialist in translating corporate concepts into innovative visual identities, positioning brands globally.",
+        "image": "/professionals/jorge.jpg"
+      },
+      {
+        "name": "Carlos Santiusti",
+        "role": "Data Architecture & AI",
+        "description": "Systems engineer, data architect and business analyst. Leads the deployment of artificial intelligence solutions for corporations.",
+        "image": "/professionals/carlos.jpg"
+      },
+      {
+        "name": "Aristides Sánchez",
+        "role": "Project Development & Hospitality",
+        "description": "Leader behind the positioning of Casa Normandía. Expert in ecosystem development, management of heritage properties and high-level hospitality strategies.",
+        "image": "/professionals/aristides.jpg"
+      },
+      {
+        "name": "David Junco",
+        "role": "Back-End Developer",
+        "description": "Developer specialized in technological ecosystems and databases. Designs and deploys efficient software architectures using languages such as Python and TypeScript.",
+        "image": null
+      },
+      {
+        "name": "Fany Barrera",
+        "role": "Finance & Accounting",
+        "description": "Public accountant specialized in solid financial structuring for expansion projects and international operations.",
+        "image": "/professionals/fany.jpg"
+      },
+      {
+        "name": "Anyelin Pérez",
+        "role": "Business Intelligence — Process Reengineering & Operational Efficiency",
+        "description": "Specialist in business intelligence and process optimization. Transforms data into strategic insights and improves corporate operational efficiency.",
+        "image": "/professionals/anyelin.jpg"
+      }
+    ]
+  },
+  "corporatePartners": {
+    "eyebrow": "Associated Firms",
+    "title": "Partners & Corporate Firms",
+    "subtitle": "Specialized institutions we integrate according to the project.",
+    "badge": "Corporate Firm",
+    "items": [
+      {
+        "name": "Audiconet",
+        "description": "Firm specialized in financial audit and accounting consulting for international companies."
+      },
+      {
+        "name": "Aparato",
+        "description": "Software development agency and custom technological solutions for businesses."
+      },
+      {
+        "name": "Factor Visual",
+        "description": "Graphic design and branding studio specialized in corporate visual identity."
+      },
+      {
+        "name": "Epicerí Gourmet",
+        "description": "Company specialized in gourmet products and high-quality gastronomic consulting."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Extended Collaboration",
+    "title": "A living network for high-risk, high-impact projects.",
+    "description": "We activate squads based on the challenge: data scientists, legal experts, scientific diplomats, strategic storytellers. All integrated under the same playbook.",
+    "bullets": [
+      "Transnational teams coordinated across three time zones.",
+      "Flexible contracts: pod, retainer or sprint acceleration.",
+      "Cultural and technical due diligence before each partnership."
+    ],
+    "allyBox": {
+      "title": "Want to join as an ally?",
+      "description": "We seek firms and professionals with boutique DNA and a results-focused mindset. Science, technology, data, diplomacy and expansion.",
+      "emailCta": {
+        "label": "Apply for alliance",
+        "href": "mailto:contacto.gpmfsas@gmail.com?subject=Partnership%20GPMF"
+      },
+      "scheduleCta": {
+        "label": "Schedule a conversation",
+        "href": "/en/plans"
+      }
+    }
+  }
+}

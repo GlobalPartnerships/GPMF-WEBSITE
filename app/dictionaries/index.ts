@@ -68,6 +68,12 @@ const loaders: {
     fr: () => import("./pilars/fr.json").then((m) => m.default as DictMap["pilars"]),
     de: () => import("./pilars/de.json").then((m) => m.default as DictMap["pilars"]),
   },
+  partners: {
+    es: () => import("./partners/es.json").then((m) => m.default as DictMap["partners"]),
+    en: () => import("./partners/en.json").then((m) => m.default as DictMap["partners"]),
+    fr: () => import("./partners/fr.json").then((m) => m.default as DictMap["partners"]),
+    de: () => import("./partners/de.json").then((m) => m.default as DictMap["partners"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

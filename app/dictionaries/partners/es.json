@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "title": "Aliados & Socios | GPMF",
+    "description": "Red multidisciplinar de expertos y firmas corporativas que amplían el impacto de GPMF en cada proyecto."
+  },
+  "hero": {
+    "eyebrow": "Alianzas Estratégicas",
+    "headline": "Red de",
+    "headlineKeyword": "Especialistas.",
+    "headlineAccent": "Un Ecosistema que amplifica nuestro impacto.",
+    "description": "Creemos en la inteligencia colectiva. GPMF opera bajo un modelo de red multidisciplinar de expertos. Activamos consultores senior especializados según la necesidad específica de cada proyecto, vinculando el talento exacto que su reto requiere."
+  },
+  "professionals": {
+    "eyebrow": "Alianzas Estratégicas",
+    "title": "Red de Especialistas",
+    "subtitle": "Talento experto que integramos bajo demanda según el reto de cada proyecto.",
+    "items": [
+      {
+        "name": "Natalia Sánchez",
+        "role": "Project Manager en Tech & Data Analytics",
+        "description": "Experta en gestión de proyectos tecnológicos y análisis de datos para el mercado canadiense. Lidera iniciativas de transformación digital con enfoque en resultados medibles.",
+        "image": "/professionals/natalia.jpg"
+      },
+      {
+        "name": "David Salazar",
+        "role": "Arquitecto & Experto en Diseño",
+        "description": "Arquitecto experto en diseño arquitectónico internacional y procesos de transformación para el sector de Bienes Raíces y Hospitalidad.",
+        "image": "/professionals/david-salazar.jpg"
+      },
+      {
+        "name": "Matthias Halleux",
+        "role": "Asesor Estratégico: Retail Francés y Acceso a Mercado",
+        "description": "Asesor estratégico en acceso a mercado y retail Francia, negociaciones y expansión de territorio. +15 años de experiencia en el ecosistema de Retail y Gran Consumo (FMCG) en Francia.",
+        "image": "/professionals/matthias.jpg"
+      },
+      {
+        "name": "Nidian Díaz",
+        "role": "Auditoría y Estructuración Financiera",
+        "description": "Especialista en contabilidad corporativa y auditoría estratégica. Asegura que los procesos de expansión y nuevos modelos de negocio tengan un respaldo financiero impecable.",
+        "image": "/professionals/nidian.jpg"
+      },
+      {
+        "name": "Diego Quintero",
+        "role": "Politólogo Experto en Seguridad y Política Pública",
+        "description": "Analista político especializado en seguridad y políticas públicas. Proporciona contexto estratégico para proyectos que requieren comprensión del entorno político y regulatorio.",
+        "image": null
+      },
+      {
+        "name": "Esperanza Vargas",
+        "role": "Desarrollo Agrícola & Sostenibilidad",
+        "description": "Visionaria del sector rural y agropecuario a través del proyecto La Finca La Granja. Aporta el conocimiento técnico y de terreno necesario para proyectos de inversión y desarrollo en el sector agro.",
+        "image": "/professionals/esperanza.jpg"
+      },
+      {
+        "name": "Jorge Ordoñez",
+        "role": "Estratega de Imagen de Marca & Dirección de Arte",
+        "description": "Diseñador gráfico con más de 16 años de trayectoria en América y Europa. Especialista en traducir conceptos corporativos en identidades visuales innovadoras, posicionando marcas globalmente.",
+        "image": "/professionals/jorge.jpg"
+      },
+      {
+        "name": "Carlos Santiusti",
+        "role": "Arquitectura de Datos e IA",
+        "description": "Ingeniero de sistemas, arquitecto de datos y analista de negocios. Lidera el despliegue de soluciones de inteligencia artificial para corporaciones.",
+        "image": "/professionals/carlos.jpg"
+      },
+      {
+        "name": "Aristides Sánchez",
+        "role": "Desarrollo de Proyectos & Hospitalidad",
+        "description": "Líder detrás del posicionamiento de Casa Normandía. Experto en el desarrollo de ecosistemas, gestión de propiedades con valor patrimonial y estrategias de hospitalidad de alto nivel.",
+        "image": "/professionals/aristides.jpg"
+      },
+      {
+        "name": "David Junco",
+        "role": "Back-End Developer",
+        "description": "Desarrollador especializado en ecosistemas tecnológicos y bases de datos. Diseña y despliega arquitecturas de software eficientes utilizando lenguajes como Python y TypeScript.",
+        "image": null
+      },
+      {
+        "name": "Fany Barrera",
+        "role": "Finanzas y Contabilidad",
+        "description": "Contadora pública especializada en la estructuración financiera sólida para proyectos de expansión y operaciones internacionales.",
+        "image": "/professionals/fany.jpg"
+      },
+      {
+        "name": "Anyelin Pérez",
+        "role": "Business Intelligence — Reingeniería de procesos y eficiencia operativa",
+        "description": "Especialista en inteligencia de negocios y optimización de procesos. Transforma datos en insights estratégicos y mejora la eficiencia operativa corporativa.",
+        "image": "/professionals/anyelin.jpg"
+      }
+    ]
+  },
+  "corporatePartners": {
+    "eyebrow": "Firmas Asociadas",
+    "title": "Partners y Firmas Corporativas",
+    "subtitle": "Instituciones especializadas que integramos según el proyecto.",
+    "badge": "Firma Corporativa",
+    "items": [
+      {
+        "name": "Audiconet",
+        "description": "Firma especializada en auditoría financiera y consultoría contable para empresas internacionales."
+      },
+      {
+        "name": "Aparato",
+        "description": "Agencia de desarrollo de software y soluciones tecnológicas a medida para empresas."
+      },
+      {
+        "name": "Factor Visual",
+        "description": "Estudio de diseño gráfico y branding especializado en identidad visual corporativa."
+      },
+      {
+        "name": "Epicerí Gourmet",
+        "description": "Empresa especializada en productos gourmet y consultoría gastronómica de alta calidad."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Colaboración Extendida",
+    "title": "Una red viva para proyectos de alto riesgo y alto impacto.",
+    "description": "Activamos squads según el reto: data scientists, expertos legales, diplomáticos científicos, storytellers estratégicos. Todo integrado bajo el mismo playbook.",
+    "bullets": [
+      "Equipos transnacionales coordinados en tres zonas horarias.",
+      "Contratos flexibles: pod, retainer o aceleración por sprint.",
+      "Due diligence cultural y técnica antes de cada partnership."
+    ],
+    "allyBox": {
+      "title": "¿Querés sumarte como aliado?",
+      "description": "Buscamos firmas y profesionales con ADN boutique y enfoque en resultados. Ciencia, tecnología, data, diplomacia y expansión.",
+      "emailCta": {
+        "label": "Postular alianza",
+        "href": "mailto:contacto.gpmfsas@gmail.com?subject=Partnership%20GPMF"
+      },
+      "scheduleCta": {
+        "label": "Agendar conversación",
+        "href": "/es/plans"
+      }
+    }
+  }
+}

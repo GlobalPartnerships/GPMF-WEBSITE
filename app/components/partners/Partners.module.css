@@ -1,0 +1,479 @@
+/* ─── Page ─── */
+.pageMain {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Hero ─── */
+.hero {
+  text-align: center;
+  padding: 80px 32px 96px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroEyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 32px;
+}
+
+.heroTitle {
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.heroKeyword {
+  color: #7A0F32;
+}
+
+.heroAccent {
+  font-style: italic;
+  font-weight: 500;
+  color: #7A0F32;
+}
+
+.heroDescription {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #564144;
+  max-width: 640px;
+  margin: 24px auto 0;
+}
+
+@media (min-width: 1024px) {
+  .heroTitle {
+    font-size: 68px;
+  }
+}
+
+/* ─── Section shared ─── */
+.section {
+  padding: 80px 0;
+}
+
+.sectionInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.sectionEyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #564144;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1c1c;
+  letter-spacing: -0.01em;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: #564144;
+  max-width: 320px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* ─── Professionals grid ─── */
+.professionalsSection {
+  background: #ffffff;
+}
+
+.professionalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .professionalsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .professionalsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ─── Card ─── */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(26, 28, 28, 0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition:
+    box-shadow 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.4s ease;
+}
+
+/* Bottom burgundy line slides in on hover */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #7A0F32;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border-radius: 0 0 16px 16px;
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px -10px rgba(122, 15, 50, 0.12);
+  transform: translateY(-4px);
+  border-color: rgba(122, 15, 50, 0.2);
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.cardAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #F5F5F5;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cardAvatarFallback {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #897174;
+  flex-shrink: 0;
+}
+
+.cardName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1c1c;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.cardRole {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7A0F32;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #564144;
+  line-height: 1.6;
+}
+
+/* ─── Corporate partners ─── */
+.corporateSection {
+  background: #f5f1ec;
+}
+
+.corporateGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .corporateGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .corporateGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.corporateCard {
+  background: #ffffff;
+  border: 1px solid rgba(26, 28, 28, 0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition:
+    box-shadow 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.corporateCard:hover {
+  box-shadow: 0 20px 40px -10px rgba(122, 15, 50, 0.08);
+  transform: translateY(-4px);
+}
+
+.corporateLogoPlaceholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #897174;
+}
+
+.corporateName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1c1c;
+  margin-bottom: 6px;
+}
+
+.corporateBadge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7A0F32;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.corporateDesc {
+  font-size: 13px;
+  color: #564144;
+  line-height: 1.6;
+}
+
+/* ─── Collaboration CTA ─── */
+.ctaSection {
+  background: #2E2E2E;
+  color: #ffffff;
+  padding: 96px 0;
+}
+
+.ctaInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .ctaInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+}
+
+.ctaEyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.ctaTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .ctaTitle {
+    font-size: 40px;
+  }
+}
+
+.ctaDescription {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.ctaBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ctaBullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.ctaBulletStar {
+  color: #7A0F32;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+/* ─── Ally box ─── */
+.allyBox {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px 36px;
+}
+
+.allyBoxTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.allyBoxDesc {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.allyBoxActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.allyBtnPrimary {
+  display: block;
+  background: #ffffff;
+  color: #2E2E2E;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.allyBtnPrimary:hover {
+  background: #ffb2be;
+  color: #56001f;
+}
+
+.allyBtnSecondary {
+  display: block;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.allyBtnSecondary:hover {
+  background: #ffffff;
+  color: #2E2E2E;
+  border-color: #ffffff;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 24px 64px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+
+  .sectionInner {
+    padding: 0 20px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sectionSubtitle {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .professionalsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    padding: 64px 0;
+  }
+
+  .allyBox {
+    padding: 28px 24px;
+  }
+}
