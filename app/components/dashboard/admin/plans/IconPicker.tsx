@@ -1,22 +1,27 @@
-import type { PlanIcon } from "./plan-modal/constants";
+"use client";
+
+import type { CloudinaryImage } from "./svg-upload/types";
+import { InlineSvg } from "./svg-upload/InlineSvg";
 
 interface IconPickerProps {
-  icons: PlanIcon[];
-  selected: string | null;
-  search: string;
+  assets: CloudinaryImage[];
+  isLoading: boolean;
+  selectedUrl: string | null;
+  searchValue: string;
   label: string;
   searchPlaceholder: string;
   uploadLabel: string;
   deleteLabel: string;
-  onSelect: (id: string) => void;
+  onSelect: (url: string) => void;
   onSearchChange: (value: string) => void;
   onClear: () => void;
 }
 
 export function IconPicker({
-  icons,
-  selected,
-  search,
+  assets,
+  isLoading,
+  selectedUrl,
+  searchValue,
   label,
   searchPlaceholder,
   uploadLabel,
@@ -25,9 +30,10 @@ export function IconPicker({
   onSearchChange,
   onClear,
 }: IconPickerProps) {
-  const filtered = icons.filter((icon) =>
-    icon.label.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = assets.filter((asset) => {
+    const name = asset.publicId.split("/").pop() ?? asset.publicId;
+    return name.toLowerCase().includes(searchValue.toLowerCase());
+  });
 
   return (
     <div className="space-y-3">
@@ -47,29 +53,37 @@ export function IconPicker({
         <input
           className="w-full pl-9 pr-4 py-2 border border-outline/15 rounded-sm text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
           placeholder={searchPlaceholder}
-          value={search}
+          value={searchValue}
           onChange={(e) => onSearchChange(e.target.value)}
         />
       </div>
       <div className="border border-outline/10 rounded-sm p-3 bg-warmgray">
         <div className="grid grid-cols-5 gap-3 max-h-48 overflow-y-auto hide-scrollbar">
-          {filtered.map((icon) => (
-            <button
-              key={icon.id}
-              type="button"
-              title={icon.label}
-              onClick={() => onSelect(icon.id)}
-              className={`w-16 h-16 rounded-full border flex items-center justify-center transition-colors ${
-                selected === icon.id
-                  ? "border-2 border-burgundy text-burgundy bg-white"
-                  : "border-outline/20 text-surface-variant/50 bg-white hover:border-burgundy/40 hover:text-burgundy"
-              }`}
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d={icon.path} />
-              </svg>
-            </button>
-          ))}
+          {isLoading ? (
+            Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="w-full h-12 rounded-full bg-outline/10 animate-pulse" />
+            ))
+          ) : filtered.length === 0 ? (
+            <p className="col-span-5 text-center text-xs text-surface-variant/50 py-4">
+              No icons found
+            </p>
+          ) : (
+            filtered.map((asset) => (
+              <button
+                key={asset.id}
+                type="button"
+                title={asset.publicId.split("/").pop()}
+                onClick={() => onSelect(asset.url)}
+                className={`w-full h-12 rounded-full border flex items-center justify-center transition-colors ${
+                  selectedUrl === asset.url
+                    ? "border-2 border-burgundy text-burgundy bg-white"
+                    : "border-outline/20 text-surface-variant/50 bg-white hover:border-burgundy/40 hover:text-burgundy"
+                }`}
+              >
+                <InlineSvg url={asset.url} className="w-6 h-6" />
+              </button>
+            ))
+          )}
         </div>
       </div>
       <div className="flex gap-2">

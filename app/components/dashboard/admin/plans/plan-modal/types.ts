@@ -4,7 +4,7 @@ export interface FormState {
   description: string;
   price: string;
   billingTypeId: string;
-  iconId: string | null;
+  iconUrl: string | null;
   iconSearch: string;
   features: string[];
   newFeature: string;

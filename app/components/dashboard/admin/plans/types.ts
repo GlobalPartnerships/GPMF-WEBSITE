@@ -46,6 +46,7 @@ export interface PlanResponse {
   billing_type: BillingType;
   is_active: boolean;
   created_at: string;
+  icon_url: string | null;
   features: PlanFeature[];
 }
 
@@ -60,6 +61,7 @@ export interface CreatePlanPayload {
   currency: string;
   category: "standard" | "custom";
   billing_type_id: string;
+  icon_url: string;
 }
 
 export interface UpdatePlanPayload {
@@ -71,6 +73,7 @@ export interface UpdatePlanPayload {
   category?: "standard" | "custom";
   billing_type_id?: string;
   is_active?: boolean;
+  icon_url?: string;
 }
 
 export interface ActionResult<T = PlanResponse> {

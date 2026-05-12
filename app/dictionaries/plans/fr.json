@@ -11,6 +11,11 @@
     "line1": "Global Partnerships &",
     "line2": "Multidisciplinary Firm"
   },
+  "cta": "Nous Contacter",
+  "emptyState": {
+    "standard": "Chez GPMF, les offres standard arrivent bientôt. Restez à l'écoute.",
+    "custom": "Chez GPMF, les offres sur mesure arrivent bientôt. Restez à l'écoute."
+  },
   "enterprise": [
     {
       "icon": "runner",

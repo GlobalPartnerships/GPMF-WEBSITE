@@ -3,16 +3,17 @@
 import { useState, useEffect, useTransition } from "react";
 import type { ModalState, BillingType } from "../types";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
+import type { CloudinaryImage } from "../svg-upload/types";
 import {
   createPlanAction,
   updatePlanAction,
   getBillingTypesAction,
+  getPlanSvgsAction,
 } from "@/app/[lang]/(dashboard)/admin/plans/actions";
 import { ModalOverlay } from "./ModalOverlay";
 import { ModalHeader } from "./ModalHeader";
 import { IconPicker } from "../IconPicker";
 import { FeatureList } from "./FeatureList";
-import { PLAN_ICONS } from "./constants";
 import type { FormState } from "./types";
 
 interface PlanModalProps {
@@ -29,7 +30,7 @@ function buildInitialForm(state: ModalState): FormState {
       description: state.plan.description,
       price: String(state.plan.base_price),
       billingTypeId: state.plan.billing_type_id,
-      iconId: null,
+      iconUrl: state.plan.icon_url ?? null,
       iconSearch: "",
       features: state.plan.features.map((f) => f.item),
       newFeature: "",
@@ -41,7 +42,7 @@ function buildInitialForm(state: ModalState): FormState {
     description: "",
     price: "",
     billingTypeId: "",
-    iconId: null,
+    iconUrl: null,
     iconSearch: "",
     features: [],
     newFeature: "",
@@ -53,6 +54,8 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
   const [selectedPlanType, setSelectedPlanType] = useState<"standard" | "custom">(state.planType);
   const [billingTypes, setBillingTypes] = useState<BillingType[]>([]);
   const [loadingBilling, setLoadingBilling] = useState(true);
+  const [svgAssets, setSvgAssets] = useState<CloudinaryImage[]>([]);
+  const [svgAssetsLoading, setSvgAssetsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const m = dict.plansModal;
@@ -68,6 +71,14 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
         }));
       }
       setLoadingBilling(false);
+    });
+
+    setSvgAssetsLoading(true);
+    getPlanSvgsAction().then((res) => {
+      if (res.success && res.data) {
+        setSvgAssets(res.data);
+      }
+      setSvgAssetsLoading(false);
     });
   }, []);
 
@@ -100,6 +111,11 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
       return;
     }
 
+    if (!form.iconUrl) {
+      setError("Please select an icon for this plan");
+      return;
+    }
+
     startTransition(async () => {
       const payload = {
         name: form.name,
@@ -109,6 +125,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
         currency: "USD",
         category: selectedPlanType,
         billing_type_id: form.billingTypeId,
+        icon_url: form.iconUrl!,
       } as const;
 
       const result =
@@ -241,16 +258,17 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
           </div>
 
           <IconPicker
-            icons={PLAN_ICONS}
-            selected={form.iconId}
-            search={form.iconSearch}
+            assets={svgAssets}
+            isLoading={svgAssetsLoading}
+            selectedUrl={form.iconUrl}
+            searchValue={form.iconSearch}
             label={m.labelIcon}
             searchPlaceholder={m.searchIcon}
             uploadLabel={m.uploadSvg}
             deleteLabel={m.deleteIcon}
-            onSelect={(id) => setForm((f) => ({ ...f, iconId: id }))}
+            onSelect={(url) => setForm((f) => ({ ...f, iconUrl: url }))}
             onSearchChange={(v) => setForm((f) => ({ ...f, iconSearch: v }))}
-            onClear={() => setForm((f) => ({ ...f, iconId: null }))}
+            onClear={() => setForm((f) => ({ ...f, iconUrl: null }))}
           />
 
           <FeatureList

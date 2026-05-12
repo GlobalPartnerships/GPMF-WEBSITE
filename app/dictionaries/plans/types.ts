@@ -27,6 +27,11 @@ export interface PlansDict {
     line1: string;
     line2: string;
   };
+  cta: string;
+  emptyState: {
+    standard: string;
+    custom: string;
+  };
   enterprise: Plan[];
   custom: Plan[];
   meta: {

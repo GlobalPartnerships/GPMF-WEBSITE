@@ -11,6 +11,11 @@
     "line1": "Global Partnerships &",
     "line2": "Multidisciplinary Firm"
   },
+  "cta": "Contactanos",
+  "emptyState": {
+    "standard": "En GPMF, los planes estándar están próximamente. Mantenete al tanto.",
+    "custom": "En GPMF, los planes personalizados están próximamente. Mantenete al tanto."
+  },
   "enterprise": [
     {
       "icon": "runner",

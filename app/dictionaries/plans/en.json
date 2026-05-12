@@ -11,6 +11,11 @@
     "line1": "Global Partnerships &",
     "line2": "Multidisciplinary Firm"
   },
+  "cta": "Get in Touch",
+  "emptyState": {
+    "standard": "At GPMF, standard plans are coming soon. Stay tuned.",
+    "custom": "At GPMF, custom plans are coming soon. Stay tuned."
+  },
   "enterprise": [
     {
       "icon": "runner",
