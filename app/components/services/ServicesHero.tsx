@@ -44,7 +44,7 @@ export function ServicesHero({ dict }: ServicesHeroProps) {
         <p className={styles.heroDescription}>{dict.description}</p>
       </div>
 
-      <ServicesTicker dict={dict} />
+      <ServicesTicker dict={dict} />     
     </section>
   );
 }

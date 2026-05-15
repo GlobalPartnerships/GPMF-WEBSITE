@@ -1,0 +1,53 @@
+/* Grid: col1=number width (auto), col2=rest (1fr).
+   textBlock in col2/row2 → its left edge aligns with the number's right edge. */
+.legend {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  position: relative;
+  overflow: visible;
+}
+
+.number {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--font-fell);
+  font-size: clamp(100px, 14vw, 200px);
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Breaks out of section padding to touch viewport edges.
+   Top = 65% of number font-size (clamp(100px,14vw,200px) × 0.65). */
+.line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  top: clamp(65px, 9.1vw, 130px);
+  z-index: 0;
+}
+
+.textBlock {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.title {
+  font-family: var(--font-fell);
+  font-size: clamp(24px, 3.5vw, 72px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-top: clamp(12px, 1.5vw, 24px);
+  width: 50%;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1vw, 20px);
+  line-height: 1.6;
+  max-width: 40ch;
+  margin-top: clamp(8px, 1vw, 14px);
+}

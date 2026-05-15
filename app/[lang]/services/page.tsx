@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { RevealObserver } from "@/app/components/home/RevealObserver";
 import { ServicesHero } from "@/app/components/services/ServicesHero";
+import { Section1 } from "@/app/components/services/sections/Section1";
+import styles from "./page.module.css";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -25,6 +27,7 @@ export default async function ServicesPage({ params }: PageParams) {
     <>
       <RevealObserver />
       <ServicesHero dict={dict.hero} />
+      <Section1 bagroundColor={styles.section1Background}/>
     </>
   );
 }
