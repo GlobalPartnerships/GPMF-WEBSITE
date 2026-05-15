@@ -25,7 +25,7 @@ export function Header({ lang, dict }: HeaderProps) {
     { label: dict.home, href: `/${lang}` },
     { label: dict.pilars, href: `/${lang}/pilars` },
     { label: dict.partners, href: `/${lang}/partners` },
-    { label: dict.services, href: `/${lang}#services` },
+    { label: dict.services, href: `/${lang}/services` },
   ];
 
   return (

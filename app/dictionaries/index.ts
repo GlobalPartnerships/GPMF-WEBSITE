@@ -74,6 +74,12 @@ const loaders: {
     fr: () => import("./partners/fr.json").then((m) => m.default as DictMap["partners"]),
     de: () => import("./partners/de.json").then((m) => m.default as DictMap["partners"]),
   },
+  services: {
+    es: () => import("./services/es.json").then((m) => m.default as DictMap["services"]),
+    en: () => import("./services/en.json").then((m) => m.default as DictMap["services"]),
+    fr: () => import("./services/fr.json").then((m) => m.default as DictMap["services"]),
+    de: () => import("./services/de.json").then((m) => m.default as DictMap["services"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

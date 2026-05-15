@@ -1,0 +1,177 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #9A3546;
+  overflow: hidden;
+}
+
+.bgTextBlock {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  user-select: none;
+  pointer-events: none;
+}
+
+.bgText {
+  font-family: var(--font-fell);
+  font-size: clamp(120px, 18vw, 320px);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  line-height: 0.85;
+}
+
+.bgCompany {
+  font-family: var(--font-fell);
+  font-size: clamp(36px, 5.4vw, 96px);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  line-height: 0.85;
+}
+
+.ringGroup {
+  position: absolute;
+  left: -8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(300px, 40vw, 550px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: clamp(40px, 5vw, 70px) solid rgba(43, 41, 48, 0.26);
+  z-index: 2;
+}
+
+.solidCircle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+  width: clamp(100px, 14vw, 200px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #D7D7D7;
+  z-index: 1;
+}
+
+.heroContent {
+  position: absolute;
+  left: 18%;
+  bottom: 18%;
+  max-width: clamp(280px, 38vw, 560px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+}
+
+.heroLegend {
+  font-family: var(--font-sans);
+  font-size: clamp(10px, 1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.heroDescription {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 42ch;
+}
+
+.badge {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(180px, 22vw, 300px);
+  aspect-ratio: 1;
+}
+
+.badgeSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.badgeText {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  fill: var(--color-foreground);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 60px;
+  right: 32px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .heroContent {
+    left: 5%;
+    bottom: 14%;
+    max-width: 85vw;
+    gap: 12px;
+  }
+
+  .ringGroup {
+    left: -20%;
+    width: 250px;
+  }
+
+  .solidCircle {
+    width: 70px;
+  }
+
+  .badge {
+    right: -2%;
+    top: 40%;
+    width: 180px;
+  }
+
+  .watermark {
+    bottom: 52px;
+    right: 16px;
+    font-size: 12px;
+  }
+}

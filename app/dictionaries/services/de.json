@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Dienstleistungen | GPMF",
+    "description": "Internationale Strategie, Führung, KI-Beratung und globale Expansion."
+  },
+  "hero": {
+    "backgroundText": "SERVICES",
+    "badgeItems": [
+      "INTERNATIONALE STRATEGIE",
+      "FÜHRUNG",
+      "KI-BERATUNG",
+      "GLOBALE EXPANSION",
+      "TRANSFORMATION"
+    ],
+    "watermark": "GPMF ©",
+    "tickerText": "SERVICES",
+    "legend": "Unsere Praxis",
+    "title": "Globale Expansion & Transformation",
+    "description": "Wir helfen Organisationen, in globalen Umgebungen zu gedeihen, indem wir strategische Expansion, kollektive Intelligenz und KI-gestützte Entscheidungsfindung zu einer einheitlichen Beratungserfahrung verbinden."
+  }
+}

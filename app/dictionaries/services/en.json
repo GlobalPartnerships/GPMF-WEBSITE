@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Services | GPMF",
+    "description": "International strategy, leadership, AI consulting and global expansion services."
+  },
+  "hero": {
+    "backgroundText": "SERVICES",
+    "badgeItems": [
+      "INTERNATIONAL STRATEGY",
+      "LEADERSHIP",
+      "AI CONSULTING",
+      "GLOBAL EXPANSION",
+      "TRANSFORMATION"
+    ],
+    "watermark": "GPMF ©",
+    "tickerText": "SERVICES",
+    "legend": "Our Practice",
+    "title": "Global Expansion & Transformation",
+    "description": "We help organizations thrive in global environments by combining strategic expansion, collective intelligence, and AI-driven decision making into a unified consulting experience."
+  }
+}

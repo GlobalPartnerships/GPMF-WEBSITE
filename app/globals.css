@@ -18,6 +18,7 @@
   --color-rose-dim: #ffb2be;
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+  --font-fell: var(--font-fell);
 }
 
 html {

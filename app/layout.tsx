@@ -1,9 +1,14 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, IM_Fell_Great_Primer_SC } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const playfair = Playfair_Display({
   variable: "--font-playfair",
+  subsets: ["latin"],
+});
+const fell = IM_Fell_Great_Primer_SC({
+  variable: "--font-fell",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -15,7 +20,7 @@ export default function RootLayout({
   return (
     <html
       suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${fell.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
         {children}

@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "Services | GPMF",
+    "description": "Stratégie internationale, leadership, conseil en IA et expansion mondiale."
+  },
+  "hero": {
+    "backgroundText": "SERVICES",
+    "badgeItems": [
+      "STRATÉGIE INTERNATIONALE",
+      "LEADERSHIP",
+      "CONSEIL EN IA",
+      "EXPANSION MONDIALE",
+      "TRANSFORMATION"
+    ],
+    "watermark": "GPMF ©",
+    "tickerText": "SERVICES",
+    "legend": "Notre Pratique",
+    "title": "Expansion Mondiale & Transformation",
+    "description": "Nous aidons les organisations à prospérer dans des environnements mondiaux en combinant l'expansion stratégique, l'intelligence collective et la prise de décision pilotée par l'IA dans une expérience de conseil unifiée."
+  }
+}
