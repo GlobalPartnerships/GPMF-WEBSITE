@@ -6,6 +6,7 @@ import { ServicesHero } from "@/app/components/services/ServicesHero";
 import { Section1 } from "@/app/components/services/sections/Section1";
 import { Section2 } from "@/app/components/services/sections/Section2";
 import styles from "./page.module.css";
+import { Section3 } from "@/app/components/services/sections/Section3";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -30,6 +31,7 @@ export default async function ServicesPage({ params }: PageParams) {
       <ServicesHero dict={dict.hero} />
       <Section1 bagroundColor={styles.section1Background}/>
       <Section2 bagroundColor={styles.section2Background} />
+      <Section3 bagroundColor={styles.section3Background} />
     </>
   );
 }
