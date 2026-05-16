@@ -78,7 +78,7 @@
   /* top: clamp(-60px, -8vw, -100px);
   right: clamp(-80px, -10vw, -140px); */
   
-  border: 60 solid #1e1e1e;
+  border: 60px solid #1e1e1e;
   top: -200%;
   right: -155%;
   z-index: 0;
@@ -223,42 +223,78 @@
 /* ── Responsive ── */
 
 @media (max-width: 768px) {
+  .section {
+    padding: clamp(16px, 3vw, 32px) clamp(16px, 5vw, 40px) clamp(40px, 6vw, 60px);
+  }
+
   .subtitleArticle {
     max-width: 90%;
-    margin-top: clamp(40px, 8vw, 80px);
+    margin-top: clamp(40px, 10vw, 80px);
   }
 
   .burgundyCircle {
-    width: clamp(70px, 22vw, 120px);
+    width: clamp(60px, 20vw, 110px);
+    top: -35%;
+    left: -5%;
+  }
+
+  .subtitleHeading {
+    margin-left: 5%;
+    max-width: 80%;
   }
 
   .jockeyArticle {
-    margin-left: 10%;
-    margin-top: clamp(80px, 14vw, 160px);
-    max-width: 85%;
+    margin-left: 8%;
+    margin-top: clamp(80px, 16vw, 140px);
+    max-width: 88%;
   }
 
   .blackRing {
-    width: clamp(50px, 14vw, 90px);
-    right: clamp(-40px, -8vw, -70px);
-    top: clamp(-30px, -6vw, -60px);
+    width: 250px;
+    border-width: 25px;
+    top: -120%;
+    right: -80%;
+  }
+
+  .redCircleSmall {
+    width: clamp(32px, 10vw, 55px);
+    top: -20%;
+    left: -40%;
+  }
+
+  .jockeyBody {
+    width: 85%;
   }
 
   .impactArticle {
     flex-direction: column;
-    margin-top: clamp(80px, 14vw, 160px);
+    margin: 80px auto 100px;
+    gap: 0;
   }
 
   .photoWrapper {
-    width: 80%;
+    width: 75%;
+  }
+
+  .photoRing {
+    width: 180px;
+    border-width: 22px;
+    bottom: -20%;
+    left: -25%;
   }
 
   .impactContent {
     min-height: auto;
+    align-items: flex-start;
+  }
+
+  .impactTextBlock {
+    max-width: 100%;
+    margin-top: 40px;
   }
 
   .pinkCircle {
-    width: clamp(36px, 12vw, 60px);
-    right: clamp(-16px, -3vw, -30px);
+    width: clamp(40px, 14vw, 65px);
+    right: clamp(-20px, -4vw, -35px);
   }
 }

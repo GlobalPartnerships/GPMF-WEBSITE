@@ -66,6 +66,7 @@ export function Section1({ bagroundColor }: Section1Props) {
             alt="Professional speaker at a conference"
             width={480}
             height={640}
+            z-index={2}
             className={styles.photo}
           />
           <div className={styles.photoRing} />

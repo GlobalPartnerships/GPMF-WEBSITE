@@ -1,0 +1,205 @@
+:root {
+    --title_color: #ffffff;
+    --text: #B3B3B3;
+    --ring_color: #b3b3b3;
+}
+
+.section {
+    width: 100%;
+    position: relative;
+    padding: clamp(24px, 3vw, 48px) clamp(24px, 8vw, 120px) clamp(60px, 8vw, 120px);
+    overflow: hidden;
+}
+
+/* _____________ Zone 1 _____________ */
+.article_1 {
+    max-width: 550px;
+    margin: clamp(80px, 12vw, 200px) auto 0;
+}
+
+.art_1_titleWrap {
+    position: relative;
+}
+
+.art_1_title {
+    font-family: var(--font-fell);
+    font-size: clamp(22px, 3vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--title_color);
+    max-width: 70%;
+    margin-left: -12%;
+}
+
+.art_1_bodyWrap {
+    position: relative;
+}
+
+.art_1_body {
+    font-family: var(--font-sans);
+    font-size: clamp(12px, 1vw, 25px);
+    line-height: 1.7;
+    color: var(--text);
+    margin-top: clamp(16px, 2vw, 28px);
+    width: 100%;
+}
+
+
+.art_1_ring {
+    position: absolute;
+    /* width: clamp(80px, 10vw, 40px); */
+    width: 600px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    /* border: clamp(10px, 1.4vw, 20px) solid #1e1e1e; */
+    /* top: clamp(-60px, -8vw, -100px);
+    right: clamp(-80px, -10vw, -140px); */
+    
+    border: 60px solid var(--ring_color);
+    top: -70%;
+    left: -155%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.art_1_circle {
+    position: absolute;
+    width: clamp(100px, 14vw, 270px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #D8D8D8;
+    /* top: clamp(-30px, -4vw, -50px); */
+    /* left: clamp(-20px, -3vw, -40px); */
+    top: -105%;
+    right: -80%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* _____________ Zone 2 _____________ */
+
+.article_2 {
+    /* margin-left: 35%; */
+    margin-top: clamp(160px, 82vw, 280px);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.art_2_title {
+    margin-top: 40%;
+    font-family: var(--font-fell);
+    font-size: clamp(22px, 3vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--title_color);
+    max-width: 70%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.art_2_body {
+    font-family: var(--font-sans);
+    font-size: clamp(12px, 1vw, 25px);
+    line-height: 1.7;
+    color: var(--text);
+    margin-top: clamp(16px, 2vw, 28px);
+    width: 450px;
+
+    position: relative;
+}
+
+.art_2_photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    position: relative;
+    z-index: 10;
+}
+
+.art_2_ring {
+    position: absolute;
+    width: clamp(80px, 15vw, 450px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: clamp(10px, 1.4vw, 20px) solid var(--ring_color);
+    /* top: clamp(-60px, -8vw, -100px);
+    right: clamp(-80px, -10vw, -140px); */
+    bottom: -150%;
+    right: -50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* _____________ Zone 3 _____________ */
+.article_3 {
+    margin: auto;
+    margin-top: clamp(160px, 82vw, 280px);
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.art_3_title {
+    font-family: var(--font-fell);
+    font-size: clamp(22px, 3vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--title_color);
+    max-width: 30%;
+    margin-left: -20%;
+}
+
+.art_3_list {
+    margin: auto;
+    font-family: var(--font-sans);
+    font-size: clamp(12px, 1vw, 25px);
+    line-height: 1.7;
+    color: var(--text);
+    width: 450px;
+    list-style: outside;
+    position: relative;
+}
+
+.art_3_badge {
+    position: absolute;
+    width: clamp(200px, 30vw, 400px);
+    height: clamp(200px, 30vw, 400px);
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.art_3_badgeSvg {
+    width: 100%;
+    height: 100%;
+}
+
+.art_3_badgeText {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    fill: #ffffff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.art_3_circle{
+    position: absolute;
+    width: clamp(100px, 14vw, 270px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #D8D8D8;
+    top: -30%;
+    right: -80%;
+    z-index: 1;
+    pointer-events: none;
+}
