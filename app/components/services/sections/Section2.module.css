@@ -173,7 +173,7 @@
     width: clamp(200px, 30vw, 400px);
     height: clamp(200px, 30vw, 400px);
     top: -50%;
-    left: -50%;
+    left: -20%;
     z-index: 0;
     pointer-events: none;
 }
@@ -198,8 +198,8 @@
     aspect-ratio: 1;
     border-radius: 50%;
     background: #D8D8D8;
-    top: -30%;
-    right: -80%;
+    top: 0%;
+    right: -10%;
     z-index: 1;
     pointer-events: none;
 }
