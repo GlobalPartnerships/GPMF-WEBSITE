@@ -10,7 +10,7 @@ interface PayPalProviderProps {
 export function PayPalProvider({ clientId, children }: PayPalProviderProps) {
   return (
     <PayPalScriptProvider
-      options={{ "client-id": clientId, currency: "USD", components: "buttons" }}
+      options={{ clientId: clientId, "client-id": clientId, currency: "USD", components: "buttons" }}
     >
       {children}
     </PayPalScriptProvider>

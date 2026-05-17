@@ -40,7 +40,7 @@ export function CheckoutLayout({ lang, dict, plan, userId, clientId }: CheckoutL
 
       <div className="grid grid-cols-1 lg:grid-cols-[55fr_40fr] gap-12 items-start">
         <div>
-          <PaymentPanel dict={dict} planId={plan.id} userId={userId} clientId={clientId} />
+          <PaymentPanel dict={dict} plan_id={plan.id} user_id={userId} clientId={clientId} />
         </div>
         <OrderSummary plan={plan} dict={dict} />
       </div>

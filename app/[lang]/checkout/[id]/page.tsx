@@ -36,7 +36,7 @@ export default async function CheckoutPage({ params }: PageProps) {
 
   if (!plan) notFound();
 
-  const clientId = process.env.PAYPAL_CLIENT_ID ?? "";
+  const clientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID ?? "AfJTgM5zAZX50hLG5N3I1eXTBHlOlHKagCp1JT5DAq4U13fV48_gDFvnghknpo3w191hzb1txlE9OQ0g1";
 
   return (
     <section className="pt-32 pb-32 min-h-screen">

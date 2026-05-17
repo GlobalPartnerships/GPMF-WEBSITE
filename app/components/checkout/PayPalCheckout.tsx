@@ -4,27 +4,27 @@ import { useState } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
 
 interface PayPalCheckoutProps {
-  planId: string;
-  userId: string;
+  plan_id: string;
+  user_id: string;
 }
 
 type Status = "idle" | "success" | "error";
 
-export function PayPalCheckout({ planId, userId }: PayPalCheckoutProps) {
+export function PayPalCheckout({ plan_id, user_id }: PayPalCheckoutProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
 
-  const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000/api/v1";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
 
   return (
     <div>
       <PayPalButtons
-        style={{ shape: "rect", layout: "vertical", color: "gold", label: "paypal" }}
+        style={{ shape: "rect", layout: "vertical", color: "blue", label: "paypal" }}
         createOrder={async () => {
-          const response = await fetch("/api/v1/orders", {
+          const response = await fetch(`${API_BASE_URL}/orders`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ planId, userId }),
+            body: JSON.stringify({ plan_id, user_id }),
           });
 
           const orderData = await response.json();
@@ -39,7 +39,7 @@ export function PayPalCheckout({ planId, userId }: PayPalCheckoutProps) {
           );
         }}
         onApprove={async (data, actions) => {
-          const response = await fetch(`/api/v1/orders/${data.orderID}/capture`, {
+          const response = await fetch(`${API_BASE_URL}/orders/${data.orderID}/capture`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
           });

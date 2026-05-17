@@ -9,12 +9,12 @@ import { PayPalCheckout } from "./PayPalCheckout";
 
 interface PaymentPanelProps {
   dict: CheckoutDict;
-  planId: string;
-  userId: string;
+  plan_id: string;
+  user_id: string;
   clientId: string;
 }
 
-export function PaymentPanel({ dict, planId, userId, clientId }: PaymentPanelProps) {
+export function PaymentPanel({ dict, plan_id, user_id, clientId }: PaymentPanelProps) {
   const [method, setMethod] = useState<"card" | "paypal">("card");
   const [cardNumber, setCardNumber] = useState("");
   const [expiration, setExpiration] = useState("");
@@ -82,7 +82,7 @@ export function PaymentPanel({ dict, planId, userId, clientId }: PaymentPanelPro
         </div>
       ) : (
         <PayPalProvider clientId={clientId}>
-          <PayPalCheckout planId={planId} userId={userId} />
+          <PayPalCheckout plan_id={plan_id} user_id={user_id} />
         </PayPalProvider>
       )}
     </div>
