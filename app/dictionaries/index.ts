@@ -86,6 +86,12 @@ const loaders: {
     fr: () => import("./checkout/fr.json").then((m) => m.default as DictMap["checkout"]),
     de: () => import("./checkout/de.json").then((m) => m.default as DictMap["checkout"]),
   },
+  checkoutResult: {
+    es: () => import("./checkout-result/es.json").then((m) => m.default as DictMap["checkoutResult"]),
+    en: () => import("./checkout-result/en.json").then((m) => m.default as DictMap["checkoutResult"]),
+    fr: () => import("./checkout-result/fr.json").then((m) => m.default as DictMap["checkoutResult"]),
+    de: () => import("./checkout-result/de.json").then((m) => m.default as DictMap["checkoutResult"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

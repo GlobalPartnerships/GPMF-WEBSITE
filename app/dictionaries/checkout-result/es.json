@@ -1,0 +1,31 @@
+{
+  "success": {
+    "welcomeMessage": "{{name}}, bienvenida a GPMF!!",
+    "planLabel": "Tu plan",
+    "orderLabel": "ID de orden",
+    "contactMessage": "Nuestro equipo de especialistas se pondrá en contacto con vos pronto. Mientras tanto, explorá nuestros servicios o conocé más sobre GPMF.",
+    "goToPurchases": "Ir a mis compras",
+    "goToServices": "Ir a servicios",
+    "sideText": {
+      "line1": "checkout",
+      "line2": "confirmado"
+    },
+    "meta": {
+      "title": "Orden Confirmada | GPMF",
+      "description": "Tu suscripción a GPMF ha sido confirmada."
+    }
+  },
+  "failed": {
+    "errorTitle": "Algo salió mal",
+    "errorMessage": "No pudimos procesar tu pago. Por favor intentá de nuevo o contactá a soporte.",
+    "backToPlans": "Volver a planes",
+    "sideText": {
+      "line1": "checkout",
+      "line2": "error"
+    },
+    "meta": {
+      "title": "Pago Fallido | GPMF",
+      "description": "No se pudo procesar tu pago."
+    }
+  }
+}
