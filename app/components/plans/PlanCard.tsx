@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { PlanResponse } from "@/app/components/dashboard/admin/plans/types";
 import { formatPrice } from "@/lib/utils/format";
 import { PlanIcon } from "./PlanIcon";
@@ -6,9 +7,10 @@ import styles from "./PlanCard.module.css";
 interface PlanCardProps {
   plan: PlanResponse;
   cta: string;
+  checkoutUrl: string;
 }
 
-export function PlanCard({ plan, cta }: PlanCardProps) {
+export function PlanCard({ plan, cta, checkoutUrl }: PlanCardProps) {
   return (
     <div className={`${styles.card} bg-white rounded-[2px] p-10 flex flex-col relative`}>
       <PlanIcon iconUrl={plan.icon_url} />
@@ -23,9 +25,12 @@ export function PlanCard({ plan, cta }: PlanCardProps) {
       </div>
       <p className="text-[13px] text-surface-variant mb-8">{plan.billing_type.name}</p>
 
-      <button className="btn-sweep w-full bg-burgundy text-white py-4 text-[12px] uppercase tracking-[0.22em] rounded-[2px] mb-10">
+      <Link
+        href={checkoutUrl}
+        className="btn-sweep w-full bg-burgundy text-white py-4 text-[12px] uppercase tracking-[0.22em] rounded-[2px] mb-10 block text-center"
+      >
         <span>{cta}</span>
-      </button>
+      </Link>
 
       <div className="border-t border-foreground/8 pt-8 flex-1">
         <ul className="space-y-4">

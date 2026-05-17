@@ -7,8 +7,9 @@ import { PlansDict } from "./plans/types";
 import { PilarsDict } from "./pilars/types";
 import { PartnersDict } from "./partners/types";
 import { ServicesDict } from "./services/types";
+import { CheckoutDict } from "./checkout/types";
 
-export type DictSection = "layout" | "home" | "login" | "plans" | "dashboard" | "admin" | "pilars" | "partners" | "services";
+export type DictSection = "layout" | "home" | "login" | "plans" | "dashboard" | "admin" | "pilars" | "partners" | "services" | "checkout";
 
 export interface DictMap {
   layout: LayoutDict;
@@ -20,4 +21,5 @@ export interface DictMap {
   pilars: PilarsDict;
   partners: PartnersDict;
   services: ServicesDict;
+  checkout: CheckoutDict;
 }

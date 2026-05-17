@@ -1,0 +1,27 @@
+{
+  "title": "Ihren Plan konfigurieren",
+  "backToPlans": "Zurück zu den Angeboten",
+  "paymentMethod": {
+    "label": "Zahlungsmethode",
+    "card": "Karte",
+    "paypal": "PayPal",
+    "paypalComingSoon": "PayPal-Integration demnächst verfügbar."
+  },
+  "form": {
+    "cardNumber": "Kartennummer",
+    "expiration": "Ablaufdatum",
+    "securityCode": "Sicherheitscode"
+  },
+  "topFeatures": "Hauptmerkmale",
+  "pricing": {
+    "subscriptionPrice": "Abonnementpreis",
+    "estimatedTax": "Geschätzte Steuer",
+    "dueToday": "Heute fällig"
+  },
+  "completePurchase": "Kauf abschließen",
+  "legal": "Mit dem Abschluss Ihres Kaufs stimmen Sie den Nutzungsbedingungen und der Datenschutzrichtlinie von GPMF zu. Zahlungen werden sicher verarbeitet.",
+  "meta": {
+    "title": "Kasse | GPMF",
+    "description": "Schließen Sie Ihr GPMF-Strategieplan-Abonnement ab."
+  }
+}

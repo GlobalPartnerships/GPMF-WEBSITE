@@ -1,0 +1,27 @@
+{
+  "title": "Configurez votre plan",
+  "backToPlans": "Retour aux Plans",
+  "paymentMethod": {
+    "label": "Méthode de Paiement",
+    "card": "Carte",
+    "paypal": "PayPal",
+    "paypalComingSoon": "L'intégration PayPal sera bientôt disponible."
+  },
+  "form": {
+    "cardNumber": "Numéro de Carte",
+    "expiration": "Date d'expiration",
+    "securityCode": "Code de Sécurité"
+  },
+  "topFeatures": "Fonctionnalités principales",
+  "pricing": {
+    "subscriptionPrice": "Prix de l'abonnement",
+    "estimatedTax": "Taxe estimée",
+    "dueToday": "Total dû aujourd'hui"
+  },
+  "completePurchase": "Finaliser l'achat",
+  "legal": "En finalisant votre achat, vous acceptez les Conditions d'utilisation et la Politique de confidentialité de GPMF. Les paiements sont traités en toute sécurité.",
+  "meta": {
+    "title": "Paiement | GPMF",
+    "description": "Finalisez votre abonnement au plan stratégique GPMF."
+  }
+}

@@ -58,6 +58,7 @@ export default async function PlansPage({ params }: PageParams) {
           dict={dict}
           standardPlans={standardPlans}
           customPlans={customPlans}
+          lang={lang}
         />
       </section>
     </>

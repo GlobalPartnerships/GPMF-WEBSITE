@@ -11,9 +11,10 @@ interface PlansGridProps {
   dict: PlansDict;
   standardPlans: PlanResponse[];
   customPlans: PlanResponse[];
+  lang: string;
 }
 
-export function PlansGrid({ dict, standardPlans, customPlans }: PlansGridProps) {
+export function PlansGrid({ dict, standardPlans, customPlans, lang }: PlansGridProps) {
   const [activeTab, setActiveTab] = useState("enterprise");
   const [fading, setFading] = useState(false);
 
@@ -55,7 +56,7 @@ export function PlansGrid({ dict, standardPlans, customPlans }: PlansGridProps) 
             className={`${styles.grid} grid gap-8 ${gridCols} ${fading ? styles.fading : ""}`}
           >
             {plans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} cta={dict.cta} />
+              <PlanCard key={plan.id} plan={plan} cta={dict.cta} checkoutUrl={`/${lang}/checkout/${plan.id}`} />
             ))}
           </div>
         )}
