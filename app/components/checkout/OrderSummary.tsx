@@ -11,7 +11,7 @@ interface OrderSummaryProps {
 }
 
 export function OrderSummary({ plan, dict }: OrderSummaryProps) {
-  const formattedPrice = formatPrice(plan.base_price, plan.currency);
+  const formattedPrice = formatPrice(plan.base_price);
 
   return (
     <div className="bg-white rounded-[2px] p-8 border border-foreground/8 shadow-sm sticky top-28">

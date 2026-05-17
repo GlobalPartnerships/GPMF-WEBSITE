@@ -20,7 +20,7 @@ export function PlanCard({ plan, cta, checkoutUrl }: PlanCardProps) {
 
       <div className="mb-2">
         <span className="font-serif text-4xl font-bold">
-          {formatPrice(plan.base_price, plan.currency)}
+          {formatPrice(plan.base_price)}
         </span>
       </div>
       <p className="text-[13px] text-surface-variant mb-8">{plan.billing_type.name}</p>

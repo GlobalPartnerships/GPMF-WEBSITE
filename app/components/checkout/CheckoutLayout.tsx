@@ -8,9 +8,11 @@ interface CheckoutLayoutProps {
   lang: string;
   dict: CheckoutDict;
   plan: PlanResponse;
+  userId: string;
+  clientId: string;
 }
 
-export function CheckoutLayout({ lang, dict, plan }: CheckoutLayoutProps) {
+export function CheckoutLayout({ lang, dict, plan, userId, clientId }: CheckoutLayoutProps) {
   return (
     <div className="max-w-[1280px] mx-auto px-8">
       <Link
@@ -38,7 +40,7 @@ export function CheckoutLayout({ lang, dict, plan }: CheckoutLayoutProps) {
 
       <div className="grid grid-cols-1 lg:grid-cols-[55fr_40fr] gap-12 items-start">
         <div>
-          <PaymentPanel dict={dict} />
+          <PaymentPanel dict={dict} planId={plan.id} userId={userId} clientId={clientId} />
         </div>
         <OrderSummary plan={plan} dict={dict} />
       </div>

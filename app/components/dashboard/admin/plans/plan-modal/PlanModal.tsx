@@ -122,7 +122,6 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
         subtitle: form.subtitle,
         description: form.description,
         base_price: price,
-        currency: "USD",
         category: selectedPlanType,
         billing_type_id: form.billingTypeId,
         icon_url: form.iconUrl!,

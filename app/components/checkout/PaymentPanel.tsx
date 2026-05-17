@@ -4,12 +4,17 @@ import { useState } from "react";
 import type { CheckoutDict } from "@/app/dictionaries/checkout/types";
 import tabStyles from "@/app/components/shared/tabs.module.css";
 import styles from "./checkout.module.css";
+import { PayPalProvider } from "./PayPalProvider";
+import { PayPalCheckout } from "./PayPalCheckout";
 
 interface PaymentPanelProps {
   dict: CheckoutDict;
+  planId: string;
+  userId: string;
+  clientId: string;
 }
 
-export function PaymentPanel({ dict }: PaymentPanelProps) {
+export function PaymentPanel({ dict, planId, userId, clientId }: PaymentPanelProps) {
   const [method, setMethod] = useState<"card" | "paypal">("card");
   const [cardNumber, setCardNumber] = useState("");
   const [expiration, setExpiration] = useState("");
@@ -76,9 +81,9 @@ export function PaymentPanel({ dict }: PaymentPanelProps) {
           </div>
         </div>
       ) : (
-        <p className="text-[13px] text-surface-variant py-4">
-          {dict.paymentMethod.paypalComingSoon}
-        </p>
+        <PayPalProvider clientId={clientId}>
+          <PayPalCheckout planId={planId} userId={userId} />
+        </PayPalProvider>
       )}
     </div>
   );

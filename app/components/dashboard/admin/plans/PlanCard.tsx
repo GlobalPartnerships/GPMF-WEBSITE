@@ -63,7 +63,7 @@ export function PlanCard({ plan, dict, onEdit, onDelete, isPending }: PlanCardPr
 
       <div className="flex items-end justify-between">
         <div className="font-serif text-xl font-bold text-foreground">
-          {formatPrice(plan.base_price, plan.currency)}
+          {formatPrice(plan.base_price)}
         </div>
         <div className="text-[11px] text-surface-variant/60 font-medium uppercase tracking-wide">
           {plan.billing_type.name}
