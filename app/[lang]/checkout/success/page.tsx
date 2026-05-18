@@ -6,12 +6,9 @@ import { RevealObserver } from "@/app/components/home/RevealObserver";
 import { DecoElements } from "@/app/components/plans/DecoElements";
 import { SideText } from "@/app/components/plans/SideText";
 
-type PageParams = { params: Promise<{ lang: string }> };
-
-const MOCK = {
-  userName: "Marcela",
-  planName: "Enterprise Gold",
-  orderId: "ORD-20260517-001",
+type PageParams = {
+  params: Promise<{ lang: string }>;
+  searchParams: Promise<{ orderId?: string }>;
 };
 
 export async function generateMetadata({
@@ -26,12 +23,29 @@ export async function generateMetadata({
   };
 }
 
-export default async function CheckoutSuccessPage({ params }: PageParams) {
+async function getOrder(orderId: string) {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
+  const res = await fetch(`${API_BASE_URL}/orders/${orderId}`, { cache: "no-store" });
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export default async function CheckoutSuccessPage({ params, searchParams }: PageParams) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale, "checkoutResult");
+  const { orderId } = await searchParams;
+
+  const [dict, order] = await Promise.all([
+    getDictionary(lang as Locale, "checkoutResult"),
+    orderId ? getOrder(orderId) : Promise.resolve(null),
+  ]);
+
   const t = dict.success;
+
+  const userName = order?.user?.name ?? "";
+  const planName = order?.plan?.name ?? "";
+  const displayOrderId = order?.id ?? orderId ?? "";
 
   return (
     <>
@@ -55,7 +69,7 @@ export default async function CheckoutSuccessPage({ params }: PageParams) {
           </div>
 
           <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            {t.welcomeMessage.replace("{{name}}", MOCK.userName)}
+            {t.welcomeMessage.replace("{{name}}", userName)}
           </h1>
 
           <div className="mt-6 space-y-2 text-sm text-foreground/70">
@@ -63,14 +77,22 @@ export default async function CheckoutSuccessPage({ params }: PageParams) {
               <span className="font-medium text-foreground">
                 {t.planLabel}:
               </span>{" "}
-              {MOCK.planName}
+              {planName}
             </p>
             <p>
               <span className="font-medium text-foreground">
                 {t.orderLabel}:
               </span>{" "}
-              {MOCK.orderId}
+              {displayOrderId}
             </p>
+            {order?.payment_provider_name && (
+              <p>
+                <span className="font-medium text-foreground">
+                  {t.paymentProviderLabel}:
+                </span>{" "}
+                {order.payment_provider_name}
+              </p>
+            )}
           </div>
 
           <p className="mt-8 text-sm text-foreground/60 max-w-md mx-auto leading-relaxed">

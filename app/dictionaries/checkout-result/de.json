@@ -3,6 +3,7 @@
     "welcomeMessage": "{{name}}, willkommen bei GPMF!!",
     "planLabel": "Ihr Plan",
     "orderLabel": "Bestell-ID",
+    "paymentProviderLabel": "Zahlungsmethode",
     "contactMessage": "Unser Spezialistenteam wird sich in Kürze bei Ihnen melden. Entdecken Sie in der Zwischenzeit unsere Services oder erfahren Sie mehr über GPMF.",
     "goToPurchases": "Zu meinen Käufen",
     "goToServices": "Zu den Services",

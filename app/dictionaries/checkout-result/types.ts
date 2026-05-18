@@ -3,6 +3,7 @@ export interface CheckoutResultDict {
     welcomeMessage: string;
     planLabel: string;
     orderLabel: string;
+    paymentProviderLabel: string;
     contactMessage: string;
     goToPurchases: string;
     goToServices: string;
