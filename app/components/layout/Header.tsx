@@ -3,16 +3,100 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/app/dictionaries";
 import type { LayoutDict } from "@/app/dictionaries/layout/types";
 import headerStyles from "./Header.module.css";
 
-const allLocales = ["es", "en", "fr", "de"] as const;
+const localeConfig = [
+  { locale: "es", flag: "es", label: "Español" },
+  { locale: "en", flag: "us", label: "English" },
+  { locale: "fr", flag: "fr", label: "Français" },
+  { locale: "de", flag: "de", label: "Deutsch" },
+] as const;
 
 interface HeaderProps {
   lang: Locale;
   dict: LayoutDict["nav"];
+}
+
+function LanguageDropdown({
+  lang,
+  pathWithoutLocale,
+  onSelect,
+}: {
+  lang: string;
+  pathWithoutLocale: string;
+  onSelect?: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="group inline-flex items-center border border-outline px-3 py-2.5 transition-all duration-300 hover:bg-burgundy hover:border-burgundy text-foreground/60 hover:text-white"
+        aria-label="Select language"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M9 6.371c0 4.418 -2.239 6.629 -5 6.629" />
+          <path d="M4 6.371h7" />
+          <path d="M5 9c0 2.144 2.252 3.908 6 4" />
+          <path d="M12 20l4 -9l4 9" />
+          <path d="M19.1 18h-6.2" />
+          <path d="M6.694 3l.793 .582" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-8 bg-white border border-gray-100 rounded-lg shadow-lg py-1 min-w-[150px] z-50">
+          {localeConfig.map(({ locale, flag, label }) => (
+            <Link
+              key={locale}
+              href={`/${locale}${pathWithoutLocale}`}
+              className={`flex items-center gap-3 px-4 py-2.5 text-[11px] uppercase tracking-[0.15em] font-medium transition-colors ${
+                locale === lang
+                  ? "text-burgundy bg-burgundy/5"
+                  : "text-foreground/60 hover:text-burgundy hover:bg-gray-50"
+              }`}
+              onClick={() => {
+                setOpen(false);
+                onSelect?.();
+              }}
+            >
+              <span
+                className={`fi fi-${flag} fis rounded-full`}
+                style={{ width: 18, height: 18, flexShrink: 0 }}
+              />
+              {label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function Header({ lang, dict }: HeaderProps) {
@@ -55,27 +139,6 @@ export function Header({ lang, dict }: HeaderProps) {
 
           {/* Desktop right side */}
           <div className="flex items-center justify-end gap-4">
-            {/* Language switcher */}
-            <div className="hidden xl:flex items-center gap-2 text-[11px] font-bold text-foreground/70 mr-1">
-              {allLocales.map((locale, i) => (
-                <span key={locale} className="flex items-center gap-2">
-                  {i > 0 && <span className="text-foreground/20">|</span>}
-                  {locale === lang ? (
-                    <span className="text-burgundy border-b border-burgundy">
-                      {locale.toUpperCase()}
-                    </span>
-                  ) : (
-                    <Link
-                      href={`/${locale}${pathWithoutLocale}`}
-                      className="hover:text-burgundy transition-colors"
-                    >
-                      {locale.toUpperCase()}
-                    </Link>
-                  )}
-                </span>
-              ))}
-            </div>
-
             {/* Sign in */}
             <Link
               href={`/${lang}/login`}
@@ -84,7 +147,7 @@ export function Header({ lang, dict }: HeaderProps) {
               {dict.login}
             </Link>
 
-            {/* Plans — get started style with sweep */}
+            {/* Plans */}
             <Link
               href={`/${lang}/plans`}
               className="btn-sweep bg-burgundy text-white px-6 py-3 text-[11px] uppercase tracking-[0.22em] rounded whitespace-nowrap"
@@ -92,6 +155,11 @@ export function Header({ lang, dict }: HeaderProps) {
               <span>{dict.plans}</span>
             </Link>
 
+             {/* Language switcher */}
+            <div className="hidden xl:flex">
+              <LanguageDropdown lang={lang} pathWithoutLocale={pathWithoutLocale} />
+            </div>
+            
             {/* Mobile hamburger */}
             <button
               className="lg:hidden text-foreground/70 ml-2"
@@ -121,25 +189,12 @@ export function Header({ lang, dict }: HeaderProps) {
           ))}
 
           {/* Mobile language switcher */}
-          <div className="flex items-center gap-4 text-sm font-bold text-foreground py-2">
-            {allLocales.map((locale, i) => (
-              <span key={locale} className="flex items-center gap-4">
-                {i > 0 && <span className="text-foreground/20">|</span>}
-                {locale === lang ? (
-                  <span className="text-burgundy border-b-2 border-burgundy">
-                    {locale.toUpperCase()}
-                  </span>
-                ) : (
-                  <Link
-                    href={`/${locale}${pathWithoutLocale}`}
-                    className="hover:text-burgundy transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {locale.toUpperCase()}
-                  </Link>
-                )}
-              </span>
-            ))}
+          <div className="py-2">
+            <LanguageDropdown
+              lang={lang}
+              pathWithoutLocale={pathWithoutLocale}
+              onSelect={() => setMobileOpen(false)}
+            />
           </div>
 
           <Link

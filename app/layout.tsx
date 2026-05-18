@@ -1,5 +1,6 @@
 import { Inter, Playfair_Display, IM_Fell_Great_Primer_SC } from "next/font/google";
 import "./globals.css";
+import "flag-icons/css/flag-icons.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const playfair = Playfair_Display({
