@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
+import { createClient } from "@/lib/supabase/server";
+import { fetchAppUser } from "@/lib/api/user";
 import { Sidebar } from "@/app/components/dashboard/user/Sidebar";
 import { UserInfoHeader } from "@/app/components/dashboard/user/UserInfoHeader";
 import { SummaryCard } from "@/app/components/dashboard/user/SummaryCard";
@@ -19,15 +21,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     description: dict.meta.description,
   };
 }
-
-// --- Mock data (replace with API calls later) ---
-
-const mockUser = {
-  name: "María González",
-  email: "m.gonzalez@gpmf.com",
-  phone: "+54 11 4567-8901",
-  avatarUrl: undefined,
-};
 
 const mockPlan = null as {
   title: string;
@@ -73,6 +66,13 @@ export default async function UserDashboardPage({ params }: PageParams) {
 
   if (!hasLocale(lang)) notFound();
 
+  const supabase = await createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) redirect(`/${lang}/login`);
+
+  const user = await fetchAppUser(session);
+  if (!user) redirect(`/${lang}/login`);
+
   const dict = await getDictionary(lang as Locale, "dashboard");
 
   return (
@@ -81,7 +81,15 @@ export default async function UserDashboardPage({ params }: PageParams) {
 
       <main className="flex-1 px-6 py-8 md:px-10 md:py-10">
         {/* User info header */}
-        <UserInfoHeader dict={dict} user={mockUser} />
+        <UserInfoHeader
+          dict={dict}
+          user={{
+            name: user.name,
+            email: user.email,
+            phone: user.phone ?? undefined,
+            avatarUrl: user.profile_image_url ?? undefined,
+          }}
+        />
 
         {/* Summary cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">

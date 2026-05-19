@@ -8,8 +8,8 @@ export interface LayoutDict {
         pilars: string;
         partners: string;
         services: string;
-        schedule: string;
         login: string;
+        logout: string;
         plans: string;
     };
     footer: {

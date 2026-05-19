@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { fetchAppUser } from "@/lib/api/user";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
@@ -101,6 +103,13 @@ export default async function AdminDashboardPage({ params }: PageParams) {
   const { lang } = await params;
 
   if (!hasLocale(lang)) notFound();
+
+  const supabase = await createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) redirect(`/${lang}/login`);
+
+  const user = await fetchAppUser(session);
+  if (!user || user.role === "user") redirect(`/${lang}/user`);
 
   const dict = await getDictionary(lang as Locale, "admin");
 
