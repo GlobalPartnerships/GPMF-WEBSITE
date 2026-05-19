@@ -58,3 +58,25 @@ export async function getBillingTypes(): Promise<BillingType[]> {
     next: { revalidate: 0 },
   });
 }
+
+export async function createBillingType(
+  data: { name: string; description: string },
+  headers?: Record<string, string>
+): Promise<BillingType> {
+  return apiPost<BillingType>("/plans/billing-type/create", data, { headers });
+}
+
+export async function updateBillingType(
+  id: string,
+  data: { name?: string; description?: string },
+  headers?: Record<string, string>
+): Promise<BillingType> {
+  return apiPut<BillingType>(`/plans/billing-type/${id}`, data, { headers });
+}
+
+export async function deleteBillingType(
+  id: string,
+  headers?: Record<string, string>
+): Promise<void> {
+  return apiDelete(`/plans/billing-type/${id}`, { headers });
+}

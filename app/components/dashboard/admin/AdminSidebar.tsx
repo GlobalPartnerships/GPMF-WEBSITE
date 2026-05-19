@@ -109,10 +109,10 @@ export function AdminSidebar({ dict, lang }: AdminSidebarProps) {
     { key: "dashboard", label: dict.dashboard, href: `/${lang}/admin` },
     { key: "sales", label: dict.sales, href: `/${lang}/admin/sales` },
     { key: "plans", label: dict.plans, href: `/${lang}/admin/plans` },
-    { key: "traffic", label: dict.traffic, href: `/${lang}/admin/traffic` },
     { key: "meetings", label: dict.meetings, href: `/${lang}/admin/meetings` },
     { key: "reports", label: dict.reports, href: `/${lang}/admin/reports` },
     { key: "users", label: dict.users, href: `/${lang}/admin/users` },
+    { key: "traffic", label: dict.traffic, href: `/${lang}/admin/traffic` },
   ];
 
   function isActive(href: string): boolean {

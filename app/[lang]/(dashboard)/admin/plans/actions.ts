@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { createClient } from "@/lib/supabase/server";
 import {
   createPlan,
   updatePlan,
@@ -9,6 +10,9 @@ import {
   deleteFeature,
   getFeaturesByPlan,
   getBillingTypes,
+  createBillingType,
+  updateBillingType,
+  deleteBillingType,
 } from "@/lib/api/plans";
 import { apiGet, apiUpload, apiDelete } from "@/lib/api/client";
 import type {
@@ -125,6 +129,66 @@ export async function getPlanSvgsAction(): Promise<
     return {
       success: false,
       error: error instanceof Error ? error.message : "Failed to fetch SVGs",
+    };
+  }
+}
+
+async function getAuthHeaders(): Promise<Record<string, string> | null> {
+  const supabase = await createClient();
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) return null;
+  return { Authorization: `Bearer ${session.access_token}` };
+}
+
+export async function createBillingTypeAction(data: {
+  name: string;
+  description: string;
+}): Promise<ActionResult<BillingType>> {
+  try {
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+    const result = await createBillingType(data, headers);
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true, data: result };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to create billing type",
+    };
+  }
+}
+
+export async function updateBillingTypeAction(
+  id: string,
+  data: { name?: string; description?: string }
+): Promise<ActionResult<BillingType>> {
+  try {
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+    const result = await updateBillingType(id, data, headers);
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true, data: result };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to update billing type",
+    };
+  }
+}
+
+export async function deleteBillingTypeAction(
+  id: string
+): Promise<ActionResult<void>> {
+  try {
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+    await deleteBillingType(id, headers);
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to delete billing type",
     };
   }
 }
