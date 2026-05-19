@@ -92,6 +92,12 @@ const loaders: {
     fr: () => import("./checkout-result/fr.json").then((m) => m.default as DictMap["checkoutResult"]),
     de: () => import("./checkout-result/de.json").then((m) => m.default as DictMap["checkoutResult"]),
   },
+  register: {
+    es: () => import("./register/es.json").then((m) => m.default as DictMap["register"]),
+    en: () => import("./register/en.json").then((m) => m.default as DictMap["register"]),
+    fr: () => import("./register/fr.json").then((m) => m.default as DictMap["register"]),
+    de: () => import("./register/de.json").then((m) => m.default as DictMap["register"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

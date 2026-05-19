@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Únete a GPMF",
+  "headlinePart1": "Registrate",
+  "headlineAccent": "Hoy",
+  "description": "Creá tu cuenta para acceder al próximo nivel para tu empresa.",
+  "nameLabel": "Nombre completo",
+  "namePlaceholder": "Juan Pérez",
+  "emailLabel": "Correo electrónico",
+  "emailPlaceholder": "j.doe@gpmf.com",
+  "emailInvalid": "Ingresá un correo electrónico válido",
+  "passwordLabel": "Contraseña",
+  "passwordPlaceholder": "••••••••",
+  "passwordStrengthWeak": "Débil",
+  "passwordStrengthFair": "Regular",
+  "passwordStrengthGood": "Buena",
+  "passwordStrengthStrong": "Fuerte",
+  "confirmPasswordLabel": "Confirmá tu contraseña",
+  "confirmPasswordPlaceholder": "••••••••",
+  "passwordMismatch": "Las contraseñas no coinciden",
+  "phoneLabel": "Teléfono (opcional)",
+  "phonePlaceholder": "+54 9 11 0000 0000",
+  "submitButton": "Crear cuenta",
+  "haveAccount": "¿Ya tenés cuenta?",
+  "signInLink": "Iniciá sesión acá",
+  "imageQuote": "El secreto para avanzar es comenzar.",
+  "imageQuoteAuthor": "Mark Twain",
+  "verticalCaption": "GPMF · Registro",
+  "imageAlt": "Consultoría estratégica patrimonial",
+  "successTitle": "Bienvenido a GPMF",
+  "successSubtitle": "Tu cuenta fue creada exitosamente. Ahora sos parte de la comunidad GPMF.",
+  "successCta": "Ir al panel",
+  "meta": {
+    "title": "Registro | GPMF",
+    "description": "Creá tu cuenta GPMF para acceder a los servicios de consultoría estratégica."
+  },
+  "successMeta": {
+    "title": "Bienvenido | GPMF",
+    "description": "Tu cuenta GPMF fue creada exitosamente."
+  }
+}

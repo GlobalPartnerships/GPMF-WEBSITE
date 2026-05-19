@@ -2,29 +2,27 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { ImagePanel } from "@/app/components/login/ImagePanel";
-import { SocialButtons } from "@/app/components/login/SocialButtons";
-import { Divider } from "@/app/components/login/Divider";
-import { LoginForm } from "@/app/components/login/LoginForm";
 import { RevealObserver } from "@/app/components/home/RevealObserver";
+import { RegisterForm } from "@/app/components/register/RegisterForm";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
-  const dict = await getDictionary(lang as Locale, "login");
+  const dict = await getDictionary(lang as Locale, "register");
   return {
     title: dict.meta.title,
     description: dict.meta.description,
   };
 }
 
-export default async function LoginPage({ params }: PageParams) {
+export default async function RegisterPage({ params }: PageParams) {
   const { lang } = await params;
 
   if (!hasLocale(lang)) notFound();
 
-  const dict = await getDictionary(lang as Locale, "login");
+  const dict = await getDictionary(lang as Locale, "register");
 
   return (
     <>
@@ -47,16 +45,7 @@ export default async function LoginPage({ params }: PageParams) {
               </p>
             </div>
 
-            <SocialButtons dict={dict} lang={lang} />
-            <Divider label={dict.divider} />
-            <LoginForm dict={dict} />
-
-            <p className="mt-10 text-center text-[14px] text-surface-variant">
-              {dict.noAccount}{" "}
-              <a className="text-burgundy font-semibold hover:text-burgundy-dark transition-colors" href={`/${lang}/register`}>
-                {dict.signUpLink}
-              </a>
-            </p>
+            <RegisterForm dict={dict} lang={lang} />
           </div>
         </div>
       </section>

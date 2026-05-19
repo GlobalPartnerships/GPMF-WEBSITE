@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Rejoindre GPMF",
+  "headlinePart1": "Inscrivez-vous",
+  "headlineAccent": "Maintenant",
+  "description": "Créez votre compte pour accéder à la prochaine étape pour votre entreprise.",
+  "nameLabel": "Nom complet",
+  "namePlaceholder": "Jean Dupont",
+  "emailLabel": "Adresse e-mail",
+  "emailPlaceholder": "j.doe@gpmf.com",
+  "emailInvalid": "Veuillez saisir une adresse e-mail valide",
+  "passwordLabel": "Mot de passe",
+  "passwordPlaceholder": "••••••••",
+  "passwordStrengthWeak": "Faible",
+  "passwordStrengthFair": "Passable",
+  "passwordStrengthGood": "Bonne",
+  "passwordStrengthStrong": "Forte",
+  "confirmPasswordLabel": "Confirmer le mot de passe",
+  "confirmPasswordPlaceholder": "••••••••",
+  "passwordMismatch": "Les mots de passe ne correspondent pas",
+  "phoneLabel": "Téléphone (optionnel)",
+  "phonePlaceholder": "+33 6 00 00 00 00",
+  "submitButton": "Créer un compte",
+  "haveAccount": "Vous avez déjà un compte ?",
+  "signInLink": "Connectez-vous ici",
+  "imageQuote": "Le secret pour avancer est de commencer.",
+  "imageQuoteAuthor": "Mark Twain",
+  "verticalCaption": "GPMF · Inscription",
+  "imageAlt": "Conseil stratégique patrimonial",
+  "successTitle": "Bienvenue chez GPMF",
+  "successSubtitle": "Votre compte a été créé avec succès. Vous faites maintenant partie de la communauté GPMF.",
+  "successCta": "Aller au tableau de bord",
+  "meta": {
+    "title": "Inscription | GPMF",
+    "description": "Créez votre compte GPMF pour accéder aux services de conseil stratégique."
+  },
+  "successMeta": {
+    "title": "Bienvenue | GPMF",
+    "description": "Votre compte GPMF a été créé avec succès."
+  }
+}

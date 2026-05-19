@@ -9,8 +9,9 @@ import { PartnersDict } from "./partners/types";
 import { ServicesDict } from "./services/types";
 import { CheckoutDict } from "./checkout/types";
 import { CheckoutResultDict } from "./checkout-result/types";
+import { RegisterDict } from "./register/types";
 
-export type DictSection = "layout" | "home" | "login" | "plans" | "dashboard" | "admin" | "pilars" | "partners" | "services" | "checkout" | "checkoutResult";
+export type DictSection = "layout" | "home" | "login" | "plans" | "dashboard" | "admin" | "pilars" | "partners" | "services" | "checkout" | "checkoutResult" | "register";
 
 export interface DictMap {
   layout: LayoutDict;
@@ -24,4 +25,5 @@ export interface DictMap {
   services: ServicesDict;
   checkout: CheckoutDict;
   checkoutResult: CheckoutResultDict;
+  register: RegisterDict;
 }

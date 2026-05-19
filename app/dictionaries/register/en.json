@@ -1,0 +1,40 @@
+{
+  "eyebrow": "Join GPMF",
+  "headlinePart1": "Register",
+  "headlineAccent": "Today",
+  "description": "Create your account to access the next step for your company.",
+  "nameLabel": "Full Name",
+  "namePlaceholder": "Jane Doe",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "j.doe@gpmf.com",
+  "emailInvalid": "Please enter a valid email address",
+  "passwordLabel": "Password",
+  "passwordPlaceholder": "••••••••",
+  "passwordStrengthWeak": "Weak",
+  "passwordStrengthFair": "Fair",
+  "passwordStrengthGood": "Good",
+  "passwordStrengthStrong": "Strong",
+  "confirmPasswordLabel": "Confirm Password",
+  "confirmPasswordPlaceholder": "••••••••",
+  "passwordMismatch": "Passwords do not match",
+  "phoneLabel": "Phone (optional)",
+  "phonePlaceholder": "+1 555 000 0000",
+  "submitButton": "Create Account",
+  "haveAccount": "Already have an account?",
+  "signInLink": "Sign in here",
+  "imageQuote": "The secret of getting ahead is getting started.",
+  "imageQuoteAuthor": "Mark Twain",
+  "verticalCaption": "GPMF · Register",
+  "imageAlt": "Strategic consulting heritage",
+  "successTitle": "Welcome to GPMF",
+  "successSubtitle": "Your account has been created successfully. You are now part of the GPMF community.",
+  "successCta": "Go to Dashboard",
+  "meta": {
+    "title": "Register | GPMF",
+    "description": "Create your GPMF account to access strategic consulting services."
+  },
+  "successMeta": {
+    "title": "Welcome | GPMF",
+    "description": "Your GPMF account has been created successfully."
+  }
+}
