@@ -1,7 +1,9 @@
 "use client";
 
+import { useActionState } from "react";
 import { useState } from "react";
 import type { LoginDict } from "@/app/dictionaries/login/types";
+import { loginAction, type LoginState } from "@/app/actions/login";
 import styles from "./LoginForm.module.css";
 
 interface LoginFormProps {
@@ -15,7 +17,10 @@ interface LoginFormProps {
     | "forgotPassword"
     | "submitButton"
   >;
+  lang: string;
 }
+
+const initialState: LoginState = {};
 
 function EyeIcon({ open }: { open: boolean }) {
   if (open) {
@@ -34,11 +39,20 @@ function EyeIcon({ open }: { open: boolean }) {
   );
 }
 
-export function LoginForm({ dict }: LoginFormProps) {
+export function LoginForm({ dict, lang }: LoginFormProps) {
+  const [state, action, isPending] = useActionState(loginAction, initialState);
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+    <form className="space-y-6" action={action}>
+      <input type="hidden" name="lang" value={lang} />
+
+      {state.formError && (
+        <div className={styles.formError} role="alert">
+          {state.formError}
+        </div>
+      )}
+
       <div>
         <label
           className="block text-[10px] tracking-[0.22em] uppercase text-foreground font-semibold mb-3"
@@ -49,9 +63,11 @@ export function LoginForm({ dict }: LoginFormProps) {
         <input
           className={`${styles.input} w-full px-4 py-3.5 bg-white text-[15px] rounded-sm`}
           id="email"
+          name="email"
           placeholder={dict.emailPlaceholder}
           type="email"
           autoComplete="email"
+          disabled={isPending}
         />
       </div>
 
@@ -66,9 +82,11 @@ export function LoginForm({ dict }: LoginFormProps) {
           <input
             className={`${styles.input} w-full px-4 py-3.5 bg-white text-[15px] rounded-sm pr-12`}
             id="password"
+            name="password"
             placeholder={dict.passwordPlaceholder}
             type={showPassword ? "text" : "password"}
             autoComplete="current-password"
+            disabled={isPending}
           />
           <button
             type="button"
@@ -100,10 +118,11 @@ export function LoginForm({ dict }: LoginFormProps) {
       </div>
 
       <button
-        className="btn-sweep w-full py-4 bg-burgundy text-white text-[12px] uppercase tracking-[0.22em] font-semibold rounded-sm mt-4"
+        className="btn-sweep w-full py-4 bg-burgundy text-white text-[12px] uppercase tracking-[0.22em] font-semibold rounded-sm mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
         type="submit"
+        disabled={isPending}
       >
-        <span>{dict.submitButton}</span>
+        <span>{isPending ? "..." : dict.submitButton}</span>
       </button>
     </form>
   );

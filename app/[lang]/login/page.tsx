@@ -49,7 +49,7 @@ export default async function LoginPage({ params }: PageParams) {
 
             <SocialButtons dict={dict} lang={lang} />
             <Divider label={dict.divider} />
-            <LoginForm dict={dict} />
+            <LoginForm dict={dict} lang={lang} />
 
             <p className="mt-10 text-center text-[14px] text-surface-variant">
               {dict.noAccount}{" "}
