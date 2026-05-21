@@ -14,7 +14,7 @@ import {
   updateBillingType,
   deleteBillingType,
 } from "@/lib/api/plans";
-import { apiGet, apiUpload, apiDelete } from "@/lib/api/client";
+import { apiGet, apiPost, apiUpload, apiDelete } from "@/lib/api/client";
 import type {
   CreatePlanPayload,
   UpdatePlanPayload,
@@ -25,6 +25,7 @@ import type {
   CloudinaryImage,
   UploadResponse,
   SvgListResponse,
+  SyncResponse,
 } from "@/app/components/dashboard/admin/plans/svg-upload/types";
 
 export async function createPlanAction(
@@ -32,10 +33,13 @@ export async function createPlanAction(
   features: string[]
 ): Promise<ActionResult> {
   try {
-    const plan = await createPlan(payload);
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+
+    const plan = await createPlan(payload, headers);
 
     for (const item of features) {
-      await createFeature({ item, plan_id: plan.id });
+      await createFeature({ item, plan_id: plan.id }, headers);
     }
 
     revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
@@ -54,14 +58,17 @@ export async function updatePlanAction(
   features: string[]
 ): Promise<ActionResult> {
   try {
-    const plan = await updatePlan(id, payload);
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+
+    const plan = await updatePlan(id, payload, headers);
 
     const existingFeatures = await getFeaturesByPlan(id);
     for (const feature of existingFeatures) {
-      await deleteFeature(feature.id);
+      await deleteFeature(feature.id, headers);
     }
     for (const item of features) {
-      await createFeature({ item, plan_id: id });
+      await createFeature({ item, plan_id: id }, headers);
     }
 
     revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
@@ -90,7 +97,9 @@ export async function deletePlanAction(
   id: string
 ): Promise<ActionResult<void>> {
   try {
-    await deletePlan(id);
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+    await deletePlan(id, headers);
     revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
     return { success: true };
   } catch (error) {
@@ -189,6 +198,23 @@ export async function deleteBillingTypeAction(
     return {
       success: false,
       error: error instanceof Error ? error.message : "Failed to delete billing type",
+    };
+  }
+}
+
+export async function syncPlanSvgsAction(): Promise<
+  ActionResult<SyncResponse["data"]>
+> {
+  try {
+    const headers = await getAuthHeaders();
+    if (!headers) return { success: false, error: "Unauthorized" };
+    const result = await apiPost<SyncResponse>("/assets/sync", {}, { headers });
+    revalidatePath("/[lang]/(dashboard)/admin/plans", "page");
+    return { success: true, data: result.data };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to sync SVGs",
     };
   }
 }

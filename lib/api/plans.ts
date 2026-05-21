@@ -20,20 +20,25 @@ export async function getPlan(id: string): Promise<PlanResponse> {
 }
 
 export async function createPlan(
-  data: CreatePlanPayload
+  data: CreatePlanPayload,
+  headers?: Record<string, string>
 ): Promise<PlanResponse> {
-  return apiPost<PlanResponse>("/plans/create", data);
+  return apiPost<PlanResponse>("/plans/create", data, { headers });
 }
 
 export async function updatePlan(
   id: string,
-  data: UpdatePlanPayload
+  data: UpdatePlanPayload,
+  headers?: Record<string, string>
 ): Promise<PlanResponse> {
-  return apiPut<PlanResponse>(`/plans/${id}`, data);
+  return apiPut<PlanResponse>(`/plans/${id}`, data, { headers });
 }
 
-export async function deletePlan(id: string): Promise<void> {
-  return apiDelete(`/plans/${id}`);
+export async function deletePlan(
+  id: string,
+  headers?: Record<string, string>
+): Promise<void> {
+  return apiDelete(`/plans/${id}`, { headers });
 }
 
 export async function getFeaturesByPlan(
@@ -42,15 +47,18 @@ export async function getFeaturesByPlan(
   return apiGet<PlanFeature[]>(`/plans/plan-feature/by-plan/${planId}`);
 }
 
-export async function createFeature(data: {
-  item: string;
-  plan_id: string;
-}): Promise<PlanFeature> {
-  return apiPost<PlanFeature>("/plans/plan-feature/create", data);
+export async function createFeature(
+  data: { item: string; plan_id: string },
+  headers?: Record<string, string>
+): Promise<PlanFeature> {
+  return apiPost<PlanFeature>("/plans/plan-feature/create", data, { headers });
 }
 
-export async function deleteFeature(id: string): Promise<void> {
-  return apiDelete(`/plans/plan-feature/${id}`);
+export async function deleteFeature(
+  id: string,
+  headers?: Record<string, string>
+): Promise<void> {
+  return apiDelete(`/plans/plan-feature/${id}`, { headers });
 }
 
 export async function getBillingTypes(): Promise<BillingType[]> {

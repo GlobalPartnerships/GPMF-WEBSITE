@@ -40,6 +40,7 @@ export interface PlanResponse {
   subtitle: string;
   description: string;
   base_price: number;
+  meetings_per_month: number;
   category: "standard" | "custom";
   billing_type_id: string;
   billing_type: BillingType;
@@ -57,6 +58,7 @@ export interface CreatePlanPayload {
   subtitle: string;
   description: string;
   base_price: number;
+  meetings_per_month: number;
   category: "standard" | "custom";
   billing_type_id: string;
   icon_url: string;
@@ -67,6 +69,7 @@ export interface UpdatePlanPayload {
   subtitle?: string;
   description?: string;
   base_price?: number;
+  meetings_per_month?: number;
   category?: "standard" | "custom";
   billing_type_id?: string;
   is_active?: boolean;

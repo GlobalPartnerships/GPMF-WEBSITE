@@ -33,6 +33,10 @@ export function PlanCard({ plan, cta, checkoutUrl }: PlanCardProps) {
       </Link>
 
       <div className="border-t border-foreground/8 pt-8 flex-1">
+        <p className="flex items-center gap-2 text-[13px] text-surface-variant mb-6">
+          <span className="material-symbols-outlined text-[18px]">calendar_month</span>
+          {plan.meetings_per_month} meetings / month
+        </p>
         <ul className="space-y-4">
           {plan.features.map((feature) => (
             <li key={feature.id} className="flex items-start gap-3">

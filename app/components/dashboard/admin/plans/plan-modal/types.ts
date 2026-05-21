@@ -3,6 +3,7 @@ export interface FormState {
   subtitle: string;
   description: string;
   price: string;
+  monthlyMeetings: string;
   billingTypeId: string;
   iconUrl: string | null;
   iconSearch: string;

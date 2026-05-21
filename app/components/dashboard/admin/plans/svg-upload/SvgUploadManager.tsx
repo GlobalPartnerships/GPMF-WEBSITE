@@ -5,6 +5,7 @@ import {
   uploadPlanSvgAction,
   getPlanSvgsAction,
   deletePlanSvgAction,
+  syncPlanSvgsAction,
 } from "@/app/[lang]/(dashboard)/admin/plans/actions";
 import { SvgGridItem } from "./SvgGridItem";
 import type { CloudinaryImage, UploadStatus } from "./types";
@@ -34,6 +35,7 @@ export function SvgUploadManager({ dict }: SvgUploadManagerProps) {
   const [uploadStatus, setUploadStatus] = useState<UploadStatus>("idle");
   const [error, setError] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
     getPlanSvgsAction().then((result) => {
@@ -92,6 +94,21 @@ export function SvgUploadManager({ dict }: SvgUploadManagerProps) {
     [handleUpload]
   );
 
+  const handleSync = useCallback(async () => {
+    setSyncing(true);
+    setError(null);
+    const result = await syncPlanSvgsAction();
+    if (result.success) {
+      const refreshed = await getPlanSvgsAction();
+      if (refreshed.success && refreshed.data) {
+        setSvgList(refreshed.data);
+      }
+    } else {
+      setError(result.error ?? "Sync failed");
+    }
+    setSyncing(false);
+  }, []);
+
   const handleDelete = useCallback(
     async (id: string) => {
       if (!confirm(m.deleteConfirm)) return;
@@ -105,9 +122,25 @@ export function SvgUploadManager({ dict }: SvgUploadManagerProps) {
 
   return (
     <div className="relative z-0 rounded-xl border border-outline/10 bg-white p-6">
-      <h3 className="text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-variant mb-4">
-        {m.title}
-      </h3>
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-variant">
+          {m.title}
+        </h3>
+        <button
+          onClick={handleSync}
+          disabled={syncing}
+          className="flex items-center gap-1.5 text-[11px] font-medium text-burgundy border border-burgundy/30 rounded-sm px-3 py-1.5 hover:bg-burgundy/5 transition-colors disabled:opacity-50"
+        >
+          <svg
+            className={`w-3.5 h-3.5 ${syncing ? "animate-spin" : ""}`}
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M12 4V1L8 5l4 4V6a6 6 0 016 6 6 6 0 01-.34 2l1.66 1.66A8 8 0 0012 4zm0 14a6 6 0 01-6-6 6 6 0 01.34-2l-1.66-1.66A8 8 0 0012 20v3l4-4-4-4v3z" />
+          </svg>
+          {syncing ? "Syncing..." : "Sync"}
+        </button>
+      </div>
 
       <div
         onDragOver={(e) => {
@@ -164,7 +197,7 @@ export function SvgUploadManager({ dict }: SvgUploadManagerProps) {
       )}
 
       {svgList.length > 0 ? (
-        <div className="flex flex-wrap gap-2 max-h-32 overflow-y-visible hide-scrollbar">
+        <div className="flex flex-wrap gap-2 pt-2 overflow-hidden">
           {svgList.map((image) => (
             <SvgGridItem
               key={image.id}

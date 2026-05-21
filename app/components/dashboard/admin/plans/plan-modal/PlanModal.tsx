@@ -29,6 +29,7 @@ function buildInitialForm(state: ModalState): FormState {
       subtitle: state.plan.subtitle,
       description: state.plan.description,
       price: String(state.plan.base_price),
+      monthlyMeetings: String(state.plan.meetings_per_month),
       billingTypeId: state.plan.billing_type_id,
       iconUrl: state.plan.icon_url ?? null,
       iconSearch: "",
@@ -41,6 +42,7 @@ function buildInitialForm(state: ModalState): FormState {
     subtitle: "",
     description: "",
     price: "",
+    monthlyMeetings: "",
     billingTypeId: "",
     iconUrl: null,
     iconSearch: "",
@@ -111,6 +113,12 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
       return;
     }
 
+    const meetings = parseInt(form.monthlyMeetings, 10);
+    if (!Number.isInteger(meetings) || meetings <= 0) {
+      setError("Monthly meetings must be a positive whole number");
+      return;
+    }
+
     if (!form.iconUrl) {
       setError("Please select an icon for this plan");
       return;
@@ -122,6 +130,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
         subtitle: form.subtitle,
         description: form.description,
         base_price: price,
+        meetings_per_month: meetings,
         category: selectedPlanType,
         billing_type_id: form.billingTypeId,
         icon_url: form.iconUrl!,
@@ -195,7 +204,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-4 gap-4">
             <div className="space-y-1.5">
               <label className="text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-variant">
                 {m.labelPlanType}
@@ -229,6 +238,21 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
                 placeholder={m.pricePlaceholder}
                 value={form.price}
                 onChange={(e) => setForm((f) => ({ ...f, price: e.target.value }))}
+                required
+              />
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-semibold uppercase tracking-[0.12em] text-surface-variant">
+                Monthly meetings
+              </label>
+              <input
+                type="number"
+                step="1"
+                min="1"
+                className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
+                placeholder="e.g. 4"
+                value={form.monthlyMeetings}
+                onChange={(e) => setForm((f) => ({ ...f, monthlyMeetings: e.target.value }))}
                 required
               />
             </div>

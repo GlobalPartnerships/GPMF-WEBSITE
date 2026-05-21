@@ -21,4 +21,13 @@ export interface SvgListResponse {
   data: CloudinaryImage[];
 }
 
+export interface SyncResponse {
+  success: boolean;
+  data: {
+    added: number;
+    alreadySynced: number;
+    totalInCloud: number;
+  };
+}
+
 export type UploadStatus = "idle" | "uploading" | "success" | "error";

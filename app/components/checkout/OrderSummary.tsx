@@ -38,6 +38,10 @@ export function OrderSummary({ plan, dict }: OrderSummaryProps) {
       <p className="text-[11px] uppercase tracking-[0.18em] text-surface-variant font-medium mt-4">
         {plan.billing_type.name}
       </p>
+      <p className="flex items-center gap-2 text-[13px] text-surface-variant mt-2">
+        <span className="material-symbols-outlined text-[16px]">calendar_month</span>
+        {plan.meetings_per_month} meetings / month
+      </p>
 
       <div className="border-t border-foreground/8 pt-6 mt-6 space-y-2">
         <div className="flex justify-between items-center">
