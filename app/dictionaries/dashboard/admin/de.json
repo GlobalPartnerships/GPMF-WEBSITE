@@ -33,6 +33,11 @@
   "status": "Status",
   "completed": "Abgeschlossen",
   "pending": "Ausstehend",
+  "failed": "Fehlgeschlagen",
+  "provider": "Anbieter",
+  "salesSubtitle": "Alle Bestellungen und Transaktionen",
+  "noOrdersTitle": "Keine Bestellungen",
+  "noOrdersMessage": "Es wurden noch keine Bestellungen aufgegeben. Sie erscheinen hier, sobald Kunden Einkäufe tätigen.",
 
   "trafficAnalytics": "Traffic-Analytik",
   "trafficAnalyticsSubtitle": "Globale Seitenaufrufe der letzten 30 Tage",
@@ -58,6 +63,10 @@
   "confirmed": "Bestätigt",
   "cancelled": "Abgesagt",
 
+  "salesMeta": {
+    "title": "Verkäufe — Admin Dashboard | GPMF",
+    "description": "Alle Bestellungen und Transaktionen anzeigen."
+  },
   "meta": {
     "title": "Admin Dashboard | GPMF",
     "description": "Verwalten Sie Verkäufe, Traffic und Meetings bei GPMF."

@@ -33,6 +33,11 @@
   "status": "Statut",
   "completed": "Terminé",
   "pending": "En attente",
+  "failed": "Échoué",
+  "provider": "Fournisseur",
+  "salesSubtitle": "Toutes les commandes et transactions",
+  "noOrdersTitle": "Aucune commande",
+  "noOrdersMessage": "Aucune commande n'a encore été passée. Elles apparaîtront ici lorsque les clients effectueront des achats.",
 
   "trafficAnalytics": "Analytiques de Trafic",
   "trafficAnalyticsSubtitle": "Pages vues globales sur les 30 derniers jours",
@@ -58,6 +63,10 @@
   "confirmed": "Confirmée",
   "cancelled": "Annulée",
 
+  "salesMeta": {
+    "title": "Ventes — Tableau de bord Admin | GPMF",
+    "description": "Voir toutes les commandes et transactions."
+  },
   "meta": {
     "title": "Tableau de bord Admin | GPMF",
     "description": "Gérez les ventes, le trafic et les réunions sur GPMF."

@@ -33,6 +33,11 @@
   "status": "Estado",
   "completed": "Completado",
   "pending": "Pendiente",
+  "failed": "Fallido",
+  "provider": "Proveedor",
+  "salesSubtitle": "Todas las órdenes y transacciones",
+  "noOrdersTitle": "Sin órdenes",
+  "noOrdersMessage": "Todavía no se registraron órdenes. Van a aparecer acá cuando los clientes realicen compras.",
 
   "trafficAnalytics": "Analíticas de Tráfico",
   "trafficAnalyticsSubtitle": "Vistas de página globales en los últimos 30 días",
@@ -58,6 +63,10 @@
   "confirmed": "Confirmada",
   "cancelled": "Cancelada",
 
+  "salesMeta": {
+    "title": "Ventas — Panel Admin | GPMF",
+    "description": "Ver todas las órdenes y transacciones."
+  },
   "meta": {
     "title": "Panel Admin | GPMF",
     "description": "Gestioná ventas, tráfico y reuniones en GPMF."

@@ -33,6 +33,11 @@
   "status": "Status",
   "completed": "Completed",
   "pending": "Pending",
+  "failed": "Failed",
+  "provider": "Provider",
+  "salesSubtitle": "All orders and transactions",
+  "noOrdersTitle": "No orders yet",
+  "noOrdersMessage": "No orders have been placed yet. They will appear here once customers make purchases.",
 
   "trafficAnalytics": "Traffic Analytics",
   "trafficAnalyticsSubtitle": "Global page views over the last 30 days",
@@ -58,6 +63,10 @@
   "confirmed": "Confirmed",
   "cancelled": "Cancelled",
 
+  "salesMeta": {
+    "title": "Sales — Admin Dashboard | GPMF",
+    "description": "View all orders and transactions."
+  },
   "meta": {
     "title": "Admin Dashboard | GPMF",
     "description": "Manage sales, traffic, and meetings at GPMF."

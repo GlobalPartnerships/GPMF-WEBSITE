@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import { getAuthHeaders } from "@/lib/auth/client";
 
 interface PayPalCheckoutProps {
   plan_id: string;
@@ -18,9 +19,10 @@ export function PayPalCheckout({ plan_id, user_id, lang }: PayPalCheckoutProps) 
     <PayPalButtons
       style={{ shape: "rect", layout: "vertical", color: "blue", label: "paypal" }}
       createOrder={async () => {
+        const headers = await getAuthHeaders();
         const response = await fetch(`${API_BASE_URL}/orders/paypal`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers,
           body: JSON.stringify({ plan_id, user_id }),
         });
 
@@ -36,9 +38,10 @@ export function PayPalCheckout({ plan_id, user_id, lang }: PayPalCheckoutProps) 
         );
       }}
       onApprove={async (data, actions) => {
+        const headers = await getAuthHeaders();
         const response = await fetch(`${API_BASE_URL}/orders/paypal/${data.orderID}/capture`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers,
         });
 
         const orderData = await response.json();

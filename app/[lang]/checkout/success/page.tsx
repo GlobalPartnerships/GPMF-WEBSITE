@@ -5,6 +5,7 @@ import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { RevealObserver } from "@/app/components/home/RevealObserver";
 import { DecoElements } from "@/app/components/plans/DecoElements";
 import { SideText } from "@/app/components/plans/SideText";
+import { getAuthHeaders } from "@/lib/auth/server";
 
 type PageParams = {
   params: Promise<{ lang: string }>;
@@ -25,7 +26,11 @@ export async function generateMetadata({
 
 async function getOrder(orderId: string) {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
-  const res = await fetch(`${API_BASE_URL}/orders/${orderId}`, { cache: "no-store" });
+  const headers = await getAuthHeaders();
+  const res = await fetch(`${API_BASE_URL}/orders/${orderId}`, {
+    cache: "no-store",
+    headers,
+  });
   if (!res.ok) return null;
   return res.json();
 }

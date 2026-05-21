@@ -33,6 +33,11 @@ export interface AdminDict {
   status: string;
   completed: string;
   pending: string;
+  failed: string;
+  provider: string;
+  salesSubtitle: string;
+  noOrdersTitle: string;
+  noOrdersMessage: string;
 
   trafficAnalytics: string;
   trafficAnalyticsSubtitle: string;
@@ -105,6 +110,10 @@ export interface AdminDict {
     pricePlaceholder: string;
     saveChanges: string;
     createPlan: string;
+  };
+  salesMeta: {
+    title: string;
+    description: string;
   };
   svgManager: {
     title: string;
