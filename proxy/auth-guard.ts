@@ -5,6 +5,18 @@ import type { NextRequest } from "next/server";
 const protectedPaths = ["/user", "/admin"];
 
 export function createSupabaseClient(request: NextRequest, response: NextResponse) {
+  // console.log all the cookies
+
+  console.log("Request cookies:");
+  request.cookies.getAll().forEach((cookie) => {
+    console.log(`- ${cookie.name}: ${cookie.value}`);
+  });
+
+  console.log("Response cookies:");
+  response.cookies.getAll().forEach((cookie) => {
+    console.log(`- ${cookie.name}: ${cookie.value}`);
+  });
+
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
