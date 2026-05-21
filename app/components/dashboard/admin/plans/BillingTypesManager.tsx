@@ -7,7 +7,7 @@ import {
   updateBillingTypeAction,
   deleteBillingTypeAction,
 } from "@/app/[lang]/(dashboard)/admin/plans/actions";
-import { ModalOverlay } from "./plan-modal/ModalOverlay";
+import { ModalOverlay } from "@/app/components/shared/ModalOverlay";
 import type { BillingType } from "./types";
 
 type ModalState =

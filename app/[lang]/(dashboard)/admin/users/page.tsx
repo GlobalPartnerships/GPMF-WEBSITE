@@ -4,12 +4,15 @@ import { createClient } from "@/lib/supabase/server";
 import { fetchAppUser } from "@/lib/api/user";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { getUsers, getTopSpender, getLatestUser, getUsersByPeriod } from "@/lib/api/users";
+import { getInvitations } from "@/lib/api/invitations";
+import { getRoles } from "@/lib/api/roles";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
 import { TopSpenderCard } from "@/app/components/dashboard/admin/users/TopSpenderCard";
 import { LatestUserCard } from "@/app/components/dashboard/admin/users/LatestUserCard";
 import { MonthlyRegistrationsCard } from "@/app/components/dashboard/admin/users/MonthlyRegistrationsCard";
 import { UsersTable } from "@/app/components/dashboard/admin/users/UsersTable";
+import { InvitationsTable } from "@/app/components/dashboard/admin/invitations/InvitationsTable";
 import type { TopSpenderResponse, LatestUserResponse } from "@/app/components/dashboard/admin/users/types";
 
 type PageParams = { params: Promise<{ lang: string }> };
@@ -60,17 +63,21 @@ export default async function AdminUsersPage({ params }: PageParams) {
   let latestUser: LatestUserResponse | null = null;
   let monthlyTotal = 0;
 
-  const [usersRes, topSpenderRes, latestUserRes, monthlyRes] = await Promise.allSettled([
+  const [usersRes, topSpenderRes, latestUserRes, monthlyRes, invitationsRes, rolesRes] = await Promise.allSettled([
     getUsers(headers),
     getTopSpender(headers),
     getLatestUser(headers),
     getUsersByPeriod(headers, monthRange),
+    getInvitations(headers),
+    getRoles(headers),
   ]);
 
   const users = usersRes.status === "fulfilled" ? usersRes.value.data : [];
   if (topSpenderRes.status === "fulfilled") topSpender = topSpenderRes.value;
   if (latestUserRes.status === "fulfilled") latestUser = latestUserRes.value;
   if (monthlyRes.status === "fulfilled") monthlyTotal = monthlyRes.value.meta.total;
+  const invitations = invitationsRes.status === "fulfilled" ? invitationsRes.value : [];
+  const roles = rolesRes.status === "fulfilled" ? rolesRes.value : [];
 
   return (
     <div className="min-h-screen pt-[88px] flex bg-background">
@@ -87,6 +94,14 @@ export default async function AdminUsersPage({ params }: PageParams) {
 
         <div className="mt-8">
           <UsersTable users={users} />
+        </div>
+
+        <div className="mt-8">
+          <InvitationsTable
+            invitations={invitations}
+            roles={roles}
+            isAdmin={user.role === "admin"}
+          />
         </div>
       </main>
     </div>

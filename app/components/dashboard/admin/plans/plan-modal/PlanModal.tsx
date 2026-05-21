@@ -10,7 +10,7 @@ import {
   getBillingTypesAction,
   getPlanSvgsAction,
 } from "@/app/[lang]/(dashboard)/admin/plans/actions";
-import { ModalOverlay } from "./ModalOverlay";
+import { ModalOverlay } from "@/app/components/shared/ModalOverlay";
 import { ModalHeader } from "./ModalHeader";
 import { IconPicker } from "../IconPicker";
 import { FeatureList } from "./FeatureList";

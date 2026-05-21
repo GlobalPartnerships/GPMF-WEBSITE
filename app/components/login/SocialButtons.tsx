@@ -42,7 +42,7 @@ export function SocialButtons({ dict, lang }: SocialButtonsProps) {
         type="button"
         disabled={loading !== null}
         onClick={() => handleOAuthLogin("google")}
-        className={`${styles.btn} w-full flex items-center justify-center gap-3 py-3.5 px-6 bg-white text-foreground text-[13px] font-medium tracking-[0.02em] rounded-sm disabled:opacity-50 disabled:cursor-not-allowed`}
+        className={`${styles.btn} w-full flex cursor-pointer items-center justify-center gap-3 py-3.5 px-6 bg-white text-foreground text-[13px] font-medium tracking-[0.02em] rounded-sm disabled:opacity-50 disabled:cursor-not-allowed`}
       >
         <GoogleIcon />
         {loading === "google" ? "..." : dict.socialGoogle}
