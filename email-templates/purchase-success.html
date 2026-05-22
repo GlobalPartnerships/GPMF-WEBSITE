@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Purchase Confirmed — GPMF</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+    body { margin: 0; padding: 0; width: 100% !important; height: 100% !important; }
+
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    /* Base */
+    body {
+      background-color: #faf8f6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #1a1c1c;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+
+    /* Header */
+    .header {
+      background-color: #7A0F32;
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    .header img {
+      width: 120px;
+      height: auto;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 48px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(137, 113, 116, 0.15);
+    }
+
+    .hero-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      background-color: #e6f4ea;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a1c1c;
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: #564144;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Section Label */
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #7A0F32;
+      margin: 0 0 20px;
+    }
+
+    /* Order Details */
+    .order-details {
+      padding: 40px 48px;
+      border-bottom: 1px solid rgba(137, 113, 116, 0.15);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(137, 113, 116, 0.08);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      font-size: 13px;
+      color: #897174;
+      font-weight: 400;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      color: #1a1c1c;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .detail-total {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #7A0F32;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 40px 48px;
+      text-align: center;
+    }
+
+    .cta-section p {
+      font-size: 14px;
+      color: #564144;
+      margin: 0 0 28px;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #7A0F32;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 2px;
+      mso-padding-alt: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #56001f;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #141413;
+      padding: 40px 48px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .footer a {
+      color: #ffb2be;
+      text-decoration: none;
+    }
+
+    .footer .brand {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 600px) {
+      .wrapper { width: 100% !important; }
+      .hero { padding: 40px 24px 32px !important; }
+      .hero h1 { font-size: 26px !important; }
+      .order-details { padding: 32px 24px !important; }
+      .cta-section { padding: 32px 24px !important; }
+      .footer { padding: 32px 24px !important; }
+      .header { padding: 24px !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #faf8f6;">
+  <!-- Preheader text (hidden) -->
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+    Your plan purchase has been confirmed. Order #{{order_id}} — Thank you, {{user_name}}.
+  </div>
+
+  <!-- Outer wrapper for background -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #faf8f6;">
+    <tr>
+      <td align="center" style="padding: 40px 16px;">
+
+        <!-- Email container -->
+        <table role="presentation" class="wrapper" width="640" cellpadding="0" cellspacing="0" style="background-color: #ffffff; box-shadow: 0 30px 60px -12px rgba(122, 15, 50, 0.07), 0 8px 20px -10px rgba(122, 15, 50, 0.04);">
+
+          <!-- Header -->
+          <tr>
+            <td class="header" style="background-color: #7A0F32; padding: 32px 40px; text-align: center;">
+              <img src="https://your-domain.com/images/gpmf-logo-white.png" alt="GPMF" width="120" style="width: 120px; height: auto;">
+            </td>
+          </tr>
+
+          <!-- Hero -->
+          <tr>
+            <td class="hero" style="padding: 56px 48px 40px; text-align: center; border-bottom: 1px solid rgba(137, 113, 116, 0.15);">
+              <!-- Success checkmark -->
+              <table role="presentation" cellpadding="0" cellspacing="0" style="margin: 0 auto 24px;">
+                <tr>
+                  <td style="width: 64px; height: 64px; background-color: #e6f4ea; border-radius: 50%; text-align: center; vertical-align: middle;">
+                    <span style="font-size: 28px; line-height: 64px;">&#10003;</span>
+                  </td>
+                </tr>
+              </table>
+              <h1 style="font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: 700; color: #1a1c1c; margin: 0 0 12px; line-height: 1.1;">
+                Purchase Confirmed
+              </h1>
+              <p style="font-size: 15px; color: #564144; margin: 0; line-height: 1.6;">
+                Thank you, <strong>{{user_name}}</strong>. Your plan is now active and ready to use.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Order Details -->
+          <tr>
+            <td class="order-details" style="padding: 40px 48px; border-bottom: 1px solid rgba(137, 113, 116, 0.15);">
+              <p style="font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #7A0F32; margin: 0 0 20px;">
+                Order Summary
+              </p>
+
+              <!-- Details table -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid rgba(137, 113, 116, 0.08);">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="font-size: 13px; color: #897174; font-weight: 400;">Order ID</td>
+                        <td style="font-size: 14px; color: #1a1c1c; font-weight: 500; text-align: right;">{{order_id}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid rgba(137, 113, 116, 0.08);">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="font-size: 13px; color: #897174; font-weight: 400;">Account</td>
+                        <td style="font-size: 14px; color: #1a1c1c; font-weight: 500; text-align: right;">{{user_email}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid rgba(137, 113, 116, 0.08);">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="font-size: 13px; color: #897174; font-weight: 400;">Payment Method</td>
+                        <td style="font-size: 14px; color: #1a1c1c; font-weight: 500; text-align: right;">{{payment_provider}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 18px 0 0;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="font-size: 13px; color: #897174; font-weight: 400; vertical-align: bottom;">Total</td>
+                        <td style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; color: #7A0F32; text-align: right;">{{order_total}}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA Section -->
+          <tr>
+            <td class="cta-section" style="padding: 40px 48px; text-align: center;">
+              <p style="font-size: 14px; color: #564144; margin: 0 0 28px; line-height: 1.6;">
+                You can view your purchases and manage your plan from your dashboard at any time.
+              </p>
+              <!--[if mso]>
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{dashboard_url}}" style="height:48px;v-text-anchor:middle;width:240px;" arcsize="4%" fillcolor="#7A0F32">
+                <w:anchorlock/>
+                <center style="color:#ffffff;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;">VIEW DASHBOARD</center>
+              </v:roundrect>
+              <![endif]-->
+              <!--[if !mso]><!-->
+              <a href="{{dashboard_url}}" class="btn-primary" style="display: inline-block; background-color: #7A0F32; color: #ffffff !important; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; padding: 16px 40px; border-radius: 2px;">
+                View Dashboard
+              </a>
+              <!--<![endif]-->
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding: 0 48px;">
+              <div style="height: 1px; background-color: rgba(137, 113, 116, 0.15);"></div>
+            </td>
+          </tr>
+
+          <!-- Help text -->
+          <tr>
+            <td style="padding: 28px 48px; text-align: center;">
+              <p style="font-size: 13px; color: #897174; margin: 0; line-height: 1.7;">
+                Questions about your purchase? Reply to this email or contact our support team.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="footer" style="background-color: #141413; padding: 40px 48px; text-align: center;">
+              <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 16px; color: rgba(255, 255, 255, 0.8); margin: 0 0 16px;">
+                GPMF
+              </p>
+              <p style="font-size: 12px; color: rgba(255, 255, 255, 0.5); margin: 0; line-height: 1.8;">
+                This email was sent to {{user_email}}<br>
+                regarding your recent purchase on GPMF.<br><br>
+                <a href="{{dashboard_url}}" style="color: #ffb2be; text-decoration: none;">Manage Account</a>
+                &nbsp;&middot;&nbsp;
+                <a href="#" style="color: #ffb2be; text-decoration: none;">Privacy Policy</a>
+                &nbsp;&middot;&nbsp;
+                <a href="#" style="color: #ffb2be; text-decoration: none;">Terms of Service</a>
+              </p>
+              <p style="font-size: 11px; color: rgba(255, 255, 255, 0.3); margin: 24px 0 0; line-height: 1.6;">
+                &copy; 2026 GPMF. All rights reserved.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Email container -->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
