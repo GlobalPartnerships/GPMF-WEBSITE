@@ -24,8 +24,15 @@ export async function proxy(request: NextRequest) {
   const supabase = createSupabaseClient(request, response);
 
   const { data: { user } } = await supabase.auth.getUser();
+  const { data: { session } } = await supabase.auth.getSession();
 
-  console.log(`[proxy] path: ${pathAfterLocale}, user: ${user?.email ?? "none"}, cookies: ${request.cookies.getAll().map(c => c.name).join(", ")}`);
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+  console.log(`🔑 [TOKEN LOG] ${request.method} ${pathAfterLocale}`);
+  console.log(`   USER          : ${user?.email ?? "❌ not authenticated"}`);
+  console.log(`   ACCESS_TOKEN  : ${session?.access_token ?? "❌ none"}`);
+  console.log(`   REFRESH_TOKEN : ${session?.refresh_token ?? "❌ none"}`);
+  console.log(`   COOKIES       : ${request.cookies.getAll().map(c => c.name).join(", ") || "none"}`);
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 
   if (isProtectedPath(pathAfterLocale) && !user) {
     const loginUrl = request.nextUrl.clone();
