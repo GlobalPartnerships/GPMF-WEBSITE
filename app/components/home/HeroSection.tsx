@@ -33,7 +33,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-8">
               <a
-                href={`/${lang}/schedule`}
+                href={`/${lang}/plans`}
                 className="btn-sweep bg-burgundy text-white px-10 py-5 text-[12px] uppercase tracking-[0.22em] rounded-sm"
               >
                 <span>{dict.ctaPrimary}</span>

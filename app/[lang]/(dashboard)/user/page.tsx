@@ -72,6 +72,7 @@ export default async function UserDashboardPage({ params }: PageParams) {
 
   const user = await fetchAppUser(session);
   if (!user) redirect(`/${lang}/login`);
+  if (user.role === "admin" || user.role === "moderator") redirect(`/${lang}/admin`);
 
   const dict = await getDictionary(lang as Locale, "dashboard");
 

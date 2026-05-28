@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import { fetchAppUser } from "@/lib/api/user";
 
 export async function GET(
   request: NextRequest,
@@ -16,8 +17,7 @@ export async function GET(
     return NextResponse.redirect(`${origin}/${lang}/login?error=no_code`);
   }
 
-  const redirectTo = `${origin}/${lang}/user`;
-  const response = NextResponse.redirect(redirectTo);
+  const cookieStore: { name: string; value: string; options: Record<string, unknown> }[] = [];
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -29,23 +29,33 @@ export async function GET(
         },
         setAll(cookiesToSet) {
           console.log("[callback] setting cookies:", cookiesToSet.map(c => c.name));
-          cookiesToSet.forEach(({ name, value, options }) => {
-            response.cookies.set(name, value, options);
-          });
+          cookieStore.length = 0;
+          cookiesToSet.forEach((cookie) => cookieStore.push(cookie));
         },
       },
     }
   );
 
   const { error } = await supabase.auth.exchangeCodeForSession(code);
-  
-  // console.log("[callback] exchange error:", error?.message ?? "none");
-  // console.log("[callback] response cookies:", response.cookies.getAll().map(c => c.name));
-  // console.log("[callback] redirecting to:", redirectTo);
 
   if (error) {
     return NextResponse.redirect(`${origin}/${lang}/login?error=auth_failed`);
   }
+
+  let redirectPath = `/${lang}/user`;
+
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) {
+    const user = await fetchAppUser(session);
+    if (user && (user.role === "admin" || user.role === "moderator")) {
+      redirectPath = `/${lang}/admin`;
+    }
+  }
+
+  const response = NextResponse.redirect(`${origin}${redirectPath}`);
+  cookieStore.forEach(({ name, value, options }) => {
+    response.cookies.set(name, value, options);
+  });
 
   return response;
 }

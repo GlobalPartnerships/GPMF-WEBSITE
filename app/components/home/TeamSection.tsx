@@ -50,7 +50,7 @@ export function TeamSection({ dict, lang }: TeamSectionProps) {
               </div>
 
               <a
-                href={`/${lang}/team`}
+                href={`/${lang}/partners`}
                 className="group inline-flex items-center gap-4 border border-outline px-10 py-5 transition-all duration-300 hover:bg-burgundy hover:text-white hover:border-burgundy"
               >
                 <span className="text-[11px] uppercase tracking-[0.28em]">{dict.cta}</span>
