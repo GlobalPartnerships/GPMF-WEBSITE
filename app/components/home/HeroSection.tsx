@@ -39,7 +39,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
                 <span>{dict.ctaPrimary}</span>
               </a>
               <a
-                href="#work"
+                href={`/${lang}/diagnosis`}
                 className="group inline-flex items-center gap-3 py-5 text-[12px] uppercase tracking-[0.22em]"
               >
                 <span className="border-b border-foreground/60 pb-1 group-hover:text-burgundy group-hover:border-burgundy transition-colors">

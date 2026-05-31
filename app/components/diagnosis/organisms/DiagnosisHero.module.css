@@ -1,0 +1,55 @@
+.hero {
+  padding: 88px 24px 24px;
+  background: linear-gradient(to bottom, #FAF3F6, #ffffff);
+  text-align: center;
+}
+
+.container {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titlePrimary {
+  display: block;
+  color: #111827;
+}
+
+.titleSecondary {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-style: italic;
+  color: #6B7280;
+  font-weight: 400;
+}
+
+.highlight {
+  color: #7A0F32;
+}
+
+.description {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4B5563;
+  max-width: 672px;
+  margin: 0 auto 8px;
+  line-height: 1.6;
+}
+
+.descriptionEn {
+  font-style: italic;
+  font-size: 0.875rem;
+  color: #6B7280;
+  max-width: 672px;
+  margin: 0 auto;
+}

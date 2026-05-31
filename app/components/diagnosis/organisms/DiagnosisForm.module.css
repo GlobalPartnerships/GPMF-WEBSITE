@@ -1,0 +1,249 @@
+.section {
+  padding: 16px 24px 32px;
+  background-color: #F9FAFB;
+}
+
+.container {
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #D1D5DB;
+  overflow: hidden;
+}
+
+.form {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Question block */
+.questionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.questionLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.labelPrimary {
+  font-weight: 700;
+  color: #111827;
+}
+
+.labelSecondary {
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #6B7280;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+/* Radio groups */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.urgencyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Budget section */
+.budgetSection {
+  padding: 16px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+}
+
+.budgetNote {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8125rem;
+  color: #6B7280;
+  margin-top: -4px;
+}
+
+/* Contact section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.contactTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .urgencyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Submit */
+.submitBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.errorMessage {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #DC2626;
+  padding: 8px 12px;
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 6px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #7A0F32;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 4px 12px rgba(122, 15, 50, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #5e0b26;
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitLabelEn {
+  font-style: italic;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Success message */
+.successMessage {
+  padding: 48px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.checkIcon {
+  width: 64px;
+  height: 64px;
+  background-color: #DCFCE7;
+  color: #16A34A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.successTitleEn {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #6B7280;
+}
+
+.successBody {
+  color: #4B5563;
+  font-size: 0.9375rem;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.successBodyEn {
+  font-style: italic;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.backLink {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: #7A0F32;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.backLink:hover {
+  color: #5e0b26;
+}

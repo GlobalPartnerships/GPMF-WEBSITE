@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Strategic Diagnostic | GPMF",
+    "description": "Answer 5 key questions to identify growth opportunities and align your vision with our expertise."
+  },
+  "hero": {
+    "title": "Strategic",
+    "titleHighlight": "Diagnostic",
+    "titleEn": "Diagnóstico",
+    "titleEnHighlight": "Estratégico",
+    "description": "Answer these 5 key questions to identify growth opportunities and align your vision with our expertise.",
+    "descriptionEn": "Responde estas 5 preguntas clave para identificar oportunidades de crecimiento y alinear tu visión con nuestra experticia."
+  },
+  "form": {
+    "questions": {
+      "challenge": {
+        "label": "1. What is the main strategic challenge to solve?",
+        "labelEn": "¿Cuál es el principal desafío estratégico a resolver?",
+        "options": [
+          { "value": "internacionalizacion", "label": "Internationalization (New markets/Export)", "labelEn": "Internacionalización (Nuevos mercados/Exportación)" },
+          { "value": "datos_ia", "label": "Data Intelligence & AI (Decision making)", "labelEn": "Inteligencia de Datos & IA (Toma de decisiones)" },
+          { "value": "intercultural", "label": "Intercultural Management (Global Teams)", "labelEn": "Gestión Intercultural (Equipos Globales)" },
+          { "value": "estrategia", "label": "Corporate Strategy (Expansion roadmap)", "labelEn": "Estrategia Corporativa (Hoja de ruta de expansión)" }
+        ]
+      },
+      "stage": {
+        "label": "2. At what stage is the project?",
+        "labelEn": "¿En qué etapa se encuentra el proyecto?",
+        "placeholder": "Select an option...",
+        "options": [
+          { "value": "exploracion", "label": "Exploration — Just an idea / Seeking feasibility" },
+          { "value": "planeacion", "label": "Planning — We have budget, need a roadmap" },
+          { "value": "ejecucion", "label": "Execution — Already started, need structure" },
+          { "value": "escalamiento", "label": "Scaling — Optimization and growth" }
+        ]
+      },
+      "pain": {
+        "label": "3. What obstacle keeps you up at night regarding this project?",
+        "labelEn": "¿Qué obstáculo te impide dormir tranquilo respecto a este proyecto?",
+        "placeholder": "Be specific. E.g.: 'My team doesn't adapt to German culture'..."
+      },
+      "urgency": {
+        "label": "4. How urgent is the solution?",
+        "labelEn": "¿Qué tan urgente es la solución?",
+        "options": [
+          { "value": "critico", "label": "Critical (This month)", "labelEn": "Crítico (Este mes)" },
+          { "value": "alto", "label": "High (Q1/Q2)", "labelEn": "Alto (Q1/Q2)" },
+          { "value": "medio", "label": "Medium (Next year)", "labelEn": "Medio (Próximo año)" },
+          { "value": "bajo", "label": "Low (Curiosity)", "labelEn": "Bajo (Curiosidad)" }
+        ]
+      },
+      "budget": {
+        "label": "5. Investment Range Considered",
+        "labelEn": "Rango de Inversión Considerado",
+        "note": "This helps us assign the appropriate consultant level.",
+        "noteEn": "Esto nos ayuda a asignar el nivel de consultor adecuado.",
+        "placeholder": "Select a range...",
+        "options": [
+          { "value": "seed", "label": "< $5,000 USD (Workshops / Seed)" },
+          { "value": "standard", "label": "$5,000 – $20,000 USD (Standard Consulting)" },
+          { "value": "expansion", "label": "$20,000 – $50,000 USD (Core Expansion)" },
+          { "value": "enterprise", "label": "$50,000 USD+ (Corporate Solutions)" },
+          { "value": "tbd", "label": "To be determined" }
+        ]
+      }
+    },
+    "contact": {
+      "title": "Your Information",
+      "titleEn": "Tus Datos",
+      "namePlaceholder": "Full Name",
+      "emailPlaceholder": "Corporate Email",
+      "companyPlaceholder": "LinkedIn or Company Website"
+    },
+    "submit": {
+      "label": "REQUEST DIAGNOSTIC SESSION",
+      "labelEn": "SOLICITAR SESIÓN DE DIAGNÓSTICO",
+      "sending": "Sending..."
+    },
+    "disclaimer": {
+      "text": "Upon submission, our partners will review your profile within 24h.",
+      "textEn": "Al enviar, nuestros socios revisarán tu perfil en 24h."
+    },
+    "errorMessage": "There was a problem submitting the form. Please try again."
+  },
+  "success": {
+    "title": "Request Received!",
+    "titleEn": "¡Diagnóstico Recibido!",
+    "body": "We will analyze your radar. If there is strategic alignment, we will contact you within 24–48h.",
+    "bodyEn": "Analizaremos tu radar. Si hay alineación estratégica, nos pondremos en contacto en 24–48h.",
+    "backLink": "Back to Home | Volver al Inicio"
+  },
+  "cta": {
+    "title": "Ready to transform your vision?",
+    "titleEn": "¿Listo para transformar tu visión?",
+    "body": "We analyze your case to design a tailored strategy.",
+    "bodyEn": "Analizamos tu caso para diseñar una estrategia a medida."
+  }
+}

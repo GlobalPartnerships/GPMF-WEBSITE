@@ -1,0 +1,44 @@
+.cta {
+  padding: 80px 24px;
+  background-color: #2E2E2E;
+  color: #ffffff;
+  text-align: center;
+}
+
+.container {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titleEn {
+  display: block;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-style: italic;
+  color: #D1D5DB;
+}
+
+.body {
+  color: #D1D5DB;
+  font-size: 1.125rem;
+  max-width: 672px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bodyEn {
+  font-style: italic;
+  font-size: 1rem;
+  color: #9CA3AF;
+}

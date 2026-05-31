@@ -98,6 +98,12 @@ const loaders: {
     fr: () => import("./register/fr.json").then((m) => m.default as DictMap["register"]),
     de: () => import("./register/de.json").then((m) => m.default as DictMap["register"]),
   },
+  diagnosis: {
+    es: () => import("./diagnosis/es.json").then((m) => m.default as DictMap["diagnosis"]),
+    en: () => import("./diagnosis/en.json").then((m) => m.default as DictMap["diagnosis"]),
+    fr: () => import("./diagnosis/fr.json").then((m) => m.default as DictMap["diagnosis"]),
+    de: () => import("./diagnosis/de.json").then((m) => m.default as DictMap["diagnosis"]),
+  },
 };
 
 export async function getDictionary<S extends DictSection>(

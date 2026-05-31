@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "title": "Strategische Diagnose | GPMF",
+    "description": "Beantworten Sie 5 Schlüsselfragen, um Wachstumschancen zu identifizieren und Ihre Vision mit unserer Expertise abzustimmen."
+  },
+  "hero": {
+    "title": "Strategische",
+    "titleHighlight": "Diagnose",
+    "titleEn": "Strategic",
+    "titleEnHighlight": "Diagnostic",
+    "description": "Beantworten Sie diese 5 Schlüsselfragen, um Wachstumschancen zu identifizieren und Ihre Vision mit unserer Expertise abzustimmen.",
+    "descriptionEn": "Answer these 5 key questions to identify growth opportunities and align your vision with our expertise."
+  },
+  "form": {
+    "questions": {
+      "challenge": {
+        "label": "1. Was ist die wichtigste strategische Herausforderung?",
+        "labelEn": "What is the main strategic challenge to solve?",
+        "options": [
+          { "value": "internacionalizacion", "label": "Internationalisierung (Neue Märkte/Export)", "labelEn": "Internationalization (New markets/Export)" },
+          { "value": "datos_ia", "label": "Datenintelligenz & KI (Entscheidungsfindung)", "labelEn": "Data Intelligence & AI (Decision making)" },
+          { "value": "intercultural", "label": "Interkulturelles Management (Globale Teams)", "labelEn": "Intercultural Management (Global Teams)" },
+          { "value": "estrategia", "label": "Unternehmensstrategie (Expansions-Roadmap)", "labelEn": "Corporate Strategy (Expansion roadmap)" }
+        ]
+      },
+      "stage": {
+        "label": "2. In welcher Phase befindet sich das Projekt?",
+        "labelEn": "At what stage is the project?",
+        "placeholder": "Option auswählen...",
+        "options": [
+          { "value": "exploracion", "label": "Erkundung — Nur eine Idee / Machbarkeit prüfen" },
+          { "value": "planeacion", "label": "Planung — Budget vorhanden, Roadmap fehlt" },
+          { "value": "ejecucion", "label": "Umsetzung — Bereits gestartet, Struktur nötig" },
+          { "value": "escalamiento", "label": "Skalierung — Optimierung und Wachstum" }
+        ]
+      },
+      "pain": {
+        "label": "3. Welches Hindernis lässt Sie nachts nicht schlafen?",
+        "labelEn": "What obstacle keeps you up at night regarding this project?",
+        "placeholder": "Seien Sie konkret. Bsp.: 'Mein Team passt sich nicht an die deutsche Kultur an'..."
+      },
+      "urgency": {
+        "label": "4. Wie dringend ist die Lösung?",
+        "labelEn": "How urgent is the solution?",
+        "options": [
+          { "value": "critico", "label": "Kritisch (Diesen Monat)", "labelEn": "Critical (This month)" },
+          { "value": "alto", "label": "Hoch (Q1/Q2)", "labelEn": "High (Q1/Q2)" },
+          { "value": "medio", "label": "Mittel (Nächstes Jahr)", "labelEn": "Medium (Next year)" },
+          { "value": "bajo", "label": "Niedrig (Neugier)", "labelEn": "Low (Curiosity)" }
+        ]
+      },
+      "budget": {
+        "label": "5. Betrachteter Investitionsrahmen",
+        "labelEn": "Investment Range Considered",
+        "note": "Dies hilft uns, das passende Beratungsniveau zuzuweisen.",
+        "noteEn": "This helps us assign the appropriate consultant level.",
+        "placeholder": "Bereich auswählen...",
+        "options": [
+          { "value": "seed", "label": "< $5,000 USD (Workshops / Seed)" },
+          { "value": "standard", "label": "$5,000 – $20,000 USD (Standardberatung)" },
+          { "value": "expansion", "label": "$20,000 – $50,000 USD (Kern-Expansion)" },
+          { "value": "enterprise", "label": "$50,000 USD+ (Unternehmenslösungen)" },
+          { "value": "tbd", "label": "Noch zu bestimmen" }
+        ]
+      }
+    },
+    "contact": {
+      "title": "Ihre Angaben",
+      "titleEn": "Your Information",
+      "namePlaceholder": "Vollständiger Name",
+      "emailPlaceholder": "Geschäftliche E-Mail",
+      "companyPlaceholder": "LinkedIn oder Unternehmenswebsite"
+    },
+    "submit": {
+      "label": "DIAGNOSESITZUNG ANFORDERN",
+      "labelEn": "REQUEST DIAGNOSTIC SESSION",
+      "sending": "Wird gesendet..."
+    },
+    "disclaimer": {
+      "text": "Nach dem Absenden prüfen unsere Partner Ihr Profil innerhalb von 24h.",
+      "textEn": "Upon submission, our partners will review your profile within 24h."
+    },
+    "errorMessage": "Beim Absenden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "success": {
+    "title": "Diagnose Erhalten!",
+    "titleEn": "Request Received",
+    "body": "Wir analysieren Ihr Radar. Bei strategischer Übereinstimmung melden wir uns innerhalb von 24–48h.",
+    "bodyEn": "We will analyze your radar. If there is strategic alignment, we will contact you within 24–48h.",
+    "backLink": "Zur Startseite | Back to Home"
+  },
+  "cta": {
+    "title": "Bereit, Ihre Vision zu transformieren?",
+    "titleEn": "Ready to transform your vision?",
+    "body": "Wir analysieren Ihren Fall, um eine maßgeschneiderte Strategie zu entwerfen.",
+    "bodyEn": "We analyze your case to design a tailored strategy."
+  }
+}
