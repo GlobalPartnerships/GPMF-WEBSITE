@@ -1,20 +1,16 @@
 "use client";
 
-import { useState, useEffect, useTransition } from "react";
-import type { ModalState, BillingType } from "../types";
+import { useState, useTransition } from "react";
+import type { ModalState } from "../types";
 import type { AdminDict } from "@/app/dictionaries/dashboard/admin/types";
-import type { CloudinaryImage } from "../svg-upload/types";
-import {
-  createPlanAction,
-  updatePlanAction,
-  getBillingTypesAction,
-  getPlanSvgsAction,
-} from "@/app/[lang]/(dashboard)/admin/plans/actions";
 import { ModalOverlay } from "@/app/components/shared/ModalOverlay";
 import { ModalHeader } from "./ModalHeader";
 import { IconPicker } from "../IconPicker";
 import { FeatureList } from "./FeatureList";
-import type { FormState } from "./types";
+import { usePlanForm } from "./usePlanForm";
+import { usePlanData } from "./usePlanData";
+import { validatePlanForm } from "./validation";
+import { submitPlan } from "./submitPlan";
 
 interface PlanModalProps {
   state: ModalState;
@@ -22,73 +18,24 @@ interface PlanModalProps {
   onClose: () => void;
 }
 
-function buildInitialForm(state: ModalState): FormState {
-  if (state.mode === "edit" && state.plan) {
-    return {
-      name: state.plan.name,
-      subtitle: state.plan.subtitle,
-      description: state.plan.description,
-      price: String(state.plan.base_price),
-      monthlyMeetings: String(state.plan.meetings_per_month),
-      billingTypeId: state.plan.billing_type_id,
-      iconUrl: state.plan.icon_url ?? null,
-      iconSearch: "",
-      features: state.plan.features.map((f) => f.item),
-      newFeature: "",
-    };
-  }
-  return {
-    name: "",
-    subtitle: "",
-    description: "",
-    price: "",
-    monthlyMeetings: "",
-    billingTypeId: "",
-    iconUrl: null,
-    iconSearch: "",
-    features: [],
-    newFeature: "",
-  };
-}
-
 export function PlanModal({ state, dict, onClose }: PlanModalProps) {
-  const [form, setForm] = useState<FormState>(() => buildInitialForm(state));
-  const [selectedPlanType, setSelectedPlanType] = useState<"standard" | "custom">(state.planType);
-  const [billingTypes, setBillingTypes] = useState<BillingType[]>([]);
-  const [loadingBilling, setLoadingBilling] = useState(true);
-  const [svgAssets, setSvgAssets] = useState<CloudinaryImage[]>([]);
-  const [svgAssetsLoading, setSvgAssetsLoading] = useState(true);
+  const {
+    form,
+    selectedPlanType,
+    setSelectedPlanType,
+    setField,
+    setDefaultBillingType,
+    addFeature,
+    removeFeature,
+    updateFeature,
+  } = usePlanForm(state);
+
+  const { billingTypes, loadingBilling, svgAssets, svgAssetsLoading } =
+    usePlanData(setDefaultBillingType);
+
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const m = dict.plansModal;
-
-  useEffect(() => {
-    setLoadingBilling(true);
-    getBillingTypesAction().then((res) => {
-      if (res.success && res.data) {
-        setBillingTypes(res.data);
-        setForm((f) => ({
-          ...f,
-          billingTypeId: f.billingTypeId || res.data![0]?.id || "",
-        }));
-      }
-      setLoadingBilling(false);
-    });
-
-    setSvgAssetsLoading(true);
-    getPlanSvgsAction().then((res) => {
-      if (res.success && res.data) {
-        setSvgAssets(res.data);
-      }
-      setSvgAssetsLoading(false);
-    });
-  }, []);
-
-  useEffect(() => {
-    setForm(buildInitialForm(state));
-    setSelectedPlanType(state.planType);
-    setError(null);
-  }, [state]);
 
   const modalTitle =
     state.mode === "edit"
@@ -97,50 +44,18 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
         ? m.createPlan
         : selectedPlanType === "custom" ? m.createCustom : m.createStandard;
 
-  function addFeature() {
-    const trimmed = form.newFeature.trim();
-    if (!trimmed) return;
-    setForm((f) => ({ ...f, features: [...f.features, trimmed], newFeature: "" }));
-  }
-
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
 
-    const price = parseFloat(form.price);
-    if (isNaN(price) || price < 0) {
-      setError("Price must be a valid positive number");
-      return;
-    }
-
-    const meetings = parseInt(form.monthlyMeetings, 10);
-    if (!Number.isInteger(meetings) || meetings <= 0) {
-      setError("Monthly meetings must be a positive whole number");
-      return;
-    }
-
-    if (!form.iconUrl) {
-      setError("Please select an icon for this plan");
+    const validationError = validatePlanForm(form);
+    if (validationError) {
+      setError(validationError);
       return;
     }
 
     startTransition(async () => {
-      const payload = {
-        name: form.name,
-        subtitle: form.subtitle,
-        description: form.description,
-        base_price: price,
-        meetings_per_month: meetings,
-        category: selectedPlanType,
-        billing_type_id: form.billingTypeId,
-        icon_url: form.iconUrl!,
-      } as const;
-
-      const result =
-        state.mode === "edit" && state.plan
-          ? await updatePlanAction(state.plan.id, payload, form.features)
-          : await createPlanAction(payload, form.features);
-
+      const result = await submitPlan(form, selectedPlanType, state);
       if (result.success) {
         onClose();
       } else {
@@ -173,7 +88,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
               className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
               placeholder={m.titlePlaceholder}
               value={form.name}
-              onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+              onChange={(e) => setField("name", e.target.value)}
               required
             />
           </div>
@@ -186,7 +101,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
               className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
               placeholder={m.subtitlePlaceholder}
               value={form.subtitle}
-              onChange={(e) => setForm((f) => ({ ...f, subtitle: e.target.value }))}
+              onChange={(e) => setField("subtitle", e.target.value)}
               required
             />
           </div>
@@ -199,7 +114,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
               className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors resize-none"
               rows={3}
               value={form.description}
-              onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
+              onChange={(e) => setField("description", e.target.value)}
               required
             />
           </div>
@@ -237,7 +152,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
                 className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
                 placeholder={m.pricePlaceholder}
                 value={form.price}
-                onChange={(e) => setForm((f) => ({ ...f, price: e.target.value }))}
+                onChange={(e) => setField("price", e.target.value)}
                 required
               />
             </div>
@@ -252,7 +167,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
                 className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors"
                 placeholder="e.g. 4"
                 value={form.monthlyMeetings}
-                onChange={(e) => setForm((f) => ({ ...f, monthlyMeetings: e.target.value }))}
+                onChange={(e) => setField("monthlyMeetings", e.target.value)}
                 required
               />
             </div>
@@ -263,7 +178,7 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
               <select
                 className="w-full border border-outline/15 rounded-sm px-4 py-2 text-sm focus:outline-none focus:border-burgundy/40 transition-colors bg-white disabled:opacity-50 disabled:cursor-not-allowed"
                 value={form.billingTypeId}
-                onChange={(e) => setForm((f) => ({ ...f, billingTypeId: e.target.value }))}
+                onChange={(e) => setField("billingTypeId", e.target.value)}
                 disabled={loadingBilling}
                 required
               >
@@ -289,9 +204,9 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
             searchPlaceholder={m.searchIcon}
             uploadLabel={m.uploadSvg}
             deleteLabel={m.deleteIcon}
-            onSelect={(url) => setForm((f) => ({ ...f, iconUrl: url }))}
-            onSearchChange={(v) => setForm((f) => ({ ...f, iconSearch: v }))}
-            onClear={() => setForm((f) => ({ ...f, iconUrl: null }))}
+            onSelect={(url) => setField("iconUrl", url)}
+            onSearchChange={(v) => setField("iconSearch", v)}
+            onClear={() => setField("iconUrl", null)}
           />
 
           <FeatureList
@@ -301,15 +216,9 @@ export function PlanModal({ state, dict, onClose }: PlanModalProps) {
             addLabel={m.addFeature}
             placeholder={m.newFeaturePlaceholder}
             onAdd={addFeature}
-            onRemove={(i) =>
-              setForm((f) => ({ ...f, features: f.features.filter((_, idx) => idx !== i) }))
-            }
-            onChange={(i, v) => {
-              const updated = [...form.features];
-              updated[i] = v;
-              setForm((f) => ({ ...f, features: updated }));
-            }}
-            onNewFeatureChange={(v) => setForm((f) => ({ ...f, newFeature: v }))}
+            onRemove={removeFeature}
+            onChange={updateFeature}
+            onNewFeatureChange={(v) => setField("newFeature", v)}
           />
 
           <div className="pt-2">
