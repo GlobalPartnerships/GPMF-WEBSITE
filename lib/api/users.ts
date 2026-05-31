@@ -1,11 +1,13 @@
 import "server-only";
 
-import { apiGet } from "./client";
+import { apiGet, apiPut, apiDelete } from "./client";
 import type {
+  User,
   UsersPaginatedResponse,
   TopSpenderResponse,
   LatestUserResponse,
   UsersByPeriodResponse,
+  UpdateUserPayload,
 } from "@/app/components/dashboard/admin/users/types";
 import type { UserDetailResponse } from "@/app/components/dashboard/admin/users/detail/types";
 
@@ -51,4 +53,19 @@ export async function getUsersByPeriod(
     `/users/by-period?${searchParams.toString()}`,
     { headers }
   );
+}
+
+export async function updateUser(
+  userId: string,
+  body: UpdateUserPayload,
+  headers: Record<string, string>
+): Promise<User> {
+  return apiPut<User>(`/users/${userId}`, body, { headers });
+}
+
+export async function deleteUser(
+  userId: string,
+  headers: Record<string, string>
+): Promise<void> {
+  return apiDelete(`/users/${userId}`, { headers });
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 interface ModalOverlayProps {
   onClose: () => void;
@@ -18,7 +19,7 @@ export function ModalOverlay({ onClose, children }: ModalOverlayProps) {
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div
       ref={overlayRef}
       className="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/40 backdrop-blur-sm"
@@ -27,6 +28,7 @@ export function ModalOverlay({ onClose, children }: ModalOverlayProps) {
       <div className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl whisper-shadow border border-outline/10 p-8 m-4 relative">
         {children}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

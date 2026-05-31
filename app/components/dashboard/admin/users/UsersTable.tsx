@@ -1,8 +1,11 @@
-import Link from "next/link";
+"use client";
+
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 import { DataTable } from "@/app/components/shared/DataTable";
+import { ActionsCell } from "./ActionsCell";
 import type { ColumnDef } from "@/app/components/shared/types";
 import type { User } from "./types";
+import type { Role } from "../invitations/types";
 
 function getInitials(name: string): string {
   return name
@@ -55,9 +58,10 @@ function RoleBadge({ role }: { role: string | null }) {
 interface UsersTableProps {
   users: User[];
   lang: string;
+  roles: Role[];
 }
 
-export function UsersTable({ users, lang }: UsersTableProps) {
+export function UsersTable({ users, lang, roles }: UsersTableProps) {
   const columns: ColumnDef<User>[] = [
     {
       key: "name",
@@ -94,15 +98,8 @@ export function UsersTable({ users, lang }: UsersTableProps) {
     },
     {
       key: "actions",
-      label: "",
-      render: (row) => (
-        <Link
-          href={`/${lang}/admin/users/${row.id}`}
-          className="text-[12px] text-burgundy hover:underline font-medium"
-        >
-          View
-        </Link>
-      ),
+      label: "Actions",
+      render: (row) => <ActionsCell user={row} lang={lang} roles={roles} />,
     },
   ];
 

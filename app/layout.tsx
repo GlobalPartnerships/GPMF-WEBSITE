@@ -1,4 +1,5 @@
 import { Inter, Playfair_Display, IM_Fell_Great_Primer_SC } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import "flag-icons/css/flag-icons.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
         {children}
+        <Toaster position="bottom-center" duration={10000} richColors />
       </body>
     </html>
   );

@@ -37,3 +37,16 @@ export interface UsersByPeriodResponse {
   data: User[];
   meta: PaginationMeta & { from: string; to: string };
 }
+
+export interface UpdateUserPayload {
+  name?: string;
+  email?: string;
+  phone?: string | null;
+  role_id?: string;
+}
+
+export interface ActionResult<T = unknown> {
+  success: boolean;
+  data?: T;
+  error?: string;
+}
