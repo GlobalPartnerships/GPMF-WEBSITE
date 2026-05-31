@@ -1,3 +1,4 @@
+import Link from "next/link";
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 import type { LatestUserResponse } from "./types";
 
@@ -28,9 +29,10 @@ function formatDate(iso: string): string {
 
 interface LatestUserCardProps {
   data: LatestUserResponse | null;
+  lang: string;
 }
 
-export function LatestUserCard({ data }: LatestUserCardProps) {
+export function LatestUserCard({ data, lang }: LatestUserCardProps) {
   if (!data) {
     return (
       <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
@@ -48,7 +50,7 @@ export function LatestUserCard({ data }: LatestUserCardProps) {
   const initials = getInitials(data.name);
 
   return (
-    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
+    <Link href={`/${lang}/admin/users/${data.id}`} className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6 block transition-shadow hover:shadow-md`}>
       <div className="flex items-center justify-between mb-4">
         <span className="text-[11px] tracking-[0.12em] uppercase text-surface-variant font-semibold">
           Latest User
@@ -80,6 +82,6 @@ export function LatestUserCard({ data }: LatestUserCardProps) {
       <p className="text-surface-variant text-[13px] mt-1">
         Joined {formatDate(data.created_at)}
       </p>
-    </div>
+    </Link>
   );
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 import { EmptyState } from "@/app/components/EmptyState";
 import type { TopSpenderResponse } from "./types";
@@ -21,9 +22,10 @@ function getInitials(name: string): string {
 
 interface TopSpenderCardProps {
   data: TopSpenderResponse | null;
+  lang: string;
 }
 
-export function TopSpenderCard({ data }: TopSpenderCardProps) {
+export function TopSpenderCard({ data, lang }: TopSpenderCardProps) {
   if (!data) {
     return (
       <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
@@ -50,7 +52,7 @@ export function TopSpenderCard({ data }: TopSpenderCardProps) {
   }).format(total_spent);
 
   return (
-    <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6`}>
+    <Link href={`/${lang}/admin/users/${user.id}`} className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6 block transition-shadow hover:shadow-md`}>
       <div className="flex items-center justify-between mb-4">
         <span className="text-[11px] tracking-[0.12em] uppercase text-surface-variant font-semibold">
           Top Spender
@@ -82,6 +84,6 @@ export function TopSpenderCard({ data }: TopSpenderCardProps) {
       <p className="text-surface-variant text-[13px] mt-1.5">
         {order_count} order{order_count !== 1 ? "s" : ""} completed
       </p>
-    </div>
+    </Link>
   );
 }

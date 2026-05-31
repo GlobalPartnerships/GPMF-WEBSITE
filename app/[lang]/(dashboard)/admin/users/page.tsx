@@ -87,8 +87,8 @@ export default async function AdminUsersPage({ params }: PageParams) {
         <AdminTopBar dict={dict} />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
-          <TopSpenderCard data={topSpender} />
-          <LatestUserCard data={latestUser} />
+          <TopSpenderCard data={topSpender} lang={lang} />
+          <LatestUserCard data={latestUser} lang={lang} />
           <MonthlyRegistrationsCard total={monthlyTotal} monthLabel={getMonthLabel()} />
         </div>
 
