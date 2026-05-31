@@ -93,7 +93,7 @@ export default async function AdminUsersPage({ params }: PageParams) {
         </div>
 
         <div className="mt-8">
-          <UsersTable users={users} />
+          <UsersTable users={users} lang={lang} />
         </div>
 
         <div className="mt-8">

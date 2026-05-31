@@ -1,3 +1,4 @@
+import Link from "next/link";
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 import { DataTable } from "@/app/components/shared/DataTable";
 import type { ColumnDef } from "@/app/components/shared/types";
@@ -53,9 +54,10 @@ function RoleBadge({ role }: { role: string | null }) {
 
 interface UsersTableProps {
   users: User[];
+  lang: string;
 }
 
-export function UsersTable({ users }: UsersTableProps) {
+export function UsersTable({ users, lang }: UsersTableProps) {
   const columns: ColumnDef<User>[] = [
     {
       key: "name",
@@ -88,6 +90,18 @@ export function UsersTable({ users }: UsersTableProps) {
               })
             : "—"}
         </span>
+      ),
+    },
+    {
+      key: "actions",
+      label: "",
+      render: (row) => (
+        <Link
+          href={`/${lang}/admin/users/${row.id}`}
+          className="text-[12px] text-burgundy hover:underline font-medium"
+        >
+          View
+        </Link>
       ),
     },
   ];

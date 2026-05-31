@@ -7,6 +7,7 @@ import type {
   LatestUserResponse,
   UsersByPeriodResponse,
 } from "@/app/components/dashboard/admin/users/types";
+import type { UserDetailResponse } from "@/app/components/dashboard/admin/users/detail/types";
 
 export async function getUsers(
   headers: Record<string, string>,
@@ -29,6 +30,16 @@ export async function getLatestUser(
   headers: Record<string, string>
 ): Promise<LatestUserResponse> {
   return apiGet<LatestUserResponse>("/users/latest", { headers });
+}
+
+export async function getUserDetail(
+  headers: Record<string, string>,
+  userId: string
+): Promise<UserDetailResponse> {
+  return apiGet<UserDetailResponse>(`/users/${userId}?all=true`, {
+    headers,
+    next: { revalidate: 0 },
+  });
 }
 
 export async function getUsersByPeriod(
