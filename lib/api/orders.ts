@@ -23,3 +23,10 @@ export async function getOrders(
   );
   return res.data;
 }
+
+export async function getOrderById(
+  headers: Record<string, string>,
+  id: string
+): Promise<Order> {
+  return apiGet<Order>(`/orders/${id}`, { headers, next: { revalidate: 0 } });
+}

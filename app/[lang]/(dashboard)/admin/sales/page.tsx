@@ -69,7 +69,7 @@ export default async function AdminSalesPage({ params, searchParams }: PageParam
         </div>
 
         <div className="mt-6">
-          <SalesTable orders={orders} dict={dict} />
+          <SalesTable orders={orders} dict={dict} lang={lang} />
         </div>
       </main>
     </div>

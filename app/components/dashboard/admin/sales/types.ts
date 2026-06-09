@@ -1,12 +1,39 @@
+export interface BillingType {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface PlanFeature {
+  id: string;
+  item: string;
+  plan_id: string;
+}
+
 export interface OrderPlan {
   id: string;
   name: string;
+  subtitle: string;
+  description: string;
+  category: string;
+  base_price: number;
+  billing_type: BillingType;
+  billing_type_id: string;
+  created_at: string;
+  features: PlanFeature[];
+  icon_url: string | null;
+  is_active: boolean;
+  meetings_per_month: number;
 }
 
 export interface OrderUser {
   id: string;
   name: string;
   email: string;
+  phone: string | null;
+  role: string;
+  role_id: string;
+  created_at: string;
   profile_image_url: string | null;
 }
 

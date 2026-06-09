@@ -94,9 +94,10 @@ function StatusBadge({ status, dict }: { status: OrderStatus; dict: AdminDict })
 interface SalesTableProps {
   orders: Order[];
   dict: AdminDict;
+  lang: string;
 }
 
-export function SalesTable({ orders, dict }: SalesTableProps) {
+export function SalesTable({ orders, dict, lang }: SalesTableProps) {
   if (orders.length === 0) {
     return (
       <EmptyState
@@ -170,7 +171,7 @@ export function SalesTable({ orders, dict }: SalesTableProps) {
     {
       key: "actions",
       label: "Actions",
-      render: (row) => <ReceiptActionsCell receiptUrl={row.receipt_url} orderId={row.id} />,
+      render: (row) => <ReceiptActionsCell receiptUrl={row.receipt_url} orderId={row.id} lang={lang} />,
     },
   ];
 
