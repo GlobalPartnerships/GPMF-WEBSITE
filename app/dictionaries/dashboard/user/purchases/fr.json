@@ -1,0 +1,26 @@
+{
+  "purchasesTitle": "Mes Achats",
+  "purchasesSubtitle": "Consultez vos achats de forfaits et reçus",
+  "planLabel": "Forfait",
+  "priceLabel": "Total",
+  "dateLabel": "Date",
+  "providerLabel": "Paiement",
+  "billingTypeLabel": "Facturation",
+  "featuresLabel": "Fonctionnalités",
+  "meetingsLabel": "Réunions",
+  "meetingsUsed": "utilisées",
+  "meetingsLeft": "restantes",
+  "receiptLabel": "Reçu",
+  "viewReceipt": "Voir le Reçu",
+  "scheduleMeeting": "Planifier une Réunion",
+  "viewPlan": "Voir le Forfait",
+  "startedOn": "Commencé le",
+  "statusActive": "Actif",
+  "statusExpired": "Expiré",
+  "statusCancelled": "Annulé",
+  "noPurchases": "Vous n'avez pas encore effectué d'achat",
+  "purchasesMeta": {
+    "title": "Achats | GPMF",
+    "description": "Consultez vos achats de forfaits et reçus."
+  }
+}

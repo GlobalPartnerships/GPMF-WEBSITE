@@ -1,4 +1,6 @@
-export interface DashboardDict {
+import type { PurchasesDict } from "./purchases/types";
+
+export interface DashboardDict extends PurchasesDict {
   sidebarTitle: string;
   myAccount: string;
   purchases: string;

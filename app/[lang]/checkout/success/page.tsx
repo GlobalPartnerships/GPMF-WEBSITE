@@ -105,12 +105,12 @@ export default async function CheckoutSuccessPage({ params, searchParams }: Page
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              disabled
-              className="btn-sweep bg-burgundy/50 text-white py-4 px-8 text-[12px] uppercase tracking-[0.22em] rounded-[2px] cursor-not-allowed opacity-60"
+            <Link
+              href={`/${lang}/user/purchases`}
+              className="btn-sweep bg-burgundy text-white py-4 px-8 text-[12px] uppercase tracking-[0.22em] rounded-[2px] text-center"
             >
               <span>{t.goToPurchases}</span>
-            </button>
+            </Link>
 
             <Link
               href={`/${lang}/services`}

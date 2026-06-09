@@ -1,0 +1,26 @@
+{
+  "purchasesTitle": "Mis Compras",
+  "purchasesSubtitle": "Consultá tus compras de planes y recibos",
+  "planLabel": "Plan",
+  "priceLabel": "Total",
+  "dateLabel": "Fecha",
+  "providerLabel": "Pago",
+  "billingTypeLabel": "Facturación",
+  "featuresLabel": "Características",
+  "meetingsLabel": "Reuniones",
+  "meetingsUsed": "usadas",
+  "meetingsLeft": "restantes",
+  "receiptLabel": "Recibo",
+  "viewReceipt": "Ver Recibo",
+  "scheduleMeeting": "Agendar Reunión",
+  "viewPlan": "Ver Plan",
+  "startedOn": "Iniciado el",
+  "statusActive": "Activo",
+  "statusExpired": "Expirado",
+  "statusCancelled": "Cancelado",
+  "noPurchases": "Todavía no realizaste ninguna compra",
+  "purchasesMeta": {
+    "title": "Compras | GPMF",
+    "description": "Consultá tus compras de planes y recibos."
+  }
+}
