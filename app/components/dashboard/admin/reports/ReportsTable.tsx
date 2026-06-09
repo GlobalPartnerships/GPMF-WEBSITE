@@ -103,7 +103,7 @@ export function ReportsTable({ reports, lang, hasFilters }: ReportsTableProps) {
       className: "text-[13px] text-surface-variant font-mono",
       render: (row) => (
         <CopyableCell value={row.id} label="ID">
-          <span>...{row.id.slice(-4)}</span>
+          <span>...{row.id.slice(-6)}</span>
         </CopyableCell>
       ),
     },
@@ -159,7 +159,7 @@ export function ReportsTable({ reports, lang, hasFilters }: ReportsTableProps) {
       className: "text-[13px] text-surface-variant font-mono",
       render: (row) => (
         <CopyableCell value={row.user_id} label="User ID">
-          <span>...{row.user_id.slice(-4)}</span>
+          <span>...{row.user_id.slice(-6)}</span>
         </CopyableCell>
       ),
     },

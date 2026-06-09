@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
@@ -7,8 +8,13 @@ import { getOrders } from "@/lib/api/orders";
 import { AdminSidebar } from "@/app/components/dashboard/admin/AdminSidebar";
 import { AdminTopBar } from "@/app/components/dashboard/admin/AdminTopBar";
 import { SalesTable } from "@/app/components/dashboard/admin/sales/SalesTable";
+import { SalesFilterBar } from "@/app/components/dashboard/admin/sales/SalesFilterBar";
+import type { OrdersFilters } from "@/app/components/dashboard/admin/sales/types";
 
-type PageParams = { params: Promise<{ lang: string }> };
+type PageParams = {
+  params: Promise<{ lang: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { lang } = await params;
@@ -19,8 +25,9 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   };
 }
 
-export default async function AdminSalesPage({ params }: PageParams) {
+export default async function AdminSalesPage({ params, searchParams }: PageParams) {
   const { lang } = await params;
+  const sp = await searchParams;
 
   if (!hasLocale(lang)) notFound();
 
@@ -34,7 +41,17 @@ export default async function AdminSalesPage({ params }: PageParams) {
   const dict = await getDictionary(lang as Locale, "admin");
   const headers = { Authorization: `Bearer ${session.access_token}` };
 
-  const [ordersRes] = await Promise.allSettled([getOrders(headers)]);
+  const filters: OrdersFilters = {
+    order_id: typeof sp.order_id === "string" ? sp.order_id : undefined,
+    user_name: typeof sp.user_name === "string" ? sp.user_name : undefined,
+    user_email: typeof sp.user_email === "string" ? sp.user_email : undefined,
+    date_from: typeof sp.date_from === "string" ? sp.date_from : undefined,
+    date_to: typeof sp.date_to === "string" ? sp.date_to : undefined,
+    amount_min: typeof sp.amount_min === "string" ? sp.amount_min : undefined,
+    amount_max: typeof sp.amount_max === "string" ? sp.amount_max : undefined,
+  };
+
+  const [ordersRes] = await Promise.allSettled([getOrders(headers, filters)]);
 
   const orders = ordersRes.status === "fulfilled" ? ordersRes.value : [];
 
@@ -46,6 +63,12 @@ export default async function AdminSalesPage({ params }: PageParams) {
         <AdminTopBar dict={dict} />
 
         <div className="mt-8">
+          <Suspense>
+            <SalesFilterBar />
+          </Suspense>
+        </div>
+
+        <div className="mt-6">
           <SalesTable orders={orders} dict={dict} />
         </div>
       </main>

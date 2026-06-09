@@ -12,6 +12,28 @@ export interface OrderUser {
 
 export type OrderStatus = "pending" | "completed" | "failed";
 
+export interface OrdersPaginatedResponse {
+  data: Order[];
+  meta: {
+    page: number;
+    per_page: number;
+    total: number;
+    total_pages: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
+
+export interface OrdersFilters {
+  order_id?: string;
+  user_name?: string;
+  user_email?: string;
+  date_from?: string;
+  date_to?: string;
+  amount_min?: string;
+  amount_max?: string;
+}
+
 export interface Order {
   id: string;
   user_id: string;
@@ -25,4 +47,5 @@ export interface Order {
   payment_provider_name: string | null;
   provider_order_id: string | null;
   provider_capture_id: string | null;
+  receipt_url: string | null;
 }
