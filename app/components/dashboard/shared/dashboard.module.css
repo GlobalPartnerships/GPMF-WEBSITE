@@ -29,3 +29,8 @@
   color: #c5221f;
   border: 1px solid #f5c6c2;
 }
+.badgeFinished {
+  background: #e8eaed;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}

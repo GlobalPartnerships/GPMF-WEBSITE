@@ -60,7 +60,7 @@ export function Sidebar({ dict, lang }: SidebarProps) {
   const navItems = [
     { href: `/${lang}/user`, label: dict.myAccount, Icon: AccountIcon, exact: true },
     { href: `/${lang}/user/purchases`, label: dict.purchases, Icon: PurchasesIcon, exact: false },
-    { href: `/${lang}/user/schedule`, label: dict.schedule, Icon: ScheduleIcon, exact: false },
+    { href: `/${lang}/user/meetings`, label: dict.schedule, Icon: ScheduleIcon, exact: false },
     { href: `/${lang}/user/reports`, label: dict.reports, Icon: ReportsIcon, exact: false },
     { href: `/${lang}/user/settings`, label: dict.settings, Icon: SettingsIcon, exact: false },
   ];

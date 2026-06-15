@@ -1,0 +1,43 @@
+{
+  "meetingsTitle": "Mes Réunions",
+  "meetingsSubtitle": "Consultez et gérez vos réunions planifiées",
+
+  "availableMeetings": "Réunions Disponibles",
+  "totalPlanMeetings": "Réunions du forfait",
+  "usedLabel": "Utilisées",
+  "leftLabel": "Restantes",
+  "meetingsLeftLabel": "Réunions restantes",
+  "meetingsUsedLabel": "Réunions utilisées",
+
+  "upcomingSection": "Réunions à Venir",
+  "finishedSection": "Réunions Terminées",
+  "cancelledSection": "Réunions Annulées",
+
+  "scheduleButton": "Planifier",
+  "scheduleModalTitle": "Planifier une Réunion",
+  "topicLabel": "Sujet",
+  "dateLabel": "Date",
+  "timeLabel": "Heure",
+  "topicPlaceholder": "Sujet de la réunion",
+  "submitSchedule": "Confirmer",
+  "cancelSchedule": "Annuler",
+
+  "meetingLinkLabel": "Lien",
+  "calendarLabel": "Calendrier",
+  "joinMeeting": "Rejoindre",
+  "viewInCalendar": "Voir",
+  "noLink": "—",
+
+  "noUpcoming": "Aucune réunion à venir",
+  "noFinished": "Aucune réunion terminée",
+  "noCancelled": "Aucune réunion annulée",
+
+  "finished": "Terminée",
+
+  "planSuffix": "Forfait",
+
+  "meetingsMeta": {
+    "title": "Réunions | GPMF",
+    "description": "Consultez et gérez vos réunions planifiées."
+  }
+}

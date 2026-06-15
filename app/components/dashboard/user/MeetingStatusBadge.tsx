@@ -1,7 +1,7 @@
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface MeetingStatusBadgeProps {
-  status: "confirmed" | "pending" | "cancelled";
+  status: "confirmed" | "pending" | "cancelled" | "finished";
   label: string;
 }
 
@@ -9,6 +9,7 @@ const statusClass: Record<MeetingStatusBadgeProps["status"], string> = {
   confirmed: dashStyles.badgeConfirmed,
   pending: dashStyles.badgePending,
   cancelled: dashStyles.badgeCancelled,
+  finished: dashStyles.badgeFinished,
 };
 
 export function MeetingStatusBadge({ status, label }: MeetingStatusBadgeProps) {

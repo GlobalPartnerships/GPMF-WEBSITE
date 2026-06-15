@@ -1,6 +1,7 @@
 import type { PurchasesDict } from "./purchases/types";
+import type { MeetingsDict } from "./meetings/types";
 
-export interface DashboardDict extends PurchasesDict {
+export interface DashboardDict extends PurchasesDict, MeetingsDict {
   sidebarTitle: string;
   myAccount: string;
   purchases: string;
