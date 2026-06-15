@@ -16,7 +16,10 @@
   "lastReportLabel": "Dernier Rapport",
   "lastReportTitle": "Aucun rapport pour l'instant",
   "completedOn": "Terminé le",
-  "downloadPdf": "Télécharger PDF",
+  "downloadPdf": "Télécharger",
+  "viewReport": "Voir",
+  "reportTitle": "Titre",
+  "reportDescription": "Description",
 
   "upcomingMeetings": "Réunions à Venir",
   "scheduleNew": "Planifier une Nouvelle",

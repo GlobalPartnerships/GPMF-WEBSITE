@@ -20,6 +20,9 @@ export interface DashboardDict extends PurchasesDict, MeetingsDict {
   lastReportTitle: string;
   completedOn: string;
   downloadPdf: string;
+  viewReport: string;
+  reportTitle: string;
+  reportDescription: string;
 
   upcomingMeetings: string;
   scheduleNew: string;

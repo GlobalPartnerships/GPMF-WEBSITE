@@ -8,6 +8,34 @@ import type {
   UpdateReportPayload,
 } from "@/app/components/dashboard/admin/reports/types";
 
+export interface UserReport {
+  id: string;
+  user_id: string;
+  purchased_plan_id: string | null;
+  title: string;
+  description: string | null;
+  file_url: string;
+  file_name: string;
+  file_type: string;
+  file_size: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export async function fetchLatestReport(
+  userId: string,
+  headers: Record<string, string>
+): Promise<UserReport | null> {
+  try {
+    return await apiGet<UserReport>(
+      `/reports/user/${userId}?latest=true`,
+      { headers, next: { revalidate: 0 } }
+    );
+  } catch {
+    return null;
+  }
+}
+
 export async function getReports(
   headers: Record<string, string>,
   page = 1,

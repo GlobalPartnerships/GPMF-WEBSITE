@@ -3,9 +3,11 @@ import { notFound, redirect } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { createClient } from "@/lib/supabase/server";
 import { fetchAppUser } from "@/lib/api/user";
+import { fetchLatestReport } from "@/lib/api/reports";
 import { Sidebar } from "@/app/components/dashboard/user/Sidebar";
 import { UserInfoHeader } from "@/app/components/dashboard/user/UserInfoHeader";
 import { SummaryCard } from "@/app/components/dashboard/user/SummaryCard";
+import { LastReportCard } from "@/app/components/dashboard/user/LastReportCard";
 import { MeetingsTable } from "@/app/components/dashboard/user/MeetingsTable";
 import { EmptyState } from "@/app/components/dashboard/user/EmptyState";
 import type { Meeting } from "@/app/components/dashboard/user/MeetingsTable";
@@ -25,11 +27,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 const mockPlan = null as {
   title: string;
   nextBilling: string;
-} | null;
-
-const mockReport = null as {
-  title: string;
-  completedOn: string;
 } | null;
 
 const mockMeetings: Meeting[] = [
@@ -74,6 +71,9 @@ export default async function UserDashboardPage({ params }: PageParams) {
   if (!user) redirect(`/${lang}/login`);
   if (user.role === "admin" || user.role === "moderator") redirect(`/${lang}/admin`);
 
+  const authHeaders = { Authorization: `Bearer ${session.access_token}` };
+  const latestReport = await fetchLatestReport(session.user.id, authHeaders);
+
   const dict = await getDictionary(lang as Locale, "dashboard");
 
   return (
@@ -116,25 +116,7 @@ export default async function UserDashboardPage({ params }: PageParams) {
           </SummaryCard>
 
           {/* Last report card */}
-          <SummaryCard
-            label={dict.lastReportLabel}
-            icon="chart"
-            action={mockReport ? { label: dict.downloadPdf } : undefined}
-          >
-            {mockReport ? (
-              <div className="flex flex-col gap-1">
-                <p className="font-serif text-[22px] text-foreground leading-tight">
-                  {mockReport.title}
-                </p>
-                <p className="text-[12px] text-surface-variant mt-1">
-                  {dict.completedOn}{" "}
-                  <span className="text-foreground font-medium">{mockReport.completedOn}</span>
-                </p>
-              </div>
-            ) : (
-              <EmptyState message={dict.noReport} icon="document" />
-            )}
-          </SummaryCard>
+          <LastReportCard report={latestReport} dict={dict} />
         </div>
 
         {/* Meetings */}

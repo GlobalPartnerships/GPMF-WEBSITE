@@ -16,7 +16,10 @@
   "lastReportLabel": "Last Report",
   "lastReportTitle": "No reports yet",
   "completedOn": "Completed on",
-  "downloadPdf": "Download PDF",
+  "downloadPdf": "Download",
+  "viewReport": "View",
+  "reportTitle": "Title",
+  "reportDescription": "Description",
 
   "upcomingMeetings": "Upcoming Meetings",
   "scheduleNew": "Schedule New",
