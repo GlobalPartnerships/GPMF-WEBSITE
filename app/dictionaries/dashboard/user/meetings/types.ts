@@ -34,6 +34,10 @@ export interface MeetingsDict {
 
   finished: string;
 
+  additionalLabel: string;
+  additionalYes: string;
+  additionalNo: string;
+
   planSuffix: string;
 
   meetingsMeta: {

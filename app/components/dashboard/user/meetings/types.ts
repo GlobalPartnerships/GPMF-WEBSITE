@@ -10,6 +10,7 @@ export interface MeetingItem {
   status: MeetingStatus;
   meetingUrl: string | null;
   calendarUrl: string | null;
+  isAdditional: boolean;
 }
 
 export interface PlanWithMeetings {

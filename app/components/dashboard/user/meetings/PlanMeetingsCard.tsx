@@ -35,7 +35,7 @@ function CancelledIcon() {
   );
 }
 
-function MeetingTableHeader({ dict }: { dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "meetingLinkLabel" | "calendarLabel"> }) {
+function MeetingTableHeader({ dict }: { dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "additionalLabel" | "meetingLinkLabel" | "calendarLabel"> }) {
   const thClass = "text-left text-[11px] tracking-[0.10em] uppercase font-semibold text-surface-variant py-3 px-5";
   return (
     <thead className="bg-background/60">
@@ -45,6 +45,7 @@ function MeetingTableHeader({ dict }: { dict: Pick<DashboardDict, "participant" 
         <th className={thClass}>{dict.date}</th>
         <th className={thClass}>{dict.time}</th>
         <th className={thClass}>{dict.status}</th>
+        <th className={thClass}>{dict.additionalLabel}</th>
         <th className={thClass}>{dict.meetingLinkLabel}</th>
         <th className={thClass}>{dict.calendarLabel}</th>
       </tr>
@@ -61,7 +62,7 @@ function MeetingsList({
 }: {
   meetings: MeetingItem[];
   emptyMessage: string;
-  dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "meetingLinkLabel" | "calendarLabel">;
+  dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "additionalLabel" | "additionalYes" | "additionalNo" | "meetingLinkLabel" | "calendarLabel">;
   statusLabels: Record<MeetingStatus, string>;
   linkLabels: { joinMeeting: string; viewInCalendar: string; noLink: string };
 }) {
@@ -79,7 +80,7 @@ function MeetingsList({
         <MeetingTableHeader dict={dict} />
         <tbody className="divide-y divide-foreground/5">
           {meetings.map((m) => (
-            <MeetingRow key={m.id} meeting={m} statusLabels={statusLabels} linkLabels={linkLabels} />
+            <MeetingRow key={m.id} meeting={m} statusLabels={statusLabels} linkLabels={linkLabels} additionalLabels={{ yes: dict.additionalYes, no: dict.additionalNo }} />
           ))}
         </tbody>
       </table>

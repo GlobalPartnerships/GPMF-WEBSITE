@@ -35,6 +35,7 @@ export function MeetingsPageClient({ initialPlans, dict }: MeetingsPageClientPro
       status: "pending" as const,
       meetingUrl: null,
       calendarUrl: null,
+      isAdditional: false,
     };
 
     setPlans((prev) =>

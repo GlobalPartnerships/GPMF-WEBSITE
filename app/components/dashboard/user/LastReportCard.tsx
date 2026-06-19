@@ -1,4 +1,5 @@
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
+import { EmptyState } from "./EmptyState";
 import type { UserReport } from "@/lib/api/reports";
 
 interface LastReportCardDict {
@@ -31,21 +32,6 @@ function DocumentPreviewIcon() {
   );
 }
 
-function EmptyReportState({ message }: { message: string }) {
-  return (
-    <div className="flex flex-col items-center justify-center gap-4 py-12 px-6 rounded-sm border border-outline/20">
-      <span className="text-outline/50">
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-        </svg>
-      </span>
-      <p className="text-[13px] tracking-[0.06em] text-surface-variant text-center">
-        {message}
-      </p>
-    </div>
-  );
-}
-
 export function LastReportCard({ report, dict }: LastReportCardProps) {
   return (
     <div className={`${dashStyles.card} whisper-shadow bg-white rounded-sm p-6 flex flex-col gap-4 relative overflow-hidden`}>
@@ -65,9 +51,9 @@ export function LastReportCard({ report, dict }: LastReportCardProps) {
       </div>
 
       {report ? (
-        <div className="flex flex-col sm:flex-row gap-5 relative z-10">
+        <div className="flex-1 flex flex-col sm:flex-row gap-5 relative z-10">
           <div className="flex flex-col gap-3 shrink-0">
-            <div className="w-[240px] h-[160px] rounded-sm border border-outline/20 bg-background flex items-center justify-center overflow-hidden">
+            <div className="w-[240px] flex-1 min-h-[160px] rounded-sm border border-outline/20 bg-background flex items-center justify-center overflow-hidden">
               {report.file_type === "application/pdf" ? (
                 <iframe
                   src={`${report.file_url}#toolbar=0&navpanes=0&scrollbar=0`}
@@ -124,8 +110,8 @@ export function LastReportCard({ report, dict }: LastReportCardProps) {
           </div>
         </div>
       ) : (
-        <div className="relative z-10">
-          <EmptyReportState message={dict.noReport} />
+        <div className="flex-1 relative z-10">
+          <EmptyState message={dict.noReport} icon="document" />
         </div>
       )}
     </div>

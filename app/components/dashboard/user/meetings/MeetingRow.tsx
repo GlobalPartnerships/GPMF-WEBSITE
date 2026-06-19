@@ -5,6 +5,7 @@ interface MeetingRowProps {
   meeting: MeetingItem;
   statusLabels: Record<MeetingStatus, string>;
   linkLabels: { joinMeeting: string; viewInCalendar: string; noLink: string };
+  additionalLabels: { yes: string; no: string };
 }
 
 function formatDate(iso: string): string {
@@ -28,7 +29,7 @@ function CalendarIcon() {
   );
 }
 
-export function MeetingRow({ meeting, statusLabels, linkLabels }: MeetingRowProps) {
+export function MeetingRow({ meeting, statusLabels, linkLabels, additionalLabels }: MeetingRowProps) {
   return (
     <tr className="transition-colors hover:bg-burgundy/[0.02]">
       <td className="py-3 px-5">
@@ -44,6 +45,11 @@ export function MeetingRow({ meeting, statusLabels, linkLabels }: MeetingRowProp
       <td className="py-3 px-5 text-[14px] tabular-nums text-foreground">{meeting.time}</td>
       <td className="py-3 px-5">
         <MeetingStatusBadge status={meeting.status} label={statusLabels[meeting.status]} />
+      </td>
+      <td className="py-3 px-5">
+        <span className={`text-[12px] font-medium ${meeting.isAdditional ? "text-burgundy" : "text-surface-variant/60"}`}>
+          {meeting.isAdditional ? additionalLabels.yes : additionalLabels.no}
+        </span>
       </td>
       <td className="py-3 px-5">
         {meeting.meetingUrl ? (

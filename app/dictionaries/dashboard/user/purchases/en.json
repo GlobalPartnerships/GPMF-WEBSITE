@@ -19,6 +19,7 @@
   "statusExpired": "Expired",
   "statusCancelled": "Cancelled",
   "noPurchases": "You haven't made any purchases yet",
+  "emptySlot": "Empty slot",
   "purchasesMeta": {
     "title": "Purchases | GPMF",
     "description": "View your plan purchases and receipts."

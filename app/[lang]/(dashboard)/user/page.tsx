@@ -4,13 +4,13 @@ import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
 import { createClient } from "@/lib/supabase/server";
 import { fetchAppUser } from "@/lib/api/user";
 import { fetchLatestReport } from "@/lib/api/reports";
+import { fetchLatestActivePlan } from "@/lib/api/purchased-plans";
+import { fetchUpcomingMeetings } from "@/lib/api/meetings";
 import { Sidebar } from "@/app/components/dashboard/user/Sidebar";
 import { UserInfoHeader } from "@/app/components/dashboard/user/UserInfoHeader";
-import { SummaryCard } from "@/app/components/dashboard/user/SummaryCard";
+import { CurrentPlanCard } from "@/app/components/dashboard/user/CurrentPlanCard";
 import { LastReportCard } from "@/app/components/dashboard/user/LastReportCard";
 import { MeetingsTable } from "@/app/components/dashboard/user/MeetingsTable";
-import { EmptyState } from "@/app/components/dashboard/user/EmptyState";
-import type { Meeting } from "@/app/components/dashboard/user/MeetingsTable";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -23,38 +23,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     description: dict.meta.description,
   };
 }
-
-const mockPlan = null as {
-  title: string;
-  nextBilling: string;
-} | null;
-
-const mockMeetings: Meeting[] = [
-  {
-    id: "1",
-    participantName: "Carlos Reyes",
-    topic: "Q2 Strategy Review",
-    date: "2026-05-12",
-    time: "10:00",
-    status: "confirmed",
-  },
-  {
-    id: "2",
-    participantName: "Ana Fernández",
-    topic: "Financial Audit Follow-up",
-    date: "2026-05-14",
-    time: "15:30",
-    status: "pending",
-  },
-  {
-    id: "3",
-    participantName: "Luis Mora",
-    topic: "Onboarding Session",
-    date: "2026-05-09",
-    time: "09:00",
-    status: "cancelled",
-  },
-];
 
 // --- Page ---
 
@@ -72,7 +40,11 @@ export default async function UserDashboardPage({ params }: PageParams) {
   if (user.role === "admin" || user.role === "moderator") redirect(`/${lang}/admin`);
 
   const authHeaders = { Authorization: `Bearer ${session.access_token}` };
-  const latestReport = await fetchLatestReport(session.user.id, authHeaders);
+  const [latestReport, activePlan, upcomingMeetings] = await Promise.all([
+    fetchLatestReport(session.user.id, authHeaders),
+    fetchLatestActivePlan(session.user.id, authHeaders),
+    fetchUpcomingMeetings(session.user.id, authHeaders),
+  ]);
 
   const dict = await getDictionary(lang as Locale, "dashboard");
 
@@ -95,25 +67,7 @@ export default async function UserDashboardPage({ params }: PageParams) {
         {/* Summary cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
           {/* Current plan card */}
-          <SummaryCard
-            label={dict.currentPlanLabel}
-            icon="star"
-            action={{ label: dict.managePlan, href: `/${lang}/plans` }}
-          >
-            {mockPlan ? (
-              <div className="flex flex-col gap-1">
-                <p className="font-serif text-[22px] text-foreground leading-tight">
-                  {mockPlan.title}
-                </p>
-                <p className="text-[12px] text-surface-variant mt-1">
-                  {dict.nextBilling}{" "}
-                  <span className="text-foreground font-medium">{mockPlan.nextBilling}</span>
-                </p>
-              </div>
-            ) : (
-              <EmptyState message={dict.noPlan} icon="plan" />
-            )}
-          </SummaryCard>
+          <CurrentPlanCard purchasedPlan={activePlan} dict={dict} lang={lang} />
 
           {/* Last report card */}
           <LastReportCard report={latestReport} dict={dict} />
@@ -121,7 +75,7 @@ export default async function UserDashboardPage({ params }: PageParams) {
 
         {/* Meetings */}
         <div className="mt-10">
-          <MeetingsTable dict={dict} meetings={mockMeetings} lang={lang} />
+          <MeetingsTable dict={dict} meetings={upcomingMeetings} lang={lang} />
         </div>
       </main>
     </div>

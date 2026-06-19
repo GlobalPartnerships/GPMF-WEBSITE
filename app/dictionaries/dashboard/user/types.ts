@@ -16,6 +16,8 @@ export interface DashboardDict extends PurchasesDict, MeetingsDict {
   currentPlanTitle: string;
   nextBilling: string;
   managePlan: string;
+  meetingsLeft: string;
+  featuresLabel: string;
   lastReportLabel: string;
   lastReportTitle: string;
   completedOn: string;
@@ -31,6 +33,10 @@ export interface DashboardDict extends PurchasesDict, MeetingsDict {
   date: string;
   time: string;
   status: string;
+  scheduled: string;
+  inProgress: string;
+  rescheduled: string;
+  completed: string;
   confirmed: string;
   pending: string;
   cancelled: string;

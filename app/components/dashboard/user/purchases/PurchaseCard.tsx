@@ -152,21 +152,19 @@ export function PurchaseCard({ purchase, dict }: PurchaseCardProps) {
             {dict.viewReceipt}
           </a>
         )}
-
-        <button
-          disabled
-          className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-foreground border border-outline/30 rounded-sm cursor-not-allowed opacity-50"
-        >
-          <CalendarIcon />
-          {dict.scheduleMeeting}
-        </button>
-
         <button
           disabled
           className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-foreground border border-outline/30 rounded-sm cursor-not-allowed opacity-50"
         >
           <EyeIcon />
           {dict.viewPlan}
+        </button>
+        <button
+          disabled
+          className="flex items-center gap-1.5 px-3 py-1.5 text-[12px] font-medium text-foreground border border-outline/30 rounded-sm cursor-not-allowed opacity-50"
+        >
+          <CalendarIcon />
+          {dict.scheduleMeeting}
         </button>
       </div>
     </div>

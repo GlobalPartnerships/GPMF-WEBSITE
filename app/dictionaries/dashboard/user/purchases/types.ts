@@ -19,6 +19,7 @@ export interface PurchasesDict {
   statusExpired: string;
   statusCancelled: string;
   noPurchases: string;
+  emptySlot: string;
   purchasesMeta: {
     title: string;
     description: string;

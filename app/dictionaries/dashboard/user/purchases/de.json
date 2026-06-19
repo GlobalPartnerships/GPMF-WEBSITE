@@ -19,6 +19,7 @@
   "statusExpired": "Abgelaufen",
   "statusCancelled": "Storniert",
   "noPurchases": "Sie haben noch keine Käufe getätigt",
+  "emptySlot": "Leerer Platz",
   "purchasesMeta": {
     "title": "Käufe | GPMF",
     "description": "Sehen Sie Ihre Plankäufe und Belege ein."

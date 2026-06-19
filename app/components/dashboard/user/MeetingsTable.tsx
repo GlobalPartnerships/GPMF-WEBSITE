@@ -1,16 +1,7 @@
 import type { DashboardDict } from "@/app/dictionaries/dashboard/user/types";
+import type { ApiMeeting, MeetingApiStatus } from "@/lib/api/meetings";
 import { EmptyState } from "./EmptyState";
 import { MeetingStatusBadge } from "./MeetingStatusBadge";
-
-export interface Meeting {
-  id: string;
-  participantName: string;
-  participantAvatarUrl?: string;
-  topic: string;
-  date: string;
-  time: string;
-  status: "confirmed" | "pending" | "cancelled";
-}
 
 interface MeetingsTableProps {
   dict: Pick<
@@ -22,12 +13,14 @@ interface MeetingsTableProps {
     | "date"
     | "time"
     | "status"
-    | "confirmed"
-    | "pending"
+    | "scheduled"
+    | "inProgress"
+    | "rescheduled"
+    | "completed"
     | "cancelled"
     | "noMeetings"
   >;
-  meetings: Meeting[] | null;
+  meetings: ApiMeeting[] | null;
   lang: string;
 }
 
@@ -36,7 +29,7 @@ function ParticipantAvatar({
   avatarUrl,
 }: {
   name: string;
-  avatarUrl?: string;
+  avatarUrl?: string | null;
 }) {
   const initials = name
     .split(" ")
@@ -62,13 +55,40 @@ function ParticipantAvatar({
   );
 }
 
+const statusBadgeMap: Record<MeetingApiStatus, "confirmed" | "pending" | "cancelled" | "finished"> = {
+  scheduled: "confirmed",
+  "in-progress": "pending",
+  "re-scheduled": "pending",
+  completed: "finished",
+  cancelled: "cancelled",
+};
+
 function statusLabel(
-  status: Meeting["status"],
-  dict: Pick<DashboardDict, "confirmed" | "pending" | "cancelled">
+  status: MeetingApiStatus,
+  dict: Pick<DashboardDict, "scheduled" | "inProgress" | "rescheduled" | "completed" | "cancelled">
 ): string {
-  if (status === "confirmed") return dict.confirmed;
-  if (status === "pending") return dict.pending;
-  return dict.cancelled;
+  const map: Record<MeetingApiStatus, string> = {
+    scheduled: dict.scheduled,
+    "in-progress": dict.inProgress,
+    "re-scheduled": dict.rescheduled,
+    completed: dict.completed,
+    cancelled: dict.cancelled,
+  };
+  return map[status];
+}
+
+function formatMeetingDate(isoDate: string): string {
+  const d = new Date(isoDate);
+  return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}
+
+function formatMeetingTime(isoDate: string): string {
+  const d = new Date(isoDate);
+  return d.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit" });
+}
+
+function getCreatorName(meeting: ApiMeeting): string {
+  return meeting.creator?.name ?? meeting.creator?.email ?? "—";
 }
 
 export function MeetingsTable({ dict, meetings, lang }: MeetingsTableProps) {
@@ -121,18 +141,18 @@ export function MeetingsTable({ dict, meetings, lang }: MeetingsTableProps) {
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2.5">
                       <ParticipantAvatar
-                        name={meeting.participantName}
-                        avatarUrl={meeting.participantAvatarUrl}
+                        name={getCreatorName(meeting)}
+                        avatarUrl={meeting.creator?.profile_image_url}
                       />
-                      <span className="text-foreground font-medium">{meeting.participantName}</span>
+                      <span className="text-foreground font-medium">{getCreatorName(meeting)}</span>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-surface-variant">{meeting.topic}</td>
-                  <td className="px-4 py-3 text-surface-variant">{meeting.date}</td>
-                  <td className="px-4 py-3 text-surface-variant">{meeting.time}</td>
+                  <td className="px-4 py-3 text-surface-variant">{meeting.title ?? "—"}</td>
+                  <td className="px-4 py-3 text-surface-variant">{formatMeetingDate(meeting.date)}</td>
+                  <td className="px-4 py-3 text-surface-variant">{formatMeetingTime(meeting.date)}</td>
                   <td className="px-4 py-3">
                     <MeetingStatusBadge
-                      status={meeting.status}
+                      status={statusBadgeMap[meeting.status]}
                       label={statusLabel(meeting.status, dict)}
                     />
                   </td>

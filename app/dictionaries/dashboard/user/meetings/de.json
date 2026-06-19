@@ -34,6 +34,10 @@
 
   "finished": "Abgeschlossen",
 
+  "additionalLabel": "Zusätzlich",
+  "additionalYes": "Ja",
+  "additionalNo": "Nein",
+
   "planSuffix": "Plan",
 
   "meetingsMeta": {
