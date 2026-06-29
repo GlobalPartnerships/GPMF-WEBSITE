@@ -23,16 +23,12 @@
   "cancelSchedule": "Abbrechen",
 
   "meetingLinkLabel": "Link",
-  "calendarLabel": "Kalender",
   "joinMeeting": "Beitreten",
-  "viewInCalendar": "Ansehen",
   "noLink": "—",
 
   "noUpcoming": "Keine bevorstehenden Meetings",
   "noFinished": "Keine abgeschlossenen Meetings",
   "noCancelled": "Keine abgesagten Meetings",
-
-  "finished": "Abgeschlossen",
 
   "additionalLabel": "Zusätzlich",
   "additionalYes": "Ja",

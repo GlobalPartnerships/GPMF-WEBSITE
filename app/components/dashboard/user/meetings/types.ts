@@ -1,15 +1,12 @@
-export type MeetingStatus = "confirmed" | "pending" | "cancelled" | "finished";
+export type MeetingStatus = "scheduled" | "cancelled" | "re-scheduled" | "completed" | "in-progress";
 
 export interface MeetingItem {
   id: string;
-  participant: string;
-  initials: string;
   topic: string;
   date: string;
   time: string;
   status: MeetingStatus;
   meetingUrl: string | null;
-  calendarUrl: string | null;
   isAdditional: boolean;
 }
 

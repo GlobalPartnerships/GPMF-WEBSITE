@@ -55,13 +55,6 @@ function ParticipantAvatar({
   );
 }
 
-const statusBadgeMap: Record<MeetingApiStatus, "confirmed" | "pending" | "cancelled" | "finished"> = {
-  scheduled: "confirmed",
-  "in-progress": "pending",
-  "re-scheduled": "pending",
-  completed: "finished",
-  cancelled: "cancelled",
-};
 
 function statusLabel(
   status: MeetingApiStatus,
@@ -152,7 +145,7 @@ export function MeetingsTable({ dict, meetings, lang }: MeetingsTableProps) {
                   <td className="px-4 py-3 text-surface-variant">{formatMeetingTime(meeting.date)}</td>
                   <td className="px-4 py-3">
                     <MeetingStatusBadge
-                      status={statusBadgeMap[meeting.status]}
+                      status={meeting.status}
                       label={statusLabel(meeting.status, dict)}
                     />
                   </td>

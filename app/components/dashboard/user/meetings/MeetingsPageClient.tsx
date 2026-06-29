@@ -27,14 +27,11 @@ export function MeetingsPageClient({ initialPlans, dict }: MeetingsPageClientPro
 
     const newMeeting = {
       id: String(Date.now()),
-      participant: "—",
-      initials: "—",
       topic: form.topic,
       date: form.date,
       time: form.time,
-      status: "pending" as const,
+      status: "scheduled" as const,
       meetingUrl: null,
-      calendarUrl: null,
       isAdditional: false,
     };
 

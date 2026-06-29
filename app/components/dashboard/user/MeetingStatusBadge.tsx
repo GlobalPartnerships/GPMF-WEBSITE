@@ -1,15 +1,16 @@
 import dashStyles from "@/app/components/dashboard/shared/dashboard.module.css";
 
 interface MeetingStatusBadgeProps {
-  status: "confirmed" | "pending" | "cancelled" | "finished";
+  status: "scheduled" | "cancelled" | "re-scheduled" | "completed" | "in-progress";
   label: string;
 }
 
 const statusClass: Record<MeetingStatusBadgeProps["status"], string> = {
-  confirmed: dashStyles.badgeConfirmed,
-  pending: dashStyles.badgePending,
+  scheduled: dashStyles.badgeConfirmed,
+  "in-progress": dashStyles.badgePending,
+  "re-scheduled": dashStyles.badgePending,
+  completed: dashStyles.badgeFinished,
   cancelled: dashStyles.badgeCancelled,
-  finished: dashStyles.badgeFinished,
 };
 
 export function MeetingStatusBadge({ status, label }: MeetingStatusBadgeProps) {

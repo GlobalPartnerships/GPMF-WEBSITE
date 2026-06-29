@@ -47,6 +47,38 @@ export interface ApiMeeting {
   attendees: MeetingAttendee[];
 }
 
+export interface ApiSummaryMeeting {
+  id: string;
+  title: string | null;
+  date: string;
+  duration_minutes: number;
+  status: MeetingApiStatus;
+  google_meet_url: string | null;
+  is_additional: boolean;
+}
+
+export interface ApiPurchasedPlanSummary {
+  id: string;
+  plan_id: string;
+  plan_name: string;
+  status: string;
+  meetings_included: number;
+  meetings_used: number;
+  meetings_left: number;
+  starts_at: string;
+}
+
+export interface ApiMeetingSummary {
+  purchased_plan: ApiPurchasedPlanSummary;
+  meetings_by_status: {
+    scheduled: ApiSummaryMeeting[];
+    completed: ApiSummaryMeeting[];
+    cancelled: ApiSummaryMeeting[];
+    "re-scheduled": ApiSummaryMeeting[];
+    "in-progress": ApiSummaryMeeting[];
+  };
+}
+
 export async function fetchUpcomingMeetings(
   userId: string,
   headers: Record<string, string>
@@ -59,4 +91,70 @@ export async function fetchUpcomingMeetings(
   } catch {
     return [];
   }
+}
+
+export async function fetchMeetingSummary(
+  userId: string,
+  headers: Record<string, string>
+): Promise<ApiMeetingSummary[]> {
+  try {
+    return await apiGet<ApiMeetingSummary[]>(
+      `/meetings/summary/user/${userId}`,
+      { headers, next: { revalidate: 0 } }
+    );
+  } catch {
+    return [];
+  }
+}
+
+interface MeetingItemMapped {
+  id: string;
+  topic: string;
+  date: string;
+  time: string;
+  status: MeetingApiStatus;
+  meetingUrl: string | null;
+  isAdditional: boolean;
+}
+
+function mapApiMeetingToItem(m: ApiSummaryMeeting): MeetingItemMapped {
+  const [datePart, timePart] = m.date.split("T");
+  return {
+    id: m.id,
+    topic: m.title ?? "",
+    date: datePart,
+    time: timePart?.slice(0, 5) ?? "",
+    status: m.status,
+    meetingUrl: m.google_meet_url,
+    isAdditional: m.is_additional,
+  };
+}
+
+export function mapSummaryToPlans(summaries: ApiMeetingSummary[]) {
+  return summaries.map((s) => {
+    const byStatus = s.meetings_by_status;
+
+    const upcoming = [
+      ...byStatus.scheduled,
+      ...byStatus["re-scheduled"],
+      ...byStatus["in-progress"],
+    ].map(mapApiMeetingToItem);
+
+    const finished = byStatus.completed.map(mapApiMeetingToItem);
+    const cancelled = byStatus.cancelled.map(mapApiMeetingToItem);
+
+    const totalMeetings = upcoming.length + finished.length + cancelled.length;
+
+    return {
+      id: s.purchased_plan.id,
+      name: s.purchased_plan.plan_name,
+      totalMeetings,
+      used: finished.length + cancelled.length,
+      left: upcoming.length,
+      planMeetings: s.purchased_plan.meetings_included,
+      planUsed: s.purchased_plan.meetings_used,
+      planLeft: s.purchased_plan.meetings_left,
+      meetings: { upcoming, finished, cancelled },
+    };
+  });
 }

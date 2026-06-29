@@ -6,7 +6,7 @@ import { fetchAppUser } from "@/lib/api/user";
 import { Sidebar } from "@/app/components/dashboard/user/Sidebar";
 import { UserInfoHeader } from "@/app/components/dashboard/user/UserInfoHeader";
 import { MeetingsPageClient } from "@/app/components/dashboard/user/meetings/MeetingsPageClient";
-import { MOCK_PLANS_DATA } from "@/app/components/dashboard/user/meetings/mock-data";
+import { fetchMeetingSummary, mapSummaryToPlans } from "@/lib/api/meetings";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -32,7 +32,10 @@ export default async function UserMeetingsPage({ params }: PageParams) {
   if (!user) redirect(`/${lang}/login`);
   if (user.role === "admin" || user.role === "moderator") redirect(`/${lang}/admin`);
 
-  const dict = await getDictionary(lang as Locale, "dashboard");
+  const [dict, plans] = await Promise.all([
+    getDictionary(lang as Locale, "dashboard"),
+    fetchMeetingSummary(session.user.id, { Authorization: `Bearer ${session.access_token}` }).then(mapSummaryToPlans),
+  ]);
 
   return (
     <div className="min-h-screen pt-[88px] flex bg-background">
@@ -59,7 +62,7 @@ export default async function UserMeetingsPage({ params }: PageParams) {
             </p>
           </div>
 
-          <MeetingsPageClient initialPlans={MOCK_PLANS_DATA} dict={dict} />
+          <MeetingsPageClient initialPlans={plans} dict={dict} />
         </div>
       </main>
     </div>

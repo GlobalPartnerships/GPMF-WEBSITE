@@ -35,19 +35,17 @@ function CancelledIcon() {
   );
 }
 
-function MeetingTableHeader({ dict }: { dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "additionalLabel" | "meetingLinkLabel" | "calendarLabel"> }) {
+function MeetingTableHeader({ dict }: { dict: Pick<DashboardDict, "topic" | "date" | "time" | "status" | "additionalLabel" | "meetingLinkLabel"> }) {
   const thClass = "text-left text-[11px] tracking-[0.10em] uppercase font-semibold text-surface-variant py-3 px-5";
   return (
     <thead className="bg-background/60">
       <tr>
-        <th className={thClass}>{dict.participant}</th>
         <th className={thClass}>{dict.topic}</th>
         <th className={thClass}>{dict.date}</th>
         <th className={thClass}>{dict.time}</th>
         <th className={thClass}>{dict.status}</th>
         <th className={thClass}>{dict.additionalLabel}</th>
         <th className={thClass}>{dict.meetingLinkLabel}</th>
-        <th className={thClass}>{dict.calendarLabel}</th>
       </tr>
     </thead>
   );
@@ -62,9 +60,9 @@ function MeetingsList({
 }: {
   meetings: MeetingItem[];
   emptyMessage: string;
-  dict: Pick<DashboardDict, "participant" | "topic" | "date" | "time" | "status" | "additionalLabel" | "additionalYes" | "additionalNo" | "meetingLinkLabel" | "calendarLabel">;
+  dict: Pick<DashboardDict, "topic" | "date" | "time" | "status" | "additionalLabel" | "additionalYes" | "additionalNo" | "meetingLinkLabel">;
   statusLabels: Record<MeetingStatus, string>;
-  linkLabels: { joinMeeting: string; viewInCalendar: string; noLink: string };
+  linkLabels: { joinMeeting: string; noLink: string };
 }) {
   if (meetings.length === 0) {
     return (
@@ -90,15 +88,15 @@ function MeetingsList({
 
 export function PlanMeetingsCard({ plan, dict, onSchedule }: PlanMeetingsCardProps) {
   const statusLabels: Record<MeetingStatus, string> = {
-    confirmed: dict.confirmed,
-    pending: dict.pending,
+    scheduled: dict.scheduled,
+    "in-progress": dict.inProgress,
+    "re-scheduled": dict.rescheduled,
+    completed: dict.completed,
     cancelled: dict.cancelled,
-    finished: dict.finished,
   };
 
   const linkLabels = {
     joinMeeting: dict.joinMeeting,
-    viewInCalendar: dict.viewInCalendar,
     noLink: dict.noLink,
   };
 

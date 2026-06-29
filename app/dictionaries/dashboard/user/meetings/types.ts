@@ -23,16 +23,12 @@ export interface MeetingsDict {
   cancelSchedule: string;
 
   meetingLinkLabel: string;
-  calendarLabel: string;
   joinMeeting: string;
-  viewInCalendar: string;
   noLink: string;
 
   noUpcoming: string;
   noFinished: string;
   noCancelled: string;
-
-  finished: string;
 
   additionalLabel: string;
   additionalYes: string;
