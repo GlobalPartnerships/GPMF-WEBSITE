@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, type Locale } from "@/app/dictionaries";
-import { getPlans } from "@/lib/api/plans";
 import { RevealObserver } from "@/app/components/home/RevealObserver";
 import { PlansHeader } from "@/app/components/plans/PlansHeader";
 import { PlansGrid } from "@/app/components/plans/PlansGrid";
 import { DecoElements } from "@/app/components/plans/DecoElements";
 import { SideText } from "@/app/components/plans/SideText";
-import type { PlanResponse } from "@/app/components/dashboard/admin/plans/types";
 
 type PageParams = { params: Promise<{ lang: string }> };
 
@@ -28,13 +26,10 @@ export default async function PlansPage({ params }: PageParams) {
 
   if (!hasLocale(lang)) notFound();
 
-  const [dict, plans] = await Promise.all([
-    getDictionary(lang as Locale, "plans"),
-    getPlans().catch((): PlanResponse[] => []),
-  ]);
+  const dict = await getDictionary(lang as Locale, "plans");
 
-  const standardPlans = plans.filter((p) => p.category === "standard");
-  const customPlans = plans.filter((p) => p.category === "custom");
+  const standardPlans = dict.plans.filter((p) => p.category === "standard");
+  const customPlans = dict.plans.filter((p) => p.category === "custom");
 
   return (
     <>

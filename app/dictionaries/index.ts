@@ -3,6 +3,13 @@ import "server-only";
 import type { DictMap, DictSection } from "./types";
 
 export type { DictSection, DictMap } from "./types";
+export type { LayoutDict } from "./layout/types";
+export type { HomeDict } from "./home/types";
+export type { PlansDict, PlanCardData } from "./plans/types";
+export type { PilarsDict } from "./pilars/types";
+export type { PartnersDict } from "./partners/types";
+export type { ServicesDict } from "./services/types";
+export type { DiagnosisDict } from "./diagnosis/types";
 
 export const locales = ["es", "en", "fr", "de"] as const;
 export type Locale = (typeof locales)[number];
@@ -26,57 +33,31 @@ const loaders: {
     fr: () => import("./home/fr.json").then((m) => m.default as DictMap["home"]),
     de: () => import("./home/de.json").then((m) => m.default as DictMap["home"]),
   },
-  login: {
-    es: () => import("./login/es.json").then((m) => m.default as DictMap["login"]),
-    en: () => import("./login/en.json").then((m) => m.default as DictMap["login"]),
-    fr: () => import("./login/fr.json").then((m) => m.default as DictMap["login"]),
-    de: () => import("./login/de.json").then((m) => m.default as DictMap["login"]),
-  },
   plans: {
-    es: () => import("./plans/es.json").then((m) => m.default as DictMap["plans"]),
-    en: () => import("./plans/en.json").then((m) => m.default as DictMap["plans"]),
-    fr: () => import("./plans/fr.json").then((m) => m.default as DictMap["plans"]),
-    de: () => import("./plans/de.json").then((m) => m.default as DictMap["plans"]),
-  },
-  dashboard: {
     es: () => Promise.all([
-      import("./dashboard/user/es.json").then((m) => m.default),
-      import("./dashboard/user/purchases/es.json").then((m) => m.default),
-      import("./dashboard/user/meetings/es.json").then((m) => m.default),
-    ]).then(([base, purchases, meetings]) => ({ ...base, ...purchases, ...meetings }) as DictMap["dashboard"]),
+      import("./plans/es.json").then((m) => m.default),
+      import("./plans/plan-1/es.json").then((m) => m.default),
+      import("./plans/plan-2/es.json").then((m) => m.default),
+      import("./plans/plan-3/es.json").then((m) => m.default),
+    ]).then(([page, p1, p2, p3]) => ({ ...page, plans: [p1, p2, p3] }) as DictMap["plans"]),
     en: () => Promise.all([
-      import("./dashboard/user/en.json").then((m) => m.default),
-      import("./dashboard/user/purchases/en.json").then((m) => m.default),
-      import("./dashboard/user/meetings/en.json").then((m) => m.default),
-    ]).then(([base, purchases, meetings]) => ({ ...base, ...purchases, ...meetings }) as DictMap["dashboard"]),
+      import("./plans/en.json").then((m) => m.default),
+      import("./plans/plan-1/en.json").then((m) => m.default),
+      import("./plans/plan-2/en.json").then((m) => m.default),
+      import("./plans/plan-3/en.json").then((m) => m.default),
+    ]).then(([page, p1, p2, p3]) => ({ ...page, plans: [p1, p2, p3] }) as DictMap["plans"]),
     fr: () => Promise.all([
-      import("./dashboard/user/fr.json").then((m) => m.default),
-      import("./dashboard/user/purchases/fr.json").then((m) => m.default),
-      import("./dashboard/user/meetings/fr.json").then((m) => m.default),
-    ]).then(([base, purchases, meetings]) => ({ ...base, ...purchases, ...meetings }) as DictMap["dashboard"]),
+      import("./plans/fr.json").then((m) => m.default),
+      import("./plans/plan-1/fr.json").then((m) => m.default),
+      import("./plans/plan-2/fr.json").then((m) => m.default),
+      import("./plans/plan-3/fr.json").then((m) => m.default),
+    ]).then(([page, p1, p2, p3]) => ({ ...page, plans: [p1, p2, p3] }) as DictMap["plans"]),
     de: () => Promise.all([
-      import("./dashboard/user/de.json").then((m) => m.default),
-      import("./dashboard/user/purchases/de.json").then((m) => m.default),
-      import("./dashboard/user/meetings/de.json").then((m) => m.default),
-    ]).then(([base, purchases, meetings]) => ({ ...base, ...purchases, ...meetings }) as DictMap["dashboard"]),
-  },
-  admin: {
-    es: () => Promise.all([
-      import("./dashboard/admin/es.json").then((m) => m.default),
-      import("./dashboard/admin/plans/es.json").then((m) => m.default),
-    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
-    en: () => Promise.all([
-      import("./dashboard/admin/en.json").then((m) => m.default),
-      import("./dashboard/admin/plans/en.json").then((m) => m.default),
-    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
-    fr: () => Promise.all([
-      import("./dashboard/admin/fr.json").then((m) => m.default),
-      import("./dashboard/admin/plans/fr.json").then((m) => m.default),
-    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
-    de: () => Promise.all([
-      import("./dashboard/admin/de.json").then((m) => m.default),
-      import("./dashboard/admin/plans/de.json").then((m) => m.default),
-    ]).then(([base, plans]) => ({ ...base, ...plans }) as DictMap["admin"]),
+      import("./plans/de.json").then((m) => m.default),
+      import("./plans/plan-1/de.json").then((m) => m.default),
+      import("./plans/plan-2/de.json").then((m) => m.default),
+      import("./plans/plan-3/de.json").then((m) => m.default),
+    ]).then(([page, p1, p2, p3]) => ({ ...page, plans: [p1, p2, p3] }) as DictMap["plans"]),
   },
   pilars: {
     es: () => import("./pilars/es.json").then((m) => m.default as DictMap["pilars"]),
@@ -95,24 +76,6 @@ const loaders: {
     en: () => import("./services/en.json").then((m) => m.default as DictMap["services"]),
     fr: () => import("./services/fr.json").then((m) => m.default as DictMap["services"]),
     de: () => import("./services/de.json").then((m) => m.default as DictMap["services"]),
-  },
-  checkout: {
-    es: () => import("./checkout/es.json").then((m) => m.default as DictMap["checkout"]),
-    en: () => import("./checkout/en.json").then((m) => m.default as DictMap["checkout"]),
-    fr: () => import("./checkout/fr.json").then((m) => m.default as DictMap["checkout"]),
-    de: () => import("./checkout/de.json").then((m) => m.default as DictMap["checkout"]),
-  },
-  checkoutResult: {
-    es: () => import("./checkout-result/es.json").then((m) => m.default as DictMap["checkoutResult"]),
-    en: () => import("./checkout-result/en.json").then((m) => m.default as DictMap["checkoutResult"]),
-    fr: () => import("./checkout-result/fr.json").then((m) => m.default as DictMap["checkoutResult"]),
-    de: () => import("./checkout-result/de.json").then((m) => m.default as DictMap["checkoutResult"]),
-  },
-  register: {
-    es: () => import("./register/es.json").then((m) => m.default as DictMap["register"]),
-    en: () => import("./register/en.json").then((m) => m.default as DictMap["register"]),
-    fr: () => import("./register/fr.json").then((m) => m.default as DictMap["register"]),
-    de: () => import("./register/de.json").then((m) => m.default as DictMap["register"]),
   },
   diagnosis: {
     es: () => import("./diagnosis/es.json").then((m) => m.default as DictMap["diagnosis"]),

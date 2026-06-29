@@ -13,40 +13,15 @@ interface DiagnosisFormProps {
   success: DiagnosisDict["success"];
 }
 
-type Status = "idle" | "loading" | "success" | "error";
+type Status = "idle" | "success";
 
 export function DiagnosisForm({ dict, success }: DiagnosisFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const { questions, contact, submit, disclaimer } = dict;
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
-
-    const data = new FormData(e.currentTarget);
-    const payload = {
-      nombre: data.get("nombre"),
-      email: data.get("email"),
-      empresa: data.get("empresa"),
-      desafio: data.get("desafio"),
-      etapa: data.get("etapa"),
-      dolor: data.get("dolor"),
-      urgencia: data.get("urgencia"),
-      presupuesto: data.get("presupuesto"),
-    };
-
-    try {
-      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
-      const res = await fetch(`${API_BASE_URL}/diagnosis`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("server_error");
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
+    setStatus("success");
   }
 
   if (status === "success") {
@@ -184,12 +159,9 @@ export function DiagnosisForm({ dict, success }: DiagnosisFormProps) {
 
             {/* Submit */}
             <div className={styles.submitBlock}>
-              {status === "error" && (
-                <p className={styles.errorMessage}>{dict.errorMessage}</p>
-              )}
-              <button type="submit" disabled={status === "loading"} className={styles.submitButton}>
-                <strong>{status === "loading" ? submit.sending : submit.label}</strong>
-                {submit.labelEn && status !== "loading" && (
+              <button type="submit" className={styles.submitButton}>
+                <strong>{submit.label}</strong>
+                {submit.labelEn && (
                   <span className={styles.submitLabelEn}>{submit.labelEn}</span>
                 )}
               </button>

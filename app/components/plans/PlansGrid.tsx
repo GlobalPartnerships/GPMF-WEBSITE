@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import type { PlansDict } from "@/app/dictionaries/plans/types";
-import type { PlanResponse } from "@/app/components/dashboard/admin/plans/types";
+import type { PlansDict, PlanCardData } from "@/app/dictionaries/plans/types";
 import { PlanTypeSelector } from "./PlanTypeSelector";
 import { PlanCard } from "./PlanCard";
 import styles from "./PlansGrid.module.css";
 
 interface PlansGridProps {
   dict: PlansDict;
-  standardPlans: PlanResponse[];
-  customPlans: PlanResponse[];
+  standardPlans: PlanCardData[];
+  customPlans: PlanCardData[];
   lang: string;
 }
 
@@ -56,7 +55,7 @@ export function PlansGrid({ dict, standardPlans, customPlans, lang }: PlansGridP
             className={`${styles.grid} grid gap-8 ${gridCols} ${fading ? styles.fading : ""}`}
           >
             {plans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} cta={dict.cta} checkoutUrl={`/${lang}/checkout/${plan.id}`} />
+              <PlanCard key={plan.id} plan={plan} cta={dict.cta} href={`/${lang}/diagnosis`} />
             ))}
           </div>
         )}

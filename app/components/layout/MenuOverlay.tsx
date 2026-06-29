@@ -2,8 +2,6 @@
 
 import type { Locale } from "@/app/dictionaries";
 import type { LayoutDict } from "@/app/dictionaries/layout/types";
-import type { AppUser } from "@/app/context/UserContext";
-import { MenuUserInfo } from "./menu/MenuUserInfo";
 import { MenuNavLinks } from "./menu/MenuNavLinks";
 import { MenuLangSelector } from "./menu/MenuLangSelector";
 import { MenuActions } from "./menu/MenuActions";
@@ -15,7 +13,6 @@ interface MenuOverlayProps {
   dict: LayoutDict["nav"];
   navLinks: { label: string; href: string }[];
   pathWithoutLocale: string;
-  user: AppUser | null;
 }
 
 export function MenuOverlay({
@@ -25,7 +22,6 @@ export function MenuOverlay({
   dict,
   navLinks,
   pathWithoutLocale,
-  user,
 }: MenuOverlayProps) {
   if (!mobileOpen) return null;
 
@@ -46,10 +42,9 @@ export function MenuOverlay({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative flex flex-col pt-24 px-8 gap-6 min-h-full min-[800px]:pt-28 min-[800px]:px-12">
-          {user && <MenuUserInfo user={user} lang={lang} onClose={onClose} />}
           <MenuNavLinks navLinks={navLinks} onClose={onClose} />
           <MenuLangSelector lang={lang} pathWithoutLocale={pathWithoutLocale} onClose={onClose} />
-          <MenuActions lang={lang} dict={dict} user={user} onClose={onClose} />
+          <MenuActions lang={lang} dict={dict} onClose={onClose} />
           {/* Close */}
           <button
             className="absolute top-6 right-8 w-10 h-10 flex items-center justify-center text-xl text-foreground/60 border border-transparent rounded-full cursor-pointer transition-all duration-300 hover:border-outline hover:text-burgundy"

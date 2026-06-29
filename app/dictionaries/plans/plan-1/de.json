@@ -1,0 +1,13 @@
+{
+  "id": "diagnostic",
+  "category": "standard",
+  "name": "GPMF Diagnose",
+  "subtitle": "Express-Audit zur Unternehmensreife",
+  "price": "500 $ USD",
+  "priceNote": "Einmalige Zahlung",
+  "features": [
+    "Zugang zum erweiterten Diagnose-Fragebogen",
+    "Reifegradreport (PDF) innerhalb von 48h",
+    "30-minütige Sitzung zur Besprechung der Ergebnisse"
+  ]
+}

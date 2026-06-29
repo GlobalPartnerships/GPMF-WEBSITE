@@ -9,9 +9,6 @@ import {
 import { Header } from "@/app/components/layout/Header";
 import { Footer } from "@/app/components/layout/Footer";
 import { SetHtmlLang } from "@/app/components/layout/SetHtmlLang";
-import { createClient } from "@/lib/supabase/server";
-import { fetchAppUser } from "@/lib/api/user";
-import { UserProvider } from "@/app/context/UserContext";
 
 type LangParams = { params: Promise<{ lang: string }> };
 
@@ -52,18 +49,12 @@ export default async function LangLayout({
   const locale = lang as Locale;
   const dict = await getDictionary(locale, "layout");
 
-  const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
-  const appUser = session ? await fetchAppUser(session) : null;
-
   return (
     <>
       <SetHtmlLang lang={lang} />
-      <UserProvider user={appUser}>
-        <Header lang={locale} dict={dict.nav} />
-        <main className="flex-1">{children}</main>
-        <Footer dict={dict.footer} />
-      </UserProvider>
+      <Header lang={locale} dict={dict.nav} />
+      <main className="flex-1">{children}</main>
+      <Footer dict={dict.footer} />
     </>
   );
 }

@@ -1,5 +1,0 @@
-.chartBar {
-  transform-origin: bottom;
-  animation: bar-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-  animation-delay: var(--delay, 0s);
-}

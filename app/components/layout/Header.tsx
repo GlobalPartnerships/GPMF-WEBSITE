@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import type { Locale } from "@/app/dictionaries";
 import type { LayoutDict } from "@/app/dictionaries/layout/types";
-import { useUser } from "@/app/context/UserContext";
 import { MenuOverlay } from "./MenuOverlay";
 
 const localeConfig = [
@@ -103,7 +102,6 @@ function LanguageDropdown({
 export function Header({ lang, dict }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const { user } = useUser();
 
   const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(\/|$)/, "/");
 
@@ -142,30 +140,10 @@ export function Header({ lang, dict }: HeaderProps) {
 
           {/* Desktop right side */}
           <div className="flex items-center justify-end gap-4">
-            {/* Login — only when not authenticated */}
-            {!user && (
-              <Link
-                href={`/${lang}/login`}
-                className="hidden xl:inline-flex group items-center gap-3 border border-outline px-5 h-[42px] text-[11px] uppercase tracking-[0.28em] text-foreground/70 transition-all duration-300 hover:text-burgundy hover:border-burgundy whitespace-nowrap"
-              >
-                <span>{dict.login}</span>
-                <svg
-                  className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            )}
-
-            {/* Language switcher — only when not authenticated */}
-            {!user && (
-              <div className="hidden xl:flex">
-                <LanguageDropdown lang={lang} pathWithoutLocale={pathWithoutLocale} />
-              </div>
-            )}
+            {/* Language switcher */}
+            <div className="hidden xl:flex">
+              <LanguageDropdown lang={lang} pathWithoutLocale={pathWithoutLocale} />
+            </div>
 
             {/* Plans */}
             <Link
@@ -176,27 +154,15 @@ export function Header({ lang, dict }: HeaderProps) {
             </Link>
 
             {/* Hamburger */}
-            {user ? (
-              <button
-                className="group inline-flex items-center gap-3 border border-outline px-4 py-2.5 text-foreground/70 transition-all duration-300 hover:text-burgundy hover:border-burgundy hover:scale-[1.1] cursor-pointer"
-                onClick={() => setMobileOpen(true)}
-                aria-label="Open menu"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              </button>
-            ) : (
-              <button
-                className="lg:hidden text-foreground/70 ml-2 cursor-pointer transition-transform duration-300 hover:scale-[1.1]"
-                onClick={() => setMobileOpen(true)}
-                aria-label="Open menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              </button>
-            )}
+            <button
+              className="lg:hidden text-foreground/70 ml-2 cursor-pointer transition-transform duration-300 hover:scale-[1.1]"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
           </div>
         </nav>
       </header>
@@ -208,7 +174,6 @@ export function Header({ lang, dict }: HeaderProps) {
         dict={dict}
         navLinks={navLinks}
         pathWithoutLocale={pathWithoutLocale}
-        user={user}
       />
     </>
   );

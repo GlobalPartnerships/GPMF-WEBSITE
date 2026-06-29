@@ -1,0 +1,13 @@
+{
+  "id": "diagnostic",
+  "category": "standard",
+  "name": "GPMF Diagnostic",
+  "subtitle": "Audit express de maturité organisationnelle",
+  "price": "500 $ USD",
+  "priceNote": "Paiement unique",
+  "features": [
+    "Accès au questionnaire de diagnostic étendu",
+    "Rapport de Maturité (PDF) livré en 48h",
+    "Session de 30 min pour passer en revue les résultats"
+  ]
+}

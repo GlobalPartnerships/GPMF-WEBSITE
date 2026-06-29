@@ -1,17 +1,11 @@
-export interface PlanFeature {
-  text: string;
-}
-
-export interface Plan {
-  icon: string;
+export interface PlanCardData {
+  id: string;
+  category: "standard" | "custom";
   name: string;
-  description: string;
+  subtitle: string;
   price: string;
-  priceSuffix: string;
-  cta: string;
-  inheritLabel?: string;
-  features: PlanFeature[];
-  featured?: boolean;
+  priceNote: string;
+  features: string[];
 }
 
 export interface PlansDict {
@@ -32,8 +26,7 @@ export interface PlansDict {
     standard: string;
     custom: string;
   };
-  enterprise: Plan[];
-  custom: Plan[];
+  plans: PlanCardData[];
   meta: {
     title: string;
     description: string;

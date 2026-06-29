@@ -1,0 +1,13 @@
+{
+  "id": "diagnostic",
+  "category": "standard",
+  "name": "GPMF Diagnóstico",
+  "subtitle": "Auditoría Express de Preparación Empresarial",
+  "price": "$500 USD",
+  "priceNote": "Pago único",
+  "features": [
+    "Acceso al cuestionario de diagnóstico extendido",
+    "Informe de Madurez (PDF) en 48h",
+    "Sesión de 30 min para revisar los hallazgos"
+  ]
+}
