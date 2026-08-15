@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Diagnostic | GPMF - ProChile</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        softgray: '#F9FAFB',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        input[type="range"] { accent-color: #7A0F32; }
+    </style>
+</head>
+
+<body class="bg-warmgray/50 text-charcoal font-sans antialiased">
+
+    <!-- Header (Archetype A) -->
+    <header class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://globalpartnerships.vercel.app" class="flex items-center gap-3">
+                <img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+            </a>
+            
+            <!-- Centered Links -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Home</a>
+                <a href="#" class="text-white hover:text-burgundy transition-colors text-sm font-medium">About</a>
+                <a href="#" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Services</a>
+                <a href="#" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Partners</a>
+            </nav>
+
+            <!-- Language & CTA -->
+            <div class="hidden sm:flex items-center gap-6">
+                <select class="bg-transparent text-white text-sm outline-none cursor-pointer hover:text-burgundy transition-colors">
+                    <option value="en" class="text-black">EN</option>
+                    <option value="es" class="text-black">ES</option>
+                </select>
+                <a href="#" class="bg-burgundy text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform duration-300 shadow-md">
+                    Schedule
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <!-- HERO SECTION -->
+        <div style="margin-bottom: 6rem;">
+            <p style="font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 2rem;">
+                GPMF S.A.S. | PROYECTO INCIDENTAL</p>
+            <h1>TÍTULO <span class="accent-text">PRINCIPAL AQUÍ</span></h1>
+            <p style="font-size: 1.125rem; max-width: 600px; margin-top: 1.5rem;">Subtítulo o descripción breve del proyecto incidental.</p>
+        </div>
+
+        <!-- CONTENT SECTION -->
+        <section class="section">
+            <div class="content-col">
+                <div class="card">
+                    <h2>1. Sección de Ejemplo</h2>
+                    <p>Contenido del proyecto incidental aquí...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Archetype A) -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <a href="https://globalpartnerships.vercel.app"><img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto"></a>
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">BogotÃ¡ â€¢ Clermont-Ferrand â€¢ Montreal</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <p class="text-xs text-gray-500">Â© 2019 - <span id='year'></span> GPMF ConsultorÃ­a S.A.S. Todos los derechos reservados.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/gpmf" class="text-gray-600 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                        <a href="https://github.com/GlobalPartnerships" class="text-gray-600 hover:text-white transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('prochileDiagnostic');
+            const success = document.getElementById('successMessage');
+            
+            // Enviar a Formspree (usando el mismo endpoint temporal o puedes reemplazarlo)
+            fetch('https://formspree.io/f/mjgarwdv', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    success.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert("Hubo un error al enviar el formulario. Por favor intenta nuevamente.");
+                }
+            })
+            .catch(error => {
+                alert("Error de conexiÃ³n. Por favor verifica tu internet e intenta nuevamente.");
+            });
+        }
+        
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
+
