@@ -7,6 +7,11 @@
         // GitHub Pages 404 redirect router
         var path = window.location.pathname;
         
+        // Remove the repository name from the path if it exists so we can match correctly
+        if (path.startsWith('/GPMF-WEBSITE')) {
+            path = path.replace('/GPMF-WEBSITE', '');
+        }
+        
         var redirects = {
             '/contact.html': '/es/contact',
             '/aliados-equipo.html': '/es/partners',
