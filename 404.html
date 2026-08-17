@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo a Vercel...</title>
+    <script>
+        // GitHub Pages 404 redirect router
+        var path = window.location.pathname;
+        
+        var redirects = {
+            '/contact.html': '/es/contact',
+            '/aliados-equipo.html': '/es/partners',
+            '/business-development.html': '/es/services',
+            '/data-ai.html': '/es/services',
+            '/internationalization.html': '/es/services',
+            '/Intercultural.html': '/es/services'
+        };
+
+        var destination = redirects[path] || '/es/';
+        window.location.replace("https://globalpartnerships.vercel.app" + destination);
+    </script>
+</head>
+<body>
+    <p>Si no eres redirigido automáticamente, haz clic <a href="https://globalpartnerships.vercel.app/es/">aquí</a>.</p>
+</body>
+</html>
