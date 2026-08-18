@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Local Guide: Bogotá 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        softgray: '#F9FAFB',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Variables based on Archetype G */
+        :root {
+            --burgundy: #7A0F32;
+            --charcoal: #2E2E2E;
+            --ultralight-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --warm-accent: #E05638;
+            /* Soft orange/red for alerts */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ultralight-gray);
+            color: var(--charcoal);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Hierarchy */
+        .container h1 {
+            font-size: 3rem;
+            /* 48px+ */
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .container h2 {
+            font-size: 1.5rem;
+            /* 24px */
+            font-weight: 600;
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+
+        .container h3 {
+            font-size: 1.125rem;
+            /* 18px */
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .container p,
+        .container li {
+            font-size: 0.875rem;
+            /* 14px */
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .container ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style-type: disc;
+        }
+
+        /* Layout & Spacing (40% Rule - Negative Space) */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        .section {
+            margin-bottom: 8rem;
+            display: flex;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .section-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-col {
+            flex: 1;
+        }
+
+        .image-col {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Graphics & Containers (Minimalist White Containers) */
+        .card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Photographic Treatment */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            display: block;
+        }
+
+        /* Alerts & Callouts */
+        .alert-box {
+            background-color: #FFF2F0;
+            border-left: 4px solid var(--warm-accent);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: var(--warm-accent);
+            font-weight: 600;
+        }
+
+        /* Institutional Accent */
+        .accent-text {
+            color: var(--burgundy);
+        }
+
+        /* Tables */
+        .clean-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .clean-table th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--burgundy);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .clean-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.875rem;
+        }
+
+        /* Lead Magnet & Buttons */
+        .cta-section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 5rem 4rem;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(122, 15, 50, 0.08);
+            margin-top: 6rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(122, 15, 50, 0.2);
+            margin-top: 2rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(122, 15, 50, 0.3);
+            background-color: #5d0b25;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+
+            .section,
+            .section-reverse {
+                flex-direction: column;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 3rem 2rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Archetype A) -->
+    <header class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://globalpartnerships.vercel.app" class="flex items-center gap-3">
+                <img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+            </a>
+            
+            <!-- Centered Links -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="../index.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Home</a>
+                <a href="../about.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">About</a>
+                <a href="../!Servicios Central.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Services</a>
+                <a href="../aliados-equipo.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Partners</a>
+            </nav>
+
+            <!-- Language & CTA -->
+            <div class="hidden sm:flex items-center gap-6">
+                <select class="bg-transparent text-white text-sm outline-none cursor-pointer hover:text-burgundy transition-colors">
+                    <option value="en" class="text-black">EN</option>
+                    <option value="es" class="text-black">ES</option>
+                </select>
+                <a href="../diagnostico.html" class="bg-burgundy text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform duration-300 shadow-md">
+                    Schedule
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 8rem;">
+
+        <!-- HERO SECTION -->
+        <div style="margin-bottom: 6rem;">
+            <p
+                style="font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 2rem;">
+                GPMF | Institutional Advisory</p>
+            <h1>LOCAL GUIDE: <br><span class="accent-text">NORTE Y USAQUÉN (BOGOTÁ)</span></h1>
+            <p style="font-size: 1.125rem; max-width: 800px; margin-top: 1.5rem;">
+                Bogotá cuenta con áreas contrastantes. Mientras el <a href="local_kit_centro_historico.html" style="color: var(--burgundy); text-decoration: underline;">Centro Histórico</a> alberga la historia, el <a href="local_kit_chapinero.html" style="color: var(--burgundy); text-decoration: underline;">distrito de Chapinero</a> la gastronomía, y la Calle 26 sirve como <a href="local_kit_logistic_hub_26.html" style="color: var(--burgundy); text-decoration: underline;">Hub Logístico</a>, el Norte de Bogotá representa la cara más corporativa, moderna y residencial de la ciudad. 
+                <br><br>
+                Esta guía se enfoca en el distrito de <strong>Usaquén y zonas aledañas del Norte</strong>. Usaquén conserva una arquitectura de estilo colonial entremezclada con corporativos modernos, plazas con cafés de especialidad, restaurantes gourmet y su famoso mercado de pulgas. Es un sector ideal para negocios que busquen un entorno residencial, seguro y tranquilo, alejado del ritmo acelerado de otras zonas.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 6rem;">
+            <img src="../assets/usaquen_real.jpg" alt="Bogotá Norte y Usaquén" class="featured-image" style="width: 100%; max-height: 500px; object-fit: cover;">
+        </div>
+
+        <!-- SECTION 2: Accommodation Table -->
+        <section class="section section-reverse">
+            <div class="content-col card">
+                <h2>Hospedaje</h2>
+                <p>Evolución de costos para 2026. Tarifas estimadas en principales hubs corporativos:</p>
+                <table class="clean-table">
+                    <thead>
+                        <tr>
+                            <th>Hotel</th>
+                            <th>Ubicación</th>
+                            <th>Costo Est.</th>
+                            <th>Perfil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=W+Hotel+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>W Hotel Bogotá</strong></a></td>
+                            <td>Usaquén</td>
+                            <td>$200 - $300 USD</td>
+                            <td>Vanguardista, lujo corporativo</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=NH+Collection+Hacienda+Royal+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>NH Collection Hacienda Royal</strong></a></td>
+                            <td>Usaquén</td>
+                            <td>$120 - $180 USD</td>
+                            <td>Corporativo, tradicional, tranquilo</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=Sonesta+Hotel+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Sonesta Hotel</strong></a></td>
+                            <td>Norte (Unicentro)</td>
+                            <td>$90 - $140 USD</td>
+                            <td>Práctico, corporativo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Mapa de Usaquén</h3>
+                <p>Visualice la cercanía entre el distrito corporativo del norte, las calles de Usaquén y los hoteles de la zona:</p>
+                <iframe src="https://maps.google.com/maps?q=Usaquen+Bogota&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="image-col">
+                <img src="../assets/monserrate_city_view_clear.jpg"
+                    alt="Bogotá Panoramic View" class="featured-image">
+            </div>
+        </section>
+
+        <!-- SECTION 3: Gastronomía & Cultura -->
+        <section class="section">
+            <div class="content-col">
+                <div class="card">
+                    <h2>Gastronomía Exclusiva del Norte</h2>
+                    <p>Restaurantes recomendados para cenas corporativas en un entorno sereno y colonial en Usaquén:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=80+Sillas+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">80 Sillas:</a> Especialistas en comida de mar y pescados frescos en un ambiente sofisticado, ubicado justo en el corazón de Usaquén.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=La+Mar+Cebicheria+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">La Mar Cebichería:</a> De la aclamada cadena de Gastón Acurio, ofrece excelente comida peruana ideal para almuerzos de negocios.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Abasto+Usaquen+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">Abasto:</a> Concepto que rescata los ingredientes autóctonos colombianos en preparaciones reconfortantes. Ideal para un desayuno o brunch de trabajo.</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Cafés de Especialidad</h3>
+                    <ul>
+                        <li><strong>Catación Pública (Usaquén):</strong> Más que un café, es un verdadero laboratorio donde puedes catar y aprender sobre los distintos perfiles de taza de los departamentos de Colombia.</li>
+                        <li><strong>Colo Coffee (Usaquén):</strong> Una amplia casa donde puedes disfrutar de múltiples métodos de filtrado y un excelente ambiente para trabajar.</li>
+                        <li><strong>Café San Alberto (Usaquén):</strong> Reconocido como el café más premiado de Colombia, su sucursal en Usaquén ofrece una experiencia premium.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-col">
+                <div class="card">
+                    <img src="../assets/bogota_panoramic.jpg" alt="Atracciones de Bogotá" class="featured-image" style="margin-bottom: 2rem;">
+                    <h2>Puntos de Interés</h2>
+                    <p>El encanto de Usaquén radica en recorrer sus calles a pie y disfrutar de su tranquilidad:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+las+Pulgas+de+Usaquen" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Mercado de Pulgas de Usaquén:</strong></a> Funciona los domingos y festivos. Es un recorrido obligado para ver artesanías finas, joyería, arte y disfrutar de espectáculos callejeros.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Parque+de+Usaquen+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Parque de Usaquén:</strong></a> Una plaza de estilo colonial, rodeada por la emblemática Iglesia de Santa Bárbara, ideal para caminar al atardecer.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Centro+Comercial+Hacienda+Santa+Barbara" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Hacienda Santa Bárbara:</strong></a> Un centro comercial único, construido sobre lo que fue una antigua hacienda colonial española, mezclando la arquitectura histórica con boutiques modernas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAD MAGNET CTA -->
+        <section class="cta-section">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Conozca más sobre nuestra propuesta</h2>
+            <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 2rem auto;">Acceda a recursos exclusivos y conozca cómo GPMF puede acompañar su estrategia en el mercado LATAM.</p>
+            <a href="prochile.html" class="btn-primary">Ver Material ProChile</a>
+        </section>
+
+        <!-- Footer (Archetype A) -->
+    </div>
+    
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <a href="https://globalpartnerships.vercel.app"><img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto"></a>
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <p class="text-xs text-gray-500">© 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/gpmf" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                        <a href="https://github.com/GlobalPartnerships" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

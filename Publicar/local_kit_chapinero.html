@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Local Guide: Bogotá 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        charcoal: '#2E2E2E',
+                        softgray: '#F9FAFB',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Variables based on Archetype G */
+        :root {
+            --burgundy: #7A0F32;
+            --charcoal: #2E2E2E;
+            --ultralight-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --warm-accent: #E05638;
+            /* Soft orange/red for alerts */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ultralight-gray);
+            color: var(--charcoal);
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Hierarchy */
+        .container h1 {
+            font-size: 3rem;
+            /* 48px+ */
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .container h2 {
+            font-size: 1.5rem;
+            /* 24px */
+            font-weight: 600;
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+
+        .container h3 {
+            font-size: 1.125rem;
+            /* 18px */
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .container p,
+        .container li {
+            font-size: 0.875rem;
+            /* 14px */
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .container ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style-type: disc;
+        }
+
+        /* Layout & Spacing (40% Rule - Negative Space) */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 6rem 4rem;
+        }
+
+        .section {
+            margin-bottom: 8rem;
+            display: flex;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .section-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-col {
+            flex: 1;
+        }
+
+        .image-col {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Graphics & Containers (Minimalist White Containers) */
+        .card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Photographic Treatment */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            display: block;
+        }
+
+        /* Alerts & Callouts */
+        .alert-box {
+            background-color: #FFF2F0;
+            border-left: 4px solid var(--warm-accent);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: var(--warm-accent);
+            font-weight: 600;
+        }
+
+        /* Institutional Accent */
+        .accent-text {
+            color: var(--burgundy);
+        }
+
+        /* Tables */
+        .clean-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .clean-table th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--burgundy);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .clean-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.875rem;
+        }
+
+        /* Lead Magnet & Buttons */
+        .cta-section {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 5rem 4rem;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(122, 15, 50, 0.08);
+            margin-top: 6rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(122, 15, 50, 0.2);
+            margin-top: 2rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(122, 15, 50, 0.3);
+            background-color: #5d0b25;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+
+            .section,
+            .section-reverse {
+                flex-direction: column;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 3rem 2rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Archetype A) -->
+    <header class="fixed w-full top-0 z-50 bg-black transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://globalpartnerships.vercel.app" class="flex items-center gap-3">
+                <img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto">
+            </a>
+            
+            <!-- Centered Links -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="../index.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Home</a>
+                <a href="../about.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">About</a>
+                <a href="../!Servicios Central.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Services</a>
+                <a href="../aliados-equipo.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Partners</a>
+            </nav>
+
+            <!-- Language & CTA -->
+            <div class="hidden sm:flex items-center gap-6">
+                <select class="bg-transparent text-white text-sm outline-none cursor-pointer hover:text-burgundy transition-colors">
+                    <option value="en" class="text-black">EN</option>
+                    <option value="es" class="text-black">ES</option>
+                </select>
+                <a href="../diagnostico.html" class="bg-burgundy text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform duration-300 shadow-md">
+                    Schedule
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 8rem;">
+
+        <!-- HERO SECTION -->
+        <div style="margin-bottom: 6rem;">
+            <p
+                style="font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 2rem;">
+                GPMF | Institutional Advisory</p>
+            <h1>LOCAL GUIDE: <br><span class="accent-text">CHAPINERO Y ZONA ROSA (BOGOTÁ)</span></h1>
+            <p style="font-size: 1.125rem; max-width: 800px; margin-top: 1.5rem;">
+                Bogotá es una metrópoli vibrante y extensa. Mientras que el <a href="local_kit_logistic_hub_26.html" style="color: var(--burgundy); text-decoration: underline;"><strong>Hub Logístico 26</strong></a> es ideal para negocios rápidos y el <a href="local_kit_centro_historico.html" style="color: var(--burgundy); text-decoration: underline;"><strong>Centro Histórico</strong></a> para la inmersión patrimonial, el distrito de <strong>Chapinero y Zona Rosa</strong> es el corazón bohemio, gastronómico y de vida nocturna de la capital.
+                <br><br>
+                Esta guía se enfoca en la <strong>Zona G, Zona T y el Parque de la 93</strong>. Aquí encontrarás la mejor alta cocina, restaurantes de autor, exclusivas boutiques, centros comerciales y una dinámica vida universitaria y nocturna. Es ideal para viajes donde el networking se extiende a cenas, eventos sociales o simplemente para disfrutar del lado más cosmopolita de la ciudad. (Para el norte corporativo y residencial, revisa <a href="local_kit_usaquen.html" style="color: var(--burgundy); text-decoration: underline;">Norte y Usaquén</a>).
+            </p>
+        </div>
+
+        <div style="margin-bottom: 6rem;">
+            <img src="../assets/chapinero_real.jpg" alt="Bogotá Chapinero y Zona Rosa" class="featured-image" style="width: 100%; max-height: 500px; object-fit: cover;">
+        </div>
+
+        <!-- SECTION 2: Accommodation Table -->
+        <section class="section section-reverse">
+            <div class="content-col card">
+                <h2>Hospedaje</h2>
+                <p>Evolución de costos para 2026. Tarifas estimadas en principales hubs corporativos:</p>
+                <table class="clean-table">
+                    <thead>
+                        <tr>
+                            <th>Hotel</th>
+                            <th>Ubicación</th>
+                            <th>Costo Est.</th>
+                            <th>Perfil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=Four+Seasons+Hotel+Casa+Medina+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Four Seasons Casa Medina</strong></a></td>
+                            <td>Zona G</td>
+                            <td>$300 - $450 USD</td>
+                            <td>Lujo clásico, gastronómico</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=Click+Clack+Hotel+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Click Clack Hotel</strong></a></td>
+                            <td>Parque 93 / Zona T</td>
+                            <td>$150 - $250 USD</td>
+                            <td>Moderno, vibrante, networking</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query=JW+Marriott+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>JW Marriott</strong></a></td>
+                            <td>Zona Financiera</td>
+                            <td>$250 - $350 USD</td>
+                            <td>Corporativo premium</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Mapa de Chapinero y Zona Rosa</h3>
+                <p>Visualice la cercanía entre los principales distritos gastronómicos, la zona financiera y los hoteles corporativos:</p>
+                <iframe src="https://maps.google.com/maps?q=Zona+T+Bogota&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="image-col">
+                <img src="../assets/monserrate_city_view_clear.jpg"
+                    alt="Bogotá Panoramic View" class="featured-image">
+            </div>
+        </section>
+
+        <!-- SECTION 3: Gastronomía & Cultura -->
+        <section class="section">
+            <div class="content-col">
+                <div class="card">
+                    <h2>Gastronomía y Vida Nocturna</h2>
+                    <p>Restaurantes recomendados para experiencias de alto nivel y networking en Chapinero:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Harry+Sasson+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">Harry Sasson:</a> Ubicado en la Zona G. Uno de los restaurantes más icónicos de Colombia, ideal para cenas de negocios de muy alto nivel.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Abasto+Quinta+Camacho+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">Abasto (Quinta Camacho):</a> En el corazón de Chapinero, un concepto que rescata ingredientes autóctonos en preparaciones reconfortantes. Ideal para un desayuno de negocios o un almuerzo casual.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Andres+DC+Bogota" target="_blank" style="color: var(--burgundy); font-weight: 600;">Andrés DC:</a> En plena Zona T. La versión urbana del legendario Andrés Carne de Res; perfecto para grupos grandes, música en vivo y gastronomía típica en un ambiente festivo.</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 2rem;">Cafés de Especialidad</h3>
+                    <ul>
+                        <li><strong>Azahar Coffee (Parque 93):</strong> Especialistas en café de origen, en un ambiente moderno y cosmopolita ideal para reuniones ejecutivas.</li>
+                        <li><strong>Amor Perfecto (Chapinero):</strong> Pioneros del café de especialidad en Colombia, con laboratorios de catación y un ambiente vibrante.</li>
+                        <li><strong>Libertario Coffee Roasters (Zona G):</strong> Café enfocado en sostenibilidad y excelente diseño interior, perfecto para un espresso rápido o una charla.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-col">
+                <div class="card">
+                    <img src="../assets/bogota_panoramic.jpg" alt="Atracciones de Bogotá" class="featured-image" style="margin-bottom: 2rem;">
+                    <h2>Puntos de Interés</h2>
+                    <p>Chapinero concentra el entretenimiento y las zonas de compras exclusivas a distancias caminables:</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Zona+T+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Zona T (Calle 82):</strong></a> Calles peatonales llenas de boutiques de diseñador, centros comerciales (como el Andino) y la mejor vida nocturna del país.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Parque+de+la+93+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Parque de la 93:</strong></a> Un hermoso parque rodeado de restaurantes, bares y sedes corporativas, ideal para relajarse y hacer networking.</li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Quebrada+La+Vieja+Bogota" target="_blank" style="color: var(--charcoal); text-decoration: underline;"><strong>Quebrada La Vieja:</strong></a> Si te gusta el senderismo urbano, este sendero en los cerros orientales de Chapinero es perfecto para conectarse con la naturaleza a primera hora de la mañana.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAD MAGNET CTA -->
+        <section class="cta-section">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Conozca más sobre nuestra propuesta</h2>
+            <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 2rem auto;">Acceda a recursos exclusivos y conozca cómo GPMF puede acompañar su estrategia en el mercado LATAM.</p>
+            <a href="prochile.html" class="btn-primary">Ver Material ProChile</a>
+        </section>
+
+        <!-- Footer (Archetype A) -->
+    </div>
+    
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <a href="https://globalpartnerships.vercel.app"><img src="../assets/GPMF LOGO white.png" alt="GPMF Logo" class="h-8 w-auto"></a>
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <p class="text-xs text-gray-500">© 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/gpmf" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                        <a href="https://github.com/GlobalPartnerships" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
