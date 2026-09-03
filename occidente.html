@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPMF | Local Guide: Eje Occidente (Calle 26, Boyacá, Normandía & Fontibón)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#7A0F32',
+                        'burgundy-dark': '#5A0B25',
+                        charcoal: '#2E2E2E',
+                        softgray: '#F9FAFB',
+                        warmgray: '#F5F5F5',
+                        black: '#000000',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body { overflow-x: hidden; width: 100%; max-width: 100vw; scroll-behavior: smooth; }
+        :root {
+            --burgundy: #7A0F32;
+            --burgundy-dark: #5A0B25;
+            --charcoal: #2E2E2E;
+            --ultralight-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --warm-accent: #E05638;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ultralight-gray);
+            color: var(--charcoal);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 6rem 2.5rem 4rem 2.5rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        .card p, .card li {
+            font-size: 0.925rem;
+            color: #444;
+            line-height: 1.65;
+        }
+
+        .card ul {
+            padding-left: 1.25rem;
+            margin-bottom: 1.25rem;
+            list-style-type: disc;
+        }
+
+        .alert-box {
+            background-color: #FFF5F3;
+            border-left: 4px solid var(--warm-accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.25rem 0;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: #A3321A;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .place-link {
+            color: var(--burgundy);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .place-link:hover {
+            color: #b31b4e;
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #EFE6EA;
+            color: var(--burgundy);
+        }
+
+        .strategic-callout {
+            border-left: 4px solid var(--burgundy);
+            background: #FAF5F7;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #4A1224;
+            font-weight: 500;
+        }
+
+        .nav-pill {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.825rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill-active {
+            background-color: var(--burgundy);
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-pill-idle {
+            background-color: white;
+            color: #555;
+            border: 1px solid #E5E7EB;
+        }
+
+        .nav-pill-idle:hover {
+            border-color: var(--burgundy);
+            color: var(--burgundy);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #111111 0%, #1f0b13 100%);
+            border-radius: 24px;
+            padding: 4.5rem 3rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            margin-top: 4rem;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background-color: var(--burgundy);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.95rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(122, 15, 50, 0.4);
+            margin-top: 1.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(122, 15, 50, 0.5);
+            background-color: #941740;
+        }
+
+        .highlight-item {
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            background: #FAFAFA;
+            border: 1px solid #F0F0F0;
+            transition: all 0.2s ease;
+        }
+        .highlight-item:hover {
+            background: #FFF;
+            border-color: #E2D2D8;
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Archetype A) -->
+    <header class="fixed w-full top-0 z-50 bg-black/95 backdrop-blur-md transition-all duration-300 border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="https://globalpartnerships.vercel.app" class="flex items-center gap-3">
+                <img src="Assets/GPMF%20LOGO%20white.png" alt="GPMF Logo" class="h-8 w-auto">
+            </a>
+
+            <!-- Centered Links -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Home</a>
+                <a href="about.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">About</a>
+                <a href="!Servicios Central.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Services</a>
+                <a href="aliados-equipo.html" class="text-white hover:text-burgundy transition-colors text-sm font-medium">Partners</a>
+            </nav>
+
+            <!-- Language & CTA -->
+            <div class="hidden sm:flex items-center gap-6">
+                <select class="bg-transparent text-white text-sm outline-none cursor-pointer hover:text-burgundy transition-colors">
+                    <option value="es" class="text-black" selected>ES</option>
+                    <option value="en" class="text-black">EN</option>
+                </select>
+                <a href="diagnostico.html" class="bg-burgundy text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform duration-300 shadow-md">
+                    Schedule
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 7.5rem;">
+
+        <!-- HERO TITLE -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="badge"><i class="fa-solid fa-compass mr-1"></i> Local Guide Bogotá 2026</span>
+                <span class="text-xs uppercase tracking-widest text-gray-500 font-semibold">• Eje Corporativo & Logístico</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-charcoal mb-4">
+                GUÍA LOCAL: EJE OCCIDENTE <br>
+                <span class="text-burgundy font-light">Calle 26 • Av. Boyacá • Salitre • Normandía • Fontibón</span>
+            </h1>
+
+            <!-- Strategic Sub-guide Quote -->
+            <div class="strategic-callout">
+                <strong>Perfil Estratégico:</strong> Esta sub-guía cubre el nodo corporativo, consular y logístico de mayor eficiencia en Bogotá. Es la zona preferida por diplomáticos, ejecutivos multinacionales y visitantes corporativos que requieren acceso inmediato al Aeropuerto El Dorado y centros de convenciones sin el desgaste del tráfico del oriente capitalino.
+            </div>
+
+            <!-- Navigation Pills -->
+            <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-200">
+                <span class="text-xs uppercase tracking-wider font-semibold text-gray-400 flex items-center mr-2">Otras Guías:</span>
+                <a href="occidente.html" class="nav-pill nav-pill-active"><i class="fa-solid fa-location-dot mr-1"></i> Occidente & Normandía</a>
+                <a href="hub26.html" class="nav-pill nav-pill-idle"><i class="fa-solid fa-plane-departure mr-1"></i> Hub Logístico 26</a>
+                <a href="centro.html" class="nav-pill nav-pill-idle"><i class="fa-solid fa-landmark mr-1"></i> Centro Histórico</a>
+                <a href="chapinero.html" class="nav-pill nav-pill-idle"><i class="fa-solid fa-martini-glass mr-1"></i> Chapinero & Zona Rosa</a>
+                <a href="usaquen.html" class="nav-pill nav-pill-idle"><i class="fa-solid fa-tree mr-1"></i> Norte & Usaquén</a>
+            </div>
+        </div>
+
+        <!-- SECTION 1: Visión General del Territorio -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-map-location-dot text-burgundy"></i> 1. Visión General del Territorio</h2>
+                <p class="text-base mb-4">
+                    El corredor del Occidente bogotano se estructura sobre dos grandes arterias de alta capacidad:
+                </p>
+                <ul class="space-y-2 mb-6">
+                    <li>
+                        <strong>Avenida Calle 26 (Avenida El Dorado):</strong> El eje oriente-occidente que une el corazón financiero y la zona consular directamente con el Aeropuerto Internacional El Dorado.
+                    </li>
+                    <li>
+                        <strong>Avenida Boyacá (Carrera 72):</strong> La gran troncal norte-sur que conecta los sectores industriales de Fontibón, las áreas residenciales y comerciales de Engativá y los accesos al norte de la ciudad.
+                    </li>
+                </ul>
+
+                <h3 class="text-charcoal font-bold text-base mb-3">Ventajas clave del cuadrante:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div class="text-burgundy text-lg font-bold mb-1"><i class="fa-solid fa-clock-rotate-left mr-2"></i>10 a 25 min</div>
+                        <p class="text-xs text-gray-600"><strong>Movilidad fluida hacia el aeropuerto:</strong> Tiempos de traslado controlados y predecibles sin cuellos de botella del oriente.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div class="text-burgundy text-lg font-bold mb-1"><i class="fa-solid fa-building mr-2"></i>Clase A+</div>
+                        <p class="text-xs text-gray-600"><strong>Entorno corporativo planificado:</strong> Complejos como Connecta, Elemento y Salitre Office Center con infraestructura global.</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                        <div class="text-burgundy text-lg font-bold mb-1"><i class="fa-solid fa-shield mr-2"></i>Seguridad Alta</div>
+                        <p class="text-xs text-gray-600"><strong>Seguridad perimetral constante:</strong> Alta presencia institucional por la zona consular, ministerios y fiscalía.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Normandía y Modelia (Casas Clásicas y GPMF) -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-house-chimney-window text-burgundy"></i> 2. Barrios Tradicionales: Normandía y Modelia</h2>
+                <p class="text-base text-gray-600 mb-6">
+                    Tanto <strong>Normandía</strong> como <strong>Modelia</strong> son los referentes residenciales consolidados del occidente bogotano. Su encanto reside en su escala humana, su arquitectura residencial tradicional y una ubicación geográfica estratégica insuperable.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3>Arquitectura Residencial y Casas Clásicas</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <strong>Estilo y Morfología:</strong> Desarrollados entre los años 60 y 80, conservan amplias casas clásicas unifamiliares con fachadas de ladrillo a la vista, techos de teja de barro, antejardines con cerramientos verdes y calles interiores arboladas y silenciosas.
+                            </li>
+                            <li>
+                                <strong>Sede GPMF y Casa Normandía:</strong> En Normandía se ubica la sede principal de 
+                                <a href="https://globalpartnerships.vercel.app" target="_blank" class="place-link font-bold">Global Partnerships Multidisciplinary Firm (GPMF)</a> 
+                                y el espacio <strong>Casa Normandía</strong>, reconocido como uno de los espacios renovados y vanguardistas del sector. Representa el equilibrio perfecto entre la preservación de la arquitectura clásica residencial y un centro moderno para consultoría multidisciplinar, eventos corporativos y servicios de soft-landing.
+                            </li>
+                            <li>
+                                <strong>Reconversión Boutique:</strong> Casonas adaptadas como oficinas profesionales, consultorios y alojamientos ejecutivos para estancias medias.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Centralidad Estratégica Inmejorable</h3>
+                        <p class="text-sm mb-4">
+                            Enmarcados en un rombo vial privilegiado: al Sur por la <strong>Av. Calle 26</strong>, al Norte por la <strong>Av. José Celestino Mutis (Calle 63)</strong>, al Oriente por la <strong>Av. Boyacá</strong> y al Occidente por la <strong>Av. Ciudad de Cali</strong>. Salida a El Dorado en menos de 10 minutos.
+                        </p>
+
+                        <h3>Vida Local y Parques</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Parque+de+Modelia+Bogota" target="_blank" class="place-link">
+                                    <strong>Parque de Modelia:</strong>
+                                </a>
+                                Amplias zonas verdes, senderos peatonales y áreas de recreación al aire libre.
+                            </li>
+                            <li>
+                                <strong>Polo Gastronómico de Modelia (Cra. 75 y Cll. 24):</strong> Parrillas tradicionales (como <em>Dos Banderas</em>), comida típica y pizzerías.
+                            </li>
+                            <li>
+                                <strong>Tranquilidad de Normandía:</strong> Ambiente apacible, panaderías de tradición vecinal y el Parque Central de Normandía bajo frondosos urapanes.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Pulmones Verdes, Ciencia y Centros Comerciales (Ultra-conciso) -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-leaf text-burgundy"></i> 3. Pulmones Verdes, Cultura & Centros Comerciales</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h3>Naturaleza y Arquitectura</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Jardin+Botanico+de+Bogota" target="_blank" class="place-link">
+                                    <strong>Jardín Botánico José Celestino Mutis & Tropicario:</strong>
+                                </a><br>
+                                Obra maestra arquitectónica de cristal premiada internacionalmente que reproduce todos los ecosistemas colombianos.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Parque+Metropolitano+Simon+Bolivar+Bogota" target="_blank" class="place-link">
+                                    <strong>Parque Metropolitano Simón Bolívar:</strong>
+                                </a><br>
+                                El parque urbano más grande de Bogotá (más de 113 hectáreas). Ideal para caminatas matutinas y running.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Biblioteca+Publica+Virgilio+Barco+Bogota" target="_blank" class="place-link">
+                                    <strong>Biblioteca Pública Virgilio Barco:</strong>
+                                </a><br>
+                                Diseñada por Rogelio Salmona. Joya del ladrillo rodeada de espejos de agua y terrazas panorámicas.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Ciencia y Entretenimiento</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Maloka+Bogota" target="_blank" class="place-link">
+                                    <strong>Maloka Museo Interactivo (Ciudad Salitre):</strong>
+                                </a><br>
+                                Centro temático de ciencia y tecnología con cine domo interactivo.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Salitre+Magico+Bogota" target="_blank" class="place-link">
+                                    <strong>Salitre Mágico:</strong>
+                                </a><br>
+                                Parque de atracciones mecánicas con montaña rusa y rueda de observación panorámica.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Compensar+Avenida+68+Bogota" target="_blank" class="place-link">
+                                    <strong>Complejo Compensar CUR (Av. 68):</strong>
+                                </a><br>
+                                Centro polideportivo, piscinas olímpicas y salas de convenciones empresariales.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Centros Comerciales: Ultra-conciso y diferenciado -->
+                <h3 class="text-charcoal font-bold text-base mb-3 pt-4 border-t border-gray-100">
+                    <i class="fa-solid fa-bag-shopping text-burgundy mr-2"></i> Centros Comerciales (Diferenciador Clave)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Gran+Estacion+Centro+Comercial+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-train-subway mr-1"></i> <strong>Gran Estación:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Conexión directa a TransMilenio en el núcleo corporativo de Salitre.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Centro+Comercial+Nuestro+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-plane-up mr-1"></i> <strong>Nuestro Bogotá:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Terraza con vista panorámica a los aviones despegando y aterrizando.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Connecta+Ecosistema+Empresarial+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-briefcase mr-1"></i> <strong>Connecta CC:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Integrado directamente al campus de oficinas para networking ejecutivo.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Titan+Plaza+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-arrows-split-up-and-left mr-1"></i> <strong>Titán Plaza:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Eje bisagra norte-occidente (Avenida Boyacá con Calle 80).</p>
+                    </div>
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Centro+Comercial+Hayuelos+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-store mr-1"></i> <strong>Hayuelos CC:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Comercio y punto de conexión directo entre Modelia y Fontibón.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Salitre+Plaza+Centro+Comercial+Bogota" target="_blank" class="place-link">
+                            <i class="fa-solid fa-hospital-user mr-1"></i> <strong>Salitre Plaza:</strong>
+                        </a>
+                        <p class="text-xs text-gray-600 mt-1">Servicios bancarios y farmacias exprés de alta resolución vecinal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Gastronomía, Tradición Local y Campos de Tejo -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-utensils text-burgundy"></i> 4. Gastronomía, Tradición Local & Campos de Tejo</h2>
+
+                <!-- Tejo Callout Box with Direct Links -->
+                <div class="bg-[#FFF9F5] border border-[#FDE5D8] rounded-xl p-5 mb-8">
+                    <div class="flex items-start gap-3">
+                        <div class="p-2.5 bg-warm-accent/10 rounded-lg text-warm-accent mt-0.5">
+                            <i class="fa-solid fa-bullseye text-lg text-[#E05638]"></i>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="text-[#8C2B14] font-bold text-base mt-0 mb-1">
+                                Experiencia Autóctona: Campos y Clubes de Tejo en Occidente
+                            </h3>
+                            <p class="text-xs text-gray-700 leading-relaxed mb-3">
+                                Los barrios tradicionales de <strong>Engativá y Fontibón</strong> albergan algunas de las canchas de tejo (el deporte nacional colombiano) más auténticas de la ciudad. Una experiencia de integración donde se lanza el disco metálico a la mecha con pólvora, acompañado de cerveza fría y picadas criollas (longaniza, papa criolla, plátano y arepa):
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-white p-3.5 rounded-lg border border-[#FDE5D8]">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Cancha+de+Tejo+Fontibon+Bogota" target="_blank" class="place-link text-xs">
+                                        <i class="fa-solid fa-location-dot mr-1"></i> <strong>Canchas de Tejo Fontibón</strong>
+                                    </a>
+                                    <p class="text-[11px] text-gray-500 mt-0.5">Canchas clásicas de greda con picada criolla tradicional.</p>
+                                </div>
+                                <div class="bg-white p-3.5 rounded-lg border border-[#FDE5D8]">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Club+de+Tejo+Engativa+Bogota" target="_blank" class="place-link text-xs">
+                                        <i class="fa-solid fa-location-dot mr-1"></i> <strong>Club de Tejo Engativá Tradicional</strong>
+                                    </a>
+                                    <p class="text-[11px] text-gray-500 mt-0.5">Auténtico tejo de barrio ideal para team building informal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- High End -->
+                    <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
+                        <h3 class="text-burgundy font-bold text-base mt-0 mb-3">
+                            <i class="fa-solid fa-champagne-glasses mr-2"></i>High End & Negocios
+                        </h3>
+                        <ul class="space-y-3 text-sm pl-4">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Ushin+Japanese+Grill+Bogota" target="_blank" class="place-link">
+                                    <strong>Ushin Japanese & Grill:</strong>
+                                </a><br>
+                                Piso 8 con vista panorámica a la ciudad y cerros. Alta gastronomía japonesa.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Pimento+Marriott+Bogota" target="_blank" class="place-link">
+                                    <strong>Pimento (Marriott):</strong>
+                                </a><br>
+                                Cocina italiana clásica refinada para almuerzos y cierres de negocios.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Kion+Huarique+Peruano+Bogota" target="_blank" class="place-link">
+                                    <strong>Kion Huarique Peruano:</strong>
+                                </a><br>
+                                Auténtica gastronomía peruana en Salitre (ceviches tradicionales, causas y lomo saltado de autor).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tipicos -->
+                    <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
+                        <h3 class="text-burgundy font-bold text-base mt-0 mb-3">
+                            <i class="fa-solid fa-fire mr-2"></i>Típicos y Preferidos Locales
+                        </h3>
+                        <ul class="space-y-3 text-sm pl-4">
+                            <li>
+                                <a href="https://maps.app.goo.gl/nEgKYHwC2ifxSSdm8" target="_blank" class="place-link">
+                                    <strong>Piqueteadero Guadalajara:</strong>
+                                </a><br>
+                                Auténtica tradición de piqueteadero y comida típica cundiboyacense (fritanga tradicional, longaniza, costilla, chicharrón y papa criolla).
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Paisano+Mateus+Bogota" target="_blank" class="place-link">
+                                    <strong>Paisano Mateus:</strong>
+                                </a><br>
+                                Comida boyacense tradicional de alta calidad en el barrio popular.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Dos+Banderas+Modelia+Bogota" target="_blank" class="place-link">
+                                    <strong>Dos Banderas:</strong>
+                                </a><br>
+                                Asados argentinos y carnes al carbón de fin de semana en el barrio Modelia.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Cafes -->
+                    <div class="p-5 bg-gray-50 rounded-xl border border-gray-100">
+                        <h3 class="text-burgundy font-bold text-base mt-0 mb-3">
+                            <i class="fa-solid fa-mug-hot mr-2"></i>Cafés & Panaderías
+                        </h3>
+                        <ul class="space-y-3 text-sm pl-4">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Varietale+Aeropuerto+El+Dorado" target="_blank" class="place-link">
+                                    <strong>Varietale Aeropuerto:</strong>
+                                </a><br>
+                                Café de especialidad dentro de El Dorado (abierto 24 horas).
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Minka+Cafe+Hotel+Capital+Bogota" target="_blank" class="place-link">
+                                    <strong>Minka Café y Bakery:</strong>
+                                </a><br>
+                                Filtrados especiales y repostería en el sector Salitre.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=La+Croissanteria+Calle+26+Bogota" target="_blank" class="place-link">
+                                    <strong>La Croissantería (Av. Dorado 69A):</strong>
+                                </a><br>
+                                Croissants y hojaldres artesanales de alta calidad.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Brot+Connecta+26+Bogota" target="_blank" class="place-link">
+                                    <strong>Brot Bäckerei (Connecta 26):</strong>
+                                </a><br>
+                                Panadería alemana artesanal y desayunos ejecutivos.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Hub Consular Embajada y CAS (Ubicada antes de Conectividad y Logística) -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-passport text-burgundy"></i> 5. Hub Consular: Embajada de EE. UU. y Centro de Visas (CAS)</h2>
+                <p class="mb-6">
+                    La gestión de visas y trámites diplomáticos concentra un alto flujo en este sector. Para optimizar tiempos y evitar contratiempos, considere las siguientes recomendaciones operativas:
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7">
+                        <h3>Ubicaciones Clave</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Embajada+de+los+Estados+Unidos+Bogota" target="_blank" class="place-link">
+                                    <i class="fa-solid fa-location-dot mr-1"></i> <strong>Embajada de los Estados Unidos en Colombia:</strong>
+                                </a><br>
+                                Carrera 45 # 24B-27 (Ciudad Salitre). Acceso peatonal principal sobre la Carrera 45.
+                            </li>
+                            <li>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Centro+de+Atencion+al+Solicitante+CAS+Calle+26+Bogota" target="_blank" class="place-link">
+                                    <i class="fa-solid fa-fingerprint mr-1"></i> <strong>CAS (Centro de Atención al Solicitante - Toma de Huellas y Biometría):</strong>
+                                </a><br>
+                                Calle 26 # 69-76 (Complejo Empresarial Elemento, Torre 1). Distancia entre CAS y Embajada: aprox. 7 minutos en vehículo o 20 minutos a pie.
+                            </li>
+                        </ul>
+
+                        <div class="alert-box mt-4">
+                            <p class="font-semibold text-xs leading-relaxed">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> <strong>Protocolos de Seguridad y Restricciones Estrictas:</strong><br>
+                                • <strong>Dispositivos Electrónicos Prohibidos:</strong> Celulares, smartwatches, audífonos bluetooth, computadores y memorias USB.<br>
+                                • <strong>Artículos Prohibidos:</strong> Maletines grandes, mochilas voluminosas, líquidos y aerosoles.<br>
+                                • <strong>Recomendación Ejecutiva:</strong> Deje todos sus dispositivos en la caja de seguridad de su hotel. Presentarse únicamente <strong>15 minutos antes</strong> de la cita.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                            <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-map-pin text-burgundy mr-1"></i> Ubicación del Complejo Consular
+                            </p>
+                            <iframe src="https://maps.google.com/maps?q=Embajada+de+Estados+Unidos+Bogota&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="240" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Hub Logístico y Checklist -->
+        <section class="mb-12">
+            <div class="card">
+                <h2><i class="fa-solid fa-plane-departure text-burgundy"></i> 6. Conectividad Logística & Consejos del Viajero</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3>Conexiones Críticas en Fontibón y Engativá</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><strong>Aeropuerto Internacional El Dorado (T1):</strong> Vuelos nacionales e internacionales 24/7.</li>
+                            <li><strong>Terminal Puente Aéreo (T2):</strong> Conexión de vuelos regionales (Clic, Satena).</li>
+                            <li><strong>Terminal de Transporte Salitre:</strong> Salida de buses ejecutivos a todo el país.</li>
+                            <li><strong>Zona Franca de Bogotá (Fontibón):</strong> Ecosistema de comercio exterior, logística y data centers.</li>
+                            <li><strong>Centro Fundacional de Fontibón:</strong> Casco colonial histórico con arquitectura patrimonial.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Checklist Rápido para el Viajero Ejecutivo</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                <strong>1. Trámites Consulares:</strong> Deje celular y maletas en el hotel; lleve documentos en carpeta transparente.
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                <strong>2. Vuelos Internacionales:</strong> Desde Salitre o Modelia, calcule <strong>2.5 horas de antelación</strong> al aeropuerto.
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                <strong>3. Pagos y Moneda:</strong> Moneda oficial Peso Colombiano (COP). 98% de comercios aceptan Apple Pay / Contactless.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEAD MAGNET CTA -->
+        <section class="cta-section">
+            <h2 class="text-3xl md:text-4xl font-black mb-3">Expande tu Operación en Colombia con GPMF</h2>
+            <p class="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-6">
+                Desde nuestra sede en Normandía, asesoramos a multinacionales y empresas en su ruta de soft-landing legal, tributario y operacional en Bogotá.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="prochile.html" class="btn-primary">
+                    <i class="fa-solid fa-chart-line"></i> Iniciar Diagnóstico Estratégico
+                </a>
+                <a href="https://globalpartnerships.vercel.app" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-gray-600 text-white hover:bg-white/10 transition-colors font-semibold text-sm mt-6">
+                    <i class="fa-solid fa-building"></i> Conocer Sede GPMF
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Global Standard Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-8">
+                    <a href="https://globalpartnerships.vercel.app">
+                        <img src="Assets/GPMF%20LOGO%20white.png" alt="GPMF Logo" class="h-8 w-auto">
+                    </a>
+                    <div class="text-xs">
+                        <p class="font-medium text-white">Global Partnerships Multidisciplinary Firm</p>
+                        <p class="text-gray-400">Bogotá • Clermont-Ferrand • Montreal</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <p class="text-xs text-gray-500">© 2019 - <span id='year'></span> GPMF Consultoría S.A.S. Todos los derechos reservados.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/gpmf" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="https://github.com/GlobalPartnerships" class="text-gray-600 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

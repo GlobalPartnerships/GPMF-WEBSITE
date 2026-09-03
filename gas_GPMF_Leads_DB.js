@@ -68,6 +68,31 @@ function doPost(e) {
             htmlBody: htmlCliente
         });
 
+        // ENVIAR NOTIFICACIÓN INTERNA AL EQUIPO DE GPMF
+        const miCorreoNotificaciones = "contacto.gpmfsas@gmail.com";
+        
+        // Creamos un cuerpo de correo sencillo con los datos recibidos
+        const htmlInterno = `
+            <h2>Nuevo Lead Recibido en la Web</h2>
+            <ul>
+                <li><strong>Nombre:</strong> ${data.nombre || 'N/A'}</li>
+                <li><strong>Email:</strong> ${data.email || 'N/A'}</li>
+                <li><strong>Empresa:</strong> ${data.empresa || 'N/A'}</li>
+                <li><strong>Presupuesto:</strong> ${data.presupuesto || 'N/A'}</li>
+                <li><strong>Desafío:</strong> ${data.desafio || 'N/A'}</li>
+                <li><strong>Etapa:</strong> ${data.etapa || 'N/A'}</li>
+                <li><strong>Dolor:</strong> ${data.dolor || 'N/A'}</li>
+                <li><strong>Urgencia:</strong> ${data.urgencia || 'N/A'}</li>
+            </ul>
+            <p>Puedes ver más detalles en tu hoja de cálculo (Google Sheets).</p>
+        `;
+
+        MailApp.sendEmail({
+            to: miCorreoNotificaciones,
+            subject: "NUEVO LEAD RECIBIDO - " + (data.empresa || data.nombre),
+            htmlBody: htmlInterno
+        });
+
         return ContentService.createTextOutput(JSON.stringify({ "success": true }))
             .setMimeType(ContentService.MimeType.JSON);
 
